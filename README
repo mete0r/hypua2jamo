@@ -20,6 +20,10 @@ Example
 Installation
 ------------
 
+from `pypi <http://pypi.python.org/pypi/hypua2jamo>`_::
+
+   pip install hypua2jamo
+
 from `github <https://github.com/mete0r/hypua2jamo>`_::
 
    git clone git://github.com/mete0r/hypua2jamo.git
