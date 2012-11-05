@@ -53,26 +53,49 @@ def codepoint(code):
     return '\\u%x' % code
 
 
-def convert(source, dest):
-    with file(dest, 'w') as g:
-        g.write('# -*- coding: utf-8 -*-\n\ntable = {\n')
-        with file(source, 'r') as f:
-            for pua, jamo in parse_lines(f):
+def parse_datafile_into_table(f):
+    if isinstance(f, basestring):
+        with file(f) as f:
+            return parse_datafile_into_table(f)
+    return dict(parse_lines(f))
 
-                pua = '0x%x' % pua
 
-                comment = "u'%s'" % jamo.encode('utf-8')
+def table_to_pickle(table, f):
+    if isinstance(f, basestring):
+        with file(f, 'w') as f:
+            return table_to_pickle(table, f)
 
-                jamo = ''.join(codepoint(ord(ch)) for ch in jamo)
-                jamo = "u'"+jamo+"'"
+    import cPickle
+    cPickle.dump(table, f)
 
-                line = ' '*4 + '%s: %s,' % (pua, jamo)
-                line += ' '*(60 - len(line))
-                line += '# %s\n' % comment
-                g.write(line)
-        g.write('}')
+
+def table_to_py(table, f):
+    if isinstance(f, basestring):
+        with file(f, 'w') as f:
+            return table_to_py(table, f)
+
+    f.write('# -*- coding: utf-8 -*-\n\ntable = {\n')
+    for pua, jamo in table.items():
+
+        pua = '0x%x' % pua
+
+        comment = "u'%s'" % jamo.encode('utf-8')
+
+        jamo = ''.join(codepoint(ord(ch)) for ch in jamo)
+        jamo = "u'"+jamo+"'"
+
+        line = ' '*4 + '%s: %s,' % (pua, jamo)
+        line += ' '*(60 - len(line))
+        line += '# %s\n' % comment
+        f.write(line)
+    f.write('}')
 
 
 if __name__ == '__main__':
-    convert('data/hypua2jamocomposed.txt', 'src/hypua2jamo/composed.py')
-    convert('data/hypua2jamodecomposed.txt', 'src/hypua2jamo/decomposed.py')
+    composed = parse_datafile_into_table('data/hypua2jamocomposed.txt')
+    table_to_py(composed, 'src/hypua2jamo/composed.py')
+    table_to_pickle(composed, 'src/hypua2jamo/composed.pickle')
+
+    decomposed = parse_datafile_into_table('data/hypua2jamodecomposed.txt')
+    table_to_py(decomposed, 'src/hypua2jamo/decomposed.py')
+    table_to_pickle(decomposed, 'src/hypua2jamo/decomposed.pickle')
