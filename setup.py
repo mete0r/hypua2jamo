@@ -21,4 +21,5 @@ setup(name='hypua2jamo',
       author_email='mete0r@sarangbang.or.kr',
       url='https://github.com/mete0r/hypua2jamo',
       packages=['hypua2jamo'],
-      package_dir={'': 'src'})
+      package_dir={'': 'src'},
+      package_data={'hypua2jamo': ['*.pickle']})
