@@ -1,0 +1,4 @@
+include COPYING
+include COPYING.LESSER
+include src/hypua2jamo/composed.pickle
+include src/hypua2jamo/decomposed.pickle
