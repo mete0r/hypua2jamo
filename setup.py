@@ -29,7 +29,7 @@ classifiers = [
 ]
 
 setup(name='hypua2jamo',
-      version='0.3',
+      version='0.4.dev0',
       license='GNU Lesser GPL v3+',
       description='Convert Hanyang-PUA code to unicode Hangul Jamo, i.e., Syllable-Initial-Peak-Final Encoding (첫가끝 코드).',
       long_description=read('README'),
