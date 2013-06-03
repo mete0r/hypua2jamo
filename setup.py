@@ -23,6 +23,7 @@ classifiers = [
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: Jython',
+    'Programming Language :: Python :: Implementation :: PyPy',
     'Topic :: Text Processing :: Filters',
 ]
 
