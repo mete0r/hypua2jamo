@@ -22,8 +22,8 @@ class ConversionTest(TestCase):
         result = translate(pua)
 
         for p, e, r in zip(pua.split(' '), expected.split(' '), result.split(' ')):
-            print 'P', p, repr(p)
-            print 'E', e, repr(e)
-            print 'R', r, repr(r)
+            print 'P', p.encode('utf-8'), repr(p)
+            print 'E', e.encode('utf-8'), repr(e)
+            print 'R', r.encode('utf-8'), repr(r)
 
         self.assertEquals(expected, result)
