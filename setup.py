@@ -5,7 +5,7 @@ from setuptools import setup
 def read(filename):
     import os.path
     filename = os.path.join(os.path.dirname(__file__), filename)
-    f = file(filename, 'r')
+    f = open(filename, 'r')
     try:
         return f.read()
     finally:
@@ -21,6 +21,7 @@ classifiers = [
     'Programming Language :: Python :: 2.5',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: Jython',
     'Programming Language :: Python :: Implementation :: PyPy',

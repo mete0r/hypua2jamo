@@ -22,6 +22,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 jython = sys.platform.startswith('java')
+if sys.version >= '3':
+    unichr = chr
 
 
 def translate(pua, composed=True):
@@ -78,7 +80,8 @@ def import_table(composed):
         else:
             from hypua2jamo.decomposed import table
             return table
-    except Exception, e:
+    except Exception:
+        e = sys.exc_info()[1]
         logger.exception(e)
         return None
 
