@@ -1,7 +1,7 @@
 hypua2jamo
 ==========
 
-Convert `Hanyang-PUA code <http://ko.wikipedia.org/wiki/%ED%95%9C%EC%96%91_%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%98%81%EC%97%AD_%EC%BD%94%EB%93%9C>`_ (U+E0BC~U+F8F7) to unicode Hangul Jamo (U+1100~U+11FF), i.e. `Syllable-Initial-Peak-Final Encoding (첫가끝 코드) <http://ko.wikipedia.org/wiki/%EC%98%9B%ED%95%9C%EA%B8%80#.EC.B2.AB.EA.B0.80.EB.81.9D_.EC.BD.94.EB.93.9C>`_.
+Convert `Hanyang-PUA code <https://ko.wikipedia.org/wiki/%EC%98%9B%ED%95%9C%EA%B8%80#%ED%95%9C%EC%96%91_%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%A0%95%EC%9D%98_%EC%98%81%EC%97%AD_%EC%BD%94%EB%93%9C>`_ (U+E0BC~U+F8F7) to unicode Hangul Jamo (U+1100~U+11FF), i.e. `Syllable-Initial-Peak-Final Encoding (첫가끝 코드) <https://ko.wikipedia.org/wiki/%EC%98%9B%ED%95%9C%EA%B8%80#%EC%B2%AB%EA%B0%80%EB%81%9D_%EC%BD%94%EB%93%9C>`_.
 
 Example
 -------
@@ -35,7 +35,7 @@ from `github <https://github.com/mete0r/hypua2jamo>`_::
 Requirements
 ------------
 
-- Python 2
+- Python 2.7, Python 3.4
 
 Documentation & Development
 ---------------------------
@@ -48,12 +48,13 @@ Documentation & Development
 Contributors
 ------------
 
-Maintainer: `@mete0r_kr <https://twitter.com/#!/mete0r_kr>`_
+Maintainer: `mete0r <https://github.com/mete0r>`_
 
 License
 -------
 
 .. image:: http://www.gnu.org/graphics/lgplv3-147x51.png
+   :width: 147px
 
 `GNU Lesser General Public License Version 3 <http://www.gnu.org/licenses/lgpl.html>`_
 `(text version) <http://www.gnu.org/licenses/lgpl-3.0.txt>`_

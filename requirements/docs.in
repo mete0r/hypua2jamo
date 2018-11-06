@@ -1,6 +1,6 @@
 alabaster >= 0.7.11
 repoze.sphinx.autointerface
 requests >= 2.20.0
-sphinx >= 1.7.9
+sphinx >= 1.8.1
 sphinx-argparse >= 0.2.2
 sphinx-intl >= 0.9.11
