@@ -28,11 +28,7 @@ def parse_line(line):
         jamo = line[10:].strip()
         if jamo != '':
             jamo = jamo.split(' ')
-            try:
-                jamo = u''.join(unichr(int(code[2:6], 16)) for code in jamo)
-            except:
-                print line
-                raise
+            jamo = u''.join(unichr(int(code[2:6], 16)) for code in jamo)
         else:
             jamo = u''
         return pua, jamo
@@ -102,10 +98,10 @@ def table_to_py(table, f):
         jamo = "u'"+jamo+"'"
 
         line = ' '*4 + '%s: %s,' % (pua, jamo)
-        line += ' '*(60 - len(line))
+        line += ' '*(max(60 - len(line), 2))
         line += '# %s\n' % comment
         f.write(line)
-    f.write('}')
+    f.write('}\n')
 
 
 if __name__ == '__main__':
