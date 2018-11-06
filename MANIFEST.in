@@ -1,4 +1,32 @@
+include CHANGES.rst
 include COPYING
 include COPYING.LESSER
+include Makefile
+include README.rst
+include requirements.in
+include requirements.txt
+include requirements/dev.in
+include requirements/dev.txt
+include requirements/docs.in
+include requirements/docs.txt
+include requirements/lint.in
+include requirements/lint.txt
+include requirements/site.in
+include requirements/site.txt
+include requirements/test.in
+include requirements/test.txt
+include requirements/setup.in
 include src/hypua2jamo/composed.pickle
 include src/hypua2jamo/decomposed.pickle
+include tox.ini
+recursive-include docs *.bat
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+recursive-include docs/locale *.pot
+recursive-include docs/locale *.po
+recursive-exclude docs/locale *.mo
+recursive-include docs/static *.css
+exclude data2py.py
+prune data
+prune tests

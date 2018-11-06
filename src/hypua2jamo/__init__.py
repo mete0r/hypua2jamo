@@ -20,6 +20,9 @@ import sys
 import logging
 
 
+__version__ = '0.4.0.dev0'
+
+
 logger = logging.getLogger(__name__)
 jython = sys.platform.startswith('java')
 if sys.version >= '3':
