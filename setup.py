@@ -22,7 +22,9 @@ from distutils.command.build import build as _build
 import io
 import os.path
 import re
+import shutil
 import subprocess
+import sys
 
 
 def setup_dir(f):
@@ -143,7 +145,26 @@ setup_info = {
 
 class build(_build):
     def run(self):
-        subprocess.check_call(['make', '-C', 'src/hypua2jamo-c', 'install'])
+        BUILD_DIR = 'build/hypua2jamo-c'
+        if os.path.exists(BUILD_DIR):
+            shutil.rmtree(BUILD_DIR)
+        os.makedirs(BUILD_DIR)
+        cwd = os.getcwd()
+        os.chdir(BUILD_DIR)
+        try:
+            if sys.platform == 'win32':
+                subprocess.check_call([
+                    'cmake',
+                    '-G', 'NMake Makefiles',
+                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                    '../../src/hypua2jamo-c'
+                ])
+                subprocess.check_call(['nmake'])
+            else:
+                subprocess.check_call(['cmake', '../../src/hypua2jamo-c'])
+                subprocess.check_call(['make'])
+        finally:
+            os.chdir(cwd)
         _build.run(self)
 
 

@@ -111,17 +111,3 @@ test: requirements/test.txt
 	$(VENV) detox -e py27,py34,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report
-
-.PHONY: cclean
-cclean:
-	rm -f *.o
-	rm -f src/hypua2jamo/p2jc-table.h src/hypua2jamo/p2jd-table.h
-
-.PHONY: ccompile
-ccompile: p2jc.o p2jd.o
-src/hypua2jamo/p2jc-table.h src/hypua2jamo/p2jd-table.h:
-	python data2c.py
-p2jc.o: src/hypua2jamo/p2jc.c src/hypua2jamo/p2jc-table.h src/hypua2jamo/p2j-typedef.h
-	gcc -Wall $(shell python2-config --includes) -fPIC -o $@ $< -c
-p2jd.o: src/hypua2jamo/p2jd.c src/hypua2jamo/p2jd-table.h src/hypua2jamo/p2j-typedef.h
-	gcc -Wall $(shell python2-config --includes) -fPIC -o $@ $< -c

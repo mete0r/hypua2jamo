@@ -22,7 +22,7 @@ include src/hypua2jamo/decomposed.pickle
 include src/hypua2jamo-c/*.c
 include src/hypua2jamo-c/*.h
 include src/hypua2jamo-c/*.py
-include src/hypua2jamo-c/Makefile
+include src/hypua2jamo-c/CMakeLists.txt
 include tox.ini
 recursive-include docs *.bat
 recursive-include docs *.py

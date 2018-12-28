@@ -19,6 +19,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
+import sys
 
 from cffi import FFI
 
@@ -28,18 +29,28 @@ ffi = FFI()
 
 ffi.cdef(
     '''
-int hypua_p2jc4_translate_calcsize(const uint32_t *src, int srclen);
-int hypua_p2jc4_translate(const uint32_t *src, int srclen, uint32_t *dst);
-int hypua_p2jd4_translate_calcsize(const uint32_t *src, int srclen);
-int hypua_p2jd4_translate(const uint32_t *src, int srclen, uint32_t *dst);
+int hypua_p2jc4_translate_calcsize(const unsigned int *src, int srclen);
+int hypua_p2jc4_translate(const unsigned int *src, int srclen, unsigned int *dst);
+int hypua_p2jd4_translate_calcsize(const unsigned int *src, int srclen);
+int hypua_p2jd4_translate(const unsigned int *src, int srclen, unsigned int *dst);
+int hypua_p2jc2_translate_calcsize(const unsigned short *src, int srclen);
+int hypua_p2jc2_translate(const unsigned short *src, int srclen, unsigned short *dst);
+int hypua_p2jd2_translate_calcsize(const unsigned int *src, int srclen);
+int hypua_p2jd2_translate(const unsigned short *src, int srclen, unsigned short *dst);
     '''  # noqa
 )
 
 
+if sys.platform == 'win32':
+    library = 'build/hypua2jamo-c/HanyangPUA.lib'
+else:
+    library = 'build/hypua2jamo-c/libHanyangPUA.a'
+
+
 ffi.set_source(
-    'hypua2jamo._p2j4',
-    '#include <inttypes.h>',
+    'hypua2jamo._p2j',
+    '',
     extra_objects=[
-        'lib/p2j4.a',
+        library,
     ],
 )
