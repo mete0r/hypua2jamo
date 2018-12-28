@@ -1,4 +1,4 @@
-#include "codepoints_typedef.h"
+#include "p2j-typedef.h"
 static codepoint_t pua2jamo_E0BC[] = { 0x0003, 0x115f, 0x1161, 0x11ae };
 static codepoint_t pua2jamo_E0BD[] = { 0x0003, 0x115f, 0x1161, 0xd7cd };
 static codepoint_t pua2jamo_E0BE[] = { 0x0003, 0x115f, 0x1161, 0x11af };
@@ -11332,9 +11332,9 @@ static codepoint_t *pua2jamo_group_F86A[] = {
 	pua2jamo_F8F7,
 };
 #define lookup(code) \
-	(0xE0BC <= code && code <= 0xEFFF)?(pua2jamo_group_E0BC[code - 0xE0BC]):\
-	(0xF100 <= code && code <= 0xF66E)?(pua2jamo_group_F100[code - 0xF100]):\
-	(0xF784 <= code && code <= 0xF800)?(pua2jamo_group_F784[code - 0xF784]):\
-	(0xF806 <= code && code <= 0xF864)?(pua2jamo_group_F806[code - 0xF806]):\
-	(0xF86A <= code && code <= 0xF8F7)?(pua2jamo_group_F86A[code - 0xF86A]):\
+	(0xE0BC <= code && code <= 0xEFFF)?(pua2jamo_group_E0BC[code - 0xE0BC]): \
+	(0xF100 <= code && code <= 0xF66E)?(pua2jamo_group_F100[code - 0xF100]): \
+	(0xF784 <= code && code <= 0xF800)?(pua2jamo_group_F784[code - 0xF784]): \
+	(0xF806 <= code && code <= 0xF864)?(pua2jamo_group_F806[code - 0xF806]): \
+	(0xF86A <= code && code <= 0xF8F7)?(pua2jamo_group_F86A[code - 0xF86A]): \
 	NULL

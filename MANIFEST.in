@@ -3,6 +3,7 @@ include COPYING
 include COPYING.LESSER
 include Makefile
 include README.rst
+include hypua2jamo_build.py
 include requirements.in
 include requirements.txt
 include requirements/dev.in
@@ -18,6 +19,10 @@ include requirements/test.txt
 include requirements/setup.in
 include src/hypua2jamo/composed.pickle
 include src/hypua2jamo/decomposed.pickle
+include src/hypua2jamo-c/*.c
+include src/hypua2jamo-c/*.h
+include src/hypua2jamo-c/*.py
+include src/hypua2jamo-c/Makefile
 include tox.ini
 recursive-include docs *.bat
 recursive-include docs *.py

@@ -13,7 +13,7 @@ backports-abc==0.5        # via tornado
 backports.shutil-get-terminal-size==1.0.0  # via ipython
 bleach==2.1.4             # via nbconvert, readme-renderer
 certifi==2018.8.24        # via requests
-cffi==1.11.5              # via cmarkgfm
+cffi==1.11.5
 chardet==3.0.4            # via requests
 check-manifest==0.37
 click==6.7                # via pip-tools, sphinx-intl

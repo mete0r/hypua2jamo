@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # hypua2jamo: Convert Hanyang-PUA code to unicode Hangul Jamo
-# Copyright (C) 2012  mete0r
+# Copyright (C) 2012,2018  mete0r
 #
 # This file is part of hypua2jamo.
 #
@@ -47,29 +47,6 @@ def parse_lines(lines):
             yield pua, jamo
 
 
-def test_parse(self):
-    lines = ['U+E0BC => U+115F U+1161 U+11AE',
-             'U+E0C6 => U+115F U+11A3',
-             'U+E230 => U+1102 U+117A %%% <= U+1102 U+117C',
-             'U+F86A =>']
-
-    pua, jamo = parse_line(lines[0])
-    self.assertEquals(0xE0BC, pua)
-    self.assertEquals(unichr(0x115F)+unichr(0x1161)+unichr(0x11AE), jamo)
-
-    pua, jamo = parse_line(lines[2])
-    self.assertEquals(0xE230, pua)
-    self.assertEquals(unichr(0x1102)+unichr(0x117A), jamo)
-
-    pua, jamo = parse_line(lines[3])
-    self.assertEquals(0xF86A, pua)
-    self.assertEquals(u'', jamo)
-
-
-def codepoint(code):
-    return '\\u%x' % code
-
-
 def parse_datafile_into_table(f):
     if isinstance(f, basestring):
         with file(f) as f:
@@ -77,10 +54,11 @@ def parse_datafile_into_table(f):
     return dict(parse_lines(f))
 
 
-def table_to_c(table, fp):
+def table_to_header(table, codepoint_t):
     pua_groups = make_groups(sorted(table.keys()))
 
-    fp.write('#include "codepoints_typedef.h"\n')
+    yield '#include <inttypes.h>'
+    yield 'typedef {} codepoint_t;'.format(codepoint_t)
 
     for pua_start, pua_end in pua_groups:
         for pua_code in range(pua_start, pua_end + 1):
@@ -90,31 +68,27 @@ def table_to_c(table, fp):
                 ['0x{:04X}'.format(len(jamo))] +
                 ['0x{:04x}'.format(ord(uch)) for uch in jamo]
             )
-            fp.write(
-                'static codepoint_t pua2jamo_{:04X}[] = {{ {} }};\n'.format(
-                    pua_code, codepoints
-                )
+            yield 'static const codepoint_t pua2jamo_{:04X}[] = {{ {} }};'.format(  # noqa
+                pua_code, codepoints
             )
 
-        fp.write(
-            'static codepoint_t *pua2jamo_group_{:04X}[] = {{\n'.format(
-                pua_start,
-            )
+        yield 'static const codepoint_t *pua2jamo_group_{:04X}[] = {{'.format(
+            pua_start,
         )
         for pua_code in range(pua_start, pua_end + 1):
-            fp.write('\tpua2jamo_{:04X},\n'.format(pua_code))
-        fp.write('};\n')
+            yield '\tpua2jamo_{:04X},'.format(pua_code)
+        yield '};'
 
-    lookup = ':\\\n'.join(
-        '\t(0x{start:04X} <= code && code <= 0x{end:04X})?'
-        '(pua2jamo_group_{start:04X}[code - 0x{start:04X}])'.format(
-            start=pua_start,
-            end=pua_end
+    yield '#define lookup(code) \\'
+    for pua_start, pua_end in pua_groups:
+        yield (
+            '\t(0x{start:04X} <= code && code <= 0x{end:04X})?'
+            '(pua2jamo_group_{start:04X}[code - 0x{start:04X}]): \\'.format(
+                start=pua_start,
+                end=pua_end
+            )
         )
-        for pua_start, pua_end in pua_groups
-    )
-    lookup_macro = '#define lookup(code) \\\n' + lookup + ':\\\n\t' + 'NULL\n'
-    fp.write(lookup_macro)
+    yield '\tNULL'
 
 
 def make_groups(codes):
@@ -136,9 +110,18 @@ def make_groups(codes):
 
 
 if __name__ == '__main__':
-    composed = parse_datafile_into_table('data/hypua2jamocomposed.txt')
-    with io.open('codepoints_p2j.h', 'wb') as fp:
-        table_to_c(composed, fp)
+    composed = parse_datafile_into_table(
+        '../../data/hypua2jamocomposed.txt'
+    )
+    with io.open('p2jc4-table.h', 'wb') as fp:
+        for line in table_to_header(composed, 'uint32_t'):
+            fp.write(line)
+            fp.write('\n')
 
-    # decomposed = parse_datafile_into_table('data/hypua2jamodecomposed.txt')
-    # table_to_c(decomposed, 'src/hypua2jamo/decomposed.c')
+    decomposed = parse_datafile_into_table(
+        '../../data/hypua2jamodecomposed.txt'
+    )
+    with io.open('p2jd4-table.h', 'wb') as fp:
+        for line in table_to_header(decomposed, 'uint32_t'):
+            fp.write(line)
+            fp.write('\n')

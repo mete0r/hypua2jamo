@@ -18,9 +18,11 @@
 # along with hypua2jamo.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import absolute_import
 from contextlib import contextmanager
+from distutils.command.build import build as _build
 import io
 import os.path
 import re
+import subprocess
 
 
 def setup_dir(f):
@@ -105,6 +107,9 @@ setup_info = {
             '*.pickle',
         ],
     },
+    'cffi_modules': [
+        'hypua2jamo_build.py:ffi',
+    ],
     'install_requires': install_requires,
     'setup_requires': setup_requires,
     'entry_points': {
@@ -136,9 +141,18 @@ setup_info = {
 }
 
 
+class build(_build):
+    def run(self):
+        subprocess.check_call(['make', '-C', 'src/hypua2jamo-c', 'install'])
+        _build.run(self)
+
+
 @setup_dir
 def main():
     setuptools = import_setuptools()
+    setup_info['cmdclass'] = {
+        'build': build,
+    }
     setuptools.setup(**setup_info)
 
 

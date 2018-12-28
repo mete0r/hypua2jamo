@@ -1,27 +1,31 @@
+#include <stdio.h>
 #include <string.h>
 
-#include "codepoints_p2j.h"
+#include "p2jc4-table.h"
 
 
-int hypua2jamo_calc_translation(const codepoint_t *src, int srclen) {
-	codepoint_t *jamo_seq;
+int hypua_p2jc4_translate_calcsize(const codepoint_t *src, int srclen) {
+	const codepoint_t *jamo_seq;
 	int ret = 0;
 	const codepoint_t *src_end = src + srclen;
-	while (src++ < src_end) {
+	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
 		if (jamo_seq != NULL) {
 			ret += jamo_seq[0];
+		} else {
+			ret += 1;
 		}
 	}
 	return ret;
 }
 
 
-int hypua2jamo_translate_codepoints(const codepoint_t *src, int srclen, codepoint_t *dst) {
-	codepoint_t *jamo_seq;
+int hypua_p2jc4_translate(const codepoint_t *src, int srclen, codepoint_t *dst) {
+	const codepoint_t *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
-	while (src++ < src_end) {
+	const codepoint_t *dst_start = dst;
+	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
 		if (jamo_seq == NULL) {
 			*(dst++) = *src;
@@ -31,5 +35,5 @@ int hypua2jamo_translate_codepoints(const codepoint_t *src, int srclen, codepoin
 			dst += jamo_len;
 		}
 	}
-	return 0;
+	return dst - dst_start;
 }
