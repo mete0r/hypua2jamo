@@ -21,13 +21,13 @@ platform:
   - x86
 
 init:
-  - cmd: >-
+  - cmd: |
     cd c:\projects\hypua2jamo
     c:\python27\scripts\virtualenv .
     call scripts\activate
 
 install:
-  - cmd: >-
+  - cmd: |
     pip install -U setuptools pip "tox>=3.4.0"
 
 build: off
