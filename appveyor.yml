@@ -14,7 +14,7 @@ environment:
 platform:
   - x86
 
-build:
+build: off
+test:
   - CALL "%testscript%"
-test: off
 deploy: off
