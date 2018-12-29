@@ -22,13 +22,13 @@ platform:
 
 init:
   - cmd: |
-    cd c:\projects\hypua2jamo
-    c:\python27\scripts\virtualenv .
-    call scripts\activate
+      cd c:\projects\hypua2jamo
+      c:\python27\scripts\virtualenv .
+      call scripts\activate
 
 install:
   - cmd: |
-    pip install -U setuptools pip "tox>=3.4.0"
+      pip install -U setuptools pip "tox>=3.4.0"
 
 build: off
 
