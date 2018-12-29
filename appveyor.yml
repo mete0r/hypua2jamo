@@ -7,12 +7,14 @@ environment:
 
   matrix:
     - python: 2.7
-      testscript: tox-py27
+      testscript: tox-py27.cmd
     - python: 3.4
-      testscript: tox-py34
+      testscript: tox-py34.cmd
 
 platform:
   - x86
 
-test_script:
-  - "%testscript%"
+build:
+  - CALL "%testscript%"
+test: off
+deploy: off
