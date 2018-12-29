@@ -1,4 +1,3 @@
-typedef unsigned int codepoint_t;
 static const codepoint_t pua2jamo_E0BC[] = { 0x0003, 0x115f, 0x1161, 0x11ae };
 static const codepoint_t pua2jamo_E0BD[] = { 0x0003, 0x115f, 0x1161, 0xd7cd };
 static const codepoint_t pua2jamo_E0BE[] = { 0x0003, 0x115f, 0x1161, 0x11af };

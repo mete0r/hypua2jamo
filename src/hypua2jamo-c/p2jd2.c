@@ -1,13 +1,24 @@
 #include <string.h>
 
-#include "p2jd2-table.h"
+#include "config.h"
+
+#ifdef HAVE_INTTYPES_H
+#include <inttypes.h>
+#else
+typedef unsigned short uint16_t;
+#endif
+
+
+typedef uint16_t codepoint_t;
+
+#include "p2jd-table.h"
 
 
 int hypua_p2jd2_translate_calcsize(const codepoint_t *src, int srclen) {
 	const codepoint_t *jamo_seq;
 	int ret = 0;
 	const codepoint_t *src_end = src + srclen;
-	while (src++ < src_end) {
+	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
 		if (jamo_seq != NULL) {
 			ret += jamo_seq[0];
@@ -23,7 +34,8 @@ int hypua_p2jd2_translate(const codepoint_t *src, int srclen, codepoint_t *dst) 
 	const codepoint_t *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
-	while (src++ < src_end) {
+	const codepoint_t *dst_start = dst;
+	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
 		if (jamo_seq == NULL) {
 			*(dst++) = *src;
@@ -33,6 +45,5 @@ int hypua_p2jd2_translate(const codepoint_t *src, int srclen, codepoint_t *dst) 
 			dst += jamo_len;
 		}
 	}
-	return 0;
+	return dst - dst_start;
 }
-

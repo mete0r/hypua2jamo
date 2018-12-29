@@ -54,10 +54,8 @@ def parse_datafile_into_table(f):
     return dict(parse_lines(f))
 
 
-def table_to_header(table, codepoint_t):
+def table_to_header(table):
     pua_groups = make_groups(sorted(table.keys()))
-
-    yield 'typedef {} codepoint_t;'.format(codepoint_t)
 
     for pua_start, pua_end in pua_groups:
         for pua_code in range(pua_start, pua_end + 1):
@@ -112,23 +110,15 @@ if __name__ == '__main__':
     composed = parse_datafile_into_table(
         '../../data/hypua2jamocomposed.txt'
     )
-    with io.open('p2jc4-table.h', 'wb') as fp:
-        for line in table_to_header(composed, 'unsigned int'):
-            fp.write(line)
-            fp.write('\n')
-    with io.open('p2jc2-table.h', 'wb') as fp:
-        for line in table_to_header(composed, 'unsigned short'):
+    with io.open('p2jc-table.h', 'wb') as fp:
+        for line in table_to_header(composed):
             fp.write(line)
             fp.write('\n')
 
     decomposed = parse_datafile_into_table(
         '../../data/hypua2jamodecomposed.txt'
     )
-    with io.open('p2jd4-table.h', 'wb') as fp:
-        for line in table_to_header(decomposed, 'unsigned int'):
-            fp.write(line)
-            fp.write('\n')
-    with io.open('p2jd2-table.h', 'wb') as fp:
-        for line in table_to_header(decomposed, 'unsigned short'):
+    with io.open('p2jd-table.h', 'wb') as fp:
+        for line in table_to_header(decomposed):
             fp.write(line)
             fp.write('\n')

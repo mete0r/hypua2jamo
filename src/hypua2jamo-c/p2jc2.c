@@ -1,7 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "p2jc2-table.h"
+#include "config.h"
+
+#ifdef HAVE_INTTYPES_H
+#include <inttypes.h>
+#else
+typedef unsigned short uint16_t;
+#endif
+
+
+typedef uint16_t codepoint_t;
+
+#include "p2jc-table.h"
 
 
 int hypua_p2jc2_translate_calcsize(const codepoint_t *src, int srclen) {
