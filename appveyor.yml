@@ -15,4 +15,4 @@ platform:
   - x86
 
 test_script:
-  - %testscript%
+  - "%testscript%"
