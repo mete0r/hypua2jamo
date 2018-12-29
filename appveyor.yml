@@ -1,0 +1,18 @@
+image:
+  - Visual Studio 2015
+
+clone_folder: c:\projects\hypua2jamo
+
+environment:
+
+  matrix:
+    - python: 2.7
+      testscript: tox-py27
+    - python: 3.4
+      testscript: tox-py34
+
+platform:
+  - x86
+
+test_script:
+  - %testscript%
