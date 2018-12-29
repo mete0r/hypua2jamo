@@ -1,6 +1,10 @@
 image:
   - Visual Studio 2015
 
+branches:
+  only:
+    - data2c
+
 clone_folder: c:\projects\hypua2jamo
 
 environment:
@@ -14,11 +18,9 @@ environment:
 platform:
   - x86
 
-build:
+build: off
 
-build_script:
-  - CALL "%testscript%"
-
-test: off
+test_script:
+  - cmd: CALL "%testscript%"
 
 deploy: off
