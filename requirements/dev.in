@@ -7,7 +7,7 @@ pyside
 qtconsole >= 4.3.1
 restview >= 2.9.1
 tox >= 3.4.0
-detox >= 0.15
+detox >= 0.18
 wheel >= 0.31.1
 zc.buildout >= 2.12.2
 zest.releaser >= 6.15.2

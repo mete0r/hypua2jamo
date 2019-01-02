@@ -24,7 +24,7 @@ configparser==3.5.0       # via entrypoints, flake8
 coverage==4.5.1
 decorator==4.3.0          # via ipython, traitlets
 defusedxml==0.5.0         # via nbconvert
-detox==0.15
+detox==0.18
 dnspython==1.15.0         # via eventlet
 docutils==0.14            # via pyroma, readme-renderer, restview, sphinx
 entrypoints==0.2.3        # via nbconvert
