@@ -106,10 +106,92 @@ def make_groups(codes):
     return groups
 
 
+class Node(object):
+
+    def __init__(self):
+        self.children = {}
+        self.pua_code = None
+        self.jamo_seq = None
+
+    @property
+    def id(self):
+        if not self.jamo_seq:
+            return 'root'
+        code_seq = [ord(ch) for ch in self.jamo_seq]
+        return ''.join('u{:4x}'.format(code) for code in code_seq)
+
+    def __repr__(self):
+        if self.pua_code is not None:
+            if self.children:
+                return str('[{:04x}] -> {}'.format(
+                    self.pua_code, self.children,
+                ))
+            else:
+                return str('[{:04x}]'.format(self.pua_code))
+        return repr(self.children)
+
+
+def table_to_tree(table):
+    root = Node()
+    root.jamo_seq = ''
+    for pua_code, jamo_chars in table.iteritems():
+        node = root
+        jamo_seq = ''
+        for jamo_char in jamo_chars:
+            node = node.children.setdefault(jamo_char, Node())
+            jamo_seq += jamo_char
+            node.jamo_seq = jamo_seq
+        node.pua_code = pua_code
+    return root
+
+
+def tree_dfs(root):
+    for jamo_char, node in sorted(root.children.iteritems()):
+        for res in tree_dfs(node):
+            yield res
+    yield root
+
+
+def tree_to_header(tree):
+    for node in tree_dfs(tree):
+        children = sorted([
+            child.id for child in node.children.values()
+        ])
+        if len(children) > 0:
+            yield 'static struct Node* node_{}_children[] = {{'.format(node.id)
+            for child_id in children:
+                yield '\t&node_{},'.format(child_id)
+            yield '};'
+
+        yield 'static struct Node node_{} = {{'.format(node.id)
+        if len(node.jamo_seq) > 0:
+            yield '\t0x{:04x},'.format(ord(node.jamo_seq[-1]))
+        else:
+            yield '\t0,'
+        if node.pua_code is not None:
+            yield '\t0x{:04x},'.format(node.pua_code)
+        else:
+            yield '\t0,'
+        yield '\t{},'.format(len(children))
+        if len(children) > 0:
+            yield '\tnode_{}_children'.format(node.id)
+        else:
+            yield '\t0'
+        yield '};'
+
+
 if __name__ == '__main__':
     composed = parse_datafile_into_table(
         '../../data/hypua2jamocomposed.txt'
     )
+    jc2p_tree = table_to_tree(composed)
+    with io.open('jc2p-tree.h', 'wb') as fp:
+        with io.open('jc2p-tree.h.in', 'rb') as rfp:
+            for line in rfp:
+                fp.write(line)
+        for line in tree_to_header(jc2p_tree):
+            fp.write(line.encode('utf-8'))
+            fp.write('\n')
     with io.open('p2jc-table.h', 'wb') as fp:
         for line in table_to_header(composed):
             fp.write(line)

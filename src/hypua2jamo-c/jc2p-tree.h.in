@@ -1,0 +1,6 @@
+struct Node {
+	codepoint_t jamo_code;
+	codepoint_t pua_code;
+	int childrenLen;
+	struct Node** children;
+};
