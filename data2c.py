@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # hypua2jamo: Convert Hanyang-PUA code to unicode Hangul Jamo
-# Copyright (C) 2012,2018  mete0r
+# Copyright (C) 2012,2018-2019  mete0r
 #
 # This file is part of hypua2jamo.
 #
@@ -21,37 +21,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 import io
 
-
-def parse_line(line):
-    comment = line.find('%%%')
-    if comment != -1:
-        line = line[:comment]
-
-    if line.startswith('U+'):
-        pua = int(line[2:6], 16)
-        jamo = line[10:].strip()
-        if jamo != '':
-            jamo = jamo.split(' ')
-            jamo = u''.join(unichr(int(code[2:6], 16)) for code in jamo)
-        else:
-            jamo = u''
-        return pua, jamo
-    else:
-        return None, None
-
-
-def parse_lines(lines):
-    for line in lines:
-        pua, jamo = parse_line(line)
-        if pua:
-            yield pua, jamo
-
-
-def parse_datafile_into_table(f):
-    if isinstance(f, basestring):
-        with file(f) as f:
-            return parse_datafile_into_table(f)
-    return dict(parse_lines(f))
+import ktugfile
 
 
 def table_to_header(table):
@@ -145,6 +115,19 @@ def table_to_tree(table):
     return root
 
 
+def tree_bfs(root):
+    q = [root]
+    while len(q) > 0:
+        node = q[0]
+        q = q[1:]
+
+        yield node
+        children = [
+            child for jamo, child in sorted(node.children.iteritems())
+        ]
+        q.extend(children)
+
+
 def tree_dfs(root):
     for jamo_char, node in sorted(root.children.iteritems()):
         for res in tree_dfs(node):
@@ -153,6 +136,11 @@ def tree_dfs(root):
 
 
 def tree_to_header(tree):
+    nodelist = list(tree_bfs(tree))
+    assert nodelist[0] is tree
+    for index, node in enumerate(nodelist):
+        node.index = index
+
     for node in tree_dfs(tree):
         children = sorted([
             child.id for child in node.children.values()
@@ -163,44 +151,79 @@ def tree_to_header(tree):
                 yield '\t&node_{},'.format(child_id)
             yield '};'
 
+        yield 'static uint16_t node_{}_jamo_seq[] = {{'.format(node.id)
+        for jamo in node.jamo_seq:
+            yield '\t0x{:04x},'.format(ord(jamo))
+        yield '};'
+
         yield 'static struct Node node_{} = {{'.format(node.id)
+
+        # index
+        yield '\t{},'.format(node.index)
+
+        # jamo_seq_len
+        yield '\t{},'.format(len(node.jamo_seq))
+
+        # jamo_seq
+        yield '\tnode_{}_jamo_seq,'.format(node.id)
+
+        # jamo_code
         if len(node.jamo_seq) > 0:
             yield '\t0x{:04x},'.format(ord(node.jamo_seq[-1]))
         else:
             yield '\t0,'
+
+        # pua_code
         if node.pua_code is not None:
             yield '\t0x{:04x},'.format(node.pua_code)
         else:
             yield '\t0,'
+
+        # childrenLen
         yield '\t{},'.format(len(children))
+
+        # children
         if len(children) > 0:
-            yield '\tnode_{}_children'.format(node.id)
+            yield '\tnode_{}_children,'.format(node.id)
         else:
-            yield '\t0'
+            yield '\t0,'
+
+        # node_name
+        yield '\t"{}",'.format(node.id)
+
         yield '};'
+
+    yield ''
+
+    yield 'static struct Node* nodelist[] = {'
+    for node in nodelist:
+        yield '\t&node_{},'.format(node.id)
+    yield '};'
 
 
 if __name__ == '__main__':
-    composed = parse_datafile_into_table(
-        '../../data/hypua2jamocomposed.txt'
-    )
+    composed = dict(ktugfile.parse_file(
+        'data/hypua2jamocomposed.txt'
+    ))
     jc2p_tree = table_to_tree(composed)
-    with io.open('jc2p-tree.h', 'wb') as fp:
-        with io.open('jc2p-tree.h.in', 'rb') as rfp:
-            for line in rfp:
-                fp.write(line)
+    with io.open('src/hypua2jamo-c/jc2p-tree.inc', 'wb') as fp:
         for line in tree_to_header(jc2p_tree):
             fp.write(line.encode('utf-8'))
             fp.write('\n')
-    with io.open('p2jc-table.h', 'wb') as fp:
+    with io.open('src/hypua2jamo-c/p2jc-table.h', 'wb') as fp:
         for line in table_to_header(composed):
             fp.write(line)
             fp.write('\n')
 
-    decomposed = parse_datafile_into_table(
-        '../../data/hypua2jamodecomposed.txt'
-    )
-    with io.open('p2jd-table.h', 'wb') as fp:
+    decomposed = dict(ktugfile.parse_file(
+        'data/hypua2jamodecomposed.txt'
+    ))
+    with io.open('src/hypua2jamo-c/p2jd-table.h', 'wb') as fp:
         for line in table_to_header(decomposed):
             fp.write(line)
+            fp.write('\n')
+    jd2p_tree = table_to_tree(decomposed)
+    with io.open('src/hypua2jamo-c/jd2p-tree.inc', 'wb') as fp:
+        for line in tree_to_header(jd2p_tree):
+            fp.write(line.encode('utf-8'))
             fp.write('\n')

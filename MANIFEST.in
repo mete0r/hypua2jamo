@@ -24,6 +24,7 @@ include src/hypua2jamo/decomposed.pickle
 include src/hypua2jamo-c/*.c
 include src/hypua2jamo-c/*.h
 include src/hypua2jamo-c/*.h.in
+include src/hypua2jamo-c/*.inc
 include src/hypua2jamo-c/*.py
 include src/hypua2jamo-c/CMakeLists.txt
 include tox.ini
@@ -35,6 +36,8 @@ recursive-include docs/locale *.pot
 recursive-include docs/locale *.po
 recursive-exclude docs/locale *.mo
 recursive-include docs/static *.css
+exclude data2c.py
 exclude data2py.py
+exclude ktugfile.py
 prune data
 prune tests
