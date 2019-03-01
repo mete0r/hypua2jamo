@@ -390,7 +390,11 @@ try:
 except ImportError:
     ComposedJamo2PUAIncrementalDecoder =\
         ComposedJamo2PUAIncrementalDecoderPurePythonImplementation
+    DecomposedJamo2PUAIncrementalDecoder =\
+        DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation
 else:
     del _
     ComposedJamo2PUAIncrementalDecoder =\
         ComposedJamo2PUAIncrementalDecoderCFFIImplementation
+    DecomposedJamo2PUAIncrementalDecoder =\
+        DecomposedJamo2PUAIncrementalDecoderCFFIImplementation
