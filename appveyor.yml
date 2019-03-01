@@ -13,9 +13,11 @@ environment:
 
   matrix:
     - python: 2.7
-      testscript: tox-py27.cmd
+      TOXENV: py27
+      ccompiler: ccompiler-vc90.cmd
     - python: 3.4
-      testscript: tox-py34.cmd
+      TOXENV: py34
+      ccompiler: ccompiler-winsdk71.cmd
 
 platform:
   - x86
@@ -32,6 +34,8 @@ install:
 build: off
 
 test_script:
-  - cmd: CALL "%testscript%"
+  - cmd: |
+      CALL "%ccompiler%"
+      tox
 
 deploy: off
