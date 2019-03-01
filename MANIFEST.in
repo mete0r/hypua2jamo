@@ -4,7 +4,7 @@ include COPYING.LESSER
 include Makefile
 include README.rst
 include appveyor.yml
-include tox-*.cmd
+include ccompiler-*.cmd
 include hypua2jamo_build.py
 include requirements.in
 include requirements.txt

@@ -3,6 +3,42 @@ from unittest import TestCase
 from array import array
 
 
+class Fixtures(object):
+
+    class HunMinPreface(object):
+        # 40 chars
+        pua_string = (
+            u'나랏\u302e말\u302f\uebd4미\u302e '
+            u'中\ue35f國귁에\u302e 달아\u302e '
+            u'문\uf258와\u302e로 '
+            u'서르 \ue97d\ue570디\u302e '
+            u'아니\u302e\uf53c\uebe1\u302e'
+        )
+
+        # 51 chars
+        composed_jamo_string = (
+            # 0:10 NFC
+            u'나랏\u302e말\u302f\u110a\u119e미\u302e '
+            # 10:23 not NFC
+            u'中\u1103\u1172\u11f0國귁에\u302e 달아\u302e '
+            # 23:31 NFC
+            u'문\u110d\u119e\u11bc와\u302e로 '
+            # 31:42 NFC
+            u'서르 \u1109\u119e\u1106\u119e\u11ba디\u302e '
+            # 42:51 NFC
+            u'아니\u302e\u1112\u119e\u11af\u110a\u11a1\u302e'  # noqa
+        )
+
+        # 55 chars
+        decomposed_jamo_string = (
+            u'나랏\u302e말\u302f\u1109\u1109\u119e미\u302e '
+            u'中\u1103\u1172\u11f0國귁에\u302e 달아\u302e '
+            u'문\u110c\u110c\u119e\u11bc와\u302e로 '
+            u'서르 \u1109\u119e\u1106\u119e\u11ba디\u302e '
+            u'아니\u302e\u1112\u119e\u11af\u1109\u1109\u119e\u1175\u302e'  # noqa
+        )
+
+
 class ConversionTest(TestCase):
 
     def test_table(self):
@@ -25,27 +61,31 @@ class ConversionTest(TestCase):
 
         self.assertEquals(expected, result)
 
-    # 40 chars
-    pua_string = (
-        u'나랏\u302e말\u302f\uebd4미\u302e '
-        u'中\ue35f國귁에\u302e 달아\u302e '
-        u'문\uf258와\u302e로 '
-        u'서르 \ue97d\ue570디\u302e '
-        u'아니\u302e\uf53c\uebe1\u302e'
-    )
-    # 51 chars
-    jamo_string = (
-        # 0:10 NFC
-        u'나랏\u302e말\u302f\u110a\u119e미\u302e '
-        # 10:23 not NFC
-        u'中\u1103\u1172\u11f0國귁에\u302e 달아\u302e '
-        # 23:31 NFC
-        u'문\u110d\u119e\u11bc와\u302e로 '
-        # 31:42 NFC
-        u'서르 \u1109\u119e\u1106\u119e\u11ba디\u302e '
-        # 42:51 NFC
-        u'아니\u302e\u1112\u119e\u11af\u110a\u11a1\u302e'  # noqa
-    )
+    def test_p2jc(self):
+        from hypua2jamo import translate
+
+        jamo_string = translate(
+            Fixtures.HunMinPreface.pua_string,
+        )
+        self.assertEquals(
+            Fixtures.HunMinPreface.composed_jamo_string,
+            jamo_string,
+        )
+
+    def test_p2jd(self):
+        from hypua2jamo import translate
+
+        jamo_string = translate(
+            Fixtures.HunMinPreface.pua_string,
+            composed=False
+        )
+        self.assertEquals(
+            Fixtures.HunMinPreface.decomposed_jamo_string,
+            jamo_string,
+        )
+
+    pua_string = Fixtures.HunMinPreface.pua_string
+    jamo_string = Fixtures.HunMinPreface.composed_jamo_string
 
     def test_p2jcx(self):
         pua = self.pua_string
@@ -302,131 +342,79 @@ class ConversionTest(TestCase):
 
         self.assertEquals(pua[:40], translate(jamo))
 
+
+class Jamo2PUAIncrementalDecoderTestBase(object):
+
     def test_jc2px_decoder(self):
-        from codecs import IncrementalDecoder
-        from cffi import FFI
+        decoder = self.make_decoder()
 
-        class ComposedJamo2PUAIncrementalDecoder(IncrementalDecoder):
-            def __init__(self, errors='strict'):
-                IncrementalDecoder.__init__(self, errors)
-
-                from hypua2jamo._p2j import lib
-
-                unicode_size = array('u').itemsize
-                if unicode_size == 4:
-                    _calcsize = \
-                        lib.hypua_jc2p_translator_u4_calcsize
-                    _calcsize_flush = \
-                        lib.hypua_jc2p_translator_u4_calcsize_flush
-                    _translate = \
-                        lib.hypua_jc2p_translator_u4_translate
-                    _translate_flush = \
-                        lib.hypua_jc2p_translator_u4_translate_flush
-                elif unicode_size == 2:
-                    _calcsize = \
-                        lib.hypua_jc2p_translator_u2_calcsize
-                    _calcsize_flush = \
-                        lib.hypua_jc2p_translator_u2_calcsize_flush
-                    _translate = \
-                        lib.hypua_jc2p_translator_u2_translate
-                    _translate_flush = \
-                        lib.hypua_jc2p_translator_u2_translate_flush
-                else:
-                    raise Exception(unicode_size)
-
-                self.ffi = ffi = FFI()
-                self.lib = lib
-                translator_size = lib.hypua_jc2p_translator_size()
-                translator_array = array('b', b' ' * translator_size)
-                translator_ptr, translator_len = translator_array.buffer_info()
-                translator_ptr = ffi.cast('void *', translator_ptr)
-                lib.hypua_jc2p_translator_init(translator_ptr)
-
-                from functools import partial
-                self.__getstate = partial(
-                    lib.hypua_jc2p_translator_getstate,
-                    translator_ptr,
-                )
-                self.__setstate = partial(
-                    lib.hypua_jc2p_translator_setstate,
-                    translator_ptr,
-                )
-                self.__calcsize = partial(
-                    _calcsize, translator_ptr
-                )
-                self.__calcsize_flush = partial(
-                    _calcsize_flush, translator_ptr
-                )
-                self.__translate = partial(
-                    _translate, translator_ptr
-                )
-                self.__translate_flush = partial(
-                    _translate_flush, translator_ptr
-                )
-
-                # keep reference to array:
-                #       to prevent for translator_ptr to be gc'ed away
-                self.__translator = translator_array
-
-            def getstate(self):
-                state = self.__getstate()
-                return (b'', state)
-
-            def setstate(self, state):
-                self.__setstate(state[1])
-
-            def reset(self):
-                self.__setstate(0)
-
-            def decode(self, jamo_string, final=False):
-                jamo_array = array('u', jamo_string)
-                jamo_ptr, jamo_len = jamo_array.buffer_info()
-                jamo_ptr = self.ffi.cast('void *', jamo_ptr)
-
-                state = self.__getstate()
-                pua_size = self.__calcsize(jamo_ptr, jamo_len)
-                self.__setstate(state)
-
-                pua_array = array('u', u' ' * pua_size)
-                pua_ptr = pua_array.buffer_info()[0]
-                pua_ptr = self.ffi.cast('void *', pua_ptr)
-                pua_len = self.__translate(jamo_ptr, jamo_len, pua_ptr)
-                if pua_size != pua_len:
-                    raise Exception('%r != %r', pua_size, pua_len)
-
-                result = pua_array.tounicode()
-
-                if not final:
-                    return result
-
-                state = self.__getstate()
-                pua_size = self.__calcsize_flush()
-                self.__setstate(state)
-
-                if pua_size == 0:
-                    return result
-
-                pua_array = array('u', u' ' * pua_size)
-                pua_ptr = pua_array.buffer_info()[0]
-                pua_ptr = self.ffi.cast('void *', pua_ptr)
-                pua_len = self.__translate(jamo_ptr, jamo_len, pua_ptr)
-                if pua_size != pua_len:
-                    raise Exception('%r != %r', pua_size, pua_len)
-
-                result += pua_array.tounicode()
-                return result
-
-        decoder = ComposedJamo2PUAIncrementalDecoder()
         self.assertEquals((b'', 0), decoder.getstate())
 
-        for chunk_size in range(1, 1 + len(self.jamo_string)):
+        for chunk_size in range(1, 1 + len(self.JAMO_STRING)):
             decoder.reset()
 
-            jamo_string = self.jamo_string
+            jamo_string = self.JAMO_STRING
+
             pua = u''
 
             while chunk_size <= len(jamo_string):
                 pua += decoder.decode(jamo_string[:chunk_size], False)
                 jamo_string = jamo_string[chunk_size:]
             pua += decoder.decode(jamo_string, True)
-            self.assertEquals(self.pua_string, pua)
+
+            self.assertEquals(
+                Fixtures.HunMinPreface.pua_string,
+                pua
+            )
+
+
+class ComposedJamo2PUAIncrementalDecoderPurePythonImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.j2p_decoder\
+            import ComposedJamo2PUAIncrementalDecoderPurePythonImplementation
+        return ComposedJamo2PUAIncrementalDecoderPurePythonImplementation()
+
+
+class ComposedJamo2PUAIncrementalDecoderCFFIImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.j2p_decoder\
+            import ComposedJamo2PUAIncrementalDecoderCFFIImplementation
+        return ComposedJamo2PUAIncrementalDecoderCFFIImplementation()
+
+
+class DecomposedJamo2PUAIncrementalDecoderPurePythonImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.j2p_decoder\
+            import DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation
+        return DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation()
+
+
+class DecomposedJamo2PUAIncrementalDecoderCFFIImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.j2p_decoder\
+            import DecomposedJamo2PUAIncrementalDecoderCFFIImplementation
+        return DecomposedJamo2PUAIncrementalDecoderCFFIImplementation()

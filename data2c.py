@@ -19,9 +19,33 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
+from struct import Struct
 import io
 
 import ktugfile
+
+
+def table_to_pack(table):
+    pua_groups = make_groups(sorted(table.keys()))
+
+    pua_groups_length = len(pua_groups)
+    pua_groups_length_struct = Struct('<I')
+    yield pua_groups_length_struct.pack(pua_groups_length)
+
+    group_entry_struct = Struct('<HH')
+    for pua_start, pua_end in pua_groups:
+        yield group_entry_struct.pack(pua_start, pua_end)
+
+    for pua_start, pua_end in pua_groups:
+        for pua_code in range(pua_start, pua_end + 1):
+            jamo = table[pua_code]
+            jamo_length = len(jamo)
+            jamo_length_struct = Struct('<H')
+            yield jamo_length_struct.pack(jamo_length)
+
+            jamo_struct = Struct('<H')
+            for uch in jamo:
+                yield jamo_struct.pack(ord(uch))
 
 
 def table_to_header(table):
@@ -205,6 +229,29 @@ def tree_to_header(tree):
     yield '};'
 
 
+def tree_to_pack(tree):
+    nodelist = list(tree_bfs(tree))
+    assert nodelist[0] is tree
+    for index, node in enumerate(nodelist):
+        node.index = index
+
+    # jamo_code, pua_code, parent id
+    node_struct = Struct('<iHH')
+
+    # whole tree (except the root node)
+    for node in tree_bfs(tree):
+        parent_id = node.index
+        for jamo_char in sorted(node.children):
+            jamo_code = ord(jamo_char)
+            child = node.children[jamo_char]
+            pua_code = child.pua_code or 0
+            yield node_struct.pack(
+                jamo_code,
+                pua_code,
+                parent_id,
+            )
+
+
 if __name__ == '__main__':
     composed = dict(ktugfile.parse_file(
         'data/hypua2jamocomposed.txt'
@@ -218,6 +265,12 @@ if __name__ == '__main__':
         for line in table_to_header(composed):
             fp.write(line)
             fp.write('\n')
+    with io.open('src/hypua2jamo/p2jc.bin', 'wb') as fp:
+        for pack in table_to_pack(composed):
+            fp.write(pack)
+    with io.open('src/hypua2jamo/jc2p.bin', 'wb') as fp:
+        for pack in tree_to_pack(jc2p_tree):
+            fp.write(pack)
 
     decomposed = dict(ktugfile.parse_file(
         'data/hypua2jamodecomposed.txt'
@@ -226,8 +279,14 @@ if __name__ == '__main__':
         for line in table_to_header(decomposed):
             fp.write(line)
             fp.write('\n')
+    with io.open('src/hypua2jamo/p2jd.bin', 'wb') as fp:
+        for pack in table_to_pack(decomposed):
+            fp.write(pack)
     jd2p_tree = table_to_tree(decomposed)
     with io.open('src/hypua2jamo-c/jd2p-tree.inc', 'wb') as fp:
         for line in tree_to_header(jd2p_tree):
             fp.write(line.encode('utf-8'))
             fp.write('\n')
+    with io.open('src/hypua2jamo/jd2p.bin', 'wb') as fp:
+        for pack in tree_to_pack(jd2p_tree):
+            fp.write(pack)

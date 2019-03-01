@@ -111,3 +111,8 @@ test: requirements/test.txt
 	$(VENV) detox -e py27,py34,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report
+
+.PHONY: test-report
+test-report:
+	$(VENV) coverage xml
+	$(VENV) coverage html
