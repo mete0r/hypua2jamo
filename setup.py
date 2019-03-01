@@ -109,6 +109,8 @@ setup_info = {
             '*.pickle',
             'jc2p.bin',
             'jd2p.bin',
+            'p2jc.bin',
+            'p2jd.bin',
         ],
     },
     'cffi_modules': [

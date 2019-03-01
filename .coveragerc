@@ -1,0 +1,15 @@
+[run]
+branch = True
+source = hypua2jamo
+
+[paths]
+source =
+	src/hypua2jamo
+	.tox/*/lib/python*/site-packages/hypua2jamo
+	.tox/pypy*/site-packages/hypua2jamo
+
+[html]
+directory = build/coverage.html
+
+[xml]
+output = build/coverage.xml

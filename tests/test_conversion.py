@@ -343,9 +343,86 @@ class ConversionTest(TestCase):
         self.assertEquals(pua[:40], translate(jamo))
 
 
+class PUA2JamoIncrementalEncoderTestBase(object):
+
+    PUA_STRING = Fixtures.HunMinPreface.pua_string
+
+    def test_p2j_encoder(self):
+        encoder = self.make_encoder()
+
+        self.assertEquals(0, encoder.getstate())
+
+        for chunk_size in range(1, 1 + len(self.PUA_STRING)):
+            encoder.reset()
+
+            pua_string = self.PUA_STRING
+
+            jamo = u''
+
+            while chunk_size <= len(pua_string):
+                jamo += encoder.encode(pua_string[:chunk_size], False)
+                pua_string = pua_string[chunk_size:]
+            jamo += encoder.encode(pua_string, True)
+
+            self.assertEquals(
+                self.JAMO_STRING,
+                jamo
+            )
+
+
+class PUA2JamoComposedIncrementalEncoderPurePythonImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.p2j_encoder\
+            import PUA2JamoComposedIncrementalEncoderPurePythonImplementation
+        return PUA2JamoComposedIncrementalEncoderPurePythonImplementation()
+
+
+class PUA2JamoDecomposedIncrementalEncoderPurePythonImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.p2j_encoder\
+            import PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation
+        return PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation()
+
+
+class PUA2JamoComposedIncrementalEncoderCFFIImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.p2j_encoder\
+            import PUA2JamoComposedIncrementalEncoderCFFIImplementation
+        return PUA2JamoComposedIncrementalEncoderCFFIImplementation()
+
+
+class PUA2JamoDecomposedIncrementalEncoderCFFIImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.p2j_encoder\
+            import PUA2JamoDecomposedIncrementalEncoderCFFIImplementation
+        return PUA2JamoDecomposedIncrementalEncoderCFFIImplementation()
+
+
 class Jamo2PUAIncrementalDecoderTestBase(object):
 
-    def test_jc2px_decoder(self):
+    PUA_STRING = Fixtures.HunMinPreface.pua_string
+
+    def test_j2p_decoder(self):
         decoder = self.make_decoder()
 
         self.assertEquals((b'', 0), decoder.getstate())
@@ -363,7 +440,7 @@ class Jamo2PUAIncrementalDecoderTestBase(object):
             pua += decoder.decode(jamo_string, True)
 
             self.assertEquals(
-                Fixtures.HunMinPreface.pua_string,
+                self.PUA_STRING,
                 pua
             )
 
