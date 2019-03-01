@@ -94784,12 +94784,10 @@ static struct Node* node_root_children[] = {
 	&node_ud7fa,
 	&node_ud7fb,
 };
-static uint16_t node_root_jamo_seq[] = {
-};
 static struct Node node_root = {
 	0,
 	0,
-	node_root_jamo_seq,
+	0,
 	0,
 	0xf86a,
 	357,

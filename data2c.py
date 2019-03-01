@@ -151,10 +151,11 @@ def tree_to_header(tree):
                 yield '\t&node_{},'.format(child_id)
             yield '};'
 
-        yield 'static uint16_t node_{}_jamo_seq[] = {{'.format(node.id)
-        for jamo in node.jamo_seq:
-            yield '\t0x{:04x},'.format(ord(jamo))
-        yield '};'
+        if len(node.jamo_seq) > 0:
+            yield 'static uint16_t node_{}_jamo_seq[] = {{'.format(node.id)
+            for jamo in node.jamo_seq:
+                yield '\t0x{:04x},'.format(ord(jamo))
+            yield '};'
 
         yield 'static struct Node node_{} = {{'.format(node.id)
 
@@ -165,7 +166,10 @@ def tree_to_header(tree):
         yield '\t{},'.format(len(node.jamo_seq))
 
         # jamo_seq
-        yield '\tnode_{}_jamo_seq,'.format(node.id)
+        if len(node.jamo_seq) > 0:
+            yield '\tnode_{}_jamo_seq,'.format(node.id)
+        else:
+            yield '\t0,'
 
         # jamo_code
         if len(node.jamo_seq) > 0:
