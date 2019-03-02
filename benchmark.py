@@ -25,6 +25,8 @@ import time
 
 from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderPurePythonImplementation  # noqa
 from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderCFFIImplementation  # noqa
+from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderPurePythonImplementation  # noqa
+from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderCFFIImplementation  # noqa
 
 
 class Fixtures(object):
@@ -65,20 +67,23 @@ class Fixtures(object):
 
 def main():
     filename = '.benchmark.csv.{}'.format(time.time())
+
+    N = 1000
+    M = 100
+
     with io.open(filename, 'w', encoding='utf-8') as fp:
         j2p_decoder_classes = [
             ComposedJamo2PUAIncrementalDecoderPurePythonImplementation,
             ComposedJamo2PUAIncrementalDecoderCFFIImplementation,
         ]
         for decoder_class in j2p_decoder_classes:
-            N = 1000
             elapsed_total = 0
             for i in range(N):
                 decoder = decoder_class()
                 elapsed = time.time()
                 try:
                     decoder.decode(
-                        Fixtures.HunMinPreface.composed_jamo_string * 100,
+                        Fixtures.HunMinPreface.composed_jamo_string * M,
                         final=True
                     )
                 finally:
@@ -90,6 +95,32 @@ def main():
                 platform.python_version(),
                 platform.platform(),
                 decoder_class.__name__,
+                elapsed_average,
+            ))
+
+        encoder_classes = [
+            PUA2JamoComposedIncrementalEncoderPurePythonImplementation,
+            PUA2JamoComposedIncrementalEncoderCFFIImplementation,
+        ]
+        for encoder_class in encoder_classes:
+            elapsed_total = 0
+            for i in range(N):
+                encoder = encoder_class()
+                elapsed = time.time()
+                try:
+                    encoder.encode(
+                        Fixtures.HunMinPreface.pua_string * M,
+                        final=True
+                    )
+                finally:
+                    elapsed = time.time() - elapsed
+                elapsed_total += elapsed
+            elapsed_average = elapsed_total / N
+            fp.write('{},{},{},{},{}\n'.format(
+                platform.python_implementation(),
+                platform.python_version(),
+                platform.platform(),
+                encoder_class.__name__,
                 elapsed_average,
             ))
 
