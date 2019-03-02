@@ -34,7 +34,7 @@ install:
 build_script:
   - cmd: |
       CALL "%ccompiler%"
-      "C:\\Python%PYTHON%\python" setup.py bdist_wheel
+      "C:\\Python%PYTHON%\\python" setup.py bdist_wheel
 
 test_script:
   - cmd: |
