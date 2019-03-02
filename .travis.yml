@@ -1,23 +1,27 @@
 language: python
 sudo: false
-
 matrix:
   include:
-    - python: "2.7"
-      env: TOXENV=py27
-    - python: "3.4"
-      env: TOXENV=py34
-    - python: "pypy"
-      env: TOXENV=pypy
-
+  - python: '2.7'
+    env: TOXENV=py27
+  - python: '3.4'
+    env: TOXENV=py34
+  - python: pypy
+    env: TOXENV=pypy
 install:
-  - pip install -U setuptools pip wheel "tox>=3.4.0"
+- pip install -U setuptools pip wheel "tox>=3.4.0"
 script:
-  - env | sort
-  - python setup.py bdist_wheel
-  - tox
-  - cat .benchmark.csv.*
-
+- env | sort
+- python setup.py bdist_wheel
+- tox
+- cat .benchmark.csv.*
+deploy:
+  provider: pypi
+  user: mete0r
+  password:
+    secure: EeecjW4fW5Nq+Mo/IINrqDiTvCpRBKBkznjwIA7XUQ59ox1vE0kEdun05JOgwIdt9w9lWt8Thum/BmIfG2J/35SIj7Xrv7ans0UvbtOodaED5jb5v7peV6ug0EOV7wukFWVVvLXuIjMNXQV5NgKxqy2wy24NGLGB3F+dGHDUCr8=
+  on:
+    tags: true
 cache: pip
 before_cache:
-  - rm -f $HOME/.cache/pip/log/debug.log
+- rm -f $HOME/.cache/pip/log/debug.log
