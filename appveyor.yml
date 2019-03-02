@@ -29,11 +29,12 @@ install:
       cd c:\projects\hypua2jamo
       c:\python27\scripts\virtualenv .
       call scripts\activate
-      pip install -U setuptools pip "tox>=3.4.0"
+      pip install -U setuptools pip wheel "tox>=3.4.0"
 
 build_script:
-  - pip install wheel
-  - python setup.py bdist_wheel
+  - cmd: |
+      CALL "%ccompiler%"
+      python setup.py bdist_wheel
 
 test_script:
   - cmd: |
