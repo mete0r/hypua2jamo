@@ -9,12 +9,14 @@ matrix:
   - python: pypy
     env: TOXENV=pypy
 install:
-- pip install -U setuptools pip wheel "tox>=3.4.0"
+- pip install -U setuptools pip wheel "tox>=3.4.0" python-coveralls
 script:
 - env | sort
 - python setup.py bdist_wheel
 - tox
 - cat .benchmark.csv.*
+after_success:
+- coveralls
 deploy:
   provider: pypi
   user: mete0r
