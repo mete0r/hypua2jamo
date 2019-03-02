@@ -111,6 +111,9 @@ test: requirements/test.txt
 	$(VENV) detox -e py27,py34,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report
+	@cat	.benchmark.csv.* >	build/benchmark.csv
+	@rm  -f	.benchmark.csv.*
+	@cat 				build/benchmark.csv
 
 .PHONY: test-report
 test-report:

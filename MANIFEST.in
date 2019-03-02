@@ -5,6 +5,7 @@ include COPYING.LESSER
 include Makefile
 include README.rst
 include appveyor.yml
+include benchmark.py
 include ccompiler-*.cmd
 include hypua2jamo_build.py
 include requirements.in
