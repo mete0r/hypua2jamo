@@ -31,11 +31,20 @@ install:
       call scripts\activate
       pip install -U setuptools pip "tox>=3.4.0"
 
-build: off
+build_script:
+  - pip install wheel
+  - python setup.py bdist_wheel
 
 test_script:
   - cmd: |
       CALL "%ccompiler%"
       tox
+
+artifacts:
+  - path: 'dist\*.whl'
+    name: wheel
+  - path: '.benchmark.csv.*'
+    name: benchmark.csv
+
 
 deploy: off
