@@ -14,7 +14,9 @@ install:
   - pip install -U setuptools pip wheel "tox>=3.4.0"
 script:
   - env | sort
+  - python setup.py bdist_wheel
   - tox
+  - cat .benchmark.csv.*
 
 cache: pip
 before_cache:
