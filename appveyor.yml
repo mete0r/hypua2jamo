@@ -34,18 +34,17 @@ install:
 build_script:
   - cmd: |
       CALL "%ccompiler%"
-      python setup.py bdist_wheel
+      "C:\\Python%PYTHON%\python" setup.py bdist_wheel
 
 test_script:
   - cmd: |
       CALL "%ccompiler%"
       tox
+      type .benchmark.csv.*
 
 artifacts:
   - path: 'dist\*.whl'
     name: wheel
-  - path: '.benchmark.csv.*'
-    name: benchmark.csv
 
 
 deploy: off
