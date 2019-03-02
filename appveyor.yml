@@ -12,11 +12,11 @@ max_jobs: 2
 environment:
 
   matrix:
-    - PYTHON: 27
-      TOXENV: py27
+    - TOXENV: py27
+      python: 27
       ccompiler: ccompiler-vc90.cmd
-    - PYTHON: 34
-      TOXENV: py34
+    - TOXENV: py34
+      python: 34
       ccompiler: ccompiler-winsdk71.cmd
 
 platform:
@@ -32,13 +32,15 @@ install:
       pip install -U setuptools pip wheel "tox>=3.4.0"
 
 build_script:
-  - CALL "%ccompiler%"
-  - "C:\\Python%PYTHON%\\python" setup.py bdist_wheel
+  - cmd: |
+      CALL "%ccompiler%"
+      "C:\\Python%python%\\python" setup.py bdist_wheel
 
 test_script:
-  - CALL "%ccompiler%"
-  - tox
-  - type .benchmark.csv.*
+  - cmd: |
+      CALL "%ccompiler%"
+      tox
+      type .benchmark.csv.*
 
 artifacts:
   - path: 'dist\*.whl'
