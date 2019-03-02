@@ -12,7 +12,7 @@ matrix:
 install:
   - pip install -U setuptools pip wheel "tox>=3.4.0"
 script:
-  - tox
+  - env
 
 cache: pip
 before_cache:
