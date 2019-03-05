@@ -165,7 +165,11 @@ class build(_build):
                 ])
                 subprocess.check_call(['nmake'])
             else:
-                subprocess.check_call(['cmake', '../../src/hypua2jamo-c'])
+                subprocess.check_call([
+                    'cmake',
+                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                    '../../src/hypua2jamo-c',
+                ])
                 subprocess.check_call(['make'])
         finally:
             os.chdir(cwd)
