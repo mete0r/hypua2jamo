@@ -93,7 +93,7 @@ class ComposedJamo2PUAIncrementalDecoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
 
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         if _UNICODE_SIZE == 4:
             _calcsize = \
@@ -156,7 +156,7 @@ class DecomposedJamo2PUAIncrementalDecoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
 
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         if _UNICODE_SIZE == 4:
             _calcsize = \
@@ -308,8 +308,9 @@ class Jamo2PUAIncrementalDecoderPurePythonImplementation(
         self.node = self.nodelist[0]
 
     def __repr__(self):
-        return 'ComposedJamo2PUAIncrementalDecodeUsingPP(node={})'.format(
-            self.node
+        return '{}(node={})'.format(
+            type(self).__name__,
+            self.node,
         )
 
     def getstate(self):
@@ -386,7 +387,7 @@ def _uptrace(nodelist, node):
 
 
 try:
-    from hypua2jamo._p2j import lib as _
+    from hypua2jamo._cffi import lib as _
 except ImportError:
     ComposedJamo2PUAIncrementalDecoder =\
         ComposedJamo2PUAIncrementalDecoderPurePythonImplementation

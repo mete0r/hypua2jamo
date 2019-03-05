@@ -174,7 +174,7 @@ class PUA2JamoComposedIncrementalEncoderCFFIImplementation(
         IncrementalEncoder.__init__(self, errors)
 
         from cffi import FFI
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         self._ffi = FFI()
 
@@ -195,7 +195,7 @@ class PUA2JamoDecomposedIncrementalEncoderCFFIImplementation(
         IncrementalEncoder.__init__(self, errors)
 
         from cffi import FFI
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         self._ffi = FFI()
 
@@ -210,7 +210,7 @@ class PUA2JamoDecomposedIncrementalEncoderCFFIImplementation(
 
 
 try:
-    from hypua2jamo._p2j import lib as _
+    from hypua2jamo._cffi import lib as _
 except ImportError:
     PUA2JamoComposedIncrementalEncoder =\
         PUA2JamoComposedIncrementalEncoderPurePythonImplementation

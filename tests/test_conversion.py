@@ -91,7 +91,7 @@ class ConversionTest(TestCase):
         pua = self.pua_string
 
         from cffi import FFI
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         unicode_size = array('u').itemsize
         if unicode_size == 4:
@@ -137,7 +137,7 @@ class ConversionTest(TestCase):
 
     def test_jc2px_translate_calcsize(self):
         from cffi import FFI
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         unicode_size = array('u').itemsize
         if unicode_size == 4:
@@ -250,7 +250,7 @@ class ConversionTest(TestCase):
 
     def test_jc2px_translate(self):
         from cffi import FFI
-        from hypua2jamo._p2j import lib
+        from hypua2jamo._cffi import lib
 
         unicode_size = array('u').itemsize
         if unicode_size == 4:

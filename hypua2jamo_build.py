@@ -84,7 +84,7 @@ else:
 
 
 ffi.set_source(
-    'hypua2jamo._p2j',
+    'hypua2jamo._cffi',
     '',
     extra_objects=[
         library,
