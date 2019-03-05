@@ -23,12 +23,12 @@ import io
 import platform
 import time
 
-from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderPurePythonImplementation  # noqa
-from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderCFFIImplementation  # noqa
-from hypua2jamo._cython import ComposedJamo2PUAIncrementalDecoderCythonImplementation  # noqa
-from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderPurePythonImplementation  # noqa
-from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderCFFIImplementation  # noqa
-from hypua2jamo._cython import PUA2JamoComposedIncrementalEncoderCythonImplementation  # noqa
+from hypua2jamo.j2p_decoder import ComposedJamoDecoderImplementationOnPurePython  # noqa
+from hypua2jamo.j2p_decoder import ComposedJamoDecoderImplementationOnCFFI  # noqa
+from hypua2jamo._cython import ComposedJamoDecoderImplementationOnCython  # noqa
+from hypua2jamo.p2j_encoder import ComposedJamoEncoderImplementationOnPurePython  # noqa
+from hypua2jamo.p2j_encoder import ComposedJamoEncoderImplementationOnCFFI  # noqa
+from hypua2jamo._cython import ComposedJamoEncoderImplementationOnCython  # noqa
 
 
 class Fixtures(object):
@@ -75,9 +75,9 @@ def main():
 
     with io.open(filename, 'w', encoding='utf-8') as fp:
         j2p_decoder_classes = [
-            ComposedJamo2PUAIncrementalDecoderPurePythonImplementation,
-            ComposedJamo2PUAIncrementalDecoderCFFIImplementation,
-            ComposedJamo2PUAIncrementalDecoderCythonImplementation,
+            ComposedJamoDecoderImplementationOnPurePython,
+            ComposedJamoDecoderImplementationOnCFFI,
+            ComposedJamoDecoderImplementationOnCython,
         ]
         for decoder_class in j2p_decoder_classes:
             elapsed_total = 0
@@ -106,9 +106,9 @@ def main():
             ))
 
         encoder_classes = [
-            PUA2JamoComposedIncrementalEncoderPurePythonImplementation,
-            PUA2JamoComposedIncrementalEncoderCFFIImplementation,
-            PUA2JamoComposedIncrementalEncoderCythonImplementation,
+            ComposedJamoEncoderImplementationOnPurePython,
+            ComposedJamoEncoderImplementationOnCFFI,
+            ComposedJamoEncoderImplementationOnCython,
         ]
         for encoder_class in encoder_classes:
             elapsed_total = 0

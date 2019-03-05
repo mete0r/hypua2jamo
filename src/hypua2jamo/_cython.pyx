@@ -75,7 +75,7 @@ cdef extern from "hypua2jamo.h":
 cdef int _UNICODE_SIZE = array('u').itemsize
 
 
-cdef class ComposedJamo2PUAIncrementalDecoderCythonImplementation:
+cdef class ComposedJamoDecoderImplementationOnCython:
 
     cdef void* _translator
     cdef int (*_calcsize)(void*, void*, int)
@@ -149,7 +149,7 @@ cdef class ComposedJamo2PUAIncrementalDecoderCythonImplementation:
             PyMem_Free(pua_buf)
 
 
-cdef class DecomposedJamo2PUAIncrementalDecoderCythonImplementation:
+cdef class DecomposedJamoDecoderImplementationOnCython:
 
     cdef void* _translator
     cdef int (*_calcsize)(void*, void*, int)
@@ -223,7 +223,7 @@ cdef class DecomposedJamo2PUAIncrementalDecoderCythonImplementation:
             PyMem_Free(pua_buf)
 
 
-cdef class PUA2JamoComposedIncrementalEncoderCythonImplementation:
+cdef class ComposedJamoEncoderImplementationOnCython:
 
     cdef int (*_calcsize)(void *src, int srclen);
     cdef int (*_translate)(void *src, int srclen, void *dst);
@@ -268,7 +268,7 @@ cdef class PUA2JamoComposedIncrementalEncoderCythonImplementation:
             PyMem_Free(jamo_buf)
 
 
-cdef class PUA2JamoDecomposedIncrementalEncoderCythonImplementation:
+cdef class DecomposedJamoEncoderImplementationOnCython:
 
     cdef int (*_calcsize)(void *src, int srclen);
     cdef int (*_translate)(void *src, int srclen, void *dst);

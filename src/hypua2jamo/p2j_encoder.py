@@ -105,7 +105,9 @@ def lookup(mapping, pua_code):
     return unichr(pua_code)
 
 
-class PUA2JamoIncrementalEncoderPurePythonImplementation(IncrementalEncoder):
+class PUA2JamoIncrementalEncoderImplementationOnPurePython(
+    IncrementalEncoder
+):
 
     def encode(self, pua_string, final=False):
         mapping = self.mapping
@@ -124,14 +126,14 @@ class PUA2JamoIncrementalEncoderPurePythonImplementation(IncrementalEncoder):
         pass
 
 
-class PUA2JamoComposedIncrementalEncoderPurePythonImplementation(
-    PUA2JamoIncrementalEncoderPurePythonImplementation
+class ComposedJamoEncoderImplementationOnPurePython(
+    PUA2JamoIncrementalEncoderImplementationOnPurePython
 ):
     mapping = p2jc_mapping
 
 
-class PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation(
-    PUA2JamoIncrementalEncoderPurePythonImplementation
+class DecomposedJamoEncoderImplementationOnPurePython(
+    PUA2JamoIncrementalEncoderImplementationOnPurePython
 ):
     mapping = p2jd_mapping
 
@@ -150,7 +152,7 @@ def encode_to_decomposed(pua_string):
     )
 
 
-class PUA2JamoIncrementalEncoderCFFIImplementation(
+class PUA2JamoIncrementalEncoderImplementationOnCFFI(
     IncrementalEncoder
 ):
 
@@ -183,8 +185,8 @@ class PUA2JamoIncrementalEncoderCFFIImplementation(
         return jamo_array.tounicode()
 
 
-class PUA2JamoComposedIncrementalEncoderCFFIImplementation(
-    PUA2JamoIncrementalEncoderCFFIImplementation
+class ComposedJamoEncoderImplementationOnCFFI(
+    PUA2JamoIncrementalEncoderImplementationOnCFFI
 ):
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
@@ -201,8 +203,8 @@ class PUA2JamoComposedIncrementalEncoderCFFIImplementation(
             raise AssertionError(_UNICODE_SIZE)
 
 
-class PUA2JamoDecomposedIncrementalEncoderCFFIImplementation(
-    PUA2JamoIncrementalEncoderCFFIImplementation
+class DecomposedJamoEncoderImplementationOnCFFI(
+    PUA2JamoIncrementalEncoderImplementationOnCFFI
 ):
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
@@ -220,17 +222,11 @@ class PUA2JamoDecomposedIncrementalEncoderCFFIImplementation(
 
 
 if cython_available:
-    PUA2JamoComposedIncrementalEncoder =\
-        _cython.PUA2JamoComposedIncrementalEncoderCythonImplementation
-    PUA2JamoDecomposedIncrementalEncoder =\
-        _cython.PUA2JamoDecomposedIncrementalEncoderCythonImplementation
+    ComposedJamoEncoder = _cython.ComposedJamoEncoderImplementationOnCython
+    DecomposedJamoEncoder = _cython.DecomposedJamoEncoderImplementationOnCython
 elif cffi_available:
-    PUA2JamoComposedIncrementalEncoder =\
-        PUA2JamoComposedIncrementalEncoderCFFIImplementation
-    PUA2JamoDecomposedIncrementalEncoder =\
-        PUA2JamoDecomposedIncrementalEncoderCFFIImplementation
+    ComposedJamoEncoder = ComposedJamoEncoderImplementationOnCFFI
+    DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnCFFI
 else:
-    PUA2JamoComposedIncrementalEncoder =\
-        PUA2JamoComposedIncrementalEncoderPurePythonImplementation
-    PUA2JamoDecomposedIncrementalEncoder =\
-        PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation
+    ComposedJamoEncoder = ComposedJamoEncoderImplementationOnPurePython
+    DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnPurePython

@@ -49,7 +49,7 @@ except NameError:
     unichr = chr
 
 
-class Jamo2PUAIncrementalDecoderCFFIImplementation(IncrementalDecoder):
+class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
 
     def getstate(self):
         state = self._getstate()
@@ -100,8 +100,8 @@ class Jamo2PUAIncrementalDecoderCFFIImplementation(IncrementalDecoder):
         return result
 
 
-class ComposedJamo2PUAIncrementalDecoderCFFIImplementation(
-    Jamo2PUAIncrementalDecoderCFFIImplementation
+class ComposedJamoDecoderImplementationOnCFFI(
+    JamoDecoderImplementationOnCFFI
 ):
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
@@ -160,8 +160,8 @@ class ComposedJamo2PUAIncrementalDecoderCFFIImplementation(
         self.__translator = translator_array
 
 
-class DecomposedJamo2PUAIncrementalDecoderCFFIImplementation(
-    Jamo2PUAIncrementalDecoderCFFIImplementation
+class DecomposedJamoDecoderImplementationOnCFFI(
+    JamoDecoderImplementationOnCFFI
 ):
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
@@ -307,7 +307,7 @@ _jc2p_tree = load_tree('jc2p.bin')
 _jd2p_tree = load_tree('jd2p.bin')
 
 
-class Jamo2PUAIncrementalDecoderPurePythonImplementation(
+class JamoDecoderImplementationOnPurePython(
     IncrementalDecoder
 ):
     nodelist = None
@@ -373,14 +373,14 @@ class Jamo2PUAIncrementalDecoderPurePythonImplementation(
         return u''.join(outbuffer)
 
 
-class ComposedJamo2PUAIncrementalDecoderPurePythonImplementation(
-    Jamo2PUAIncrementalDecoderPurePythonImplementation
+class ComposedJamoDecoderImplementationOnPurePython(
+    JamoDecoderImplementationOnPurePython
 ):
     nodelist = _jc2p_tree
 
 
-class DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation(
-    Jamo2PUAIncrementalDecoderPurePythonImplementation
+class DecomposedJamoDecoderImplementationOnPurePython(
+    JamoDecoderImplementationOnPurePython
 ):
     nodelist = _jd2p_tree
 
@@ -395,17 +395,11 @@ def _uptrace(nodelist, node):
 
 
 if cython_available:
-    ComposedJamo2PUAIncrementalDecoder =\
-        _cython.ComposedJamo2PUAIncrementalDecoderCythonImplementation
-    DecomposedJamo2PUAIncrementalDecoder =\
-        _cython.DecomposedJamo2PUAIncrementalDecoderCythonImplementation
+    ComposedJamoDecoder = _cython.ComposedJamoDecoderImplementationOnCython
+    DecomposedJamoDecoder = _cython.DecomposedJamoDecoderImplementationOnCython
 elif cffi_available:
-    ComposedJamo2PUAIncrementalDecoder =\
-        ComposedJamo2PUAIncrementalDecoderCFFIImplementation
-    DecomposedJamo2PUAIncrementalDecoder =\
-        DecomposedJamo2PUAIncrementalDecoderCFFIImplementation
+    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnCFFI
+    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnCFFI
 else:
-    ComposedJamo2PUAIncrementalDecoder =\
-        ComposedJamo2PUAIncrementalDecoderPurePythonImplementation
-    DecomposedJamo2PUAIncrementalDecoder =\
-        DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation
+    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
+    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
