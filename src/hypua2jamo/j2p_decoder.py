@@ -220,14 +220,14 @@ class Node(object):
     __slots__ = (
         'index',
         'parent_index',
-        'jamo_code',
-        'pua_code',
+        'jamo_char',
+        'pua_char',
         'children',
     )
 
     def __repr__(self):
         return 'Node(index={}, PUA={})'.format(
-            self.index, self.pua_code
+            self.index, self.pua_char
         )
 
 
@@ -235,7 +235,7 @@ class NodeFormatJSON(object):
 
     def format(self, node):
         return {
-            'pua_code': node.pua_code,
+            'pua_char': node.pua_char,
             'children': {
                 '{:04x}'.format(k): self.format(v)
                 for k, v in node.children.items()
@@ -250,8 +250,8 @@ def load_tree_fp(fp):
     root = Node()
     root.index = 0
     root.parent_index = None
-    root.jamo_code = None
-    root.pua_code = None
+    root.jamo_char = None
+    root.pua_char = None
     root.children = {}
 
     index = 1
@@ -262,25 +262,27 @@ def load_tree_fp(fp):
         if len(data) == 0:
             break
         jamo_code, pua_code, parent_id = _node_struct.unpack(data)
+        jamo_char = unichr(jamo_code) if jamo_code else None
+        pua_char = unichr(pua_code) if pua_code else None
 
         node = Node()
         node.index = index
         node.parent_index = parent_id
-        node.jamo_code = jamo_code
-        node.pua_code = pua_code
+        node.jamo_char = jamo_char
+        node.pua_char = pua_char
         node.children = {}
 
         index += 1
         nodelist.append(node)
-        paths.append((parent_id, jamo_code))
+        paths.append((parent_id, jamo_char))
 
-    for node, (parent_id, jamo_code) in zip(nodelist[1:], paths[1:]):
+    for node, (parent_id, jamo_char) in zip(nodelist[1:], paths[1:]):
         if parent_id is None:
             raise Exception()
-        if jamo_code is None:
+        if jamo_char is None:
             raise Exception()
         parent = nodelist[parent_id]
-        parent.children[jamo_code] = node
+        parent.children[jamo_char] = node
 
     return nodelist
 
@@ -331,9 +333,8 @@ class Jamo2PUAIncrementalDecoderPurePythonImplementation(
         src_index = 0
         while src_index < src_len:
             jamo_char = jamo_string[src_index]
-            jamo_code = ord(jamo_char)
             try:
-                node = self.node.children[jamo_code]
+                node = self.node.children[jamo_char]
             except KeyError:
                 #
                 # 현재 노드에서 나갈 엣지가 없음
@@ -342,12 +343,12 @@ class Jamo2PUAIncrementalDecoderPurePythonImplementation(
                 if self.node.index == 0:
                     outbuffer.append(jamo_char)
                     src_index += 1
-                elif self.node.pua_code:
-                    outbuffer.append(unichr(self.node.pua_code))
+                elif self.node.pua_char:
+                    outbuffer.append(self.node.pua_char)
                 else:
                     # 노드 업트레이스하며 입력 버퍼 자모 코드 출력
                     for n in _uptrace(self.nodelist, self.node):
-                        outbuffer.append(unichr(n.jamo_code))
+                        outbuffer.append(n.jamo_char)
                     outbuffer.append(jamo_char)
 
                 # 루트 상태로 복귀
@@ -361,7 +362,7 @@ class Jamo2PUAIncrementalDecoderPurePythonImplementation(
             if self.node.index != 0:
                 # 노드 업트레이스하며 입력 버퍼 자모 코드 출력
                 for n in _uptrace(self.nodelist, self.node):
-                    outbuffer.append(unichr(n.jamo_code))
+                    outbuffer.append(n.jamo_char)
         return u''.join(outbuffer)
 
 
