@@ -67,74 +67,101 @@ class Fixtures(object):
         )
 
 
+class StopWatch(object):
+
+    def __init__(self):
+        self.elapsed_total = 0
+
+    def __enter__(self):
+        self.t = time.time()
+
+    def __exit__(self, *args, **kwargs):
+        elapsed = time.time() - self.t
+        self.elapsed_total += elapsed
+
+
 def main():
     filename = '.benchmark.csv.{}'.format(time.time())
 
     N = 1000
-    M = 100
+    M = 1000
+    chunk_sizes = [
+        512,
+        4096,
+        16384,
+    ]
 
     with io.open(filename, 'w', encoding='utf-8') as fp:
-        j2p_decoder_classes = [
-            ComposedJamoDecoderImplementationOnPurePython,
-            ComposedJamoDecoderImplementationOnCFFI,
-            ComposedJamoDecoderImplementationOnCython,
-        ]
-        for decoder_class in j2p_decoder_classes:
-            elapsed_total = 0
-            for i in range(N):
-                decoder = decoder_class()
-                elapsed = time.time()
-                try:
-                    decoder.decode(
-                        Fixtures.HunMinPreface.composed_jamo_string * M,
-                        final=True
+        for chunk_size in chunk_sizes:
+            j2p_decoder_classes = [
+                ComposedJamoDecoderImplementationOnPurePython,
+                ComposedJamoDecoderImplementationOnCFFI,
+                ComposedJamoDecoderImplementationOnCython,
+            ]
+            for decoder_class in j2p_decoder_classes:
+                stopwatch = StopWatch()
+                for i in range(N):
+                    stream = io.StringIO(
+                        Fixtures.HunMinPreface.composed_jamo_string * M
                     )
-                finally:
-                    elapsed = time.time() - elapsed
-                elapsed_total += elapsed
-            elapsed_average = elapsed_total / N
-            elapsed_average *= 1000000
-            elapsed_average += 0.5
-            elapsed_average = int(elapsed_average)
-            elapsed_average /= 1000000.0
-            fp.write('{},{},{},{},{}\n'.format(
-                platform.python_implementation(),
-                platform.python_version(),
-                platform.platform(),
-                decoder_class.__name__,
-                elapsed_average,
-            ))
+                    decoder = decoder_class()
+                    while True:
+                        s = stream.read(512)
+                        if len(s) < 512:
+                            with stopwatch:
+                                decoder.decode(s, final=True)
+                            break
+                        else:
+                            with stopwatch:
+                                decoder.decode(s)
+                elapsed_average = stopwatch.elapsed_total / N
+                elapsed_average *= 1000000
+                elapsed_average += 0.5
+                elapsed_average = int(elapsed_average)
+                elapsed_average /= 1000000.0
+                fp.write('{},{},{},{},{},{}\n'.format(
+                    chunk_size,
+                    platform.python_implementation(),
+                    platform.python_version(),
+                    platform.platform(),
+                    decoder_class.__name__,
+                    elapsed_average,
+                ))
 
-        encoder_classes = [
-            ComposedJamoEncoderImplementationOnPurePython,
-            ComposedJamoEncoderImplementationOnCFFI,
-            ComposedJamoEncoderImplementationOnCython,
-        ]
-        for encoder_class in encoder_classes:
-            elapsed_total = 0
-            for i in range(N):
-                encoder = encoder_class()
-                elapsed = time.time()
-                try:
-                    encoder.encode(
+            encoder_classes = [
+                ComposedJamoEncoderImplementationOnPurePython,
+                ComposedJamoEncoderImplementationOnCFFI,
+                ComposedJamoEncoderImplementationOnCython,
+            ]
+            for encoder_class in encoder_classes:
+                stopwatch = StopWatch()
+                for i in range(N):
+                    stream = io.StringIO(
                         Fixtures.HunMinPreface.pua_string * M,
-                        final=True
                     )
-                finally:
-                    elapsed = time.time() - elapsed
-                elapsed_total += elapsed
-            elapsed_average = elapsed_total / N
-            elapsed_average *= 1000000
-            elapsed_average += 0.5
-            elapsed_average = int(elapsed_average)
-            elapsed_average /= 1000000.0
-            fp.write('{},{},{},{},{}\n'.format(
-                platform.python_implementation(),
-                platform.python_version(),
-                platform.platform(),
-                encoder_class.__name__,
-                elapsed_average,
-            ))
+                    encoder = encoder_class()
+                    while True:
+                        s = stream.read(512)
+                        if len(s) < 512:
+                            with stopwatch:
+                                encoder.encode(s, final=True)
+                            break
+                        else:
+                            with stopwatch:
+                                encoder.encode(s)
+                elapsed_average = stopwatch.elapsed_total / N
+                elapsed_average *= 1000000
+                elapsed_average += 0.5
+                elapsed_average = int(elapsed_average)
+                elapsed_average /= 1000000.0
+                fp.write('{},{},{},{},{},{}\n'.format(
+                    chunk_size,
+                    platform.python_implementation(),
+                    platform.python_version(),
+                    platform.platform(),
+                    encoder_class.__name__,
+                    elapsed_average,
+                ))
 
 
 if __name__ == '__main__':
