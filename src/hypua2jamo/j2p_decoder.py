@@ -22,8 +22,9 @@ from array import array
 from codecs import IncrementalDecoder
 from functools import partial
 from struct import Struct
-import os.path
 import io
+import platform
+import os.path
 
 try:
     from cffi import FFI
@@ -401,5 +402,11 @@ elif cffi_available:
     ComposedJamoDecoder = ComposedJamoDecoderImplementationOnCFFI
     DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnCFFI
 else:
+    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
+    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
+
+
+# PyPy: Pure Python 구현이 압도적으로 빠르다.
+if platform.python_implementation() == 'PyPy':
     ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
     DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
