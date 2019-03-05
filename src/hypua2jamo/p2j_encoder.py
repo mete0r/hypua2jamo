@@ -24,6 +24,22 @@ from struct import Struct
 import io
 import os.path
 
+try:
+    from cffi import FFI
+    from hypua2jamo._cffi import lib as _cffi
+except ImportError:
+    cffi_available = False
+else:
+    cffi_available = True
+
+try:
+    from . import _cython
+except ImportError:
+    cython_available = False
+else:
+    cython_available = True
+
+
 _UNICODE_SIZE = array('u').itemsize
 try:
     unichr
@@ -173,17 +189,14 @@ class PUA2JamoComposedIncrementalEncoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 
-        from cffi import FFI
-        from hypua2jamo._cffi import lib
-
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
-            self._calcsize = lib.hypua_p2jc4_translate_calcsize
-            self._translate = lib.hypua_p2jc4_translate
+            self._calcsize = _cffi.hypua_p2jc4_translate_calcsize
+            self._translate = _cffi.hypua_p2jc4_translate
         elif _UNICODE_SIZE == 2:
-            self._calcsize = lib.hypua_p2jc2_translate_calcsize
-            self._translate = lib.hypua_p2jc2_translate
+            self._calcsize = _cffi.hypua_p2jc2_translate_calcsize
+            self._translate = _cffi.hypua_p2jc2_translate
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -194,31 +207,30 @@ class PUA2JamoDecomposedIncrementalEncoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 
-        from cffi import FFI
-        from hypua2jamo._cffi import lib
-
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
-            self._calcsize = lib.hypua_p2jd4_translate_calcsize
-            self._translate = lib.hypua_p2jd4_translate
+            self._calcsize = _cffi.hypua_p2jd4_translate_calcsize
+            self._translate = _cffi.hypua_p2jd4_translate
         elif _UNICODE_SIZE == 2:
-            self._calcsize = lib.hypua_p2jd2_translate_calcsize
-            self._translate = lib.hypua_p2jd2_translate
+            self._calcsize = _cffi.hypua_p2jd2_translate_calcsize
+            self._translate = _cffi.hypua_p2jd2_translate
         else:
             raise AssertionError(_UNICODE_SIZE)
 
 
-try:
-    from hypua2jamo._cffi import lib as _
-except ImportError:
+if cython_available:
     PUA2JamoComposedIncrementalEncoder =\
-        PUA2JamoComposedIncrementalEncoderPurePythonImplementation
+        _cython.PUA2JamoComposedIncrementalEncoderCythonImplementation
     PUA2JamoDecomposedIncrementalEncoder =\
-        PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation
-else:
-    del _
+        _cython.PUA2JamoDecomposedIncrementalEncoderCythonImplementation
+elif cffi_available:
     PUA2JamoComposedIncrementalEncoder =\
         PUA2JamoComposedIncrementalEncoderCFFIImplementation
     PUA2JamoDecomposedIncrementalEncoder =\
         PUA2JamoDecomposedIncrementalEncoderCFFIImplementation
+else:
+    PUA2JamoComposedIncrementalEncoder =\
+        PUA2JamoComposedIncrementalEncoderPurePythonImplementation
+    PUA2JamoDecomposedIncrementalEncoder =\
+        PUA2JamoDecomposedIncrementalEncoderPurePythonImplementation

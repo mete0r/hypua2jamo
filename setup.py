@@ -182,6 +182,22 @@ def main():
     setup_info['cmdclass'] = {
         'build': build,
     }
+    from setuptools.extension import Extension
+
+    if sys.platform == 'win32':
+        library = 'build/hypua2jamo-c/HanyangPUA.lib'
+    else:
+        library = 'build/hypua2jamo-c/libHanyangPUA.a'
+
+    setup_info['ext_modules'] = [
+        Extension('hypua2jamo._cython', [
+            'src/hypua2jamo/_cython' + str(sys.version_info.major) + '.c'
+        ], include_dirs=[
+            'src/hypua2jamo-c',
+        ], extra_objects=[
+            library,
+        ])
+    ]
     setuptools.setup(**setup_info)
 
 

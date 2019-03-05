@@ -418,6 +418,30 @@ class PUA2JamoDecomposedIncrementalEncoderCFFIImplementationTest(
         return PUA2JamoDecomposedIncrementalEncoderCFFIImplementation()
 
 
+class PUA2JamoComposedIncrementalEncoderCythonImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo._cython\
+            import PUA2JamoComposedIncrementalEncoderCythonImplementation
+        return PUA2JamoComposedIncrementalEncoderCythonImplementation()
+
+
+class PUA2JamoDecomposedIncrementalEncoderCythonImplementationTest(
+    TestCase,
+    PUA2JamoIncrementalEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo._cython\
+            import PUA2JamoDecomposedIncrementalEncoderCythonImplementation
+        return PUA2JamoDecomposedIncrementalEncoderCythonImplementation()
+
+
 class Jamo2PUAIncrementalDecoderTestBase(object):
 
     PUA_STRING = Fixtures.HunMinPreface.pua_string
@@ -495,3 +519,31 @@ class DecomposedJamo2PUAIncrementalDecoderCFFIImplementationTest(
         from hypua2jamo.j2p_decoder\
             import DecomposedJamo2PUAIncrementalDecoderCFFIImplementation
         return DecomposedJamo2PUAIncrementalDecoderCFFIImplementation()
+
+
+class ComposedJamo2PUAIncrementalDecoderCythonImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo._cython \
+            import ComposedJamo2PUAIncrementalDecoderCythonImplementation
+
+        return ComposedJamo2PUAIncrementalDecoderCythonImplementation()
+
+
+class DecomposedJamo2PUAIncrementalDecoderCythonImplementationTest(
+    TestCase,
+    Jamo2PUAIncrementalDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo._cython \
+            import DecomposedJamo2PUAIncrementalDecoderCythonImplementation
+
+        return DecomposedJamo2PUAIncrementalDecoderCythonImplementation()

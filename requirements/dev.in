@@ -1,6 +1,7 @@
 argcomplete >= 1.9.4
 babel >= 2.6.0
 coloredlogs >= 10.0
+cython >= 0.29.6
 jupyter
 pip-tools >= 2.0.2
 pyside

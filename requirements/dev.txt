@@ -22,6 +22,7 @@ colorama==0.3.9           # via zest.releaser
 coloredlogs==10.0
 configparser==3.5.0       # via entrypoints, flake8
 coverage==4.5.1
+cython==0.29.6
 decorator==4.3.0          # via ipython, traitlets
 defusedxml==0.5.0         # via nbconvert
 detox==0.18

@@ -25,8 +25,10 @@ import time
 
 from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderPurePythonImplementation  # noqa
 from hypua2jamo.j2p_decoder import ComposedJamo2PUAIncrementalDecoderCFFIImplementation  # noqa
+from hypua2jamo._cython import ComposedJamo2PUAIncrementalDecoderCythonImplementation  # noqa
 from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderPurePythonImplementation  # noqa
 from hypua2jamo.p2j_encoder import PUA2JamoComposedIncrementalEncoderCFFIImplementation  # noqa
+from hypua2jamo._cython import PUA2JamoComposedIncrementalEncoderCythonImplementation  # noqa
 
 
 class Fixtures(object):
@@ -75,6 +77,7 @@ def main():
         j2p_decoder_classes = [
             ComposedJamo2PUAIncrementalDecoderPurePythonImplementation,
             ComposedJamo2PUAIncrementalDecoderCFFIImplementation,
+            ComposedJamo2PUAIncrementalDecoderCythonImplementation,
         ]
         for decoder_class in j2p_decoder_classes:
             elapsed_total = 0
@@ -90,6 +93,10 @@ def main():
                     elapsed = time.time() - elapsed
                 elapsed_total += elapsed
             elapsed_average = elapsed_total / N
+            elapsed_average *= 1000000
+            elapsed_average += 0.5
+            elapsed_average = int(elapsed_average)
+            elapsed_average /= 1000000.0
             fp.write('{},{},{},{},{}\n'.format(
                 platform.python_implementation(),
                 platform.python_version(),
@@ -101,6 +108,7 @@ def main():
         encoder_classes = [
             PUA2JamoComposedIncrementalEncoderPurePythonImplementation,
             PUA2JamoComposedIncrementalEncoderCFFIImplementation,
+            PUA2JamoComposedIncrementalEncoderCythonImplementation,
         ]
         for encoder_class in encoder_classes:
             elapsed_total = 0
@@ -116,6 +124,10 @@ def main():
                     elapsed = time.time() - elapsed
                 elapsed_total += elapsed
             elapsed_average = elapsed_total / N
+            elapsed_average *= 1000000
+            elapsed_average += 0.5
+            elapsed_average = int(elapsed_average)
+            elapsed_average /= 1000000.0
             fp.write('{},{},{},{},{}\n'.format(
                 platform.python_implementation(),
                 platform.python_version(),

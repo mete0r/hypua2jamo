@@ -25,7 +25,20 @@ from struct import Struct
 import os.path
 import io
 
-from cffi import FFI
+try:
+    from cffi import FFI
+    from ._cffi import lib as _cffi
+except ImportError:
+    cffi_available = False
+else:
+    cffi_available = True
+
+try:
+    from . import _cython
+except ImportError:
+    cython_available = False
+else:
+    cython_available = True
 
 
 _UNICODE_SIZE = array('u').itemsize
@@ -93,43 +106,40 @@ class ComposedJamo2PUAIncrementalDecoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
 
-        from hypua2jamo._cffi import lib
-
         if _UNICODE_SIZE == 4:
             _calcsize = \
-                lib.hypua_jc2p_translator_u4_calcsize
+                _cffi.hypua_jc2p_translator_u4_calcsize
             _calcsize_flush = \
-                lib.hypua_jc2p_translator_u4_calcsize_flush
+                _cffi.hypua_jc2p_translator_u4_calcsize_flush
             _translate = \
-                lib.hypua_jc2p_translator_u4_translate
+                _cffi.hypua_jc2p_translator_u4_translate
             _translate_flush = \
-                lib.hypua_jc2p_translator_u4_translate_flush
+                _cffi.hypua_jc2p_translator_u4_translate_flush
         elif _UNICODE_SIZE == 2:
             _calcsize = \
-                lib.hypua_jc2p_translator_u2_calcsize
+                _cffi.hypua_jc2p_translator_u2_calcsize
             _calcsize_flush = \
-                lib.hypua_jc2p_translator_u2_calcsize_flush
+                _cffi.hypua_jc2p_translator_u2_calcsize_flush
             _translate = \
-                lib.hypua_jc2p_translator_u2_translate
+                _cffi.hypua_jc2p_translator_u2_translate
             _translate_flush = \
-                lib.hypua_jc2p_translator_u2_translate_flush
+                _cffi.hypua_jc2p_translator_u2_translate_flush
         else:
             raise Exception(_UNICODE_SIZE)
 
         self.ffi = ffi = FFI()
-        self.lib = lib
-        translator_size = lib.hypua_jc2p_translator_size()
+        translator_size = _cffi.hypua_jc2p_translator_size()
         translator_array = array('b', b' ' * translator_size)
         translator_ptr, translator_len = translator_array.buffer_info()
         translator_ptr = ffi.cast('void *', translator_ptr)
-        lib.hypua_jc2p_translator_init(translator_ptr)
+        _cffi.hypua_jc2p_translator_init(translator_ptr)
 
         self._getstate = partial(
-            lib.hypua_jc2p_translator_getstate,
+            _cffi.hypua_jc2p_translator_getstate,
             translator_ptr,
         )
         self._setstate = partial(
-            lib.hypua_jc2p_translator_setstate,
+            _cffi.hypua_jc2p_translator_setstate,
             translator_ptr,
         )
         self._calcsize = partial(
@@ -156,43 +166,40 @@ class DecomposedJamo2PUAIncrementalDecoderCFFIImplementation(
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
 
-        from hypua2jamo._cffi import lib
-
         if _UNICODE_SIZE == 4:
             _calcsize = \
-                lib.hypua_jd2p_translator_u4_calcsize
+                _cffi.hypua_jd2p_translator_u4_calcsize
             _calcsize_flush = \
-                lib.hypua_jd2p_translator_u4_calcsize_flush
+                _cffi.hypua_jd2p_translator_u4_calcsize_flush
             _translate = \
-                lib.hypua_jd2p_translator_u4_translate
+                _cffi.hypua_jd2p_translator_u4_translate
             _translate_flush = \
-                lib.hypua_jd2p_translator_u4_translate_flush
+                _cffi.hypua_jd2p_translator_u4_translate_flush
         elif _UNICODE_SIZE == 2:
             _calcsize = \
-                lib.hypua_jd2p_translator_u2_calcsize
+                _cffi.hypua_jd2p_translator_u2_calcsize
             _calcsize_flush = \
-                lib.hypua_jd2p_translator_u2_calcsize_flush
+                _cffi.hypua_jd2p_translator_u2_calcsize_flush
             _translate = \
-                lib.hypua_jd2p_translator_u2_translate
+                _cffi.hypua_jd2p_translator_u2_translate
             _translate_flush = \
-                lib.hypua_jd2p_translator_u2_translate_flush
+                _cffi.hypua_jd2p_translator_u2_translate_flush
         else:
             raise Exception(_UNICODE_SIZE)
 
         self.ffi = ffi = FFI()
-        self.lib = lib
-        translator_size = lib.hypua_jd2p_translator_size()
+        translator_size = _cffi.hypua_jd2p_translator_size()
         translator_array = array('b', b' ' * translator_size)
         translator_ptr, translator_len = translator_array.buffer_info()
         translator_ptr = ffi.cast('void *', translator_ptr)
-        lib.hypua_jd2p_translator_init(translator_ptr)
+        _cffi.hypua_jd2p_translator_init(translator_ptr)
 
         self._getstate = partial(
-            lib.hypua_jd2p_translator_getstate,
+            _cffi.hypua_jd2p_translator_getstate,
             translator_ptr,
         )
         self._setstate = partial(
-            lib.hypua_jd2p_translator_setstate,
+            _cffi.hypua_jd2p_translator_setstate,
             translator_ptr,
         )
         self._calcsize = partial(
@@ -387,16 +394,18 @@ def _uptrace(nodelist, node):
     yield node
 
 
-try:
-    from hypua2jamo._cffi import lib as _
-except ImportError:
+if cython_available:
     ComposedJamo2PUAIncrementalDecoder =\
-        ComposedJamo2PUAIncrementalDecoderPurePythonImplementation
+        _cython.ComposedJamo2PUAIncrementalDecoderCythonImplementation
     DecomposedJamo2PUAIncrementalDecoder =\
-        DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation
-else:
-    del _
+        _cython.DecomposedJamo2PUAIncrementalDecoderCythonImplementation
+elif cffi_available:
     ComposedJamo2PUAIncrementalDecoder =\
         ComposedJamo2PUAIncrementalDecoderCFFIImplementation
     DecomposedJamo2PUAIncrementalDecoder =\
         DecomposedJamo2PUAIncrementalDecoderCFFIImplementation
+else:
+    ComposedJamo2PUAIncrementalDecoder =\
+        ComposedJamo2PUAIncrementalDecoderPurePythonImplementation
+    DecomposedJamo2PUAIncrementalDecoder =\
+        DecomposedJamo2PUAIncrementalDecoderPurePythonImplementation

@@ -106,8 +106,17 @@ bootstrap-virtualenv.py: requirements.txt bootstrap-virtualenv.in
 notebook:
 	$(VENV)	jupyter notebook --notebook-dir=notebooks
 
+.PHONY: cythonize
+cythonize:	src/hypua2jamo/_cython2.c \
+		src/hypua2jamo/_cython3.c
+
+src/hypua2jamo/_cython2.c: src/hypua2jamo/_cython.pyx
+	$(VENV) cython $< -o $@ -2
+src/hypua2jamo/_cython3.c: src/hypua2jamo/_cython.pyx
+	$(VENV) cython $< -o $@ -3
+
 .PHONY: test
-test: requirements/test.txt
+test: requirements/test.txt cythonize
 	$(VENV) detox -e py27,py34,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report

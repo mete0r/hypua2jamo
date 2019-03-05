@@ -23,6 +23,9 @@ include requirements/test.txt
 include requirements/setup.in
 include src/hypua2jamo/composed.pickle
 include src/hypua2jamo/decomposed.pickle
+include src/hypua2jamo/_cython.pyx
+include src/hypua2jamo/_cython2.c
+include src/hypua2jamo/_cython3.c
 include src/hypua2jamo-c/*.c
 include src/hypua2jamo-c/*.h
 include src/hypua2jamo-c/*.h.in
