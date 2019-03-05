@@ -170,18 +170,22 @@ def tree_to_header(tree):
             child.id for child in node.children.values()
         ])
         if len(children) > 0:
-            yield 'static struct Node* node_{}_children[] = {{'.format(node.id)
+            yield 'static struct Node* const node_{}_children[] = {{'.format(
+                node.id
+            )
             for child_id in children:
                 yield '\t&node_{},'.format(child_id)
             yield '};'
 
         if len(node.jamo_seq) > 0:
-            yield 'static uint16_t node_{}_jamo_seq[] = {{'.format(node.id)
+            yield 'static const uint16_t node_{}_jamo_seq[] = {{'.format(
+                node.id
+            )
             for jamo in node.jamo_seq:
                 yield '\t0x{:04x},'.format(ord(jamo))
             yield '};'
 
-        yield 'static struct Node node_{} = {{'.format(node.id)
+        yield 'static const struct Node node_{} = {{'.format(node.id)
 
         # index
         yield '\t{},'.format(node.index)
