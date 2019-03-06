@@ -48,7 +48,7 @@ def table_to_pack(table):
                 yield jamo_struct.pack(ord(uch))
 
 
-def table_to_header(table):
+def table_to_header(prefix, table):
     pua_groups = make_groups(sorted(table.keys()))
 
     for pua_start, pua_end in pua_groups:
@@ -59,22 +59,23 @@ def table_to_header(table):
                 ['0x{:04X}'.format(len(jamo))] +
                 ['0x{:04x}'.format(ord(uch)) for uch in jamo]
             )
-            yield 'static const unsigned short pua2jamo_{:04X}[] = {{ {} }};'.format(  # noqa
-                pua_code, codepoints
+            yield 'static const unsigned short {}_{:04X}[] = {{ {} }};'.format(  # noqa
+                prefix, pua_code, codepoints
             )
 
-        yield 'static const unsigned short *pua2jamo_group_{:04X}[] = {{'.format(  # noqa
-            pua_start,
+        yield 'static const unsigned short *{}_group_{:04X}[] = {{'.format(  # noqa
+            prefix, pua_start,
         )
         for pua_code in range(pua_start, pua_end + 1):
-            yield '\tpua2jamo_{:04X},'.format(pua_code)
+            yield '\t{}_{:04X},'.format(prefix, pua_code)
         yield '};'
 
     yield '#define lookup(code) \\'
     for pua_start, pua_end in pua_groups:
         yield (
             '\t(0x{start:04X} <= code && code <= 0x{end:04X})?'
-            '(pua2jamo_group_{start:04X}[code - 0x{start:04X}]): \\'.format(
+            '({prefix}_group_{start:04X}[code - 0x{start:04X}]): \\'.format(
+                prefix=prefix,
                 start=pua_start,
                 end=pua_end
             )
@@ -266,7 +267,7 @@ if __name__ == '__main__':
             fp.write(line.encode('utf-8'))
             fp.write('\n')
     with io.open('src/hypua2jamo-c/p2jc-table.h', 'wb') as fp:
-        for line in table_to_header(composed):
+        for line in table_to_header('p2jc', composed):
             fp.write(line)
             fp.write('\n')
     with io.open('src/hypua2jamo/p2jc.bin', 'wb') as fp:
@@ -280,7 +281,7 @@ if __name__ == '__main__':
         'data/hypua2jamodecomposed.txt'
     ))
     with io.open('src/hypua2jamo-c/p2jd-table.h', 'wb') as fp:
-        for line in table_to_header(decomposed):
+        for line in table_to_header('p2jd', decomposed):
             fp.write(line)
             fp.write('\n')
     with io.open('src/hypua2jamo/p2jd.bin', 'wb') as fp:
