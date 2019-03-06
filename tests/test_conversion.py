@@ -362,6 +362,11 @@ class DecomposedJamoEncoderImplementationOnCFFITest(
             import DecomposedJamoEncoderImplementationOnCFFI
         return DecomposedJamoEncoderImplementationOnCFFI()
 
+    def test_f7ca(self):
+        encoder = self.make_encoder()
+        jamo = encoder.encode(u'\uf7ca', final=True)
+        self.assertEqual(u'\u1109\u1109', jamo)
+
 
 class ComposedJamoEncoderImplementationOnCythonTest(
     TestCase,
@@ -385,6 +390,11 @@ class DecomposedJamoEncoderImplementationOnCythonTest(
         from hypua2jamo._cython\
             import DecomposedJamoEncoderImplementationOnCython
         return DecomposedJamoEncoderImplementationOnCython()
+
+    def test_f7ca(self):
+        encoder = self.make_encoder()
+        jamo = encoder.encode(u'\uf7ca', final=True)
+        self.assertEqual(u'\u1109\u1109', jamo)
 
 
 class JamoDecoderTestBase(object):
