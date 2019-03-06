@@ -79,19 +79,68 @@ cdef extern from "hypua2jamo.h":
 cdef int _UNICODE_SIZE = array('u').itemsize
 
 
-@embedsignature(True)
-cdef class ComposedJamoDecoderImplementationOnCython:
-    '''
-    Composed Jamo-to-PUA decoder
-
-    Cython implementation.
-    '''
+cdef class JamoDecoderImplementationOnCython:
 
     cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
     cdef int (*_calcsize_flush)(void *)
     cdef int (*_decode)(void*, void*, int, void*)
     cdef int (*_decode_flush)(void*, void*)
+
+    def __dealloc__(self):
+        PyMem_Free(self._decoder)
+
+    def getstate(self):
+        cdef int state = hypua_decoder_getstate(self._decoder)
+        return (b'', state)
+
+    def setstate(self, state):
+        cdef int stateint = state
+        hypua_decoder_setstate(self._decoder, stateint)
+
+    def reset(self):
+        hypua_decoder_setstate(self._decoder, 0)
+
+    def decode(self, jamo_string, final=False):
+        cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
+        if jamo_buf is NULL:
+            raise MemoryError()
+        cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
+        cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
+        cdef Py_ssize_t pua_len = self._calcsize(
+            self._decoder, jamo_buf, jamo_len
+        )
+        if final:
+            pua_len += self._calcsize_flush(self._decoder)
+
+        hypua_decoder_setstate(self._decoder, state)
+
+        cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
+        if pua_buf is NULL:
+            raise MemoryError()
+        cdef Py_ssize_t n_translated
+        try:
+            n_translated = self._decode(
+                self._decoder, jamo_buf, jamo_len, pua_buf
+            )
+            if final:
+                n_translated += self._decode_flush(
+                    self._decoder, pua_buf + n_translated
+                )
+            return PyUnicode_FromUnicode(pua_buf, n_translated)
+        finally:
+            PyMem_Free(pua_buf)
+
+
+@embedsignature(True)
+cdef class ComposedJamoDecoderImplementationOnCython(
+    JamoDecoderImplementationOnCython
+):
+    '''
+    Composed Jamo-to-PUA decoder
+
+    Cython implementation.
+    '''
 
     def __cinit__(self):
         size = hypua_decoder_alloc_size()
@@ -114,64 +163,16 @@ cdef class ComposedJamoDecoderImplementationOnCython:
         else:
             raise AssertionError(_UNICODE_SIZE)
 
-    def __dealloc__(self):
-        PyMem_Free(self._decoder)
-
-    def getstate(self):
-        cdef int state = hypua_decoder_getstate(self._decoder)
-        return (b'', state)
-
-    def setstate(self, state):
-        cdef int stateint = state
-        hypua_decoder_setstate(self._decoder, stateint)
-
-    def reset(self):
-        hypua_decoder_setstate(self._decoder, 0)
-
-    def decode(self, jamo_string, final=False):
-        cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
-        if jamo_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
-        cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
-        cdef Py_ssize_t pua_len = self._calcsize(
-            self._decoder, jamo_buf, jamo_len
-        )
-        if final:
-            pua_len += self._calcsize_flush(self._decoder)
-
-        hypua_decoder_setstate(self._decoder, state)
-
-        cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
-        if pua_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t n_translated
-        try:
-            n_translated = self._decode(
-                self._decoder, jamo_buf, jamo_len, pua_buf
-            )
-            if final:
-                n_translated += self._decode_flush(
-                    self._decoder, pua_buf + n_translated
-                )
-            return PyUnicode_FromUnicode(pua_buf, n_translated)
-        finally:
-            PyMem_Free(pua_buf)
-
 
 @embedsignature(True)
-cdef class DecomposedJamoDecoderImplementationOnCython:
+cdef class DecomposedJamoDecoderImplementationOnCython(
+    JamoDecoderImplementationOnCython
+):
     '''
     Decomposed Jamo-to-PUA decoder
 
     Cython implementation.
     '''
-
-    cdef void* _decoder
-    cdef int (*_calcsize)(void*, void*, int)
-    cdef int (*_calcsize_flush)(void *)
-    cdef int (*_decode)(void*, void*, int, void*)
-    cdef int (*_decode_flush)(void*, void*)
 
     def __cinit__(self):
         size = hypua_decoder_alloc_size()
@@ -194,53 +195,8 @@ cdef class DecomposedJamoDecoderImplementationOnCython:
         else:
             raise AssertionError(_UNICODE_SIZE)
 
-    def __dealloc__(self):
-        PyMem_Free(self._decoder)
 
-    def getstate(self):
-        cdef int state = hypua_decoder_getstate(self._decoder)
-        return (b'', state)
-
-    def setstate(self, state):
-        cdef int stateint = state
-        hypua_decoder_setstate(self._decoder, stateint)
-
-    def reset(self):
-        hypua_decoder_setstate(self._decoder, 0)
-
-    def decode(self, jamo_string, final=False):
-        cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
-        if jamo_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
-        cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
-        cdef Py_ssize_t pua_len = self._calcsize(
-            self._decoder, jamo_buf, jamo_len
-        )
-        if final:
-            pua_len += self._calcsize_flush(self._decoder)
-
-        hypua_decoder_setstate(self._decoder, state)
-
-        cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
-        if pua_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t n_translated
-        try:
-            n_translated = self._decode(
-                self._decoder, jamo_buf, jamo_len, pua_buf
-            )
-            if final:
-                n_translated += self._decode_flush(
-                    self._decoder, pua_buf + n_translated
-                )
-            return PyUnicode_FromUnicode(pua_buf, n_translated)
-        finally:
-            PyMem_Free(pua_buf)
-
-
-@embedsignature(True)
-cdef class ComposedJamoEncoderImplementationOnCython:
+cdef class JamoEncoderImplementationOnCython:
     '''
     PUA-to-Jamo(composed) encoder
 
@@ -249,6 +205,46 @@ cdef class ComposedJamoEncoderImplementationOnCython:
 
     cdef int (*_calcsize)(void *src, int srclen);
     cdef int (*_encode)(void *src, int srclen, void *dst);
+
+    def reset(self):
+        pass
+
+    def getstate(self):
+        return 0
+
+    def setstate(self, state):
+        pass
+
+    def encode(self, pua_string, final=False):
+        cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
+        if pua_buf is NULL:
+            raise MemoryError()
+        cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
+        cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
+        cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
+        if jamo_buf is NULL:
+            raise MemoryError()
+        cdef Py_ssize_t n_translated
+        try:
+            n_translated = self._encode(pua_buf, pua_len, jamo_buf)
+            if jamo_len != n_translated:
+                raise Exception(
+                    'p2jcx translation failed', jamo_len, n_translated
+                )
+            return PyUnicode_FromUnicode(jamo_buf, n_translated)
+        finally:
+            PyMem_Free(jamo_buf)
+
+
+@embedsignature(True)
+cdef class ComposedJamoEncoderImplementationOnCython(
+    JamoEncoderImplementationOnCython
+):
+    '''
+    PUA-to-Jamo(composed) encoder
+
+    Cython implementation.
+    '''
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
@@ -260,46 +256,16 @@ cdef class ComposedJamoEncoderImplementationOnCython:
         else:
             raise AssertionError(_UNICODE_SIZE)
 
-    def reset(self):
-        pass
-
-    def getstate(self):
-        return 0
-
-    def setstate(self, state):
-        pass
-
-    def encode(self, pua_string, final=False):
-        cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
-        if pua_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
-        cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
-        cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
-        if jamo_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t n_translated
-        try:
-            n_translated = self._encode(pua_buf, pua_len, jamo_buf)
-            if jamo_len != n_translated:
-                raise Exception(
-                    'p2jcx translation failed', jamo_len, n_translated
-                )
-            return PyUnicode_FromUnicode(jamo_buf, n_translated)
-        finally:
-            PyMem_Free(jamo_buf)
-
 
 @embedsignature(True)
-cdef class DecomposedJamoEncoderImplementationOnCython:
+cdef class DecomposedJamoEncoderImplementationOnCython(
+    JamoEncoderImplementationOnCython
+):
     '''
     PUA-to-Jamo(decomposed) encoder
 
     Cython implementation.
     '''
-
-    cdef int (*_calcsize)(void *src, int srclen);
-    cdef int (*_encode)(void *src, int srclen, void *dst);
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
@@ -310,32 +276,3 @@ cdef class DecomposedJamoEncoderImplementationOnCython:
             self._encode = hypua_p2jd_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
-
-    def reset(self):
-        pass
-
-    def getstate(self):
-        return 0
-
-    def setstate(self, state):
-        pass
-
-    def encode(self, pua_string, final=False):
-        cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
-        if pua_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
-        cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
-        cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
-        if jamo_buf is NULL:
-            raise MemoryError()
-        cdef Py_ssize_t n_translated
-        try:
-            n_translated = self._encode(pua_buf, pua_len, jamo_buf)
-            if jamo_len != n_translated:
-                raise Exception(
-                    'p2jcx translation failed', jamo_len, n_translated
-                )
-            return PyUnicode_FromUnicode(jamo_buf, n_translated)
-        finally:
-            PyMem_Free(jamo_buf)
