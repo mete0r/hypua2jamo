@@ -106,7 +106,6 @@ setup_info = {
     },
     'package_data': {
         'hypua2jamo': [
-            '*.pickle',
             'jc2p.bin',
             'jd2p.bin',
             'p2jc.bin',
