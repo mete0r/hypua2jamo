@@ -290,12 +290,17 @@ class JamoDecoderImplementationOnPurePython(
                 #
 
                 if self.node.index == 0:
+                    # 현 노드가 루트이면 입력 자모 문자를 그대로 출력
                     outbuffer.append(jamo_char)
                     src_index += 1
                 elif self.node.pua_char:
+                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
+                    # 해당 문자 출력
                     outbuffer.append(self.node.pua_char)
                 else:
-                    # 노드 업트레이스하며 입력 버퍼 자모 코드 출력
+                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
+                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
+                    # 노드를 상향 추적하여 얻는다.
                     for n in _uptrace(self.nodelist, self.node):
                         outbuffer.append(n.jamo_char)
                     outbuffer.append(jamo_char)
@@ -309,9 +314,16 @@ class JamoDecoderImplementationOnPurePython(
         if final:
             # 만약 루트 상태가 아니면
             if self.node.index != 0:
-                # 노드 업트레이스하며 입력 버퍼 자모 코드 출력
-                for n in _uptrace(self.nodelist, self.node):
-                    outbuffer.append(n.jamo_char)
+                if self.node.pua_char:
+                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
+                    # 해당 문자 출력
+                    outbuffer.append(self.node.pua_char)
+                else:
+                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
+                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
+                    # 노드를 상향 추적하여 얻는다.
+                    for n in _uptrace(self.nodelist, self.node):
+                        outbuffer.append(n.jamo_char)
         return u''.join(outbuffer)
 
 
@@ -328,6 +340,13 @@ class DecomposedJamoDecoderImplementationOnPurePython(
 
 
 def _uptrace(nodelist, node):
+    '''
+    노드를 상향 추적한다.
+
+    현 노드로부터 조상 노드들을 차례로 순회하며 반환한다.
+    루트 노드는 제외한다.
+    '''
+
     if node.parent_index is None:
         return
     parent = nodelist[node.parent_index]

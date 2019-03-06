@@ -414,9 +414,80 @@ class JamoDecoderTestBase(object):
             )
 
 
+class ComposedJamoDecoderTestBase(JamoDecoderTestBase):
+
+    def test_jc2p_decode(self):
+        def translate(jamo_string):
+            decoder = self.make_decoder()
+            return decoder.decode(jamo_string, final=True)
+
+        pua = self.PUA_STRING
+        jamo = self.JAMO_STRING
+
+        self.assertEquals(pua[:1], translate(jamo[:1]))    # 나
+        self.assertEquals(pua[:2], translate(jamo[:2]))    # 랏
+        self.assertEquals(pua[:3], translate(jamo[:3]))
+        self.assertEquals(pua[:4], translate(jamo[:4]))
+        self.assertEquals(pua[:5], translate(jamo[:5]))
+        self.assertEquals(pua[:5] + u'\uf7ca', translate(jamo[:6]))
+        self.assertEquals(pua[:6], translate(jamo[:7]))
+        self.assertEquals(pua[:7], translate(jamo[:8]))
+        self.assertEquals(pua[:8], translate(jamo[:9]))
+        self.assertEquals(pua[:9], translate(jamo[:10]))
+
+        self.assertEquals(pua[:10], translate(jamo[:11]))  # 中
+        self.assertEquals(pua[:10] + u'\uf790', translate(jamo[:12]))
+        self.assertEquals(pua[:10] + u'\u1103\u1172', translate(jamo[:13]))
+        self.assertEquals(pua[:11], translate(jamo[:14]))
+        self.assertEquals(pua[:12], translate(jamo[:15]))  # 國
+        self.assertEquals(pua[:13], translate(jamo[:16]))  # 귁
+        self.assertEquals(pua[:14], translate(jamo[:17]))  # 에
+        self.assertEquals(pua[:15], translate(jamo[:18]))  # u302e
+        self.assertEquals(pua[:16], translate(jamo[:19]))  # u0020
+
+        self.assertEquals(pua[:17], translate(jamo[:20]))  # 달
+        self.assertEquals(pua[:18], translate(jamo[:21]))  # 아
+        self.assertEquals(pua[:19], translate(jamo[:22]))  # u302e
+        self.assertEquals(pua[:20], translate(jamo[:23]))  # u0020
+
+        self.assertEquals(pua[:21], translate(jamo[:24]))  # 문
+        self.assertEquals(pua[:21] + u'\uf7ea', translate(jamo[:25]))  #
+        self.assertEquals(pua[:21] + u'\uf250', translate(jamo[:26]))  #
+        self.assertEquals(pua[:22], translate(jamo[:27]))  #
+        self.assertEquals(pua[:23], translate(jamo[:28]))  # 와
+        self.assertEquals(pua[:24], translate(jamo[:29]))  # u302e
+        self.assertEquals(pua[:25], translate(jamo[:30]))  # 로
+        self.assertEquals(pua[:26], translate(jamo[:31]))  # u0020
+
+        self.assertEquals(pua[:27], translate(jamo[:32]))  # 서
+        self.assertEquals(pua[:28], translate(jamo[:33]))  # 르
+        self.assertEquals(pua[:29], translate(jamo[:34]))  # u0020
+
+        self.assertEquals(pua[:29] + u'\uf7c2', translate(jamo[:35]))
+        self.assertEquals(pua[:30], translate(jamo[:36]))
+        self.assertEquals(pua[:30] + u'\uf7a8', translate(jamo[:37]))
+        self.assertEquals(pua[:30] + u'\ue560', translate(jamo[:38]))
+        self.assertEquals(pua[:31], translate(jamo[:39]))
+        self.assertEquals(pua[:32], translate(jamo[:40]))  # 디
+        self.assertEquals(pua[:33], translate(jamo[:41]))  # u302e
+        self.assertEquals(pua[:34], translate(jamo[:42]))  # u0020
+
+        self.assertEquals(pua[:35], translate(jamo[:43]))  # 아
+        self.assertEquals(pua[:36], translate(jamo[:44]))  # 니
+        self.assertEquals(pua[:37], translate(jamo[:45]))  # u302e
+        self.assertEquals(pua[:37] + u'\uf7fc', translate(jamo[:46]))
+        self.assertEquals(pua[:37] + u'\uf537', translate(jamo[:47]))
+        self.assertEquals(pua[:38], translate(jamo[:48]))
+        self.assertEquals(pua[:38] + u'\uf7ca', translate(jamo[:49]))
+        self.assertEquals(pua[:39], translate(jamo[:50]))
+        self.assertEquals(pua[:40], translate(jamo[:51]))  # 302e
+
+        self.assertEquals(pua[:40], translate(jamo))
+
+
 class ComposedJamoDecoderImplementationOnPurePythonTest(
     TestCase,
-    JamoDecoderTestBase
+    ComposedJamoDecoderTestBase
 ):
 
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
@@ -429,7 +500,7 @@ class ComposedJamoDecoderImplementationOnPurePythonTest(
 
 class ComposedJamoDecoderImplementationOnCFFITest(
     TestCase,
-    JamoDecoderTestBase
+    ComposedJamoDecoderTestBase
 ):
 
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
@@ -468,7 +539,7 @@ class DecomposedJamoDecoderImplementationOnCFFITest(
 
 class ComposedJamoDecoderImplementationOnCythonTest(
     TestCase,
-    JamoDecoderTestBase
+    ComposedJamoDecoderTestBase
 ):
 
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
