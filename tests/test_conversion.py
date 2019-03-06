@@ -367,6 +367,10 @@ class DecomposedJamoEncoderImplementationOnCFFITest(
         jamo = encoder.encode(u'\uf7ca', final=True)
         self.assertEqual(u'\u1109\u1109', jamo)
 
+    def test_hypua_p2jd_ucs2(self):
+        from hypua2jamo._cffi import lib
+        lib.hypua_p2jd_ucs2_test()
+
 
 class ComposedJamoEncoderImplementationOnCythonTest(
     TestCase,

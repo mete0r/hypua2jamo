@@ -35,8 +35,9 @@ int hypua_p2jc_ucs2_calcsize(const unsigned short *src, int srclen);
 int hypua_p2jc_ucs2_encode(const unsigned short *src, int srclen, unsigned short *dst);
 int hypua_p2jd_ucs4_calcsize(const unsigned int *src, int srclen);
 int hypua_p2jd_ucs4_encode(const unsigned int *src, int srclen, unsigned int *dst);
-int hypua_p2jd_ucs2_calcsize(const unsigned int *src, int srclen);
+int hypua_p2jd_ucs2_calcsize(const unsigned short *src, int srclen);
 int hypua_p2jd_ucs2_encode(const unsigned short *src, int srclen, unsigned short *dst);
+void hypua_p2jd_ucs2_test();
 
 int hypua_jc2p_ucs4_calcsize(const unsigned int *src, int srclen);
 int hypua_jc2p_ucs4_decode(const unsigned int *src, int srclen, unsigned int *dst);
