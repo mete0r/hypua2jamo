@@ -150,6 +150,11 @@ class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
 class ComposedJamoDecoderImplementationOnCFFI(
     JamoDecoderImplementationOnCFFI
 ):
+    '''
+    Composed Jamo-to-PUA decoder
+
+    CFFI implementation.
+    '''
 
     def init_decoder_c_implementation(self, decoder_ptr):
         _cffi.hypua_decoder_init_jc2p(decoder_ptr)
@@ -158,6 +163,11 @@ class ComposedJamoDecoderImplementationOnCFFI(
 class DecomposedJamoDecoderImplementationOnCFFI(
     JamoDecoderImplementationOnCFFI
 ):
+    '''
+    Decomposed Jamo-to-PUA decoder
+
+    CFFI implementation.
+    '''
     def init_decoder_c_implementation(self, decoder_ptr):
         _cffi.hypua_decoder_init_jd2p(decoder_ptr)
 
@@ -330,12 +340,22 @@ class JamoDecoderImplementationOnPurePython(
 class ComposedJamoDecoderImplementationOnPurePython(
     JamoDecoderImplementationOnPurePython
 ):
+    '''
+    Composed Jamo-to-PUA decoder
+
+    Pure python implementation.
+    '''
     nodelist = _jc2p_tree
 
 
 class DecomposedJamoDecoderImplementationOnPurePython(
     JamoDecoderImplementationOnPurePython
 ):
+    '''
+    Decomposed Jamo-to-PUA decoder
+
+    Pure python implementation.
+    '''
     nodelist = _jd2p_tree
 
 

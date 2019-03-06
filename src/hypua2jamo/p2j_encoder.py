@@ -105,7 +105,7 @@ def lookup(mapping, pua_code):
     return unichr(pua_code)
 
 
-class PUA2JamoIncrementalEncoderImplementationOnPurePython(
+class JamoEncoderImplementationOnPurePython(
     IncrementalEncoder
 ):
 
@@ -127,14 +127,26 @@ class PUA2JamoIncrementalEncoderImplementationOnPurePython(
 
 
 class ComposedJamoEncoderImplementationOnPurePython(
-    PUA2JamoIncrementalEncoderImplementationOnPurePython
+    JamoEncoderImplementationOnPurePython
 ):
+    '''
+    PUA-to-Jamo(composed) encoder
+
+    Pure python implementation.
+    '''
+
     mapping = p2jc_mapping
 
 
 class DecomposedJamoEncoderImplementationOnPurePython(
-    PUA2JamoIncrementalEncoderImplementationOnPurePython
+    JamoEncoderImplementationOnPurePython
 ):
+    '''
+    PUA-to-Jamo(decomposed) encoder
+
+    Pure python implementation.
+    '''
+
     mapping = p2jd_mapping
 
 
@@ -152,7 +164,7 @@ def encode_to_decomposed(pua_string):
     )
 
 
-class PUA2JamoIncrementalEncoderImplementationOnCFFI(
+class JamoEncoderImplementationOnCFFI(
     IncrementalEncoder
 ):
 
@@ -186,8 +198,14 @@ class PUA2JamoIncrementalEncoderImplementationOnCFFI(
 
 
 class ComposedJamoEncoderImplementationOnCFFI(
-    PUA2JamoIncrementalEncoderImplementationOnCFFI
+    JamoEncoderImplementationOnCFFI
 ):
+    '''
+    PUA-to-Jamo(composed) encoder
+
+    CFFI implementation.
+    '''
+
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 
@@ -204,8 +222,14 @@ class ComposedJamoEncoderImplementationOnCFFI(
 
 
 class DecomposedJamoEncoderImplementationOnCFFI(
-    PUA2JamoIncrementalEncoderImplementationOnCFFI
+    JamoEncoderImplementationOnCFFI
 ):
+    '''
+    PUA-to-Jamo(decomposed) encoder
+
+    CFFI implementation.
+    '''
+
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 

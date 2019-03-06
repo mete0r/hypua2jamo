@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with hypua2jamo.  If not, see <http://www.gnu.org/licenses/>.
 from array import array
+from cython import embedsignature
 from cpython.mem cimport PyMem_Malloc
 from cpython.mem cimport PyMem_Free
 from libc.stdlib cimport malloc
@@ -78,7 +79,13 @@ cdef extern from "hypua2jamo.h":
 cdef int _UNICODE_SIZE = array('u').itemsize
 
 
+@embedsignature(True)
 cdef class ComposedJamoDecoderImplementationOnCython:
+    '''
+    Composed Jamo-to-PUA decoder
+
+    Cython implementation.
+    '''
 
     cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
@@ -152,7 +159,13 @@ cdef class ComposedJamoDecoderImplementationOnCython:
             PyMem_Free(pua_buf)
 
 
+@embedsignature(True)
 cdef class DecomposedJamoDecoderImplementationOnCython:
+    '''
+    Decomposed Jamo-to-PUA decoder
+
+    Cython implementation.
+    '''
 
     cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
@@ -226,7 +239,13 @@ cdef class DecomposedJamoDecoderImplementationOnCython:
             PyMem_Free(pua_buf)
 
 
+@embedsignature(True)
 cdef class ComposedJamoEncoderImplementationOnCython:
+    '''
+    PUA-to-Jamo(composed) encoder
+
+    Cython implementation.
+    '''
 
     cdef int (*_calcsize)(void *src, int srclen);
     cdef int (*_encode)(void *src, int srclen, void *dst);
@@ -271,7 +290,13 @@ cdef class ComposedJamoEncoderImplementationOnCython:
             PyMem_Free(jamo_buf)
 
 
+@embedsignature(True)
 cdef class DecomposedJamoEncoderImplementationOnCython:
+    '''
+    PUA-to-Jamo(decomposed) encoder
+
+    Cython implementation.
+    '''
 
     cdef int (*_calcsize)(void *src, int srclen);
     cdef int (*_encode)(void *src, int srclen, void *dst);
