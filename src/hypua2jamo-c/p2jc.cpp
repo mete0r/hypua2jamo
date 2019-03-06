@@ -21,6 +21,7 @@ extern "C" int hypua_p2jc_ucs2_calcsize(const uint16_t *src, int srclen) {
 
 
 extern "C" int hypua_p2jc_ucs2_encode(const uint16_t *src, int srclen, uint16_t *dst) {
+	printf("hypua_p2jc_ucs2_encode\n");
 	return encode(src, srclen, dst);
 }
 
