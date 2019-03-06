@@ -49,7 +49,7 @@ class TranslateTest(TestCase):
 
         result = translate(pua)
 
-        self.assertEquals(expected, result)
+        self.assertEqual(expected, result)
 
     def test_translate_composed(self):
         from hypua2jamo import translate
@@ -57,7 +57,7 @@ class TranslateTest(TestCase):
         jamo_string = translate(
             Fixtures.HunMinPreface.pua_string,
         )
-        self.assertEquals(
+        self.assertEqual(
             Fixtures.HunMinPreface.composed_jamo_string,
             jamo_string,
         )
@@ -69,7 +69,7 @@ class TranslateTest(TestCase):
             Fixtures.HunMinPreface.pua_string,
             composed=False
         )
-        self.assertEquals(
+        self.assertEqual(
             Fixtures.HunMinPreface.decomposed_jamo_string,
             jamo_string,
         )
@@ -102,88 +102,88 @@ class CFFITest(TestCase):
             pua_size = _calcsize(jamo_ptr, jamo_len)
             return pua_size
 
-        self.assertEquals(1, calcsize(self.jamo_string[:1]))    # 나
-        self.assertEquals(2, calcsize(self.jamo_string[:2]))    # 랏
-        self.assertEquals(3, calcsize(self.jamo_string[:3]))
-        self.assertEquals(4, calcsize(self.jamo_string[:4]))
-        self.assertEquals(5, calcsize(self.jamo_string[:5]))
-        self.assertEquals(6, calcsize(self.jamo_string[:6]))
-        self.assertEquals(6, calcsize(self.jamo_string[:7]))
-        self.assertEquals(7, calcsize(self.jamo_string[:8]))
-        self.assertEquals(8, calcsize(self.jamo_string[:9]))
-        self.assertEquals(9, calcsize(self.jamo_string[:10]))
-        self.assertEquals((
+        self.assertEqual(1, calcsize(self.jamo_string[:1]))    # 나
+        self.assertEqual(2, calcsize(self.jamo_string[:2]))    # 랏
+        self.assertEqual(3, calcsize(self.jamo_string[:3]))
+        self.assertEqual(4, calcsize(self.jamo_string[:4]))
+        self.assertEqual(5, calcsize(self.jamo_string[:5]))
+        self.assertEqual(6, calcsize(self.jamo_string[:6]))
+        self.assertEqual(6, calcsize(self.jamo_string[:7]))
+        self.assertEqual(7, calcsize(self.jamo_string[:8]))
+        self.assertEqual(8, calcsize(self.jamo_string[:9]))
+        self.assertEqual(9, calcsize(self.jamo_string[:10]))
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
         ), self.pua_string[:9])
 
-        self.assertEquals(10, calcsize(self.jamo_string[:11]))  # 中
-        self.assertEquals(11, calcsize(self.jamo_string[:12]))
-        self.assertEquals(12, calcsize(self.jamo_string[:13]))
-        self.assertEquals(11, calcsize(self.jamo_string[:14]))
-        self.assertEquals(12, calcsize(self.jamo_string[:15]))  # 國
-        self.assertEquals(13, calcsize(self.jamo_string[:16]))  # 귁
-        self.assertEquals(14, calcsize(self.jamo_string[:17]))  # 에
-        self.assertEquals(15, calcsize(self.jamo_string[:18]))  # u302e
-        self.assertEquals(16, calcsize(self.jamo_string[:19]))  # u0020
+        self.assertEqual(10, calcsize(self.jamo_string[:11]))  # 中
+        self.assertEqual(11, calcsize(self.jamo_string[:12]))
+        self.assertEqual(12, calcsize(self.jamo_string[:13]))
+        self.assertEqual(11, calcsize(self.jamo_string[:14]))
+        self.assertEqual(12, calcsize(self.jamo_string[:15]))  # 國
+        self.assertEqual(13, calcsize(self.jamo_string[:16]))  # 귁
+        self.assertEqual(14, calcsize(self.jamo_string[:17]))  # 에
+        self.assertEqual(15, calcsize(self.jamo_string[:18]))  # u302e
+        self.assertEqual(16, calcsize(self.jamo_string[:19]))  # u0020
 
-        self.assertEquals(17, calcsize(self.jamo_string[:20]))  # 달
-        self.assertEquals(18, calcsize(self.jamo_string[:21]))  # 아
-        self.assertEquals(19, calcsize(self.jamo_string[:22]))  # u302e
-        self.assertEquals(20, calcsize(self.jamo_string[:23]))  # u0020
-        self.assertEquals((
+        self.assertEqual(17, calcsize(self.jamo_string[:20]))  # 달
+        self.assertEqual(18, calcsize(self.jamo_string[:21]))  # 아
+        self.assertEqual(19, calcsize(self.jamo_string[:22]))  # u302e
+        self.assertEqual(20, calcsize(self.jamo_string[:23]))  # u0020
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
             u'中\ue35f國귁에\u302e 달아\u302e '
         ), self.pua_string[:20])
 
-        self.assertEquals(21, calcsize(self.jamo_string[:24]))  # 문
-        self.assertEquals(22, calcsize(self.jamo_string[:25]))  #
-        self.assertEquals(22, calcsize(self.jamo_string[:26]))  #
-        self.assertEquals(22, calcsize(self.jamo_string[:27]))  #
-        self.assertEquals(23, calcsize(self.jamo_string[:28]))  # 와
-        self.assertEquals(24, calcsize(self.jamo_string[:29]))  # u302e
-        self.assertEquals(25, calcsize(self.jamo_string[:30]))  # 로
-        self.assertEquals(26, calcsize(self.jamo_string[:31]))  # u0020
-        self.assertEquals((
+        self.assertEqual(21, calcsize(self.jamo_string[:24]))  # 문
+        self.assertEqual(22, calcsize(self.jamo_string[:25]))  #
+        self.assertEqual(22, calcsize(self.jamo_string[:26]))  #
+        self.assertEqual(22, calcsize(self.jamo_string[:27]))  #
+        self.assertEqual(23, calcsize(self.jamo_string[:28]))  # 와
+        self.assertEqual(24, calcsize(self.jamo_string[:29]))  # u302e
+        self.assertEqual(25, calcsize(self.jamo_string[:30]))  # 로
+        self.assertEqual(26, calcsize(self.jamo_string[:31]))  # u0020
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
             u'中\ue35f國귁에\u302e 달아\u302e '
             u'문\uf258와\u302e로 '
         ), self.pua_string[:26])
 
-        self.assertEquals(27, calcsize(self.jamo_string[:32]))  # 서
-        self.assertEquals(28, calcsize(self.jamo_string[:33]))  # 르
-        self.assertEquals(29, calcsize(self.jamo_string[:34]))  # u0020
-        self.assertEquals((
+        self.assertEqual(27, calcsize(self.jamo_string[:32]))  # 서
+        self.assertEqual(28, calcsize(self.jamo_string[:33]))  # 르
+        self.assertEqual(29, calcsize(self.jamo_string[:34]))  # u0020
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
             u'中\ue35f國귁에\u302e 달아\u302e '
             u'문\uf258와\u302e로 '
             u'서르 '
         ), self.pua_string[:29])
 
-        self.assertEquals(30, calcsize(self.jamo_string[:35]))
-        self.assertEquals(30, calcsize(self.jamo_string[:36]))
-        self.assertEquals(31, calcsize(self.jamo_string[:37]))
-        self.assertEquals(31, calcsize(self.jamo_string[:38]))
-        self.assertEquals(31, calcsize(self.jamo_string[:39]))
-        self.assertEquals(32, calcsize(self.jamo_string[:40]))  # 디
-        self.assertEquals(33, calcsize(self.jamo_string[:41]))  # u302e
-        self.assertEquals(34, calcsize(self.jamo_string[:42]))  # u0020
-        self.assertEquals((
+        self.assertEqual(30, calcsize(self.jamo_string[:35]))
+        self.assertEqual(30, calcsize(self.jamo_string[:36]))
+        self.assertEqual(31, calcsize(self.jamo_string[:37]))
+        self.assertEqual(31, calcsize(self.jamo_string[:38]))
+        self.assertEqual(31, calcsize(self.jamo_string[:39]))
+        self.assertEqual(32, calcsize(self.jamo_string[:40]))  # 디
+        self.assertEqual(33, calcsize(self.jamo_string[:41]))  # u302e
+        self.assertEqual(34, calcsize(self.jamo_string[:42]))  # u0020
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
             u'中\ue35f國귁에\u302e 달아\u302e '
             u'문\uf258와\u302e로 '
             u'서르 \ue97d\ue570디\u302e '
         ), self.pua_string[:34])
 
-        self.assertEquals(35, calcsize(self.jamo_string[:43]))  # 아
-        self.assertEquals(36, calcsize(self.jamo_string[:44]))  # 니
-        self.assertEquals(37, calcsize(self.jamo_string[:45]))  # u302e
-        self.assertEquals(38, calcsize(self.jamo_string[:46]))
-        self.assertEquals(38, calcsize(self.jamo_string[:47]))
-        self.assertEquals(38, calcsize(self.jamo_string[:48]))
-        self.assertEquals(39, calcsize(self.jamo_string[:49]))
-        self.assertEquals(39, calcsize(self.jamo_string[:50]))
-        self.assertEquals(40, calcsize(self.jamo_string[:51]))  # 302e
-        self.assertEquals((
+        self.assertEqual(35, calcsize(self.jamo_string[:43]))  # 아
+        self.assertEqual(36, calcsize(self.jamo_string[:44]))  # 니
+        self.assertEqual(37, calcsize(self.jamo_string[:45]))  # u302e
+        self.assertEqual(38, calcsize(self.jamo_string[:46]))
+        self.assertEqual(38, calcsize(self.jamo_string[:47]))
+        self.assertEqual(38, calcsize(self.jamo_string[:48]))
+        self.assertEqual(39, calcsize(self.jamo_string[:49]))
+        self.assertEqual(39, calcsize(self.jamo_string[:50]))
+        self.assertEqual(40, calcsize(self.jamo_string[:51]))  # 302e
+        self.assertEqual((
             u'나랏\u302e말\u302f\uebd4미\u302e '
             u'中\ue35f國귁에\u302e 달아\u302e '
             u'문\uf258와\u302e로 '
@@ -191,7 +191,7 @@ class CFFITest(TestCase):
             u'아니\u302e\uf53c\uebe1\u302e'
         ), self.pua_string[:40])
 
-        self.assertEquals(40, calcsize(self.jamo_string))
+        self.assertEqual(40, calcsize(self.jamo_string))
 
     def test_jc2p_decode(self):
         from cffi import FFI
@@ -227,65 +227,65 @@ class CFFITest(TestCase):
         pua = self.pua_string
         jamo = self.jamo_string
 
-        self.assertEquals(pua[:1], translate(jamo[:1]))    # 나
-        self.assertEquals(pua[:2], translate(jamo[:2]))    # 랏
-        self.assertEquals(pua[:3], translate(jamo[:3]))
-        self.assertEquals(pua[:4], translate(jamo[:4]))
-        self.assertEquals(pua[:5], translate(jamo[:5]))
-        self.assertEquals(pua[:5] + u'\uf7ca', translate(jamo[:6]))
-        self.assertEquals(pua[:6], translate(jamo[:7]))
-        self.assertEquals(pua[:7], translate(jamo[:8]))
-        self.assertEquals(pua[:8], translate(jamo[:9]))
-        self.assertEquals(pua[:9], translate(jamo[:10]))
+        self.assertEqual(pua[:1], translate(jamo[:1]))    # 나
+        self.assertEqual(pua[:2], translate(jamo[:2]))    # 랏
+        self.assertEqual(pua[:3], translate(jamo[:3]))
+        self.assertEqual(pua[:4], translate(jamo[:4]))
+        self.assertEqual(pua[:5], translate(jamo[:5]))
+        self.assertEqual(pua[:5] + u'\uf7ca', translate(jamo[:6]))
+        self.assertEqual(pua[:6], translate(jamo[:7]))
+        self.assertEqual(pua[:7], translate(jamo[:8]))
+        self.assertEqual(pua[:8], translate(jamo[:9]))
+        self.assertEqual(pua[:9], translate(jamo[:10]))
 
-        self.assertEquals(pua[:10], translate(jamo[:11]))  # 中
-        self.assertEquals(pua[:10] + u'\uf790', translate(jamo[:12]))
-        self.assertEquals(pua[:10] + u'\u1103\u1172', translate(jamo[:13]))
-        self.assertEquals(pua[:11], translate(jamo[:14]))
-        self.assertEquals(pua[:12], translate(jamo[:15]))  # 國
-        self.assertEquals(pua[:13], translate(jamo[:16]))  # 귁
-        self.assertEquals(pua[:14], translate(jamo[:17]))  # 에
-        self.assertEquals(pua[:15], translate(jamo[:18]))  # u302e
-        self.assertEquals(pua[:16], translate(jamo[:19]))  # u0020
+        self.assertEqual(pua[:10], translate(jamo[:11]))  # 中
+        self.assertEqual(pua[:10] + u'\uf790', translate(jamo[:12]))
+        self.assertEqual(pua[:10] + u'\u1103\u1172', translate(jamo[:13]))
+        self.assertEqual(pua[:11], translate(jamo[:14]))
+        self.assertEqual(pua[:12], translate(jamo[:15]))  # 國
+        self.assertEqual(pua[:13], translate(jamo[:16]))  # 귁
+        self.assertEqual(pua[:14], translate(jamo[:17]))  # 에
+        self.assertEqual(pua[:15], translate(jamo[:18]))  # u302e
+        self.assertEqual(pua[:16], translate(jamo[:19]))  # u0020
 
-        self.assertEquals(pua[:17], translate(jamo[:20]))  # 달
-        self.assertEquals(pua[:18], translate(jamo[:21]))  # 아
-        self.assertEquals(pua[:19], translate(jamo[:22]))  # u302e
-        self.assertEquals(pua[:20], translate(jamo[:23]))  # u0020
+        self.assertEqual(pua[:17], translate(jamo[:20]))  # 달
+        self.assertEqual(pua[:18], translate(jamo[:21]))  # 아
+        self.assertEqual(pua[:19], translate(jamo[:22]))  # u302e
+        self.assertEqual(pua[:20], translate(jamo[:23]))  # u0020
 
-        self.assertEquals(pua[:21], translate(jamo[:24]))  # 문
-        self.assertEquals(pua[:21] + u'\uf7ea', translate(jamo[:25]))  #
-        self.assertEquals(pua[:21] + u'\uf250', translate(jamo[:26]))  #
-        self.assertEquals(pua[:22], translate(jamo[:27]))  #
-        self.assertEquals(pua[:23], translate(jamo[:28]))  # 와
-        self.assertEquals(pua[:24], translate(jamo[:29]))  # u302e
-        self.assertEquals(pua[:25], translate(jamo[:30]))  # 로
-        self.assertEquals(pua[:26], translate(jamo[:31]))  # u0020
+        self.assertEqual(pua[:21], translate(jamo[:24]))  # 문
+        self.assertEqual(pua[:21] + u'\uf7ea', translate(jamo[:25]))  #
+        self.assertEqual(pua[:21] + u'\uf250', translate(jamo[:26]))  #
+        self.assertEqual(pua[:22], translate(jamo[:27]))  #
+        self.assertEqual(pua[:23], translate(jamo[:28]))  # 와
+        self.assertEqual(pua[:24], translate(jamo[:29]))  # u302e
+        self.assertEqual(pua[:25], translate(jamo[:30]))  # 로
+        self.assertEqual(pua[:26], translate(jamo[:31]))  # u0020
 
-        self.assertEquals(pua[:27], translate(jamo[:32]))  # 서
-        self.assertEquals(pua[:28], translate(jamo[:33]))  # 르
-        self.assertEquals(pua[:29], translate(jamo[:34]))  # u0020
+        self.assertEqual(pua[:27], translate(jamo[:32]))  # 서
+        self.assertEqual(pua[:28], translate(jamo[:33]))  # 르
+        self.assertEqual(pua[:29], translate(jamo[:34]))  # u0020
 
-        self.assertEquals(pua[:29] + u'\uf7c2', translate(jamo[:35]))
-        self.assertEquals(pua[:30], translate(jamo[:36]))
-        self.assertEquals(pua[:30] + u'\uf7a8', translate(jamo[:37]))
-        self.assertEquals(pua[:30] + u'\ue560', translate(jamo[:38]))
-        self.assertEquals(pua[:31], translate(jamo[:39]))
-        self.assertEquals(pua[:32], translate(jamo[:40]))  # 디
-        self.assertEquals(pua[:33], translate(jamo[:41]))  # u302e
-        self.assertEquals(pua[:34], translate(jamo[:42]))  # u0020
+        self.assertEqual(pua[:29] + u'\uf7c2', translate(jamo[:35]))
+        self.assertEqual(pua[:30], translate(jamo[:36]))
+        self.assertEqual(pua[:30] + u'\uf7a8', translate(jamo[:37]))
+        self.assertEqual(pua[:30] + u'\ue560', translate(jamo[:38]))
+        self.assertEqual(pua[:31], translate(jamo[:39]))
+        self.assertEqual(pua[:32], translate(jamo[:40]))  # 디
+        self.assertEqual(pua[:33], translate(jamo[:41]))  # u302e
+        self.assertEqual(pua[:34], translate(jamo[:42]))  # u0020
 
-        self.assertEquals(pua[:35], translate(jamo[:43]))  # 아
-        self.assertEquals(pua[:36], translate(jamo[:44]))  # 니
-        self.assertEquals(pua[:37], translate(jamo[:45]))  # u302e
-        self.assertEquals(pua[:37] + u'\uf7fc', translate(jamo[:46]))
-        self.assertEquals(pua[:37] + u'\uf537', translate(jamo[:47]))
-        self.assertEquals(pua[:38], translate(jamo[:48]))
-        self.assertEquals(pua[:38] + u'\uf7ca', translate(jamo[:49]))
-        self.assertEquals(pua[:39], translate(jamo[:50]))
-        self.assertEquals(pua[:40], translate(jamo[:51]))  # 302e
+        self.assertEqual(pua[:35], translate(jamo[:43]))  # 아
+        self.assertEqual(pua[:36], translate(jamo[:44]))  # 니
+        self.assertEqual(pua[:37], translate(jamo[:45]))  # u302e
+        self.assertEqual(pua[:37] + u'\uf7fc', translate(jamo[:46]))
+        self.assertEqual(pua[:37] + u'\uf537', translate(jamo[:47]))
+        self.assertEqual(pua[:38], translate(jamo[:48]))
+        self.assertEqual(pua[:38] + u'\uf7ca', translate(jamo[:49]))
+        self.assertEqual(pua[:39], translate(jamo[:50]))
+        self.assertEqual(pua[:40], translate(jamo[:51]))  # 302e
 
-        self.assertEquals(pua[:40], translate(jamo))
+        self.assertEqual(pua[:40], translate(jamo))
 
 
 class JamoEncoderTestBase(object):
@@ -295,7 +295,7 @@ class JamoEncoderTestBase(object):
     def test_p2j_encoder(self):
         encoder = self.make_encoder()
 
-        self.assertEquals(0, encoder.getstate())
+        self.assertEqual(0, encoder.getstate())
 
         for chunk_size in range(1, 1 + len(self.PUA_STRING)):
             encoder.reset()
@@ -309,7 +309,7 @@ class JamoEncoderTestBase(object):
                 pua_string = pua_string[chunk_size:]
             jamo += encoder.encode(pua_string, True)
 
-            self.assertEquals(
+            self.assertEqual(
                 self.JAMO_STRING,
                 jamo
             )
@@ -394,7 +394,7 @@ class JamoDecoderTestBase(object):
     def test_j2p_decoder(self):
         decoder = self.make_decoder()
 
-        self.assertEquals((b'', 0), decoder.getstate())
+        self.assertEqual((b'', 0), decoder.getstate())
 
         for chunk_size in range(1, 1 + len(self.JAMO_STRING)):
             decoder.reset()
@@ -408,7 +408,7 @@ class JamoDecoderTestBase(object):
                 jamo_string = jamo_string[chunk_size:]
             pua += decoder.decode(jamo_string, True)
 
-            self.assertEquals(
+            self.assertEqual(
                 self.PUA_STRING,
                 pua
             )
@@ -424,65 +424,65 @@ class ComposedJamoDecoderTestBase(JamoDecoderTestBase):
         pua = self.PUA_STRING
         jamo = self.JAMO_STRING
 
-        self.assertEquals(pua[:1], translate(jamo[:1]))    # 나
-        self.assertEquals(pua[:2], translate(jamo[:2]))    # 랏
-        self.assertEquals(pua[:3], translate(jamo[:3]))
-        self.assertEquals(pua[:4], translate(jamo[:4]))
-        self.assertEquals(pua[:5], translate(jamo[:5]))
-        self.assertEquals(pua[:5] + u'\uf7ca', translate(jamo[:6]))
-        self.assertEquals(pua[:6], translate(jamo[:7]))
-        self.assertEquals(pua[:7], translate(jamo[:8]))
-        self.assertEquals(pua[:8], translate(jamo[:9]))
-        self.assertEquals(pua[:9], translate(jamo[:10]))
+        self.assertEqual(pua[:1], translate(jamo[:1]))    # 나
+        self.assertEqual(pua[:2], translate(jamo[:2]))    # 랏
+        self.assertEqual(pua[:3], translate(jamo[:3]))
+        self.assertEqual(pua[:4], translate(jamo[:4]))
+        self.assertEqual(pua[:5], translate(jamo[:5]))
+        self.assertEqual(pua[:5] + u'\uf7ca', translate(jamo[:6]))
+        self.assertEqual(pua[:6], translate(jamo[:7]))
+        self.assertEqual(pua[:7], translate(jamo[:8]))
+        self.assertEqual(pua[:8], translate(jamo[:9]))
+        self.assertEqual(pua[:9], translate(jamo[:10]))
 
-        self.assertEquals(pua[:10], translate(jamo[:11]))  # 中
-        self.assertEquals(pua[:10] + u'\uf790', translate(jamo[:12]))
-        self.assertEquals(pua[:10] + u'\u1103\u1172', translate(jamo[:13]))
-        self.assertEquals(pua[:11], translate(jamo[:14]))
-        self.assertEquals(pua[:12], translate(jamo[:15]))  # 國
-        self.assertEquals(pua[:13], translate(jamo[:16]))  # 귁
-        self.assertEquals(pua[:14], translate(jamo[:17]))  # 에
-        self.assertEquals(pua[:15], translate(jamo[:18]))  # u302e
-        self.assertEquals(pua[:16], translate(jamo[:19]))  # u0020
+        self.assertEqual(pua[:10], translate(jamo[:11]))  # 中
+        self.assertEqual(pua[:10] + u'\uf790', translate(jamo[:12]))
+        self.assertEqual(pua[:10] + u'\u1103\u1172', translate(jamo[:13]))
+        self.assertEqual(pua[:11], translate(jamo[:14]))
+        self.assertEqual(pua[:12], translate(jamo[:15]))  # 國
+        self.assertEqual(pua[:13], translate(jamo[:16]))  # 귁
+        self.assertEqual(pua[:14], translate(jamo[:17]))  # 에
+        self.assertEqual(pua[:15], translate(jamo[:18]))  # u302e
+        self.assertEqual(pua[:16], translate(jamo[:19]))  # u0020
 
-        self.assertEquals(pua[:17], translate(jamo[:20]))  # 달
-        self.assertEquals(pua[:18], translate(jamo[:21]))  # 아
-        self.assertEquals(pua[:19], translate(jamo[:22]))  # u302e
-        self.assertEquals(pua[:20], translate(jamo[:23]))  # u0020
+        self.assertEqual(pua[:17], translate(jamo[:20]))  # 달
+        self.assertEqual(pua[:18], translate(jamo[:21]))  # 아
+        self.assertEqual(pua[:19], translate(jamo[:22]))  # u302e
+        self.assertEqual(pua[:20], translate(jamo[:23]))  # u0020
 
-        self.assertEquals(pua[:21], translate(jamo[:24]))  # 문
-        self.assertEquals(pua[:21] + u'\uf7ea', translate(jamo[:25]))  #
-        self.assertEquals(pua[:21] + u'\uf250', translate(jamo[:26]))  #
-        self.assertEquals(pua[:22], translate(jamo[:27]))  #
-        self.assertEquals(pua[:23], translate(jamo[:28]))  # 와
-        self.assertEquals(pua[:24], translate(jamo[:29]))  # u302e
-        self.assertEquals(pua[:25], translate(jamo[:30]))  # 로
-        self.assertEquals(pua[:26], translate(jamo[:31]))  # u0020
+        self.assertEqual(pua[:21], translate(jamo[:24]))  # 문
+        self.assertEqual(pua[:21] + u'\uf7ea', translate(jamo[:25]))  #
+        self.assertEqual(pua[:21] + u'\uf250', translate(jamo[:26]))  #
+        self.assertEqual(pua[:22], translate(jamo[:27]))  #
+        self.assertEqual(pua[:23], translate(jamo[:28]))  # 와
+        self.assertEqual(pua[:24], translate(jamo[:29]))  # u302e
+        self.assertEqual(pua[:25], translate(jamo[:30]))  # 로
+        self.assertEqual(pua[:26], translate(jamo[:31]))  # u0020
 
-        self.assertEquals(pua[:27], translate(jamo[:32]))  # 서
-        self.assertEquals(pua[:28], translate(jamo[:33]))  # 르
-        self.assertEquals(pua[:29], translate(jamo[:34]))  # u0020
+        self.assertEqual(pua[:27], translate(jamo[:32]))  # 서
+        self.assertEqual(pua[:28], translate(jamo[:33]))  # 르
+        self.assertEqual(pua[:29], translate(jamo[:34]))  # u0020
 
-        self.assertEquals(pua[:29] + u'\uf7c2', translate(jamo[:35]))
-        self.assertEquals(pua[:30], translate(jamo[:36]))
-        self.assertEquals(pua[:30] + u'\uf7a8', translate(jamo[:37]))
-        self.assertEquals(pua[:30] + u'\ue560', translate(jamo[:38]))
-        self.assertEquals(pua[:31], translate(jamo[:39]))
-        self.assertEquals(pua[:32], translate(jamo[:40]))  # 디
-        self.assertEquals(pua[:33], translate(jamo[:41]))  # u302e
-        self.assertEquals(pua[:34], translate(jamo[:42]))  # u0020
+        self.assertEqual(pua[:29] + u'\uf7c2', translate(jamo[:35]))
+        self.assertEqual(pua[:30], translate(jamo[:36]))
+        self.assertEqual(pua[:30] + u'\uf7a8', translate(jamo[:37]))
+        self.assertEqual(pua[:30] + u'\ue560', translate(jamo[:38]))
+        self.assertEqual(pua[:31], translate(jamo[:39]))
+        self.assertEqual(pua[:32], translate(jamo[:40]))  # 디
+        self.assertEqual(pua[:33], translate(jamo[:41]))  # u302e
+        self.assertEqual(pua[:34], translate(jamo[:42]))  # u0020
 
-        self.assertEquals(pua[:35], translate(jamo[:43]))  # 아
-        self.assertEquals(pua[:36], translate(jamo[:44]))  # 니
-        self.assertEquals(pua[:37], translate(jamo[:45]))  # u302e
-        self.assertEquals(pua[:37] + u'\uf7fc', translate(jamo[:46]))
-        self.assertEquals(pua[:37] + u'\uf537', translate(jamo[:47]))
-        self.assertEquals(pua[:38], translate(jamo[:48]))
-        self.assertEquals(pua[:38] + u'\uf7ca', translate(jamo[:49]))
-        self.assertEquals(pua[:39], translate(jamo[:50]))
-        self.assertEquals(pua[:40], translate(jamo[:51]))  # 302e
+        self.assertEqual(pua[:35], translate(jamo[:43]))  # 아
+        self.assertEqual(pua[:36], translate(jamo[:44]))  # 니
+        self.assertEqual(pua[:37], translate(jamo[:45]))  # u302e
+        self.assertEqual(pua[:37] + u'\uf7fc', translate(jamo[:46]))
+        self.assertEqual(pua[:37] + u'\uf537', translate(jamo[:47]))
+        self.assertEqual(pua[:38], translate(jamo[:48]))
+        self.assertEqual(pua[:38] + u'\uf7ca', translate(jamo[:49]))
+        self.assertEqual(pua[:39], translate(jamo[:50]))
+        self.assertEqual(pua[:40], translate(jamo[:51]))  # 302e
 
-        self.assertEquals(pua[:40], translate(jamo))
+        self.assertEqual(pua[:40], translate(jamo))
 
 
 class ComposedJamoDecoderImplementationOnPurePythonTest(
