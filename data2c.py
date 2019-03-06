@@ -59,11 +59,11 @@ def table_to_header(table):
                 ['0x{:04X}'.format(len(jamo))] +
                 ['0x{:04x}'.format(ord(uch)) for uch in jamo]
             )
-            yield 'static const codepoint_t pua2jamo_{:04X}[] = {{ {} }};'.format(  # noqa
+            yield 'static const unsigned short pua2jamo_{:04X}[] = {{ {} }};'.format(  # noqa
                 pua_code, codepoints
             )
 
-        yield 'static const codepoint_t *pua2jamo_group_{:04X}[] = {{'.format(
+        yield 'static const unsigned short *pua2jamo_group_{:04X}[] = {{'.format(  # noqa
             pua_start,
         )
         for pua_code in range(pua_start, pua_end + 1):

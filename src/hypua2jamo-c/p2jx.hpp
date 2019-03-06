@@ -1,6 +1,6 @@
 template <typename codepoint_t>
 int calcsize(const codepoint_t *src, int srclen) {
-	const codepoint_t *jamo_seq;
+	const unsigned short *jamo_seq;
 	int ret = 0;
 	const codepoint_t *src_end = src + srclen;
 	for (; src < src_end; ++src) {
@@ -17,7 +17,7 @@ int calcsize(const codepoint_t *src, int srclen) {
 
 template <typename codepoint_t>
 int encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
-	const codepoint_t *jamo_seq;
+	const unsigned short *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
 	const codepoint_t *dst_start = dst;
@@ -27,8 +27,9 @@ int encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
 			*(dst++) = *src;
 		} else {
 			jamo_len = *(jamo_seq++);
-			memcpy(dst, jamo_seq, jamo_len * sizeof(codepoint_t));
-			dst += jamo_len;
+			while (jamo_len-- > 0) {
+				*(dst++) = *(jamo_seq++);
+			}
 		}
 	}
 	return dst - dst_start;
