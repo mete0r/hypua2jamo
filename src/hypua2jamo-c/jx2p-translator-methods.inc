@@ -1,6 +1,6 @@
 int TRANSLATOR_CALCSIZE(void *translator, const codepoint_t *src, int srclen) {
 	struct Translator *t = translator;
-	struct Node* child_node;
+	struct Node const* child_node;
 	int dstlen = 0;
 	const uint16_t *src_reserved;
 	const codepoint_t *src_end = src + srclen;
@@ -75,7 +75,7 @@ int TRANSLATOR_CALCSIZE_FLUSH(void *translator) {
 
 int TRANSLATOR_TRANSLATE(void *translator, const codepoint_t *src, int srclen, codepoint_t *dst) {
 	struct Translator *t = translator;
-	struct Node* child_node;
+	const struct Node* child_node;
 	int dstlen = 0;
 	const uint16_t *src_reserved;
 	const codepoint_t *src_end = src + srclen;

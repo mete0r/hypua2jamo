@@ -328,7 +328,7 @@ static const struct Node node_u1100u1161ud7f1 = {
 	0,
 	"u1100u1161ud7f1",
 };
-static struct Node* const node_u1100u1161_children[] = {
+static const struct Node *node_u1100u1161_children[] = {
 	&node_u1100u1161u11c7,
 	&node_u1100u1161u11ca,
 	&node_u1100u1161u11cd,
@@ -411,7 +411,7 @@ static const struct Node node_u1100u1162ud7db = {
 	0,
 	"u1100u1162ud7db",
 };
-static struct Node* const node_u1100u1162_children[] = {
+static const struct Node *node_u1100u1162_children[] = {
 	&node_u1100u1162u11cd,
 	&node_u1100u1162u11f0,
 	&node_u1100u1162ud7db,
@@ -490,7 +490,7 @@ static const struct Node node_u1100u1163u11f9 = {
 	0,
 	"u1100u1163u11f9",
 };
-static struct Node* const node_u1100u1163_children[] = {
+static const struct Node *node_u1100u1163_children[] = {
 	&node_u1100u1163u11e2,
 	&node_u1100u1163u11e6,
 	&node_u1100u1163u11f0,
@@ -705,7 +705,7 @@ static const struct Node node_u1100u1165ud7f2 = {
 	0,
 	"u1100u1165ud7f2",
 };
-static struct Node* const node_u1100u1165_children[] = {
+static const struct Node *node_u1100u1165_children[] = {
 	&node_u1100u1165u11c7,
 	&node_u1100u1165u11d0,
 	&node_u1100u1165u11d9,
@@ -749,7 +749,7 @@ static const struct Node node_u1100u1166u11f0 = {
 	0,
 	"u1100u1166u11f0",
 };
-static struct Node* const node_u1100u1166_children[] = {
+static const struct Node *node_u1100u1166_children[] = {
 	&node_u1100u1166u11f0,
 };
 static const uint16_t node_u1100u1166_jamo_seq[] = {
@@ -946,7 +946,7 @@ static const struct Node node_u1100u1167ud7f2 = {
 	0,
 	"u1100u1167ud7f2",
 };
-static struct Node* const node_u1100u1167_children[] = {
+static const struct Node *node_u1100u1167_children[] = {
 	&node_u1100u1167u11d9,
 	&node_u1100u1167u11e2,
 	&node_u1100u1167u11e7,
@@ -989,7 +989,7 @@ static const struct Node node_u1100u1168u11f0 = {
 	0,
 	"u1100u1168u11f0",
 };
-static struct Node* const node_u1100u1168_children[] = {
+static const struct Node *node_u1100u1168_children[] = {
 	&node_u1100u1168u11f0,
 };
 static const uint16_t node_u1100u1168_jamo_seq[] = {
@@ -1216,7 +1216,7 @@ static const struct Node node_u1100u1169ud7f0 = {
 	0,
 	"u1100u1169ud7f0",
 };
-static struct Node* const node_u1100u1169_children[] = {
+static const struct Node *node_u1100u1169_children[] = {
 	&node_u1100u1169u11d0,
 	&node_u1100u1169u11d6,
 	&node_u1100u1169u11d9,
@@ -1306,7 +1306,7 @@ static const struct Node node_u1100u116au11f9 = {
 	0,
 	"u1100u116au11f9",
 };
-static struct Node* const node_u1100u116a_children[] = {
+static const struct Node *node_u1100u116a_children[] = {
 	&node_u1100u116au11c7,
 	&node_u1100u116au11d9,
 	&node_u1100u116au11f0,
@@ -1341,7 +1341,7 @@ static const struct Node node_u1100u116cu11f0 = {
 	0,
 	"u1100u116cu11f0",
 };
-static struct Node* const node_u1100u116c_children[] = {
+static const struct Node *node_u1100u116c_children[] = {
 	&node_u1100u116cu11f0,
 };
 static const uint16_t node_u1100u116c_jamo_seq[] = {
@@ -1403,7 +1403,7 @@ static const struct Node node_u1100u116du11f0 = {
 	0,
 	"u1100u116du11f0",
 };
-static struct Node* const node_u1100u116d_children[] = {
+static const struct Node *node_u1100u116d_children[] = {
 	&node_u1100u116du11d9,
 	&node_u1100u116du11e2,
 	&node_u1100u116du11f0,
@@ -1617,7 +1617,7 @@ static const struct Node node_u1100u116eu11fd = {
 	0,
 	"u1100u116eu11fd",
 };
-static struct Node* const node_u1100u116e_children[] = {
+static const struct Node *node_u1100u116e_children[] = {
 	&node_u1100u116eu11c7,
 	&node_u1100u116eu11cd,
 	&node_u1100u116eu11d0,
@@ -1691,7 +1691,7 @@ static const struct Node node_u1100u116fu11f9 = {
 	0,
 	"u1100u116fu11f9",
 };
-static struct Node* const node_u1100u116f_children[] = {
+static const struct Node *node_u1100u116f_children[] = {
 	&node_u1100u116fu11c7,
 	&node_u1100u116fu11d9,
 	&node_u1100u116fu11f9,
@@ -1740,7 +1740,7 @@ static const struct Node node_u1100u1171u11f9 = {
 	0,
 	"u1100u1171u11f9",
 };
-static struct Node* const node_u1100u1171_children[] = {
+static const struct Node *node_u1100u1171_children[] = {
 	&node_u1100u1171u11f0,
 	&node_u1100u1171u11f9,
 };
@@ -1818,7 +1818,7 @@ static const struct Node node_u1100u1172u11f9 = {
 	0,
 	"u1100u1172u11f9",
 };
-static struct Node* const node_u1100u1172_children[] = {
+static const struct Node *node_u1100u1172_children[] = {
 	&node_u1100u1172u11d9,
 	&node_u1100u1172u11e2,
 	&node_u1100u1172u11f0,
@@ -2093,7 +2093,7 @@ static const struct Node node_u1100u1173ud7f0 = {
 	0,
 	"u1100u1173ud7f0",
 };
-static struct Node* const node_u1100u1173_children[] = {
+static const struct Node *node_u1100u1173_children[] = {
 	&node_u1100u1173u11c7,
 	&node_u1100u1173u11c9,
 	&node_u1100u1173u11cd,
@@ -2156,7 +2156,7 @@ static const struct Node node_u1100u1174u11f9 = {
 	0,
 	"u1100u1174u11f9",
 };
-static struct Node* const node_u1100u1174_children[] = {
+static const struct Node *node_u1100u1174_children[] = {
 	&node_u1100u1174u11d9,
 	&node_u1100u1174u11f9,
 };
@@ -2459,7 +2459,7 @@ static const struct Node node_u1100u1175ud7f0 = {
 	0,
 	"u1100u1175ud7f0",
 };
-static struct Node* const node_u1100u1175_children[] = {
+static const struct Node *node_u1100u1175_children[] = {
 	&node_u1100u1175u11ca,
 	&node_u1100u1175u11cd,
 	&node_u1100u1175u11d0,
@@ -2581,7 +2581,7 @@ static const struct Node node_u1100u117cu11b7 = {
 	0,
 	"u1100u117cu11b7",
 };
-static struct Node* const node_u1100u117c_children[] = {
+static const struct Node *node_u1100u117c_children[] = {
 	&node_u1100u117cu11ab,
 	&node_u1100u117cu11af,
 	&node_u1100u117cu11b7,
@@ -2630,7 +2630,7 @@ static const struct Node node_u1100u117fu11af = {
 	0,
 	"u1100u117fu11af",
 };
-static struct Node* const node_u1100u117f_children[] = {
+static const struct Node *node_u1100u117f_children[] = {
 	&node_u1100u117fu11ab,
 	&node_u1100u117fu11af,
 };
@@ -2663,7 +2663,7 @@ static const struct Node node_u1100u1182u11af = {
 	0,
 	"u1100u1182u11af",
 };
-static struct Node* const node_u1100u1182_children[] = {
+static const struct Node *node_u1100u1182_children[] = {
 	&node_u1100u1182u11af,
 };
 static const uint16_t node_u1100u1182_jamo_seq[] = {
@@ -2724,7 +2724,7 @@ static const struct Node node_u1100u1185u11b0 = {
 	0,
 	"u1100u1185u11b0",
 };
-static struct Node* const node_u1100u1185_children[] = {
+static const struct Node *node_u1100u1185_children[] = {
 	&node_u1100u1185u11af,
 	&node_u1100u1185u11b0,
 };
@@ -2757,7 +2757,7 @@ static const struct Node node_u1100u1188u11ab = {
 	0,
 	"u1100u1188u11ab",
 };
-static struct Node* const node_u1100u1188_children[] = {
+static const struct Node *node_u1100u1188_children[] = {
 	&node_u1100u1188u11ab,
 };
 static const uint16_t node_u1100u1188_jamo_seq[] = {
@@ -2819,7 +2819,7 @@ static const struct Node node_u1100u1189u11bc = {
 	0,
 	"u1100u1189u11bc",
 };
-static struct Node* const node_u1100u1189_children[] = {
+static const struct Node *node_u1100u1189_children[] = {
 	&node_u1100u1189u11ab,
 	&node_u1100u1189u11b7,
 	&node_u1100u1189u11bc,
@@ -2867,7 +2867,7 @@ static const struct Node node_u1100u118bu11ab = {
 	0,
 	"u1100u118bu11ab",
 };
-static struct Node* const node_u1100u118b_children[] = {
+static const struct Node *node_u1100u118b_children[] = {
 	&node_u1100u118bu11ab,
 };
 static const uint16_t node_u1100u118b_jamo_seq[] = {
@@ -2913,7 +2913,7 @@ static const struct Node node_u1100u118du11af = {
 	0,
 	"u1100u118du11af",
 };
-static struct Node* const node_u1100u118d_children[] = {
+static const struct Node *node_u1100u118d_children[] = {
 	&node_u1100u118du11af,
 };
 static const uint16_t node_u1100u118d_jamo_seq[] = {
@@ -2945,7 +2945,7 @@ static const struct Node node_u1100u118eu11ab = {
 	0,
 	"u1100u118eu11ab",
 };
-static struct Node* const node_u1100u118e_children[] = {
+static const struct Node *node_u1100u118e_children[] = {
 	&node_u1100u118eu11ab,
 };
 static const uint16_t node_u1100u118e_jamo_seq[] = {
@@ -2977,7 +2977,7 @@ static const struct Node node_u1100u118fu11ab = {
 	0,
 	"u1100u118fu11ab",
 };
-static struct Node* const node_u1100u118f_children[] = {
+static const struct Node *node_u1100u118f_children[] = {
 	&node_u1100u118fu11ab,
 };
 static const uint16_t node_u1100u118f_jamo_seq[] = {
@@ -3099,7 +3099,7 @@ static const struct Node node_u1100u1191u11f9 = {
 	0,
 	"u1100u1191u11f9",
 };
-static struct Node* const node_u1100u1191_children[] = {
+static const struct Node *node_u1100u1191_children[] = {
 	&node_u1100u1191u11a8,
 	&node_u1100u1191u11ab,
 	&node_u1100u1191u11af,
@@ -3167,7 +3167,7 @@ static const struct Node node_u1100u1192u11bc = {
 	0,
 	"u1100u1192u11bc",
 };
-static struct Node* const node_u1100u1192_children[] = {
+static const struct Node *node_u1100u1192_children[] = {
 	&node_u1100u1192u11af,
 	&node_u1100u1192u11b0,
 	&node_u1100u1192u11bc,
@@ -3261,7 +3261,7 @@ static const struct Node node_u1100u1194u11f0 = {
 	0,
 	"u1100u1194u11f0",
 };
-static struct Node* const node_u1100u1194_children[] = {
+static const struct Node *node_u1100u1194_children[] = {
 	&node_u1100u1194u11a8,
 	&node_u1100u1194u11af,
 	&node_u1100u1194u11bc,
@@ -3354,7 +3354,7 @@ static const struct Node node_u1100u1199u11bc = {
 	0,
 	"u1100u1199u11bc",
 };
-static struct Node* const node_u1100u1199_children[] = {
+static const struct Node *node_u1100u1199_children[] = {
 	&node_u1100u1199u11ab,
 	&node_u1100u1199u11bc,
 };
@@ -3924,7 +3924,7 @@ static const struct Node node_u1100u119eud7da = {
 	0,
 	"u1100u119eud7da",
 };
-static struct Node* const node_u1100u119e_children[] = {
+static const struct Node *node_u1100u119e_children[] = {
 	&node_u1100u119eu11a8,
 	&node_u1100u119eu11a9,
 	&node_u1100u119eu11ab,
@@ -4004,7 +4004,7 @@ static const struct Node node_u1100u119fu11bc = {
 	0,
 	"u1100u119fu11bc",
 };
-static struct Node* const node_u1100u119f_children[] = {
+static const struct Node *node_u1100u119f_children[] = {
 	&node_u1100u119fu11ab,
 	&node_u1100u119fu11bc,
 };
@@ -4157,7 +4157,7 @@ static const struct Node node_u1100u11a1u11f1 = {
 	0,
 	"u1100u11a1u11f1",
 };
-static struct Node* const node_u1100u11a1_children[] = {
+static const struct Node *node_u1100u11a1_children[] = {
 	&node_u1100u11a1u11a8,
 	&node_u1100u11a1u11ab,
 	&node_u1100u11a1u11af,
@@ -4197,7 +4197,7 @@ static const struct Node node_u1100u11a6u11bc = {
 	0,
 	"u1100u11a6u11bc",
 };
-static struct Node* const node_u1100u11a6_children[] = {
+static const struct Node *node_u1100u11a6_children[] = {
 	&node_u1100u11a6u11bc,
 };
 static const uint16_t node_u1100u11a6_jamo_seq[] = {
@@ -4243,7 +4243,7 @@ static const struct Node node_u1100ud7b3u11af = {
 	0,
 	"u1100ud7b3u11af",
 };
-static struct Node* const node_u1100ud7b3_children[] = {
+static const struct Node *node_u1100ud7b3_children[] = {
 	&node_u1100ud7b3u11af,
 };
 static const uint16_t node_u1100ud7b3_jamo_seq[] = {
@@ -4359,7 +4359,7 @@ static const struct Node node_u1100ud7c3u11ab = {
 	0,
 	"u1100ud7c3u11ab",
 };
-static struct Node* const node_u1100ud7c3_children[] = {
+static const struct Node *node_u1100ud7c3_children[] = {
 	&node_u1100ud7c3u11ab,
 };
 static const uint16_t node_u1100ud7c3_jamo_seq[] = {
@@ -4390,7 +4390,7 @@ static const struct Node node_u1100ud7c4 = {
 	0,
 	"u1100ud7c4",
 };
-static struct Node* const node_u1100_children[] = {
+static const struct Node *node_u1100_children[] = {
 	&node_u1100u1161,
 	&node_u1100u1162,
 	&node_u1100u1163,
@@ -4478,7 +4478,7 @@ static const struct Node node_u1101u1161u11f0 = {
 	0,
 	"u1101u1161u11f0",
 };
-static struct Node* const node_u1101u1161_children[] = {
+static const struct Node *node_u1101u1161_children[] = {
 	&node_u1101u1161u11f0,
 };
 static const uint16_t node_u1101u1161_jamo_seq[] = {
@@ -4510,7 +4510,7 @@ static const struct Node node_u1101u1163u11e2 = {
 	0,
 	"u1101u1163u11e2",
 };
-static struct Node* const node_u1101u1163_children[] = {
+static const struct Node *node_u1101u1163_children[] = {
 	&node_u1101u1163u11e2,
 };
 static const uint16_t node_u1101u1163_jamo_seq[] = {
@@ -4602,7 +4602,7 @@ static const struct Node node_u1101u1165u11ed = {
 	0,
 	"u1101u1165u11ed",
 };
-static struct Node* const node_u1101u1165_children[] = {
+static const struct Node *node_u1101u1165_children[] = {
 	&node_u1101u1165u11d9,
 	&node_u1101u1165u11e2,
 	&node_u1101u1165u11e6,
@@ -4638,7 +4638,7 @@ static const struct Node node_u1101u1167u11f0 = {
 	0,
 	"u1101u1167u11f0",
 };
-static struct Node* const node_u1101u1167_children[] = {
+static const struct Node *node_u1101u1167_children[] = {
 	&node_u1101u1167u11f0,
 };
 static const uint16_t node_u1101u1167_jamo_seq[] = {
@@ -4685,7 +4685,7 @@ static const struct Node node_u1101u1169u11f0 = {
 	0,
 	"u1101u1169u11f0",
 };
-static struct Node* const node_u1101u1169_children[] = {
+static const struct Node *node_u1101u1169_children[] = {
 	&node_u1101u1169u11e2,
 	&node_u1101u1169u11f0,
 };
@@ -4718,7 +4718,7 @@ static const struct Node node_u1101u116au11f0 = {
 	0,
 	"u1101u116au11f0",
 };
-static struct Node* const node_u1101u116a_children[] = {
+static const struct Node *node_u1101u116a_children[] = {
 	&node_u1101u116au11f0,
 };
 static const uint16_t node_u1101u116a_jamo_seq[] = {
@@ -4765,7 +4765,7 @@ static const struct Node node_u1101u116du11f0 = {
 	0,
 	"u1101u116du11f0",
 };
-static struct Node* const node_u1101u116d_children[] = {
+static const struct Node *node_u1101u116d_children[] = {
 	&node_u1101u116du11e2,
 	&node_u1101u116du11f0,
 };
@@ -4843,7 +4843,7 @@ static const struct Node node_u1101u116eu11f0 = {
 	0,
 	"u1101u116eu11f0",
 };
-static struct Node* const node_u1101u116e_children[] = {
+static const struct Node *node_u1101u116e_children[] = {
 	&node_u1101u116eu11d9,
 	&node_u1101u116eu11da,
 	&node_u1101u116eu11e2,
@@ -4893,7 +4893,7 @@ static const struct Node node_u1101u116fu11f0 = {
 	0,
 	"u1101u116fu11f0",
 };
-static struct Node* const node_u1101u116f_children[] = {
+static const struct Node *node_u1101u116f_children[] = {
 	&node_u1101u116fu11d9,
 	&node_u1101u116fu11f0,
 };
@@ -4956,7 +4956,7 @@ static const struct Node node_u1101u1172u11f0 = {
 	0,
 	"u1101u1172u11f0",
 };
-static struct Node* const node_u1101u1172_children[] = {
+static const struct Node *node_u1101u1172_children[] = {
 	&node_u1101u1172u11d9,
 	&node_u1101u1172u11e2,
 	&node_u1101u1172u11f0,
@@ -5020,7 +5020,7 @@ static const struct Node node_u1101u1173u11f6 = {
 	0,
 	"u1101u1173u11f6",
 };
-static struct Node* const node_u1101u1173_children[] = {
+static const struct Node *node_u1101u1173_children[] = {
 	&node_u1101u1173u11d9,
 	&node_u1101u1173u11f0,
 	&node_u1101u1173u11f6,
@@ -5054,7 +5054,7 @@ static const struct Node node_u1101u1174u11f0 = {
 	0,
 	"u1101u1174u11f0",
 };
-static struct Node* const node_u1101u1174_children[] = {
+static const struct Node *node_u1101u1174_children[] = {
 	&node_u1101u1174u11f0,
 };
 static const uint16_t node_u1101u1174_jamo_seq[] = {
@@ -5116,7 +5116,7 @@ static const struct Node node_u1101u1175u11f9 = {
 	0,
 	"u1101u1175u11f9",
 };
-static struct Node* const node_u1101u1175_children[] = {
+static const struct Node *node_u1101u1175_children[] = {
 	&node_u1101u1175u11e2,
 	&node_u1101u1175u11f0,
 	&node_u1101u1175u11f9,
@@ -5265,7 +5265,7 @@ static const struct Node node_u1101u1191u11f9 = {
 	0,
 	"u1101u1191u11f9",
 };
-static struct Node* const node_u1101u1191_children[] = {
+static const struct Node *node_u1101u1191_children[] = {
 	&node_u1101u1191u11ab,
 	&node_u1101u1191u11bc,
 	&node_u1101u1191u11f0,
@@ -5300,7 +5300,7 @@ static const struct Node node_u1101u1194u11bc = {
 	0,
 	"u1101u1194u11bc",
 };
-static struct Node* const node_u1101u1194_children[] = {
+static const struct Node *node_u1101u1194_children[] = {
 	&node_u1101u1194u11bc,
 };
 static const uint16_t node_u1101u1194_jamo_seq[] = {
@@ -5373,7 +5373,7 @@ static const struct Node node_u1101ud7b5 = {
 	0,
 	"u1101ud7b5",
 };
-static struct Node* const node_u1101_children[] = {
+static const struct Node *node_u1101_children[] = {
 	&node_u1101u1161,
 	&node_u1101u1163,
 	&node_u1101u1165,
@@ -5742,7 +5742,7 @@ static const struct Node node_u1102u1161ud7f8 = {
 	0,
 	"u1102u1161ud7f8",
 };
-static struct Node* const node_u1102u1161_children[] = {
+static const struct Node *node_u1102u1161_children[] = {
 	&node_u1102u1161u11c4,
 	&node_u1102u1161u11c7,
 	&node_u1102u1161u11cd,
@@ -5840,7 +5840,7 @@ static const struct Node node_u1102u1162ud7e3 = {
 	0,
 	"u1102u1162ud7e3",
 };
-static struct Node* const node_u1102u1162_children[] = {
+static const struct Node *node_u1102u1162_children[] = {
 	&node_u1102u1162u11d9,
 	&node_u1102u1162u11e3,
 	&node_u1102u1162ud7cf,
@@ -5890,7 +5890,7 @@ static const struct Node node_u1102u1163u11f0 = {
 	0,
 	"u1102u1163u11f0",
 };
-static struct Node* const node_u1102u1163_children[] = {
+static const struct Node *node_u1102u1163_children[] = {
 	&node_u1102u1163u11e2,
 	&node_u1102u1163u11f0,
 };
@@ -6043,7 +6043,7 @@ static const struct Node node_u1102u1165ud7f2 = {
 	0,
 	"u1102u1165ud7f2",
 };
-static struct Node* const node_u1102u1165_children[] = {
+static const struct Node *node_u1102u1165_children[] = {
 	&node_u1102u1165u11d0,
 	&node_u1102u1165u11da,
 	&node_u1102u1165u11db,
@@ -6218,7 +6218,7 @@ static const struct Node node_u1102u1167ud7f2 = {
 	0,
 	"u1102u1167ud7f2",
 };
-static struct Node* const node_u1102u1167_children[] = {
+static const struct Node *node_u1102u1167_children[] = {
 	&node_u1102u1167u11c5,
 	&node_u1102u1167u11c7,
 	&node_u1102u1167u11d9,
@@ -6424,7 +6424,7 @@ static const struct Node node_u1102u1169ud7f6 = {
 	0,
 	"u1102u1169ud7f6",
 };
-static struct Node* const node_u1102u1169_children[] = {
+static const struct Node *node_u1102u1169_children[] = {
 	&node_u1102u1169u11cd,
 	&node_u1102u1169u11d0,
 	&node_u1102u1169u11d9,
@@ -6467,7 +6467,7 @@ static const struct Node node_u1102u116au11d9 = {
 	0,
 	"u1102u116au11d9",
 };
-static struct Node* const node_u1102u116a_children[] = {
+static const struct Node *node_u1102u116a_children[] = {
 	&node_u1102u116au11d9,
 };
 static const uint16_t node_u1102u116a_jamo_seq[] = {
@@ -6499,7 +6499,7 @@ static const struct Node node_u1102u116cu11f0 = {
 	0,
 	"u1102u116cu11f0",
 };
-static struct Node* const node_u1102u116c_children[] = {
+static const struct Node *node_u1102u116c_children[] = {
 	&node_u1102u116cu11f0,
 };
 static const uint16_t node_u1102u116c_jamo_seq[] = {
@@ -6561,7 +6561,7 @@ static const struct Node node_u1102u116du11f0 = {
 	0,
 	"u1102u116du11f0",
 };
-static struct Node* const node_u1102u116d_children[] = {
+static const struct Node *node_u1102u116d_children[] = {
 	&node_u1102u116du11d9,
 	&node_u1102u116du11e2,
 	&node_u1102u116du11f0,
@@ -6700,7 +6700,7 @@ static const struct Node node_u1102u116eu11f5 = {
 	0,
 	"u1102u116eu11f5",
 };
-static struct Node* const node_u1102u116e_children[] = {
+static const struct Node *node_u1102u116e_children[] = {
 	&node_u1102u116eu11c6,
 	&node_u1102u116eu11c7,
 	&node_u1102u116eu11c8,
@@ -6739,7 +6739,7 @@ static const struct Node node_u1102u1171u11eb = {
 	0,
 	"u1102u1171u11eb",
 };
-static struct Node* const node_u1102u1171_children[] = {
+static const struct Node *node_u1102u1171_children[] = {
 	&node_u1102u1171u11eb,
 };
 static const uint16_t node_u1102u1171_jamo_seq[] = {
@@ -6801,7 +6801,7 @@ static const struct Node node_u1102u1172u11f0 = {
 	0,
 	"u1102u1172u11f0",
 };
-static struct Node* const node_u1102u1172_children[] = {
+static const struct Node *node_u1102u1172_children[] = {
 	&node_u1102u1172u11d9,
 	&node_u1102u1172u11e2,
 	&node_u1102u1172u11f0,
@@ -6895,7 +6895,7 @@ static const struct Node node_u1102u1173ud7f6 = {
 	0,
 	"u1102u1173ud7f6",
 };
-static struct Node* const node_u1102u1173_children[] = {
+static const struct Node *node_u1102u1173_children[] = {
 	&node_u1102u1173u11c3,
 	&node_u1102u1173u11cd,
 	&node_u1102u1173u11d9,
@@ -6931,7 +6931,7 @@ static const struct Node node_u1102u1174u11f0 = {
 	0,
 	"u1102u1174u11f0",
 };
-static struct Node* const node_u1102u1174_children[] = {
+static const struct Node *node_u1102u1174_children[] = {
 	&node_u1102u1174u11f0,
 };
 static const uint16_t node_u1102u1174_jamo_seq[] = {
@@ -7143,7 +7143,7 @@ static const struct Node node_u1102u1175ud7d9 = {
 	0,
 	"u1102u1175ud7d9",
 };
-static struct Node* const node_u1102u1175_children[] = {
+static const struct Node *node_u1102u1175_children[] = {
 	&node_u1102u1175u11c3,
 	&node_u1102u1175u11ce,
 	&node_u1102u1175u11d0,
@@ -7244,7 +7244,7 @@ static const struct Node node_u1102u117au11c2 = {
 	0,
 	"u1102u117au11c2",
 };
-static struct Node* const node_u1102u117a_children[] = {
+static const struct Node *node_u1102u117a_children[] = {
 	&node_u1102u117au11a8,
 	&node_u1102u117au11c2,
 };
@@ -7277,7 +7277,7 @@ static const struct Node node_u1102u117bu11b7 = {
 	0,
 	"u1102u117bu11b7",
 };
-static struct Node* const node_u1102u117b_children[] = {
+static const struct Node *node_u1102u117b_children[] = {
 	&node_u1102u117bu11b7,
 };
 static const uint16_t node_u1102u117b_jamo_seq[] = {
@@ -7337,7 +7337,7 @@ static const struct Node node_u1102u1189u11ab = {
 	0,
 	"u1102u1189u11ab",
 };
-static struct Node* const node_u1102u1189_children[] = {
+static const struct Node *node_u1102u1189_children[] = {
 	&node_u1102u1189u11ab,
 };
 static const uint16_t node_u1102u1189_jamo_seq[] = {
@@ -7412,7 +7412,7 @@ static const struct Node node_u1102u1194u11bc = {
 	0,
 	"u1102u1194u11bc",
 };
-static struct Node* const node_u1102u1194_children[] = {
+static const struct Node *node_u1102u1194_children[] = {
 	&node_u1102u1194u11ab,
 	&node_u1102u1194u11bc,
 };
@@ -7502,7 +7502,7 @@ static const struct Node node_u1102u1199u11bc = {
 	0,
 	"u1102u1199u11bc",
 };
-static struct Node* const node_u1102u1199_children[] = {
+static const struct Node *node_u1102u1199_children[] = {
 	&node_u1102u1199u11ab,
 	&node_u1102u1199u11bc,
 };
@@ -7849,7 +7849,7 @@ static const struct Node node_u1102u119eud7f0 = {
 	0,
 	"u1102u119eud7f0",
 };
-static struct Node* const node_u1102u119e_children[] = {
+static const struct Node *node_u1102u119e_children[] = {
 	&node_u1102u119eu11a8,
 	&node_u1102u119eu11ab,
 	&node_u1102u119eu11ae,
@@ -8051,7 +8051,7 @@ static const struct Node node_u1102u11a1u11f0 = {
 	0,
 	"u1102u11a1u11f0",
 };
-static struct Node* const node_u1102u11a1_children[] = {
+static const struct Node *node_u1102u11a1_children[] = {
 	&node_u1102u11a1u11a8,
 	&node_u1102u11a1u11ab,
 	&node_u1102u11a1u11ae,
@@ -8093,7 +8093,7 @@ static const struct Node node_u1102ud7b2u11bc = {
 	0,
 	"u1102ud7b2u11bc",
 };
-static struct Node* const node_u1102ud7b2_children[] = {
+static const struct Node *node_u1102ud7b2_children[] = {
 	&node_u1102ud7b2u11bc,
 };
 static const uint16_t node_u1102ud7b2_jamo_seq[] = {
@@ -8166,7 +8166,7 @@ static const struct Node node_u1102ud7c0 = {
 	0,
 	"u1102ud7c0",
 };
-static struct Node* const node_u1102_children[] = {
+static const struct Node *node_u1102_children[] = {
 	&node_u1102u1161,
 	&node_u1102u1162,
 	&node_u1102u1163,
@@ -8489,7 +8489,7 @@ static const struct Node node_u1103u1161ud7f6 = {
 	0,
 	"u1103u1161ud7f6",
 };
-static struct Node* const node_u1103u1161_children[] = {
+static const struct Node *node_u1103u1161_children[] = {
 	&node_u1103u1161u11c7,
 	&node_u1103u1161u11ca,
 	&node_u1103u1161u11cd,
@@ -8538,7 +8538,7 @@ static const struct Node node_u1103u1162u11f0 = {
 	0,
 	"u1103u1162u11f0",
 };
-static struct Node* const node_u1103u1162_children[] = {
+static const struct Node *node_u1103u1162_children[] = {
 	&node_u1103u1162u11f0,
 };
 static const uint16_t node_u1103u1162_jamo_seq[] = {
@@ -8600,7 +8600,7 @@ static const struct Node node_u1103u1163u11f1 = {
 	0,
 	"u1103u1163u11f1",
 };
-static struct Node* const node_u1103u1163_children[] = {
+static const struct Node *node_u1103u1163_children[] = {
 	&node_u1103u1163u11e2,
 	&node_u1103u1163u11f0,
 	&node_u1103u1163u11f1,
@@ -8694,7 +8694,7 @@ static const struct Node node_u1103u1165u11f0 = {
 	0,
 	"u1103u1165u11f0",
 };
-static struct Node* const node_u1103u1165_children[] = {
+static const struct Node *node_u1103u1165_children[] = {
 	&node_u1103u1165u11dd,
 	&node_u1103u1165u11e4,
 	&node_u1103u1165u11e6,
@@ -8745,7 +8745,7 @@ static const struct Node node_u1103u1166ud7e3 = {
 	0,
 	"u1103u1166ud7e3",
 };
-static struct Node* const node_u1103u1166_children[] = {
+static const struct Node *node_u1103u1166_children[] = {
 	&node_u1103u1166u11c6,
 	&node_u1103u1166ud7e3,
 };
@@ -8823,7 +8823,7 @@ static const struct Node node_u1103u1167u11f9 = {
 	0,
 	"u1103u1167u11f9",
 };
-static struct Node* const node_u1103u1167_children[] = {
+static const struct Node *node_u1103u1167_children[] = {
 	&node_u1103u1167u11d9,
 	&node_u1103u1167u11e2,
 	&node_u1103u1167u11f0,
@@ -9068,7 +9068,7 @@ static const struct Node node_u1103u1169ud7f2 = {
 	0,
 	"u1103u1169ud7f2",
 };
-static struct Node* const node_u1103u1169_children[] = {
+static const struct Node *node_u1103u1169_children[] = {
 	&node_u1103u1169u11c6,
 	&node_u1103u1169u11ca,
 	&node_u1103u1169u11d0,
@@ -9129,7 +9129,7 @@ static const struct Node node_u1103u116au11f0 = {
 	0,
 	"u1103u116au11f0",
 };
-static struct Node* const node_u1103u116a_children[] = {
+static const struct Node *node_u1103u116a_children[] = {
 	&node_u1103u116au11d9,
 	&node_u1103u116au11f0,
 };
@@ -9192,7 +9192,7 @@ static const struct Node node_u1103u116dud7f5 = {
 	0,
 	"u1103u116dud7f5",
 };
-static struct Node* const node_u1103u116d_children[] = {
+static const struct Node *node_u1103u116d_children[] = {
 	&node_u1103u116du11e2,
 	&node_u1103u116du11f0,
 	&node_u1103u116dud7f5,
@@ -9301,7 +9301,7 @@ static const struct Node node_u1103u116eu11f0 = {
 	0,
 	"u1103u116eu11f0",
 };
-static struct Node* const node_u1103u116e_children[] = {
+static const struct Node *node_u1103u116e_children[] = {
 	&node_u1103u116eu11ce,
 	&node_u1103u116eu11d0,
 	&node_u1103u116eu11d9,
@@ -9338,7 +9338,7 @@ static const struct Node node_u1103u116fu11f9 = {
 	0,
 	"u1103u116fu11f9",
 };
-static struct Node* const node_u1103u116f_children[] = {
+static const struct Node *node_u1103u116f_children[] = {
 	&node_u1103u116fu11f9,
 };
 static const uint16_t node_u1103u116f_jamo_seq[] = {
@@ -9385,7 +9385,7 @@ static const struct Node node_u1103u1171u11f9 = {
 	0,
 	"u1103u1171u11f9",
 };
-static struct Node* const node_u1103u1171_children[] = {
+static const struct Node *node_u1103u1171_children[] = {
 	&node_u1103u1171u11e6,
 	&node_u1103u1171u11f9,
 };
@@ -9463,7 +9463,7 @@ static const struct Node node_u1103u1172u11f1 = {
 	0,
 	"u1103u1172u11f1",
 };
-static struct Node* const node_u1103u1172_children[] = {
+static const struct Node *node_u1103u1172_children[] = {
 	&node_u1103u1172u11d9,
 	&node_u1103u1172u11e2,
 	&node_u1103u1172u11f0,
@@ -9648,7 +9648,7 @@ static const struct Node node_u1103u1173u11f1 = {
 	0,
 	"u1103u1173u11f1",
 };
-static struct Node* const node_u1103u1173_children[] = {
+static const struct Node *node_u1103u1173_children[] = {
 	&node_u1103u1173u11cd,
 	&node_u1103u1173u11ce,
 	&node_u1103u1173u11d0,
@@ -9705,7 +9705,7 @@ static const struct Node node_u1103u1174u11f9 = {
 	0,
 	"u1103u1174u11f9",
 };
-static struct Node* const node_u1103u1174_children[] = {
+static const struct Node *node_u1103u1174_children[] = {
 	&node_u1103u1174u11d9,
 	&node_u1103u1174u11f9,
 };
@@ -9858,7 +9858,7 @@ static const struct Node node_u1103u1175ud7f1 = {
 	0,
 	"u1103u1175ud7f1",
 };
-static struct Node* const node_u1103u1175_children[] = {
+static const struct Node *node_u1103u1175_children[] = {
 	&node_u1103u1175u11d0,
 	&node_u1103u1175u11d9,
 	&node_u1103u1175u11e2,
@@ -9898,7 +9898,7 @@ static const struct Node node_u1103u1176u11af = {
 	0,
 	"u1103u1176u11af",
 };
-static struct Node* const node_u1103u1176_children[] = {
+static const struct Node *node_u1103u1176_children[] = {
 	&node_u1103u1176u11af,
 };
 static const uint16_t node_u1103u1176_jamo_seq[] = {
@@ -9958,7 +9958,7 @@ static const struct Node node_u1103u117bu11af = {
 	0,
 	"u1103u117bu11af",
 };
-static struct Node* const node_u1103u117b_children[] = {
+static const struct Node *node_u1103u117b_children[] = {
 	&node_u1103u117bu11af,
 };
 static const uint16_t node_u1103u117b_jamo_seq[] = {
@@ -10005,7 +10005,7 @@ static const struct Node node_u1103u117cu11b7 = {
 	0,
 	"u1103u117cu11b7",
 };
-static struct Node* const node_u1103u117c_children[] = {
+static const struct Node *node_u1103u117c_children[] = {
 	&node_u1103u117cu11af,
 	&node_u1103u117cu11b7,
 };
@@ -10038,7 +10038,7 @@ static const struct Node node_u1103u1182u11b7 = {
 	0,
 	"u1103u1182u11b7",
 };
-static struct Node* const node_u1103u1182_children[] = {
+static const struct Node *node_u1103u1182_children[] = {
 	&node_u1103u1182u11b7,
 };
 static const uint16_t node_u1103u1182_jamo_seq[] = {
@@ -10085,7 +10085,7 @@ static const struct Node node_u1103u1188u11af = {
 	0,
 	"u1103u1188u11af",
 };
-static struct Node* const node_u1103u1188_children[] = {
+static const struct Node *node_u1103u1188_children[] = {
 	&node_u1103u1188u11ab,
 	&node_u1103u1188u11af,
 };
@@ -10118,7 +10118,7 @@ static const struct Node node_u1103u1189u11ab = {
 	0,
 	"u1103u1189u11ab",
 };
-static struct Node* const node_u1103u1189_children[] = {
+static const struct Node *node_u1103u1189_children[] = {
 	&node_u1103u1189u11ab,
 };
 static const uint16_t node_u1103u1189_jamo_seq[] = {
@@ -10209,7 +10209,7 @@ static const struct Node node_u1103u1191u11d9 = {
 	0,
 	"u1103u1191u11d9",
 };
-static struct Node* const node_u1103u1191_children[] = {
+static const struct Node *node_u1103u1191_children[] = {
 	&node_u1103u1191u11ab,
 	&node_u1103u1191u11af,
 	&node_u1103u1191u11bc,
@@ -10244,7 +10244,7 @@ static const struct Node node_u1103u1192u11bc = {
 	0,
 	"u1103u1192u11bc",
 };
-static struct Node* const node_u1103u1192_children[] = {
+static const struct Node *node_u1103u1192_children[] = {
 	&node_u1103u1192u11bc,
 };
 static const uint16_t node_u1103u1192_jamo_seq[] = {
@@ -10291,7 +10291,7 @@ static const struct Node node_u1103u1194u11bc = {
 	0,
 	"u1103u1194u11bc",
 };
-static struct Node* const node_u1103u1194_children[] = {
+static const struct Node *node_u1103u1194_children[] = {
 	&node_u1103u1194u11ab,
 	&node_u1103u1194u11bc,
 };
@@ -10381,7 +10381,7 @@ static const struct Node node_u1103u1199u11bc = {
 	0,
 	"u1103u1199u11bc",
 };
-static struct Node* const node_u1103u1199_children[] = {
+static const struct Node *node_u1103u1199_children[] = {
 	&node_u1103u1199u11ab,
 	&node_u1103u1199u11bc,
 };
@@ -10848,7 +10848,7 @@ static const struct Node node_u1103u119eud7df = {
 	0,
 	"u1103u119eud7df",
 };
-static struct Node* const node_u1103u119e_children[] = {
+static const struct Node *node_u1103u119e_children[] = {
 	&node_u1103u119eu11a8,
 	&node_u1103u119eu11ab,
 	&node_u1103u119eu11ae,
@@ -11058,7 +11058,7 @@ static const struct Node node_u1103u11a1u11f0 = {
 	0,
 	"u1103u11a1u11f0",
 };
-static struct Node* const node_u1103u11a1_children[] = {
+static const struct Node *node_u1103u11a1_children[] = {
 	&node_u1103u11a1u11a8,
 	&node_u1103u11a1u11ab,
 	&node_u1103u11a1u11ae,
@@ -11127,7 +11127,7 @@ static const struct Node node_u1103ud7c0 = {
 	0,
 	"u1103ud7c0",
 };
-static struct Node* const node_u1103_children[] = {
+static const struct Node *node_u1103_children[] = {
 	&node_u1103u1161,
 	&node_u1103u1162,
 	&node_u1103u1163,
@@ -11285,7 +11285,7 @@ static const struct Node node_u1104u1161u11f9 = {
 	0,
 	"u1104u1161u11f9",
 };
-static struct Node* const node_u1104u1161_children[] = {
+static const struct Node *node_u1104u1161_children[] = {
 	&node_u1104u1161u11d0,
 	&node_u1104u1161u11d8,
 	&node_u1104u1161u11d9,
@@ -11338,7 +11338,7 @@ static const struct Node node_u1104u1163u11f0 = {
 	0,
 	"u1104u1163u11f0",
 };
-static struct Node* const node_u1104u1163_children[] = {
+static const struct Node *node_u1104u1163_children[] = {
 	&node_u1104u1163u11e2,
 	&node_u1104u1163u11f0,
 };
@@ -11386,7 +11386,7 @@ static const struct Node node_u1104u1167u11f0 = {
 	0,
 	"u1104u1167u11f0",
 };
-static struct Node* const node_u1104u1167_children[] = {
+static const struct Node *node_u1104u1167_children[] = {
 	&node_u1104u1167u11d9,
 	&node_u1104u1167u11f0,
 };
@@ -11464,7 +11464,7 @@ static const struct Node node_u1104u1169u11f9 = {
 	0,
 	"u1104u1169u11f9",
 };
-static struct Node* const node_u1104u1169_children[] = {
+static const struct Node *node_u1104u1169_children[] = {
 	&node_u1104u1169u11d9,
 	&node_u1104u1169u11e2,
 	&node_u1104u1169u11f0,
@@ -11514,7 +11514,7 @@ static const struct Node node_u1104u116au11f0 = {
 	0,
 	"u1104u116au11f0",
 };
-static struct Node* const node_u1104u116a_children[] = {
+static const struct Node *node_u1104u116a_children[] = {
 	&node_u1104u116au11d9,
 	&node_u1104u116au11f0,
 };
@@ -11547,7 +11547,7 @@ static const struct Node node_u1104u116du11e2 = {
 	0,
 	"u1104u116du11e2",
 };
-static struct Node* const node_u1104u116d_children[] = {
+static const struct Node *node_u1104u116d_children[] = {
 	&node_u1104u116du11e2,
 };
 static const uint16_t node_u1104u116d_jamo_seq[] = {
@@ -11609,7 +11609,7 @@ static const struct Node node_u1104u116eu11f9 = {
 	0,
 	"u1104u116eu11f9",
 };
-static struct Node* const node_u1104u116e_children[] = {
+static const struct Node *node_u1104u116e_children[] = {
 	&node_u1104u116eu11e2,
 	&node_u1104u116eu11f0,
 	&node_u1104u116eu11f9,
@@ -11643,7 +11643,7 @@ static const struct Node node_u1104u1171u11f9 = {
 	0,
 	"u1104u1171u11f9",
 };
-static struct Node* const node_u1104u1171_children[] = {
+static const struct Node *node_u1104u1171_children[] = {
 	&node_u1104u1171u11f9,
 };
 static const uint16_t node_u1104u1171_jamo_seq[] = {
@@ -11705,7 +11705,7 @@ static const struct Node node_u1104u1172u11f0 = {
 	0,
 	"u1104u1172u11f0",
 };
-static struct Node* const node_u1104u1172_children[] = {
+static const struct Node *node_u1104u1172_children[] = {
 	&node_u1104u1172u11d9,
 	&node_u1104u1172u11e2,
 	&node_u1104u1172u11f0,
@@ -11784,7 +11784,7 @@ static const struct Node node_u1104u1173ud7cd = {
 	0,
 	"u1104u1173ud7cd",
 };
-static struct Node* const node_u1104u1173_children[] = {
+static const struct Node *node_u1104u1173_children[] = {
 	&node_u1104u1173u11e2,
 	&node_u1104u1173u11f0,
 	&node_u1104u1173u11f9,
@@ -11819,7 +11819,7 @@ static const struct Node node_u1104u1174u11f9 = {
 	0,
 	"u1104u1174u11f9",
 };
-static struct Node* const node_u1104u1174_children[] = {
+static const struct Node *node_u1104u1174_children[] = {
 	&node_u1104u1174u11f9,
 };
 static const uint16_t node_u1104u1174_jamo_seq[] = {
@@ -11881,7 +11881,7 @@ static const struct Node node_u1104u1175u11f9 = {
 	0,
 	"u1104u1175u11f9",
 };
-static struct Node* const node_u1104u1175_children[] = {
+static const struct Node *node_u1104u1175_children[] = {
 	&node_u1104u1175u11d9,
 	&node_u1104u1175u11f0,
 	&node_u1104u1175u11f9,
@@ -11944,7 +11944,7 @@ static const struct Node node_u1104u117cu11b2 = {
 	0,
 	"u1104u117cu11b2",
 };
-static struct Node* const node_u1104u117c_children[] = {
+static const struct Node *node_u1104u117c_children[] = {
 	&node_u1104u117cu11af,
 	&node_u1104u117cu11b2,
 };
@@ -12005,7 +12005,7 @@ static const struct Node node_u1104u1191u11ab = {
 	0,
 	"u1104u1191u11ab",
 };
-static struct Node* const node_u1104u1191_children[] = {
+static const struct Node *node_u1104u1191_children[] = {
 	&node_u1104u1191u11ab,
 };
 static const uint16_t node_u1104u1191_jamo_seq[] = {
@@ -12037,7 +12037,7 @@ static const struct Node node_u1104u1194u11bc = {
 	0,
 	"u1104u1194u11bc",
 };
-static struct Node* const node_u1104u1194_children[] = {
+static const struct Node *node_u1104u1194_children[] = {
 	&node_u1104u1194u11bc,
 };
 static const uint16_t node_u1104u1194_jamo_seq[] = {
@@ -12143,7 +12143,7 @@ static const struct Node node_u1104u119eu11ba = {
 	0,
 	"u1104u119eu11ba",
 };
-static struct Node* const node_u1104u119e_children[] = {
+static const struct Node *node_u1104u119e_children[] = {
 	&node_u1104u119eu11a8,
 	&node_u1104u119eu11ab,
 	&node_u1104u119eu11af,
@@ -12224,7 +12224,7 @@ static const struct Node node_u1104u11a1u11f0 = {
 	0,
 	"u1104u11a1u11f0",
 };
-static struct Node* const node_u1104u11a1_children[] = {
+static const struct Node *node_u1104u11a1_children[] = {
 	&node_u1104u11a1u11a8,
 	&node_u1104u11a1u11af,
 	&node_u1104u11a1u11bc,
@@ -12258,7 +12258,7 @@ static const struct Node node_u1104ud7b5 = {
 	0,
 	"u1104ud7b5",
 };
-static struct Node* const node_u1104_children[] = {
+static const struct Node *node_u1104_children[] = {
 	&node_u1104u1161,
 	&node_u1104u1163,
 	&node_u1104u1167,
@@ -12490,7 +12490,7 @@ static const struct Node node_u1105u1161ud7ec = {
 	0,
 	"u1105u1161ud7ec",
 };
-static struct Node* const node_u1105u1161_children[] = {
+static const struct Node *node_u1105u1161_children[] = {
 	&node_u1105u1161u11d0,
 	&node_u1105u1161u11d9,
 	&node_u1105u1161u11dd,
@@ -12534,7 +12534,7 @@ static const struct Node node_u1105u1162u11f0 = {
 	0,
 	"u1105u1162u11f0",
 };
-static struct Node* const node_u1105u1162_children[] = {
+static const struct Node *node_u1105u1162_children[] = {
 	&node_u1105u1162u11f0,
 };
 static const uint16_t node_u1105u1162_jamo_seq[] = {
@@ -12581,7 +12581,7 @@ static const struct Node node_u1105u1163u11f0 = {
 	0,
 	"u1105u1163u11f0",
 };
-static struct Node* const node_u1105u1163_children[] = {
+static const struct Node *node_u1105u1163_children[] = {
 	&node_u1105u1163u11e2,
 	&node_u1105u1163u11f0,
 };
@@ -12674,7 +12674,7 @@ static const struct Node node_u1105u1165ud7f2 = {
 	0,
 	"u1105u1165ud7f2",
 };
-static struct Node* const node_u1105u1165_children[] = {
+static const struct Node *node_u1105u1165_children[] = {
 	&node_u1105u1165u11e6,
 	&node_u1105u1165u11f0,
 	&node_u1105u1165u11f5,
@@ -12710,7 +12710,7 @@ static const struct Node node_u1105u1166u11f0 = {
 	0,
 	"u1105u1166u11f0",
 };
-static struct Node* const node_u1105u1166_children[] = {
+static const struct Node *node_u1105u1166_children[] = {
 	&node_u1105u1166u11f0,
 };
 static const uint16_t node_u1105u1166_jamo_seq[] = {
@@ -12817,7 +12817,7 @@ static const struct Node node_u1105u1167u11f9 = {
 	0,
 	"u1105u1167u11f9",
 };
-static struct Node* const node_u1105u1167_children[] = {
+static const struct Node *node_u1105u1167_children[] = {
 	&node_u1105u1167u11c7,
 	&node_u1105u1167u11d9,
 	&node_u1105u1167u11e2,
@@ -12974,7 +12974,7 @@ static const struct Node node_u1105u1169ud7f0 = {
 	0,
 	"u1105u1169ud7f0",
 };
-static struct Node* const node_u1105u1169_children[] = {
+static const struct Node *node_u1105u1169_children[] = {
 	&node_u1105u1169u11d9,
 	&node_u1105u1169u11dd,
 	&node_u1105u1169u11e2,
@@ -13029,7 +13029,7 @@ static const struct Node node_u1105u116au11f0 = {
 	0,
 	"u1105u116au11f0",
 };
-static struct Node* const node_u1105u116a_children[] = {
+static const struct Node *node_u1105u116a_children[] = {
 	&node_u1105u116au11d9,
 	&node_u1105u116au11f0,
 };
@@ -13107,7 +13107,7 @@ static const struct Node node_u1105u116du11f0 = {
 	0,
 	"u1105u116du11f0",
 };
-static struct Node* const node_u1105u116d_children[] = {
+static const struct Node *node_u1105u116d_children[] = {
 	&node_u1105u116du11d9,
 	&node_u1105u116du11dd,
 	&node_u1105u116du11e2,
@@ -13217,7 +13217,7 @@ static const struct Node node_u1105u116eu11f9 = {
 	0,
 	"u1105u116eu11f9",
 };
-static struct Node* const node_u1105u116e_children[] = {
+static const struct Node *node_u1105u116e_children[] = {
 	&node_u1105u116eu11d9,
 	&node_u1105u116eu11dd,
 	&node_u1105u116eu11e2,
@@ -13299,7 +13299,7 @@ static const struct Node node_u1105u1172u11f9 = {
 	0,
 	"u1105u1172u11f9",
 };
-static struct Node* const node_u1105u1172_children[] = {
+static const struct Node *node_u1105u1172_children[] = {
 	&node_u1105u1172u11d9,
 	&node_u1105u1172u11e2,
 	&node_u1105u1172u11f0,
@@ -13439,7 +13439,7 @@ static const struct Node node_u1105u1173ud7e0 = {
 	0,
 	"u1105u1173ud7e0",
 };
-static struct Node* const node_u1105u1173_children[] = {
+static const struct Node *node_u1105u1173_children[] = {
 	&node_u1105u1173u11d0,
 	&node_u1105u1173u11d9,
 	&node_u1105u1173u11dd,
@@ -13478,7 +13478,7 @@ static const struct Node node_u1105u1174u11f9 = {
 	0,
 	"u1105u1174u11f9",
 };
-static struct Node* const node_u1105u1174_children[] = {
+static const struct Node *node_u1105u1174_children[] = {
 	&node_u1105u1174u11f9,
 };
 static const uint16_t node_u1105u1174_jamo_seq[] = {
@@ -13600,7 +13600,7 @@ static const struct Node node_u1105u1175u11f9 = {
 	0,
 	"u1105u1175u11f9",
 };
-static struct Node* const node_u1105u1175_children[] = {
+static const struct Node *node_u1105u1175_children[] = {
 	&node_u1105u1175u11c7,
 	&node_u1105u1175u11d9,
 	&node_u1105u1175u11dd,
@@ -13638,7 +13638,7 @@ static const struct Node node_u1105u1176u11af = {
 	0,
 	"u1105u1176u11af",
 };
-static struct Node* const node_u1105u1176_children[] = {
+static const struct Node *node_u1105u1176_children[] = {
 	&node_u1105u1176u11af,
 };
 static const uint16_t node_u1105u1176_jamo_seq[] = {
@@ -13712,7 +13712,7 @@ static const struct Node node_u1105u117bu11af = {
 	0,
 	"u1105u117bu11af",
 };
-static struct Node* const node_u1105u117b_children[] = {
+static const struct Node *node_u1105u117b_children[] = {
 	&node_u1105u117bu11af,
 };
 static const uint16_t node_u1105u117b_jamo_seq[] = {
@@ -13800,7 +13800,7 @@ static const struct Node node_u1105u1189u11ab = {
 	0,
 	"u1105u1189u11ab",
 };
-static struct Node* const node_u1105u1189_children[] = {
+static const struct Node *node_u1105u1189_children[] = {
 	&node_u1105u1189u11ab,
 };
 static const uint16_t node_u1105u1189_jamo_seq[] = {
@@ -13890,7 +13890,7 @@ static const struct Node node_u1105u1191u11d9 = {
 	0,
 	"u1105u1191u11d9",
 };
-static struct Node* const node_u1105u1191_children[] = {
+static const struct Node *node_u1105u1191_children[] = {
 	&node_u1105u1191u11ab,
 	&node_u1105u1191u11af,
 	&node_u1105u1191u11d9,
@@ -13924,7 +13924,7 @@ static const struct Node node_u1105u1194u11bc = {
 	0,
 	"u1105u1194u11bc",
 };
-static struct Node* const node_u1105u1194_children[] = {
+static const struct Node *node_u1105u1194_children[] = {
 	&node_u1105u1194u11bc,
 };
 static const uint16_t node_u1105u1194_jamo_seq[] = {
@@ -14013,7 +14013,7 @@ static const struct Node node_u1105u1199u11bc = {
 	0,
 	"u1105u1199u11bc",
 };
-static struct Node* const node_u1105u1199_children[] = {
+static const struct Node *node_u1105u1199_children[] = {
 	&node_u1105u1199u11ab,
 	&node_u1105u1199u11bc,
 };
@@ -14046,7 +14046,7 @@ static const struct Node node_u1105u119au11af = {
 	0,
 	"u1105u119au11af",
 };
-static struct Node* const node_u1105u119a_children[] = {
+static const struct Node *node_u1105u119a_children[] = {
 	&node_u1105u119au11af,
 };
 static const uint16_t node_u1105u119a_jamo_seq[] = {
@@ -14078,7 +14078,7 @@ static const struct Node node_u1105u119bu11af = {
 	0,
 	"u1105u119bu11af",
 };
-static struct Node* const node_u1105u119b_children[] = {
+static const struct Node *node_u1105u119b_children[] = {
 	&node_u1105u119bu11af,
 };
 static const uint16_t node_u1105u119b_jamo_seq[] = {
@@ -14470,7 +14470,7 @@ static const struct Node node_u1105u119eud7e0 = {
 	0,
 	"u1105u119eud7e0",
 };
-static struct Node* const node_u1105u119e_children[] = {
+static const struct Node *node_u1105u119e_children[] = {
 	&node_u1105u119eu11a8,
 	&node_u1105u119eu11ab,
 	&node_u1105u119eu11ae,
@@ -14631,7 +14631,7 @@ static const struct Node node_u1105u11a1u11f0 = {
 	0,
 	"u1105u11a1u11f0",
 };
-static struct Node* const node_u1105u11a1_children[] = {
+static const struct Node *node_u1105u11a1_children[] = {
 	&node_u1105u11a1u11a8,
 	&node_u1105u11a1u11ab,
 	&node_u1105u11a1u11ae,
@@ -14753,7 +14753,7 @@ static const struct Node node_u1105ud7c5 = {
 	0,
 	"u1105ud7c5",
 };
-static struct Node* const node_u1105_children[] = {
+static const struct Node *node_u1105_children[] = {
 	&node_u1105u1161,
 	&node_u1105u1162,
 	&node_u1105u1163,
@@ -15066,7 +15066,7 @@ static const struct Node node_u1106u1161ud7f1 = {
 	0,
 	"u1106u1161ud7f1",
 };
-static struct Node* const node_u1106u1161_children[] = {
+static const struct Node *node_u1106u1161_children[] = {
 	&node_u1106u1161u11c6,
 	&node_u1106u1161u11c7,
 	&node_u1106u1161u11cd,
@@ -15114,7 +15114,7 @@ static const struct Node node_u1106u1162u11f0 = {
 	0,
 	"u1106u1162u11f0",
 };
-static struct Node* const node_u1106u1162_children[] = {
+static const struct Node *node_u1106u1162_children[] = {
 	&node_u1106u1162u11f0,
 };
 static const uint16_t node_u1106u1162_jamo_seq[] = {
@@ -15146,7 +15146,7 @@ static const struct Node node_u1106u1163u11e2 = {
 	0,
 	"u1106u1163u11e2",
 };
-static struct Node* const node_u1106u1163_children[] = {
+static const struct Node *node_u1106u1163_children[] = {
 	&node_u1106u1163u11e2,
 };
 static const uint16_t node_u1106u1163_jamo_seq[] = {
@@ -15253,7 +15253,7 @@ static const struct Node node_u1106u1165u11f9 = {
 	0,
 	"u1106u1165u11f9",
 };
-static struct Node* const node_u1106u1165_children[] = {
+static const struct Node *node_u1106u1165_children[] = {
 	&node_u1106u1165u11c6,
 	&node_u1106u1165u11cd,
 	&node_u1106u1165u11d0,
@@ -15290,7 +15290,7 @@ static const struct Node node_u1106u1166u11d9 = {
 	0,
 	"u1106u1166u11d9",
 };
-static struct Node* const node_u1106u1166_children[] = {
+static const struct Node *node_u1106u1166_children[] = {
 	&node_u1106u1166u11d9,
 };
 static const uint16_t node_u1106u1166_jamo_seq[] = {
@@ -15397,7 +15397,7 @@ static const struct Node node_u1106u1167ud7f6 = {
 	0,
 	"u1106u1167ud7f6",
 };
-static struct Node* const node_u1106u1167_children[] = {
+static const struct Node *node_u1106u1167_children[] = {
 	&node_u1106u1167u11d9,
 	&node_u1106u1167u11e2,
 	&node_u1106u1167u11eb,
@@ -15539,7 +15539,7 @@ static const struct Node node_u1106u1169ud7f0 = {
 	0,
 	"u1106u1169ud7f0",
 };
-static struct Node* const node_u1106u1169_children[] = {
+static const struct Node *node_u1106u1169_children[] = {
 	&node_u1106u1169u11c6,
 	&node_u1106u1169u11d0,
 	&node_u1106u1169u11d9,
@@ -15578,7 +15578,7 @@ static const struct Node node_u1106u116du11e2 = {
 	0,
 	"u1106u116du11e2",
 };
-static struct Node* const node_u1106u116d_children[] = {
+static const struct Node *node_u1106u116d_children[] = {
 	&node_u1106u116du11e2,
 };
 static const uint16_t node_u1106u116d_jamo_seq[] = {
@@ -15805,7 +15805,7 @@ static const struct Node node_u1106u116eud7f1 = {
 	0,
 	"u1106u116eud7f1",
 };
-static struct Node* const node_u1106u116e_children[] = {
+static const struct Node *node_u1106u116e_children[] = {
 	&node_u1106u116eu11c6,
 	&node_u1106u116eu11c7,
 	&node_u1106u116eu11d0,
@@ -15850,7 +15850,7 @@ static const struct Node node_u1106u116fu11f9 = {
 	0,
 	"u1106u116fu11f9",
 };
-static struct Node* const node_u1106u116f_children[] = {
+static const struct Node *node_u1106u116f_children[] = {
 	&node_u1106u116fu11f9,
 };
 static const uint16_t node_u1106u116f_jamo_seq[] = {
@@ -15882,7 +15882,7 @@ static const struct Node node_u1106u1171u11f9 = {
 	0,
 	"u1106u1171u11f9",
 };
-static struct Node* const node_u1106u1171_children[] = {
+static const struct Node *node_u1106u1171_children[] = {
 	&node_u1106u1171u11f9,
 };
 static const uint16_t node_u1106u1171_jamo_seq[] = {
@@ -15914,7 +15914,7 @@ static const struct Node node_u1106u1172u11e2 = {
 	0,
 	"u1106u1172u11e2",
 };
-static struct Node* const node_u1106u1172_children[] = {
+static const struct Node *node_u1106u1172_children[] = {
 	&node_u1106u1172u11e2,
 };
 static const uint16_t node_u1106u1172_jamo_seq[] = {
@@ -16051,7 +16051,7 @@ static const struct Node node_u1106u1173ud7f2 = {
 	0,
 	"u1106u1173ud7f2",
 };
-static struct Node* const node_u1106u1173_children[] = {
+static const struct Node *node_u1106u1173_children[] = {
 	&node_u1106u1173u11c4,
 	&node_u1106u1173u11d0,
 	&node_u1106u1173u11d9,
@@ -16120,7 +16120,7 @@ static const struct Node node_u1106u1174u11f9 = {
 	0,
 	"u1106u1174u11f9",
 };
-static struct Node* const node_u1106u1174_children[] = {
+static const struct Node *node_u1106u1174_children[] = {
 	&node_u1106u1174u11d9,
 	&node_u1106u1174u11e6,
 	&node_u1106u1174u11f9,
@@ -16364,7 +16364,7 @@ static const struct Node node_u1106u1175ud7f2 = {
 	0,
 	"u1106u1175ud7f2",
 };
-static struct Node* const node_u1106u1175_children[] = {
+static const struct Node *node_u1106u1175_children[] = {
 	&node_u1106u1175u11cd,
 	&node_u1106u1175u11d0,
 	&node_u1106u1175u11d9,
@@ -16466,7 +16466,7 @@ static const struct Node node_u1106u117cu11af = {
 	0,
 	"u1106u117cu11af",
 };
-static struct Node* const node_u1106u117c_children[] = {
+static const struct Node *node_u1106u117c_children[] = {
 	&node_u1106u117cu11af,
 };
 static const uint16_t node_u1106u117c_jamo_seq[] = {
@@ -16498,7 +16498,7 @@ static const struct Node node_u1106u117fu11ab = {
 	0,
 	"u1106u117fu11ab",
 };
-static struct Node* const node_u1106u117f_children[] = {
+static const struct Node *node_u1106u117f_children[] = {
 	&node_u1106u117fu11ab,
 };
 static const uint16_t node_u1106u117f_jamo_seq[] = {
@@ -16642,7 +16642,7 @@ static const struct Node node_u1106u1196u11b7 = {
 	0,
 	"u1106u1196u11b7",
 };
-static struct Node* const node_u1106u1196_children[] = {
+static const struct Node *node_u1106u1196_children[] = {
 	&node_u1106u1196u11b7,
 };
 static const uint16_t node_u1106u1196_jamo_seq[] = {
@@ -16688,7 +16688,7 @@ static const struct Node node_u1106u1199u11ab = {
 	0,
 	"u1106u1199u11ab",
 };
-static struct Node* const node_u1106u1199_children[] = {
+static const struct Node *node_u1106u1199_children[] = {
 	&node_u1106u1199u11ab,
 };
 static const uint16_t node_u1106u1199_jamo_seq[] = {
@@ -16720,7 +16720,7 @@ static const struct Node node_u1106u119cu11bc = {
 	0,
 	"u1106u119cu11bc",
 };
-static struct Node* const node_u1106u119c_children[] = {
+static const struct Node *node_u1106u119c_children[] = {
 	&node_u1106u119cu11bc,
 };
 static const uint16_t node_u1106u119c_jamo_seq[] = {
@@ -17082,7 +17082,7 @@ static const struct Node node_u1106u119eud7f0 = {
 	0,
 	"u1106u119eud7f0",
 };
-static struct Node* const node_u1106u119e_children[] = {
+static const struct Node *node_u1106u119e_children[] = {
 	&node_u1106u119eu11a8,
 	&node_u1106u119eu11ab,
 	&node_u1106u119eu11ae,
@@ -17151,7 +17151,7 @@ static const struct Node node_u1106u119fu11bc = {
 	0,
 	"u1106u119fu11bc",
 };
-static struct Node* const node_u1106u119f_children[] = {
+static const struct Node *node_u1106u119f_children[] = {
 	&node_u1106u119fu11ab,
 	&node_u1106u119fu11bc,
 };
@@ -17409,7 +17409,7 @@ static const struct Node node_u1106u11a1u11f0 = {
 	0,
 	"u1106u11a1u11f0",
 };
-static struct Node* const node_u1106u11a1_children[] = {
+static const struct Node *node_u1106u11a1_children[] = {
 	&node_u1106u11a1u11a8,
 	&node_u1106u11a1u11a9,
 	&node_u1106u11a1u11ab,
@@ -17497,7 +17497,7 @@ static const struct Node node_u1106ud7c0 = {
 	0,
 	"u1106ud7c0",
 };
-static struct Node* const node_u1106_children[] = {
+static const struct Node *node_u1106_children[] = {
 	&node_u1106u1161,
 	&node_u1106u1162,
 	&node_u1106u1163,
@@ -17942,7 +17942,7 @@ static const struct Node node_u1107u1161ud7f0 = {
 	0,
 	"u1107u1161ud7f0",
 };
-static struct Node* const node_u1107u1161_children[] = {
+static const struct Node *node_u1107u1161_children[] = {
 	&node_u1107u1161u11c3,
 	&node_u1107u1161u11c7,
 	&node_u1107u1161u11c9,
@@ -17999,7 +17999,7 @@ static const struct Node node_u1107u1162u11f0 = {
 	0,
 	"u1107u1162u11f0",
 };
-static struct Node* const node_u1107u1162_children[] = {
+static const struct Node *node_u1107u1162_children[] = {
 	&node_u1107u1162u11f0,
 };
 static const uint16_t node_u1107u1162_jamo_seq[] = {
@@ -18031,7 +18031,7 @@ static const struct Node node_u1107u1163u11e2 = {
 	0,
 	"u1107u1163u11e2",
 };
-static struct Node* const node_u1107u1163_children[] = {
+static const struct Node *node_u1107u1163_children[] = {
 	&node_u1107u1163u11e2,
 };
 static const uint16_t node_u1107u1163_jamo_seq[] = {
@@ -18123,7 +18123,7 @@ static const struct Node node_u1107u1165u11f0 = {
 	0,
 	"u1107u1165u11f0",
 };
-static struct Node* const node_u1107u1165_children[] = {
+static const struct Node *node_u1107u1165_children[] = {
 	&node_u1107u1165u11c7,
 	&node_u1107u1165u11cd,
 	&node_u1107u1165u11d9,
@@ -18234,7 +18234,7 @@ static const struct Node node_u1107u1167ud7f1 = {
 	0,
 	"u1107u1167ud7f1",
 };
-static struct Node* const node_u1107u1167_children[] = {
+static const struct Node *node_u1107u1167_children[] = {
 	&node_u1107u1167u11d9,
 	&node_u1107u1167u11e2,
 	&node_u1107u1167u11f0,
@@ -18406,7 +18406,7 @@ static const struct Node node_u1107u1169ud7ec = {
 	0,
 	"u1107u1169ud7ec",
 };
-static struct Node* const node_u1107u1169_children[] = {
+static const struct Node *node_u1107u1169_children[] = {
 	&node_u1107u1169u11d0,
 	&node_u1107u1169u11d9,
 	&node_u1107u1169u11dc,
@@ -18462,7 +18462,7 @@ static const struct Node node_u1107u116cud7f0 = {
 	0,
 	"u1107u116cud7f0",
 };
-static struct Node* const node_u1107u116c_children[] = {
+static const struct Node *node_u1107u116c_children[] = {
 	&node_u1107u116cu11d9,
 	&node_u1107u116cud7f0,
 };
@@ -18525,7 +18525,7 @@ static const struct Node node_u1107u116du11f0 = {
 	0,
 	"u1107u116du11f0",
 };
-static struct Node* const node_u1107u116d_children[] = {
+static const struct Node *node_u1107u116d_children[] = {
 	&node_u1107u116du11d9,
 	&node_u1107u116du11e2,
 	&node_u1107u116du11f0,
@@ -18739,7 +18739,7 @@ static const struct Node node_u1107u116eud7f0 = {
 	0,
 	"u1107u116eud7f0",
 };
-static struct Node* const node_u1107u116e_children[] = {
+static const struct Node *node_u1107u116e_children[] = {
 	&node_u1107u116eu11c7,
 	&node_u1107u116eu11d0,
 	&node_u1107u116eu11d1,
@@ -18783,7 +18783,7 @@ static const struct Node node_u1107u116fu11f9 = {
 	0,
 	"u1107u116fu11f9",
 };
-static struct Node* const node_u1107u116f_children[] = {
+static const struct Node *node_u1107u116f_children[] = {
 	&node_u1107u116fu11f9,
 };
 static const uint16_t node_u1107u116f_jamo_seq[] = {
@@ -18830,7 +18830,7 @@ static const struct Node node_u1107u1171u11f9 = {
 	0,
 	"u1107u1171u11f9",
 };
-static struct Node* const node_u1107u1171_children[] = {
+static const struct Node *node_u1107u1171_children[] = {
 	&node_u1107u1171u11d9,
 	&node_u1107u1171u11f9,
 };
@@ -18878,7 +18878,7 @@ static const struct Node node_u1107u1172u11e2 = {
 	0,
 	"u1107u1172u11e2",
 };
-static struct Node* const node_u1107u1172_children[] = {
+static const struct Node *node_u1107u1172_children[] = {
 	&node_u1107u1172u11d9,
 	&node_u1107u1172u11e2,
 };
@@ -19046,7 +19046,7 @@ static const struct Node node_u1107u1173ud7f1 = {
 	0,
 	"u1107u1173ud7f1",
 };
-static struct Node* const node_u1107u1173_children[] = {
+static const struct Node *node_u1107u1173_children[] = {
 	&node_u1107u1173u11c3,
 	&node_u1107u1173u11d0,
 	&node_u1107u1173u11d9,
@@ -19087,7 +19087,7 @@ static const struct Node node_u1107u1174u11f9 = {
 	0,
 	"u1107u1174u11f9",
 };
-static struct Node* const node_u1107u1174_children[] = {
+static const struct Node *node_u1107u1174_children[] = {
 	&node_u1107u1174u11f9,
 };
 static const uint16_t node_u1107u1174_jamo_seq[] = {
@@ -19284,7 +19284,7 @@ static const struct Node node_u1107u1175ud7f2 = {
 	0,
 	"u1107u1175ud7f2",
 };
-static struct Node* const node_u1107u1175_children[] = {
+static const struct Node *node_u1107u1175_children[] = {
 	&node_u1107u1175u11ca,
 	&node_u1107u1175u11d9,
 	&node_u1107u1175u11e2,
@@ -19327,7 +19327,7 @@ static const struct Node node_u1107u1176u11af = {
 	0,
 	"u1107u1176u11af",
 };
-static struct Node* const node_u1107u1176_children[] = {
+static const struct Node *node_u1107u1176_children[] = {
 	&node_u1107u1176u11af,
 };
 static const uint16_t node_u1107u1176_jamo_seq[] = {
@@ -19359,7 +19359,7 @@ static const struct Node node_u1107u1177u11af = {
 	0,
 	"u1107u1177u11af",
 };
-static struct Node* const node_u1107u1177_children[] = {
+static const struct Node *node_u1107u1177_children[] = {
 	&node_u1107u1177u11af,
 };
 static const uint16_t node_u1107u1177_jamo_seq[] = {
@@ -19405,7 +19405,7 @@ static const struct Node node_u1107u117bu11af = {
 	0,
 	"u1107u117bu11af",
 };
-static struct Node* const node_u1107u117b_children[] = {
+static const struct Node *node_u1107u117b_children[] = {
 	&node_u1107u117bu11af,
 };
 static const uint16_t node_u1107u117b_jamo_seq[] = {
@@ -19482,7 +19482,7 @@ static const struct Node node_u1107u117cu11bc = {
 	0,
 	"u1107u117cu11bc",
 };
-static struct Node* const node_u1107u117c_children[] = {
+static const struct Node *node_u1107u117c_children[] = {
 	&node_u1107u117cu11a8,
 	&node_u1107u117cu11af,
 	&node_u1107u117cu11b7,
@@ -19629,7 +19629,7 @@ static const struct Node node_u1107u1199u11ab = {
 	0,
 	"u1107u1199u11ab",
 };
-static struct Node* const node_u1107u1199_children[] = {
+static const struct Node *node_u1107u1199_children[] = {
 	&node_u1107u1199u11ab,
 };
 static const uint16_t node_u1107u1199_jamo_seq[] = {
@@ -20034,7 +20034,7 @@ static const struct Node node_u1107u119eud7f1 = {
 	0,
 	"u1107u119eud7f1",
 };
-static struct Node* const node_u1107u119e_children[] = {
+static const struct Node *node_u1107u119e_children[] = {
 	&node_u1107u119eu11a8,
 	&node_u1107u119eu11ab,
 	&node_u1107u119eu11ae,
@@ -20119,7 +20119,7 @@ static const struct Node node_u1107u119fu11bc = {
 	0,
 	"u1107u119fu11bc",
 };
-static struct Node* const node_u1107u119f_children[] = {
+static const struct Node *node_u1107u119f_children[] = {
 	&node_u1107u119fu11ab,
 	&node_u1107u119fu11af,
 	&node_u1107u119fu11bc,
@@ -20378,7 +20378,7 @@ static const struct Node node_u1107u11a1u11f1 = {
 	0,
 	"u1107u11a1u11f1",
 };
-static struct Node* const node_u1107u11a1_children[] = {
+static const struct Node *node_u1107u11a1_children[] = {
 	&node_u1107u11a1u11a8,
 	&node_u1107u11a1u11ab,
 	&node_u1107u11a1u11ae,
@@ -20480,7 +20480,7 @@ static const struct Node node_u1107ud7c6 = {
 	0,
 	"u1107ud7c6",
 };
-static struct Node* const node_u1107_children[] = {
+static const struct Node *node_u1107_children[] = {
 	&node_u1107u1161,
 	&node_u1107u1162,
 	&node_u1107u1163,
@@ -20624,7 +20624,7 @@ static const struct Node node_u1108u1161u11f9 = {
 	0,
 	"u1108u1161u11f9",
 };
-static struct Node* const node_u1108u1161_children[] = {
+static const struct Node *node_u1108u1161_children[] = {
 	&node_u1108u1161u11d0,
 	&node_u1108u1161u11d9,
 	&node_u1108u1161u11e2,
@@ -20676,7 +20676,7 @@ static const struct Node node_u1108u1163u11f0 = {
 	0,
 	"u1108u1163u11f0",
 };
-static struct Node* const node_u1108u1163_children[] = {
+static const struct Node *node_u1108u1163_children[] = {
 	&node_u1108u1163u11e2,
 	&node_u1108u1163u11f0,
 };
@@ -20724,7 +20724,7 @@ static const struct Node node_u1108u1165u11f9 = {
 	0,
 	"u1108u1165u11f9",
 };
-static struct Node* const node_u1108u1165_children[] = {
+static const struct Node *node_u1108u1165_children[] = {
 	&node_u1108u1165u11d9,
 	&node_u1108u1165u11f9,
 };
@@ -20802,7 +20802,7 @@ static const struct Node node_u1108u1167u11f9 = {
 	0,
 	"u1108u1167u11f9",
 };
-static struct Node* const node_u1108u1167_children[] = {
+static const struct Node *node_u1108u1167_children[] = {
 	&node_u1108u1167u11d9,
 	&node_u1108u1167u11e2,
 	&node_u1108u1167u11f0,
@@ -20867,7 +20867,7 @@ static const struct Node node_u1108u1169u11f0 = {
 	0,
 	"u1108u1169u11f0",
 };
-static struct Node* const node_u1108u1169_children[] = {
+static const struct Node *node_u1108u1169_children[] = {
 	&node_u1108u1169u11d9,
 	&node_u1108u1169u11e2,
 	&node_u1108u1169u11f0,
@@ -20901,7 +20901,7 @@ static const struct Node node_u1108u116du11e2 = {
 	0,
 	"u1108u116du11e2",
 };
-static struct Node* const node_u1108u116d_children[] = {
+static const struct Node *node_u1108u116d_children[] = {
 	&node_u1108u116du11e2,
 };
 static const uint16_t node_u1108u116d_jamo_seq[] = {
@@ -20978,7 +20978,7 @@ static const struct Node node_u1108u116eu11f9 = {
 	0,
 	"u1108u116eu11f9",
 };
-static struct Node* const node_u1108u116e_children[] = {
+static const struct Node *node_u1108u116e_children[] = {
 	&node_u1108u116eu11d9,
 	&node_u1108u116eu11e2,
 	&node_u1108u116eu11f0,
@@ -21013,7 +21013,7 @@ static const struct Node node_u1108u116fu11f9 = {
 	0,
 	"u1108u116fu11f9",
 };
-static struct Node* const node_u1108u116f_children[] = {
+static const struct Node *node_u1108u116f_children[] = {
 	&node_u1108u116fu11f9,
 };
 static const uint16_t node_u1108u116f_jamo_seq[] = {
@@ -21045,7 +21045,7 @@ static const struct Node node_u1108u1172u11e2 = {
 	0,
 	"u1108u1172u11e2",
 };
-static struct Node* const node_u1108u1172_children[] = {
+static const struct Node *node_u1108u1172_children[] = {
 	&node_u1108u1172u11e2,
 };
 static const uint16_t node_u1108u1172_jamo_seq[] = {
@@ -21137,7 +21137,7 @@ static const struct Node node_u1108u1173ud7e6 = {
 	0,
 	"u1108u1173ud7e6",
 };
-static struct Node* const node_u1108u1173_children[] = {
+static const struct Node *node_u1108u1173_children[] = {
 	&node_u1108u1173u11d9,
 	&node_u1108u1173u11e2,
 	&node_u1108u1173u11f0,
@@ -21188,7 +21188,7 @@ static const struct Node node_u1108u1174u11f9 = {
 	0,
 	"u1108u1174u11f9",
 };
-static struct Node* const node_u1108u1174_children[] = {
+static const struct Node *node_u1108u1174_children[] = {
 	&node_u1108u1174u11f0,
 	&node_u1108u1174u11f9,
 };
@@ -21266,7 +21266,7 @@ static const struct Node node_u1108u1175u11f9 = {
 	0,
 	"u1108u1175u11f9",
 };
-static struct Node* const node_u1108u1175_children[] = {
+static const struct Node *node_u1108u1175_children[] = {
 	&node_u1108u1175u11d9,
 	&node_u1108u1175u11e2,
 	&node_u1108u1175u11f0,
@@ -21331,7 +21331,7 @@ static const struct Node node_u1108u119eu11d9 = {
 	0,
 	"u1108u119eu11d9",
 };
-static struct Node* const node_u1108u119e_children[] = {
+static const struct Node *node_u1108u119e_children[] = {
 	&node_u1108u119eu11af,
 	&node_u1108u119eu11b3,
 	&node_u1108u119eu11d9,
@@ -21395,7 +21395,7 @@ static const struct Node node_u1108u11a1u11f0 = {
 	0,
 	"u1108u11a1u11f0",
 };
-static struct Node* const node_u1108u11a1_children[] = {
+static const struct Node *node_u1108u11a1_children[] = {
 	&node_u1108u11a1u11a8,
 	&node_u1108u11a1u11bc,
 	&node_u1108u11a1u11f0,
@@ -21429,7 +21429,7 @@ static const struct Node node_u1108ud7b5u11f9 = {
 	0,
 	"u1108ud7b5u11f9",
 };
-static struct Node* const node_u1108ud7b5_children[] = {
+static const struct Node *node_u1108ud7b5_children[] = {
 	&node_u1108ud7b5u11f9,
 };
 static const uint16_t node_u1108ud7b5_jamo_seq[] = {
@@ -21446,7 +21446,7 @@ static const struct Node node_u1108ud7b5 = {
 	node_u1108ud7b5_children,
 	"u1108ud7b5",
 };
-static struct Node* const node_u1108_children[] = {
+static const struct Node *node_u1108_children[] = {
 	&node_u1108u1161,
 	&node_u1108u1163,
 	&node_u1108u1165,
@@ -21701,7 +21701,7 @@ static const struct Node node_u1109u1161ud7f2 = {
 	0,
 	"u1109u1161ud7f2",
 };
-static struct Node* const node_u1109u1161_children[] = {
+static const struct Node *node_u1109u1161_children[] = {
 	&node_u1109u1161u11c7,
 	&node_u1109u1161u11ca,
 	&node_u1109u1161u11cd,
@@ -21762,7 +21762,7 @@ static const struct Node node_u1109u1162u11f0 = {
 	0,
 	"u1109u1162u11f0",
 };
-static struct Node* const node_u1109u1162_children[] = {
+static const struct Node *node_u1109u1162_children[] = {
 	&node_u1109u1162u11e6,
 	&node_u1109u1162u11f0,
 };
@@ -21855,7 +21855,7 @@ static const struct Node node_u1109u1163u11f1 = {
 	0,
 	"u1109u1163u11f1",
 };
-static struct Node* const node_u1109u1163_children[] = {
+static const struct Node *node_u1109u1163_children[] = {
 	&node_u1109u1163u11d9,
 	&node_u1109u1163u11e2,
 	&node_u1109u1163u11eb,
@@ -22011,7 +22011,7 @@ static const struct Node node_u1109u1165u11f9 = {
 	0,
 	"u1109u1165u11f9",
 };
-static struct Node* const node_u1109u1165_children[] = {
+static const struct Node *node_u1109u1165_children[] = {
 	&node_u1109u1165u11c3,
 	&node_u1109u1165u11d9,
 	&node_u1109u1165u11e5,
@@ -22051,7 +22051,7 @@ static const struct Node node_u1109u1166ud7fb = {
 	0,
 	"u1109u1166ud7fb",
 };
-static struct Node* const node_u1109u1166_children[] = {
+static const struct Node *node_u1109u1166_children[] = {
 	&node_u1109u1166ud7fb,
 };
 static const uint16_t node_u1109u1166_jamo_seq[] = {
@@ -22233,7 +22233,7 @@ static const struct Node node_u1109u1167u11f9 = {
 	0,
 	"u1109u1167u11f9",
 };
-static struct Node* const node_u1109u1167_children[] = {
+static const struct Node *node_u1109u1167_children[] = {
 	&node_u1109u1167u11d5,
 	&node_u1109u1167u11d9,
 	&node_u1109u1167u11dd,
@@ -22275,7 +22275,7 @@ static const struct Node node_u1109u1168u11f0 = {
 	0,
 	"u1109u1168u11f0",
 };
-static struct Node* const node_u1109u1168_children[] = {
+static const struct Node *node_u1109u1168_children[] = {
 	&node_u1109u1168u11f0,
 };
 static const uint16_t node_u1109u1168_jamo_seq[] = {
@@ -22412,7 +22412,7 @@ static const struct Node node_u1109u1169ud7f0 = {
 	0,
 	"u1109u1169ud7f0",
 };
-static struct Node* const node_u1109u1169_children[] = {
+static const struct Node *node_u1109u1169_children[] = {
 	&node_u1109u1169u11c7,
 	&node_u1109u1169u11d9,
 	&node_u1109u1169u11e2,
@@ -22481,7 +22481,7 @@ static const struct Node node_u1109u116au11f9 = {
 	0,
 	"u1109u116au11f9",
 };
-static struct Node* const node_u1109u116a_children[] = {
+static const struct Node *node_u1109u116a_children[] = {
 	&node_u1109u116au11d9,
 	&node_u1109u116au11f0,
 	&node_u1109u116au11f9,
@@ -22515,7 +22515,7 @@ static const struct Node node_u1109u116bu11f9 = {
 	0,
 	"u1109u116bu11f9",
 };
-static struct Node* const node_u1109u116b_children[] = {
+static const struct Node *node_u1109u116b_children[] = {
 	&node_u1109u116bu11f9,
 };
 static const uint16_t node_u1109u116b_jamo_seq[] = {
@@ -22547,7 +22547,7 @@ static const struct Node node_u1109u116cu11f0 = {
 	0,
 	"u1109u116cu11f0",
 };
-static struct Node* const node_u1109u116c_children[] = {
+static const struct Node *node_u1109u116c_children[] = {
 	&node_u1109u116cu11f0,
 };
 static const uint16_t node_u1109u116c_jamo_seq[] = {
@@ -22624,7 +22624,7 @@ static const struct Node node_u1109u116du11f1 = {
 	0,
 	"u1109u116du11f1",
 };
-static struct Node* const node_u1109u116d_children[] = {
+static const struct Node *node_u1109u116d_children[] = {
 	&node_u1109u116du11d9,
 	&node_u1109u116du11e2,
 	&node_u1109u116du11f0,
@@ -22794,7 +22794,7 @@ static const struct Node node_u1109u116eud7f0 = {
 	0,
 	"u1109u116eud7f0",
 };
-static struct Node* const node_u1109u116e_children[] = {
+static const struct Node *node_u1109u116e_children[] = {
 	&node_u1109u116eu11d0,
 	&node_u1109u116eu11d9,
 	&node_u1109u116eu11e2,
@@ -22865,7 +22865,7 @@ static const struct Node node_u1109u1171u11e7 = {
 	0,
 	"u1109u1171u11e7",
 };
-static struct Node* const node_u1109u1171_children[] = {
+static const struct Node *node_u1109u1171_children[] = {
 	&node_u1109u1171u11d9,
 	&node_u1109u1171u11e6,
 	&node_u1109u1171u11e7,
@@ -22944,7 +22944,7 @@ static const struct Node node_u1109u1172u11f0 = {
 	0,
 	"u1109u1172u11f0",
 };
-static struct Node* const node_u1109u1172_children[] = {
+static const struct Node *node_u1109u1172_children[] = {
 	&node_u1109u1172u11d9,
 	&node_u1109u1172u11e2,
 	&node_u1109u1172u11e6,
@@ -23129,7 +23129,7 @@ static const struct Node node_u1109u1173ud7f6 = {
 	0,
 	"u1109u1173ud7f6",
 };
-static struct Node* const node_u1109u1173_children[] = {
+static const struct Node *node_u1109u1173_children[] = {
 	&node_u1109u1173u11d9,
 	&node_u1109u1173u11e2,
 	&node_u1109u1173u11e3,
@@ -23186,7 +23186,7 @@ static const struct Node node_u1109u1174u11f9 = {
 	0,
 	"u1109u1174u11f9",
 };
-static struct Node* const node_u1109u1174_children[] = {
+static const struct Node *node_u1109u1174_children[] = {
 	&node_u1109u1174u11f0,
 	&node_u1109u1174u11f9,
 };
@@ -23399,7 +23399,7 @@ static const struct Node node_u1109u1175u11ff = {
 	0,
 	"u1109u1175u11ff",
 };
-static struct Node* const node_u1109u1175_children[] = {
+static const struct Node *node_u1109u1175_children[] = {
 	&node_u1109u1175u11c7,
 	&node_u1109u1175u11ce,
 	&node_u1109u1175u11d0,
@@ -23588,7 +23588,7 @@ static const struct Node node_u1109u117cu11bc = {
 	0,
 	"u1109u117cu11bc",
 };
-static struct Node* const node_u1109u117c_children[] = {
+static const struct Node *node_u1109u117c_children[] = {
 	&node_u1109u117cu11a8,
 	&node_u1109u117cu11af,
 	&node_u1109u117cu11b7,
@@ -23667,7 +23667,7 @@ static const struct Node node_u1109u1187u11af = {
 	0,
 	"u1109u1187u11af",
 };
-static struct Node* const node_u1109u1187_children[] = {
+static const struct Node *node_u1109u1187_children[] = {
 	&node_u1109u1187u11af,
 };
 static const uint16_t node_u1109u1187_jamo_seq[] = {
@@ -23729,7 +23729,7 @@ static const struct Node node_u1109u1188u11ba = {
 	0,
 	"u1109u1188u11ba",
 };
-static struct Node* const node_u1109u1188_children[] = {
+static const struct Node *node_u1109u1188_children[] = {
 	&node_u1109u1188u11ab,
 	&node_u1109u1188u11af,
 	&node_u1109u1188u11ba,
@@ -23778,7 +23778,7 @@ static const struct Node node_u1109u1189u11b7 = {
 	0,
 	"u1109u1189u11b7",
 };
-static struct Node* const node_u1109u1189_children[] = {
+static const struct Node *node_u1109u1189_children[] = {
 	&node_u1109u1189u11ab,
 	&node_u1109u1189u11b7,
 };
@@ -23840,7 +23840,7 @@ static const struct Node node_u1109u118eu11f0 = {
 	0,
 	"u1109u118eu11f0",
 };
-static struct Node* const node_u1109u118e_children[] = {
+static const struct Node *node_u1109u118e_children[] = {
 	&node_u1109u118eu11ab,
 	&node_u1109u118eu11f0,
 };
@@ -23961,7 +23961,7 @@ static const struct Node node_u1109u1191u11f9 = {
 	0,
 	"u1109u1191u11f9",
 };
-static struct Node* const node_u1109u1191_children[] = {
+static const struct Node *node_u1109u1191_children[] = {
 	&node_u1109u1191u11ab,
 	&node_u1109u1191u11af,
 	&node_u1109u1191u11d9,
@@ -23997,7 +23997,7 @@ static const struct Node node_u1109u1192u11bc = {
 	0,
 	"u1109u1192u11bc",
 };
-static struct Node* const node_u1109u1192_children[] = {
+static const struct Node *node_u1109u1192_children[] = {
 	&node_u1109u1192u11bc,
 };
 static const uint16_t node_u1109u1192_jamo_seq[] = {
@@ -24029,7 +24029,7 @@ static const struct Node node_u1109u1193u11af = {
 	0,
 	"u1109u1193u11af",
 };
-static struct Node* const node_u1109u1193_children[] = {
+static const struct Node *node_u1109u1193_children[] = {
 	&node_u1109u1193u11af,
 };
 static const uint16_t node_u1109u1193_jamo_seq[] = {
@@ -24121,7 +24121,7 @@ static const struct Node node_u1109u1194u11bc = {
 	0,
 	"u1109u1194u11bc",
 };
-static struct Node* const node_u1109u1194_children[] = {
+static const struct Node *node_u1109u1194_children[] = {
 	&node_u1109u1194u11ab,
 	&node_u1109u1194u11af,
 	&node_u1109u1194u11b7,
@@ -24214,7 +24214,7 @@ static const struct Node node_u1109u1199u11bc = {
 	0,
 	"u1109u1199u11bc",
 };
-static struct Node* const node_u1109u1199_children[] = {
+static const struct Node *node_u1109u1199_children[] = {
 	&node_u1109u1199u11ab,
 	&node_u1109u1199u11bc,
 };
@@ -24665,7 +24665,7 @@ static const struct Node node_u1109u119eud7f0 = {
 	0,
 	"u1109u119eud7f0",
 };
-static struct Node* const node_u1109u119e_children[] = {
+static const struct Node *node_u1109u119e_children[] = {
 	&node_u1109u119eu11a8,
 	&node_u1109u119eu11ab,
 	&node_u1109u119eu11ae,
@@ -24873,7 +24873,7 @@ static const struct Node node_u1109u11a1u11f1 = {
 	0,
 	"u1109u11a1u11f1",
 };
-static struct Node* const node_u1109u11a1_children[] = {
+static const struct Node *node_u1109u11a1_children[] = {
 	&node_u1109u11a1u11a8,
 	&node_u1109u11a1u11ab,
 	&node_u1109u11a1u11af,
@@ -24915,7 +24915,7 @@ static const struct Node node_u1109u11a3u11b7 = {
 	0,
 	"u1109u11a3u11b7",
 };
-static struct Node* const node_u1109u11a3_children[] = {
+static const struct Node *node_u1109u11a3_children[] = {
 	&node_u1109u11a3u11b7,
 };
 static const uint16_t node_u1109u11a3_jamo_seq[] = {
@@ -24975,7 +24975,7 @@ static const struct Node node_u1109ud7b5u11ab = {
 	0,
 	"u1109ud7b5u11ab",
 };
-static struct Node* const node_u1109ud7b5_children[] = {
+static const struct Node *node_u1109ud7b5_children[] = {
 	&node_u1109ud7b5u11ab,
 };
 static const uint16_t node_u1109ud7b5_jamo_seq[] = {
@@ -25021,7 +25021,7 @@ static const struct Node node_u1109ud7b8u11af = {
 	0,
 	"u1109ud7b8u11af",
 };
-static struct Node* const node_u1109ud7b8_children[] = {
+static const struct Node *node_u1109ud7b8_children[] = {
 	&node_u1109ud7b8u11af,
 };
 static const uint16_t node_u1109ud7b8_jamo_seq[] = {
@@ -25137,7 +25137,7 @@ static const struct Node node_u1109ud7c3u11ab = {
 	0,
 	"u1109ud7c3u11ab",
 };
-static struct Node* const node_u1109ud7c3_children[] = {
+static const struct Node *node_u1109ud7c3_children[] = {
 	&node_u1109ud7c3u11ab,
 };
 static const uint16_t node_u1109ud7c3_jamo_seq[] = {
@@ -25154,7 +25154,7 @@ static const struct Node node_u1109ud7c3 = {
 	node_u1109ud7c3_children,
 	"u1109ud7c3",
 };
-static struct Node* const node_u1109_children[] = {
+static const struct Node *node_u1109_children[] = {
 	&node_u1109u1161,
 	&node_u1109u1162,
 	&node_u1109u1163,
@@ -25273,7 +25273,7 @@ static const struct Node node_u110au1161ud7f2 = {
 	0,
 	"u110au1161ud7f2",
 };
-static struct Node* const node_u110au1161_children[] = {
+static const struct Node *node_u110au1161_children[] = {
 	&node_u110au1161u11e2,
 	&node_u110au1161u11f0,
 	&node_u110au1161ud7f2,
@@ -25322,7 +25322,7 @@ static const struct Node node_u110au1163u11f0 = {
 	0,
 	"u110au1163u11f0",
 };
-static struct Node* const node_u110au1163_children[] = {
+static const struct Node *node_u110au1163_children[] = {
 	&node_u110au1163u11e2,
 	&node_u110au1163u11f0,
 };
@@ -25355,7 +25355,7 @@ static const struct Node node_u110au1165u11f0 = {
 	0,
 	"u110au1165u11f0",
 };
-static struct Node* const node_u110au1165_children[] = {
+static const struct Node *node_u110au1165_children[] = {
 	&node_u110au1165u11f0,
 };
 static const uint16_t node_u110au1165_jamo_seq[] = {
@@ -25417,7 +25417,7 @@ static const struct Node node_u110au1167u11f9 = {
 	0,
 	"u110au1167u11f9",
 };
-static struct Node* const node_u110au1167_children[] = {
+static const struct Node *node_u110au1167_children[] = {
 	&node_u110au1167u11d9,
 	&node_u110au1167u11f0,
 	&node_u110au1167u11f9,
@@ -25466,7 +25466,7 @@ static const struct Node node_u110au1169u11f0 = {
 	0,
 	"u110au1169u11f0",
 };
-static struct Node* const node_u110au1169_children[] = {
+static const struct Node *node_u110au1169_children[] = {
 	&node_u110au1169u11e2,
 	&node_u110au1169u11f0,
 };
@@ -25514,7 +25514,7 @@ static const struct Node node_u110au116du11f0 = {
 	0,
 	"u110au116du11f0",
 };
-static struct Node* const node_u110au116d_children[] = {
+static const struct Node *node_u110au116d_children[] = {
 	&node_u110au116du11e2,
 	&node_u110au116du11f0,
 };
@@ -25577,7 +25577,7 @@ static const struct Node node_u110au116eu11f9 = {
 	0,
 	"u110au116eu11f9",
 };
-static struct Node* const node_u110au116e_children[] = {
+static const struct Node *node_u110au116e_children[] = {
 	&node_u110au116eu11d9,
 	&node_u110au116eu11e2,
 	&node_u110au116eu11f9,
@@ -25656,7 +25656,7 @@ static const struct Node node_u110au1172u11f9 = {
 	0,
 	"u110au1172u11f9",
 };
-static struct Node* const node_u110au1172_children[] = {
+static const struct Node *node_u110au1172_children[] = {
 	&node_u110au1172u11d9,
 	&node_u110au1172u11e2,
 	&node_u110au1172u11f0,
@@ -25721,7 +25721,7 @@ static const struct Node node_u110au1173u11f0 = {
 	0,
 	"u110au1173u11f0",
 };
-static struct Node* const node_u110au1173_children[] = {
+static const struct Node *node_u110au1173_children[] = {
 	&node_u110au1173u11d9,
 	&node_u110au1173u11eb,
 	&node_u110au1173u11f0,
@@ -25815,7 +25815,7 @@ static const struct Node node_u110au1175u11f9 = {
 	0,
 	"u110au1175u11f9",
 };
-static struct Node* const node_u110au1175_children[] = {
+static const struct Node *node_u110au1175_children[] = {
 	&node_u110au1175u11d9,
 	&node_u110au1175u11e2,
 	&node_u110au1175u11eb,
@@ -25880,7 +25880,7 @@ static const struct Node node_u110au1189u11bc = {
 	0,
 	"u110au1189u11bc",
 };
-static struct Node* const node_u110au1189_children[] = {
+static const struct Node *node_u110au1189_children[] = {
 	&node_u110au1189u11ab,
 	&node_u110au1189u11bc,
 };
@@ -25942,7 +25942,7 @@ static const struct Node node_u110au1191u11bc = {
 	0,
 	"u110au1191u11bc",
 };
-static struct Node* const node_u110au1191_children[] = {
+static const struct Node *node_u110au1191_children[] = {
 	&node_u110au1191u11ab,
 	&node_u110au1191u11bc,
 };
@@ -25975,7 +25975,7 @@ static const struct Node node_u110au1192u11bc = {
 	0,
 	"u110au1192u11bc",
 };
-static struct Node* const node_u110au1192_children[] = {
+static const struct Node *node_u110au1192_children[] = {
 	&node_u110au1192u11bc,
 };
 static const uint16_t node_u110au1192_jamo_seq[] = {
@@ -26022,7 +26022,7 @@ static const struct Node node_u110au1194u11f0 = {
 	0,
 	"u110au1194u11f0",
 };
-static struct Node* const node_u110au1194_children[] = {
+static const struct Node *node_u110au1194_children[] = {
 	&node_u110au1194u11bc,
 	&node_u110au1194u11f0,
 };
@@ -26234,7 +26234,7 @@ static const struct Node node_u110au119eu11f0 = {
 	0,
 	"u110au119eu11f0",
 };
-static struct Node* const node_u110au119e_children[] = {
+static const struct Node *node_u110au119e_children[] = {
 	&node_u110au119eu11a8,
 	&node_u110au119eu11ab,
 	&node_u110au119eu11ae,
@@ -26292,7 +26292,7 @@ static const struct Node node_u110au11a1u11f0 = {
 	0,
 	"u110au11a1u11f0",
 };
-static struct Node* const node_u110au11a1_children[] = {
+static const struct Node *node_u110au11a1_children[] = {
 	&node_u110au11a1u11ab,
 	&node_u110au11a1u11f0,
 };
@@ -26325,7 +26325,7 @@ static const struct Node node_u110aud7b5u11ab = {
 	0,
 	"u110aud7b5u11ab",
 };
-static struct Node* const node_u110aud7b5_children[] = {
+static const struct Node *node_u110aud7b5_children[] = {
 	&node_u110aud7b5u11ab,
 };
 static const uint16_t node_u110aud7b5_jamo_seq[] = {
@@ -26342,7 +26342,7 @@ static const struct Node node_u110aud7b5 = {
 	node_u110aud7b5_children,
 	"u110aud7b5",
 };
-static struct Node* const node_u110a_children[] = {
+static const struct Node *node_u110a_children[] = {
 	&node_u110au1161,
 	&node_u110au1163,
 	&node_u110au1165,
@@ -26692,7 +26692,7 @@ static const struct Node node_u110bu1161ud7e4 = {
 	0,
 	"u110bu1161ud7e4",
 };
-static struct Node* const node_u110bu1161_children[] = {
+static const struct Node *node_u110bu1161_children[] = {
 	&node_u110bu1161u11c7,
 	&node_u110bu1161u11c9,
 	&node_u110bu1161u11cd,
@@ -26759,7 +26759,7 @@ static const struct Node node_u110bu1162u11f0 = {
 	0,
 	"u110bu1162u11f0",
 };
-static struct Node* const node_u110bu1162_children[] = {
+static const struct Node *node_u110bu1162_children[] = {
 	&node_u110bu1162u11eb,
 	&node_u110bu1162u11f0,
 };
@@ -26927,7 +26927,7 @@ static const struct Node node_u110bu1163u11f9 = {
 	0,
 	"u110bu1163u11f9",
 };
-static struct Node* const node_u110bu1163_children[] = {
+static const struct Node *node_u110bu1163_children[] = {
 	&node_u110bu1163u11d9,
 	&node_u110bu1163u11dc,
 	&node_u110bu1163u11dd,
@@ -27163,7 +27163,7 @@ static const struct Node node_u110bu1165ud7fa = {
 	0,
 	"u110bu1165ud7fa",
 };
-static struct Node* const node_u110bu1165_children[] = {
+static const struct Node *node_u110bu1165_children[] = {
 	&node_u110bu1165u11c3,
 	&node_u110bu1165u11c6,
 	&node_u110bu1165u11c7,
@@ -27238,7 +27238,7 @@ static const struct Node node_u110bu1166u11f0 = {
 	0,
 	"u110bu1166u11f0",
 };
-static struct Node* const node_u110bu1166_children[] = {
+static const struct Node *node_u110bu1166_children[] = {
 	&node_u110bu1166u11c6,
 	&node_u110bu1166u11eb,
 	&node_u110bu1166u11f0,
@@ -27587,7 +27587,7 @@ static const struct Node node_u110bu1167ud7f2 = {
 	0,
 	"u110bu1167ud7f2",
 };
-static struct Node* const node_u110bu1167_children[] = {
+static const struct Node *node_u110bu1167_children[] = {
 	&node_u110bu1167u11c4,
 	&node_u110bu1167u11c6,
 	&node_u110bu1167u11c7,
@@ -27820,7 +27820,7 @@ static const struct Node node_u110bu1169ud7f0 = {
 	0,
 	"u110bu1169ud7f0",
 };
-static struct Node* const node_u110bu1169_children[] = {
+static const struct Node *node_u110bu1169_children[] = {
 	&node_u110bu1169u11c7,
 	&node_u110bu1169u11cd,
 	&node_u110bu1169u11d0,
@@ -27939,7 +27939,7 @@ static const struct Node node_u110bu116aud7d4 = {
 	0,
 	"u110bu116aud7d4",
 };
-static struct Node* const node_u110bu116a_children[] = {
+static const struct Node *node_u110bu116a_children[] = {
 	&node_u110bu116au11dd,
 	&node_u110bu116au11ea,
 	&node_u110bu116au11f0,
@@ -28006,7 +28006,7 @@ static const struct Node node_u110bu116cu11f0 = {
 	0,
 	"u110bu116cu11f0",
 };
-static struct Node* const node_u110bu116c_children[] = {
+static const struct Node *node_u110bu116c_children[] = {
 	&node_u110bu116cu11d0,
 	&node_u110bu116cu11d9,
 	&node_u110bu116cu11f0,
@@ -28070,7 +28070,7 @@ static const struct Node node_u110bu116du11f0 = {
 	0,
 	"u110bu116du11f0",
 };
-static struct Node* const node_u110bu116d_children[] = {
+static const struct Node *node_u110bu116d_children[] = {
 	&node_u110bu116du11d9,
 	&node_u110bu116du11e2,
 	&node_u110bu116du11f0,
@@ -28359,7 +28359,7 @@ static const struct Node node_u110bu116eud7f4 = {
 	0,
 	"u110bu116eud7f4",
 };
-static struct Node* const node_u110bu116e_children[] = {
+static const struct Node *node_u110bu116e_children[] = {
 	&node_u110bu116eu11c9,
 	&node_u110bu116eu11cd,
 	&node_u110bu116eu11d0,
@@ -28468,7 +28468,7 @@ static const struct Node node_u110bu116fu11f1 = {
 	0,
 	"u110bu116fu11f1",
 };
-static struct Node* const node_u110bu116f_children[] = {
+static const struct Node *node_u110bu116f_children[] = {
 	&node_u110bu116fu11d8,
 	&node_u110bu116fu11d9,
 	&node_u110bu116fu11eb,
@@ -28519,7 +28519,7 @@ static const struct Node node_u110bu1171u11f0 = {
 	0,
 	"u110bu1171u11f0",
 };
-static struct Node* const node_u110bu1171_children[] = {
+static const struct Node *node_u110bu1171_children[] = {
 	&node_u110bu1171u11d9,
 	&node_u110bu1171u11f0,
 };
@@ -28597,7 +28597,7 @@ static const struct Node node_u110bu1172u11f9 = {
 	0,
 	"u110bu1172u11f9",
 };
-static struct Node* const node_u110bu1172_children[] = {
+static const struct Node *node_u110bu1172_children[] = {
 	&node_u110bu1172u11d9,
 	&node_u110bu1172u11e2,
 	&node_u110bu1172u11f0,
@@ -28872,7 +28872,7 @@ static const struct Node node_u110bu1173ud7f9 = {
 	0,
 	"u110bu1173ud7f9",
 };
-static struct Node* const node_u110bu1173_children[] = {
+static const struct Node *node_u110bu1173_children[] = {
 	&node_u110bu1173u11c7,
 	&node_u110bu1173u11d0,
 	&node_u110bu1173u11d4,
@@ -28935,7 +28935,7 @@ static const struct Node node_u110bu1174u11f9 = {
 	0,
 	"u110bu1174u11f9",
 };
-static struct Node* const node_u110bu1174_children[] = {
+static const struct Node *node_u110bu1174_children[] = {
 	&node_u110bu1174u11d9,
 	&node_u110bu1174u11f9,
 };
@@ -29133,7 +29133,7 @@ static const struct Node node_u110bu1175u11f9 = {
 	0,
 	"u110bu1175u11f9",
 };
-static struct Node* const node_u110bu1175_children[] = {
+static const struct Node *node_u110bu1175_children[] = {
 	&node_u110bu1175u11c7,
 	&node_u110bu1175u11cd,
 	&node_u110bu1175u11d0,
@@ -29176,7 +29176,7 @@ static const struct Node node_u110bu1176u11af = {
 	0,
 	"u110bu1176u11af",
 };
-static struct Node* const node_u110bu1176_children[] = {
+static const struct Node *node_u110bu1176_children[] = {
 	&node_u110bu1176u11af,
 };
 static const uint16_t node_u110bu1176_jamo_seq[] = {
@@ -29326,7 +29326,7 @@ static const struct Node node_u110bu117cu11bc = {
 	0,
 	"u110bu117cu11bc",
 };
-static struct Node* const node_u110bu117c_children[] = {
+static const struct Node *node_u110bu117c_children[] = {
 	&node_u110bu117cu11ab,
 	&node_u110bu117cu11af,
 	&node_u110bu117cu11b7,
@@ -29407,7 +29407,7 @@ static const struct Node node_u110bu117fu11af = {
 	0,
 	"u110bu117fu11af",
 };
-static struct Node* const node_u110bu117f_children[] = {
+static const struct Node *node_u110bu117f_children[] = {
 	&node_u110bu117fu11ab,
 	&node_u110bu117fu11af,
 };
@@ -29440,7 +29440,7 @@ static const struct Node node_u110bu1182u11af = {
 	0,
 	"u110bu1182u11af",
 };
-static struct Node* const node_u110bu1182_children[] = {
+static const struct Node *node_u110bu1182_children[] = {
 	&node_u110bu1182u11af,
 };
 static const uint16_t node_u110bu1182_jamo_seq[] = {
@@ -29486,7 +29486,7 @@ static const struct Node node_u110bu1188u11af = {
 	0,
 	"u110bu1188u11af",
 };
-static struct Node* const node_u110bu1188_children[] = {
+static const struct Node *node_u110bu1188_children[] = {
 	&node_u110bu1188u11af,
 };
 static const uint16_t node_u110bu1188_jamo_seq[] = {
@@ -29548,7 +29548,7 @@ static const struct Node node_u110bu1189u11f0 = {
 	0,
 	"u110bu1189u11f0",
 };
-static struct Node* const node_u110bu1189_children[] = {
+static const struct Node *node_u110bu1189_children[] = {
 	&node_u110bu1189u11ab,
 	&node_u110bu1189u11bc,
 	&node_u110bu1189u11f0,
@@ -29596,7 +29596,7 @@ static const struct Node node_u110bu118bu11ab = {
 	0,
 	"u110bu118bu11ab",
 };
-static struct Node* const node_u110bu118b_children[] = {
+static const struct Node *node_u110bu118b_children[] = {
 	&node_u110bu118bu11ab,
 };
 static const uint16_t node_u110bu118b_jamo_seq[] = {
@@ -29657,7 +29657,7 @@ static const struct Node node_u110bu118eu11b7 = {
 	0,
 	"u110bu118eu11b7",
 };
-static struct Node* const node_u110bu118e_children[] = {
+static const struct Node *node_u110bu118e_children[] = {
 	&node_u110bu118eu11ab,
 	&node_u110bu118eu11b7,
 };
@@ -29704,7 +29704,7 @@ static const struct Node node_u110bu1190u11ab = {
 	0,
 	"u110bu1190u11ab",
 };
-static struct Node* const node_u110bu1190_children[] = {
+static const struct Node *node_u110bu1190_children[] = {
 	&node_u110bu1190u11ab,
 };
 static const uint16_t node_u110bu1190_jamo_seq[] = {
@@ -29811,7 +29811,7 @@ static const struct Node node_u110bu1191u11f9 = {
 	0,
 	"u110bu1191u11f9",
 };
-static struct Node* const node_u110bu1191_children[] = {
+static const struct Node *node_u110bu1191_children[] = {
 	&node_u110bu1191u11a8,
 	&node_u110bu1191u11ab,
 	&node_u110bu1191u11af,
@@ -29863,7 +29863,7 @@ static const struct Node node_u110bu1192u11f0 = {
 	0,
 	"u110bu1192u11f0",
 };
-static struct Node* const node_u110bu1192_children[] = {
+static const struct Node *node_u110bu1192_children[] = {
 	&node_u110bu1192u11bc,
 	&node_u110bu1192u11f0,
 };
@@ -29940,7 +29940,7 @@ static const struct Node node_u110bu1194u11f0 = {
 	0,
 	"u110bu1194u11f0",
 };
-static struct Node* const node_u110bu1194_children[] = {
+static const struct Node *node_u110bu1194_children[] = {
 	&node_u110bu1194u11ab,
 	&node_u110bu1194u11bc,
 	&node_u110bu1194u11f0,
@@ -30033,7 +30033,7 @@ static const struct Node node_u110bu1196u11f9 = {
 	0,
 	"u110bu1196u11f9",
 };
-static struct Node* const node_u110bu1196_children[] = {
+static const struct Node *node_u110bu1196_children[] = {
 	&node_u110bu1196u11ab,
 	&node_u110bu1196u11bc,
 	&node_u110bu1196u11f0,
@@ -30110,7 +30110,7 @@ static const struct Node node_u110bu119cu11ab = {
 	0,
 	"u110bu119cu11ab",
 };
-static struct Node* const node_u110bu119c_children[] = {
+static const struct Node *node_u110bu119c_children[] = {
 	&node_u110bu119cu11ab,
 };
 static const uint16_t node_u110bu119c_jamo_seq[] = {
@@ -30442,7 +30442,7 @@ static const struct Node node_u110bu119eu11f0 = {
 	0,
 	"u110bu119eu11f0",
 };
-static struct Node* const node_u110bu119e_children[] = {
+static const struct Node *node_u110bu119e_children[] = {
 	&node_u110bu119eu11a8,
 	&node_u110bu119eu11ab,
 	&node_u110bu119eu11ae,
@@ -30554,7 +30554,7 @@ static const struct Node node_u110bu119fu11bc = {
 	0,
 	"u110bu119fu11bc",
 };
-static struct Node* const node_u110bu119f_children[] = {
+static const struct Node *node_u110bu119f_children[] = {
 	&node_u110bu119fu11ab,
 	&node_u110bu119fu11af,
 	&node_u110bu119fu11b2,
@@ -30710,7 +30710,7 @@ static const struct Node node_u110bu11a1u11f0 = {
 	0,
 	"u110bu11a1u11f0",
 };
-static struct Node* const node_u110bu11a1_children[] = {
+static const struct Node *node_u110bu11a1_children[] = {
 	&node_u110bu11a1u11a8,
 	&node_u110bu11a1u11ab,
 	&node_u110bu11a1u11af,
@@ -30750,7 +30750,7 @@ static const struct Node node_u110bu11a2u11af = {
 	0,
 	"u110bu11a2u11af",
 };
-static struct Node* const node_u110bu11a2_children[] = {
+static const struct Node *node_u110bu11a2_children[] = {
 	&node_u110bu11a2u11af,
 };
 static const uint16_t node_u110bu11a2_jamo_seq[] = {
@@ -30810,7 +30810,7 @@ static const struct Node node_u110bud7b3u11ab = {
 	0,
 	"u110bud7b3u11ab",
 };
-static struct Node* const node_u110bud7b3_children[] = {
+static const struct Node *node_u110bud7b3_children[] = {
 	&node_u110bud7b3u11ab,
 };
 static const uint16_t node_u110bud7b3_jamo_seq[] = {
@@ -30842,7 +30842,7 @@ static const struct Node node_u110bud7b4u11ab = {
 	0,
 	"u110bud7b4u11ab",
 };
-static struct Node* const node_u110bud7b4_children[] = {
+static const struct Node *node_u110bud7b4_children[] = {
 	&node_u110bud7b4u11ab,
 };
 static const uint16_t node_u110bud7b4_jamo_seq[] = {
@@ -30887,7 +30887,7 @@ static const struct Node node_u110bud7c1 = {
 	0,
 	"u110bud7c1",
 };
-static struct Node* const node_u110b_children[] = {
+static const struct Node *node_u110b_children[] = {
 	&node_u110bu1161,
 	&node_u110bu1162,
 	&node_u110bu1163,
@@ -31166,7 +31166,7 @@ static const struct Node node_u110cu1161ud7e6 = {
 	0,
 	"u110cu1161ud7e6",
 };
-static struct Node* const node_u110cu1161_children[] = {
+static const struct Node *node_u110cu1161_children[] = {
 	&node_u110cu1161u11c7,
 	&node_u110cu1161u11cd,
 	&node_u110cu1161u11d0,
@@ -31211,7 +31211,7 @@ static const struct Node node_u110cu1162u11f0 = {
 	0,
 	"u110cu1162u11f0",
 };
-static struct Node* const node_u110cu1162_children[] = {
+static const struct Node *node_u110cu1162_children[] = {
 	&node_u110cu1162u11f0,
 };
 static const uint16_t node_u110cu1162_jamo_seq[] = {
@@ -31333,7 +31333,7 @@ static const struct Node node_u110cu1163u11f1 = {
 	0,
 	"u110cu1163u11f1",
 };
-static struct Node* const node_u110cu1163_children[] = {
+static const struct Node *node_u110cu1163_children[] = {
 	&node_u110cu1163u11c7,
 	&node_u110cu1163u11cd,
 	&node_u110cu1163u11d0,
@@ -31521,7 +31521,7 @@ static const struct Node node_u110cu1165ud7f6 = {
 	0,
 	"u110cu1165ud7f6",
 };
-static struct Node* const node_u110cu1165_children[] = {
+static const struct Node *node_u110cu1165_children[] = {
 	&node_u110cu1165u11cd,
 	&node_u110cu1165u11d0,
 	&node_u110cu1165u11d9,
@@ -31713,7 +31713,7 @@ static const struct Node node_u110cu1167ud7d2 = {
 	0,
 	"u110cu1167ud7d2",
 };
-static struct Node* const node_u110cu1167_children[] = {
+static const struct Node *node_u110cu1167_children[] = {
 	&node_u110cu1167u11c7,
 	&node_u110cu1167u11ca,
 	&node_u110cu1167u11d0,
@@ -31830,7 +31830,7 @@ static const struct Node node_u110cu1169u11f0 = {
 	0,
 	"u110cu1169u11f0",
 };
-static struct Node* const node_u110cu1169_children[] = {
+static const struct Node *node_u110cu1169_children[] = {
 	&node_u110cu1169u11c7,
 	&node_u110cu1169u11d9,
 	&node_u110cu1169u11dd,
@@ -31897,7 +31897,7 @@ static const struct Node node_u110cu116au11f0 = {
 	0,
 	"u110cu116au11f0",
 };
-static struct Node* const node_u110cu116a_children[] = {
+static const struct Node *node_u110cu116a_children[] = {
 	&node_u110cu116au11d9,
 	&node_u110cu116au11e2,
 	&node_u110cu116au11f0,
@@ -31991,7 +31991,7 @@ static const struct Node node_u110cu116du11f1 = {
 	0,
 	"u110cu116du11f1",
 };
-static struct Node* const node_u110cu116d_children[] = {
+static const struct Node *node_u110cu116d_children[] = {
 	&node_u110cu116du11d9,
 	&node_u110cu116du11e2,
 	&node_u110cu116du11e6,
@@ -32132,7 +32132,7 @@ static const struct Node node_u110cu116eu11f9 = {
 	0,
 	"u110cu116eu11f9",
 };
-static struct Node* const node_u110cu116e_children[] = {
+static const struct Node *node_u110cu116e_children[] = {
 	&node_u110cu116eu11c7,
 	&node_u110cu116eu11cd,
 	&node_u110cu116eu11d9,
@@ -32231,7 +32231,7 @@ static const struct Node node_u110cu1172u11f9 = {
 	0,
 	"u110cu1172u11f9",
 };
-static struct Node* const node_u110cu1172_children[] = {
+static const struct Node *node_u110cu1172_children[] = {
 	&node_u110cu1172u11d9,
 	&node_u110cu1172u11e2,
 	&node_u110cu1172u11ec,
@@ -32342,7 +32342,7 @@ static const struct Node node_u110cu1173u11f0 = {
 	0,
 	"u110cu1173u11f0",
 };
-static struct Node* const node_u110cu1173_children[] = {
+static const struct Node *node_u110cu1173_children[] = {
 	&node_u110cu1173u11d0,
 	&node_u110cu1173u11d9,
 	&node_u110cu1173u11e2,
@@ -32394,7 +32394,7 @@ static const struct Node node_u110cu1174u11f9 = {
 	0,
 	"u110cu1174u11f9",
 };
-static struct Node* const node_u110cu1174_children[] = {
+static const struct Node *node_u110cu1174_children[] = {
 	&node_u110cu1174u11f0,
 	&node_u110cu1174u11f9,
 };
@@ -32607,7 +32607,7 @@ static const struct Node node_u110cu1175ud7f2 = {
 	0,
 	"u110cu1175ud7f2",
 };
-static struct Node* const node_u110cu1175_children[] = {
+static const struct Node *node_u110cu1175_children[] = {
 	&node_u110cu1175u11cd,
 	&node_u110cu1175u11d9,
 	&node_u110cu1175u11dd,
@@ -32738,7 +32738,7 @@ static const struct Node node_u110cu117cu11f9 = {
 	0,
 	"u110cu117cu11f9",
 };
-static struct Node* const node_u110cu117c_children[] = {
+static const struct Node *node_u110cu117c_children[] = {
 	&node_u110cu117cu11a8,
 	&node_u110cu117cu11ab,
 	&node_u110cu117cu11bc,
@@ -32830,7 +32830,7 @@ static const struct Node node_u110cu1188u11d9 = {
 	0,
 	"u110cu1188u11d9",
 };
-static struct Node* const node_u110cu1188_children[] = {
+static const struct Node *node_u110cu1188_children[] = {
 	&node_u110cu1188u11af,
 	&node_u110cu1188u11d9,
 };
@@ -32863,7 +32863,7 @@ static const struct Node node_u110cu1189u11bc = {
 	0,
 	"u110cu1189u11bc",
 };
-static struct Node* const node_u110cu1189_children[] = {
+static const struct Node *node_u110cu1189_children[] = {
 	&node_u110cu1189u11bc,
 };
 static const uint16_t node_u110cu1189_jamo_seq[] = {
@@ -32923,7 +32923,7 @@ static const struct Node node_u110cu118eu11ab = {
 	0,
 	"u110cu118eu11ab",
 };
-static struct Node* const node_u110cu118e_children[] = {
+static const struct Node *node_u110cu118e_children[] = {
 	&node_u110cu118eu11ab,
 };
 static const uint16_t node_u110cu118e_jamo_seq[] = {
@@ -32970,7 +32970,7 @@ static const struct Node node_u110cu118fu11af = {
 	0,
 	"u110cu118fu11af",
 };
-static struct Node* const node_u110cu118f_children[] = {
+static const struct Node *node_u110cu118f_children[] = {
 	&node_u110cu118fu11ab,
 	&node_u110cu118fu11af,
 };
@@ -33062,7 +33062,7 @@ static const struct Node node_u110cu1191u11f9 = {
 	0,
 	"u110cu1191u11f9",
 };
-static struct Node* const node_u110cu1191_children[] = {
+static const struct Node *node_u110cu1191_children[] = {
 	&node_u110cu1191u11ab,
 	&node_u110cu1191u11af,
 	&node_u110cu1191u11d9,
@@ -33127,7 +33127,7 @@ static const struct Node node_u110cu1192u11bc = {
 	0,
 	"u110cu1192u11bc",
 };
-static struct Node* const node_u110cu1192_children[] = {
+static const struct Node *node_u110cu1192_children[] = {
 	&node_u110cu1192u11ab,
 	&node_u110cu1192u11b8,
 	&node_u110cu1192u11bc,
@@ -33236,7 +33236,7 @@ static const struct Node node_u110cu1194u11d9 = {
 	0,
 	"u110cu1194u11d9",
 };
-static struct Node* const node_u110cu1194_children[] = {
+static const struct Node *node_u110cu1194_children[] = {
 	&node_u110cu1194u11a8,
 	&node_u110cu1194u11ab,
 	&node_u110cu1194u11af,
@@ -33315,7 +33315,7 @@ static const struct Node node_u110cu1199u11ab = {
 	0,
 	"u110cu1199u11ab",
 };
-static struct Node* const node_u110cu1199_children[] = {
+static const struct Node *node_u110cu1199_children[] = {
 	&node_u110cu1199u11ab,
 };
 static const uint16_t node_u110cu1199_jamo_seq[] = {
@@ -33347,7 +33347,7 @@ static const struct Node node_u110cu119au11af = {
 	0,
 	"u110cu119au11af",
 };
-static struct Node* const node_u110cu119a_children[] = {
+static const struct Node *node_u110cu119a_children[] = {
 	&node_u110cu119au11af,
 };
 static const uint16_t node_u110cu119a_jamo_seq[] = {
@@ -33663,7 +33663,7 @@ static const struct Node node_u110cu119eu11f0 = {
 	0,
 	"u110cu119eu11f0",
 };
-static struct Node* const node_u110cu119e_children[] = {
+static const struct Node *node_u110cu119e_children[] = {
 	&node_u110cu119eu11a8,
 	&node_u110cu119eu11ab,
 	&node_u110cu119eu11ae,
@@ -33833,7 +33833,7 @@ static const struct Node node_u110cu11a1u11f0 = {
 	0,
 	"u110cu11a1u11f0",
 };
-static struct Node* const node_u110cu11a1_children[] = {
+static const struct Node *node_u110cu11a1_children[] = {
 	&node_u110cu11a1u11a8,
 	&node_u110cu11a1u11ab,
 	&node_u110cu11a1u11ae,
@@ -33873,7 +33873,7 @@ static const struct Node node_u110cu11a4u11af = {
 	0,
 	"u110cu11a4u11af",
 };
-static struct Node* const node_u110cu11a4_children[] = {
+static const struct Node *node_u110cu11a4_children[] = {
 	&node_u110cu11a4u11af,
 };
 static const uint16_t node_u110cu11a4_jamo_seq[] = {
@@ -33905,7 +33905,7 @@ static const struct Node node_u110cu11a5u11bc = {
 	0,
 	"u110cu11a5u11bc",
 };
-static struct Node* const node_u110cu11a5_children[] = {
+static const struct Node *node_u110cu11a5_children[] = {
 	&node_u110cu11a5u11bc,
 };
 static const uint16_t node_u110cu11a5_jamo_seq[] = {
@@ -33967,7 +33967,7 @@ static const struct Node node_u110cud7b5u11d9 = {
 	0,
 	"u110cud7b5u11d9",
 };
-static struct Node* const node_u110cud7b5_children[] = {
+static const struct Node *node_u110cud7b5_children[] = {
 	&node_u110cud7b5u11ab,
 	&node_u110cud7b5u11af,
 	&node_u110cud7b5u11d9,
@@ -34029,7 +34029,7 @@ static const struct Node node_u110cud7c5u11bc = {
 	0,
 	"u110cud7c5u11bc",
 };
-static struct Node* const node_u110cud7c5_children[] = {
+static const struct Node *node_u110cud7c5_children[] = {
 	&node_u110cud7c5u11bc,
 };
 static const uint16_t node_u110cud7c5_jamo_seq[] = {
@@ -34046,7 +34046,7 @@ static const struct Node node_u110cud7c5 = {
 	node_u110cud7c5_children,
 	"u110cud7c5",
 };
-static struct Node* const node_u110c_children[] = {
+static const struct Node *node_u110c_children[] = {
 	&node_u110cu1161,
 	&node_u110cu1162,
 	&node_u110cu1163,
@@ -34195,7 +34195,7 @@ static const struct Node node_u110du1161ud7e6 = {
 	0,
 	"u110du1161ud7e6",
 };
-static struct Node* const node_u110du1161_children[] = {
+static const struct Node *node_u110du1161_children[] = {
 	&node_u110du1161u11d0,
 	&node_u110du1161u11d9,
 	&node_u110du1161u11e2,
@@ -34262,7 +34262,7 @@ static const struct Node node_u110du1163u11f0 = {
 	0,
 	"u110du1163u11f0",
 };
-static struct Node* const node_u110du1163_children[] = {
+static const struct Node *node_u110du1163_children[] = {
 	&node_u110du1163u11e2,
 	&node_u110du1163u11e6,
 	&node_u110du1163u11f0,
@@ -34311,7 +34311,7 @@ static const struct Node node_u110du1165u11f9 = {
 	0,
 	"u110du1165u11f9",
 };
-static struct Node* const node_u110du1165_children[] = {
+static const struct Node *node_u110du1165_children[] = {
 	&node_u110du1165u11f0,
 	&node_u110du1165u11f9,
 };
@@ -34359,7 +34359,7 @@ static const struct Node node_u110du1167u11f0 = {
 	0,
 	"u110du1167u11f0",
 };
-static struct Node* const node_u110du1167_children[] = {
+static const struct Node *node_u110du1167_children[] = {
 	&node_u110du1167u11d9,
 	&node_u110du1167u11f0,
 };
@@ -34452,7 +34452,7 @@ static const struct Node node_u110du1169ud7f9 = {
 	0,
 	"u110du1169ud7f9",
 };
-static struct Node* const node_u110du1169_children[] = {
+static const struct Node *node_u110du1169_children[] = {
 	&node_u110du1169u11d9,
 	&node_u110du1169u11e2,
 	&node_u110du1169u11f0,
@@ -34488,7 +34488,7 @@ static const struct Node node_u110du116au11f0 = {
 	0,
 	"u110du116au11f0",
 };
-static struct Node* const node_u110du116a_children[] = {
+static const struct Node *node_u110du116a_children[] = {
 	&node_u110du116au11f0,
 };
 static const uint16_t node_u110du116a_jamo_seq[] = {
@@ -34520,7 +34520,7 @@ static const struct Node node_u110du116cu11f9 = {
 	0,
 	"u110du116cu11f9",
 };
-static struct Node* const node_u110du116c_children[] = {
+static const struct Node *node_u110du116c_children[] = {
 	&node_u110du116cu11f9,
 };
 static const uint16_t node_u110du116c_jamo_seq[] = {
@@ -34567,7 +34567,7 @@ static const struct Node node_u110du116du11f0 = {
 	0,
 	"u110du116du11f0",
 };
-static struct Node* const node_u110du116d_children[] = {
+static const struct Node *node_u110du116d_children[] = {
 	&node_u110du116du11e2,
 	&node_u110du116du11f0,
 };
@@ -34645,7 +34645,7 @@ static const struct Node node_u110du116eu11f9 = {
 	0,
 	"u110du116eu11f9",
 };
-static struct Node* const node_u110du116e_children[] = {
+static const struct Node *node_u110du116e_children[] = {
 	&node_u110du116eu11d9,
 	&node_u110du116eu11e2,
 	&node_u110du116eu11f0,
@@ -34680,7 +34680,7 @@ static const struct Node node_u110du1171u11f9 = {
 	0,
 	"u110du1171u11f9",
 };
-static struct Node* const node_u110du1171_children[] = {
+static const struct Node *node_u110du1171_children[] = {
 	&node_u110du1171u11f9,
 };
 static const uint16_t node_u110du1171_jamo_seq[] = {
@@ -34727,7 +34727,7 @@ static const struct Node node_u110du1172u11e2 = {
 	0,
 	"u110du1172u11e2",
 };
-static struct Node* const node_u110du1172_children[] = {
+static const struct Node *node_u110du1172_children[] = {
 	&node_u110du1172u11d9,
 	&node_u110du1172u11e2,
 };
@@ -34805,7 +34805,7 @@ static const struct Node node_u110du1173ud7f9 = {
 	0,
 	"u110du1173ud7f9",
 };
-static struct Node* const node_u110du1173_children[] = {
+static const struct Node *node_u110du1173_children[] = {
 	&node_u110du1173u11e2,
 	&node_u110du1173u11eb,
 	&node_u110du1173u11f0,
@@ -34855,7 +34855,7 @@ static const struct Node node_u110du1174u11f9 = {
 	0,
 	"u110du1174u11f9",
 };
-static struct Node* const node_u110du1174_children[] = {
+static const struct Node *node_u110du1174_children[] = {
 	&node_u110du1174u11f0,
 	&node_u110du1174u11f9,
 };
@@ -34948,7 +34948,7 @@ static const struct Node node_u110du1175u11f9 = {
 	0,
 	"u110du1175u11f9",
 };
-static struct Node* const node_u110du1175_children[] = {
+static const struct Node *node_u110du1175_children[] = {
 	&node_u110du1175u11d9,
 	&node_u110du1175u11e2,
 	&node_u110du1175u11eb,
@@ -35043,7 +35043,7 @@ static const struct Node node_u110du1191u11f9 = {
 	0,
 	"u110du1191u11f9",
 };
-static struct Node* const node_u110du1191_children[] = {
+static const struct Node *node_u110du1191_children[] = {
 	&node_u110du1191u11ab,
 	&node_u110du1191u11af,
 	&node_u110du1191u11d9,
@@ -35078,7 +35078,7 @@ static const struct Node node_u110du1194u11bc = {
 	0,
 	"u110du1194u11bc",
 };
-static struct Node* const node_u110du1194_children[] = {
+static const struct Node *node_u110du1194_children[] = {
 	&node_u110du1194u11bc,
 };
 static const uint16_t node_u110du1194_jamo_seq[] = {
@@ -35230,7 +35230,7 @@ static const struct Node node_u110du119eu11f0 = {
 	0,
 	"u110du119eu11f0",
 };
-static struct Node* const node_u110du119e_children[] = {
+static const struct Node *node_u110du119e_children[] = {
 	&node_u110du119eu11a8,
 	&node_u110du119eu11ab,
 	&node_u110du119eu11af,
@@ -35375,7 +35375,7 @@ static const struct Node node_u110du11a1u11f9 = {
 	0,
 	"u110du11a1u11f9",
 };
-static struct Node* const node_u110du11a1_children[] = {
+static const struct Node *node_u110du11a1_children[] = {
 	&node_u110du11a1u11a8,
 	&node_u110du11a1u11ab,
 	&node_u110du11a1u11af,
@@ -35399,7 +35399,7 @@ static const struct Node node_u110du11a1 = {
 	node_u110du11a1_children,
 	"u110du11a1",
 };
-static struct Node* const node_u110d_children[] = {
+static const struct Node *node_u110d_children[] = {
 	&node_u110du1161,
 	&node_u110du1163,
 	&node_u110du1165,
@@ -35508,7 +35508,7 @@ static const struct Node node_u110eu1161u11f9 = {
 	0,
 	"u110eu1161u11f9",
 };
-static struct Node* const node_u110eu1161_children[] = {
+static const struct Node *node_u110eu1161_children[] = {
 	&node_u110eu1161u11d9,
 	&node_u110eu1161u11e2,
 	&node_u110eu1161u11e6,
@@ -35589,7 +35589,7 @@ static const struct Node node_u110eu1163u11f1 = {
 	0,
 	"u110eu1163u11f1",
 };
-static struct Node* const node_u110eu1163_children[] = {
+static const struct Node *node_u110eu1163_children[] = {
 	&node_u110eu1163u11d9,
 	&node_u110eu1163u11e6,
 	&node_u110eu1163u11f0,
@@ -35639,7 +35639,7 @@ static const struct Node node_u110eu1165u11f0 = {
 	0,
 	"u110eu1165u11f0",
 };
-static struct Node* const node_u110eu1165_children[] = {
+static const struct Node *node_u110eu1165_children[] = {
 	&node_u110eu1165u11eb,
 	&node_u110eu1165u11f0,
 };
@@ -35777,7 +35777,7 @@ static const struct Node node_u110eu1167ud7cf = {
 	0,
 	"u110eu1167ud7cf",
 };
-static struct Node* const node_u110eu1167_children[] = {
+static const struct Node *node_u110eu1167_children[] = {
 	&node_u110eu1167u11d9,
 	&node_u110eu1167u11e2,
 	&node_u110eu1167u11f0,
@@ -35876,7 +35876,7 @@ static const struct Node node_u110eu1169ud7e8 = {
 	0,
 	"u110eu1169ud7e8",
 };
-static struct Node* const node_u110eu1169_children[] = {
+static const struct Node *node_u110eu1169_children[] = {
 	&node_u110eu1169u11d9,
 	&node_u110eu1169u11e2,
 	&node_u110eu1169u11eb,
@@ -35927,7 +35927,7 @@ static const struct Node node_u110eu116au11f0 = {
 	0,
 	"u110eu116au11f0",
 };
-static struct Node* const node_u110eu116a_children[] = {
+static const struct Node *node_u110eu116a_children[] = {
 	&node_u110eu116au11d9,
 	&node_u110eu116au11f0,
 };
@@ -35975,7 +35975,7 @@ static const struct Node node_u110eu116du11f0 = {
 	0,
 	"u110eu116du11f0",
 };
-static struct Node* const node_u110eu116d_children[] = {
+static const struct Node *node_u110eu116d_children[] = {
 	&node_u110eu116du11e2,
 	&node_u110eu116du11f0,
 };
@@ -36068,7 +36068,7 @@ static const struct Node node_u110eu116eu11f9 = {
 	0,
 	"u110eu116eu11f9",
 };
-static struct Node* const node_u110eu116e_children[] = {
+static const struct Node *node_u110eu116e_children[] = {
 	&node_u110eu116eu11d9,
 	&node_u110eu116eu11e0,
 	&node_u110eu116eu11e2,
@@ -36104,7 +36104,7 @@ static const struct Node node_u110eu116fu11f9 = {
 	0,
 	"u110eu116fu11f9",
 };
-static struct Node* const node_u110eu116f_children[] = {
+static const struct Node *node_u110eu116f_children[] = {
 	&node_u110eu116fu11f9,
 };
 static const uint16_t node_u110eu116f_jamo_seq[] = {
@@ -36151,7 +36151,7 @@ static const struct Node node_u110eu1171u11f9 = {
 	0,
 	"u110eu1171u11f9",
 };
-static struct Node* const node_u110eu1171_children[] = {
+static const struct Node *node_u110eu1171_children[] = {
 	&node_u110eu1171u11d9,
 	&node_u110eu1171u11f9,
 };
@@ -36229,7 +36229,7 @@ static const struct Node node_u110eu1172u11f9 = {
 	0,
 	"u110eu1172u11f9",
 };
-static struct Node* const node_u110eu1172_children[] = {
+static const struct Node *node_u110eu1172_children[] = {
 	&node_u110eu1172u11d9,
 	&node_u110eu1172u11e2,
 	&node_u110eu1172u11f0,
@@ -36339,7 +36339,7 @@ static const struct Node node_u110eu1173ud7dd = {
 	0,
 	"u110eu1173ud7dd",
 };
-static struct Node* const node_u110eu1173_children[] = {
+static const struct Node *node_u110eu1173_children[] = {
 	&node_u110eu1173u11d9,
 	&node_u110eu1173u11e2,
 	&node_u110eu1173u11eb,
@@ -36376,7 +36376,7 @@ static const struct Node node_u110eu1174u11f9 = {
 	0,
 	"u110eu1174u11f9",
 };
-static struct Node* const node_u110eu1174_children[] = {
+static const struct Node *node_u110eu1174_children[] = {
 	&node_u110eu1174u11f9,
 };
 static const uint16_t node_u110eu1174_jamo_seq[] = {
@@ -36498,7 +36498,7 @@ static const struct Node node_u110eu1175ud7e3 = {
 	0,
 	"u110eu1175ud7e3",
 };
-static struct Node* const node_u110eu1175_children[] = {
+static const struct Node *node_u110eu1175_children[] = {
 	&node_u110eu1175u11d9,
 	&node_u110eu1175u11e2,
 	&node_u110eu1175u11e6,
@@ -36550,7 +36550,7 @@ static const struct Node node_u110eu1178u11af = {
 	0,
 	"u110eu1178u11af",
 };
-static struct Node* const node_u110eu1178_children[] = {
+static const struct Node *node_u110eu1178_children[] = {
 	&node_u110eu1178u11af,
 };
 static const uint16_t node_u110eu1178_jamo_seq[] = {
@@ -36582,7 +36582,7 @@ static const struct Node node_u110eu117cu11ab = {
 	0,
 	"u110eu117cu11ab",
 };
-static struct Node* const node_u110eu117c_children[] = {
+static const struct Node *node_u110eu117c_children[] = {
 	&node_u110eu117cu11ab,
 };
 static const uint16_t node_u110eu117c_jamo_seq[] = {
@@ -36670,7 +36670,7 @@ static const struct Node node_u110eu1188u11ab = {
 	0,
 	"u110eu1188u11ab",
 };
-static struct Node* const node_u110eu1188_children[] = {
+static const struct Node *node_u110eu1188_children[] = {
 	&node_u110eu1188u11ab,
 };
 static const uint16_t node_u110eu1188_jamo_seq[] = {
@@ -36717,7 +36717,7 @@ static const struct Node node_u110eu1189u11bc = {
 	0,
 	"u110eu1189u11bc",
 };
-static struct Node* const node_u110eu1189_children[] = {
+static const struct Node *node_u110eu1189_children[] = {
 	&node_u110eu1189u11ab,
 	&node_u110eu1189u11bc,
 };
@@ -36778,7 +36778,7 @@ static const struct Node node_u110eu118eu11ab = {
 	0,
 	"u110eu118eu11ab",
 };
-static struct Node* const node_u110eu118e_children[] = {
+static const struct Node *node_u110eu118e_children[] = {
 	&node_u110eu118eu11ab,
 };
 static const uint16_t node_u110eu118e_jamo_seq[] = {
@@ -36810,7 +36810,7 @@ static const struct Node node_u110eu118fu11b7 = {
 	0,
 	"u110eu118fu11b7",
 };
-static struct Node* const node_u110eu118f_children[] = {
+static const struct Node *node_u110eu118f_children[] = {
 	&node_u110eu118fu11b7,
 };
 static const uint16_t node_u110eu118f_jamo_seq[] = {
@@ -36901,7 +36901,7 @@ static const struct Node node_u110eu1191u11d9 = {
 	0,
 	"u110eu1191u11d9",
 };
-static struct Node* const node_u110eu1191_children[] = {
+static const struct Node *node_u110eu1191_children[] = {
 	&node_u110eu1191u11ab,
 	&node_u110eu1191u11af,
 	&node_u110eu1191u11b7,
@@ -36936,7 +36936,7 @@ static const struct Node node_u110eu1192u11bc = {
 	0,
 	"u110eu1192u11bc",
 };
-static struct Node* const node_u110eu1192_children[] = {
+static const struct Node *node_u110eu1192_children[] = {
 	&node_u110eu1192u11bc,
 };
 static const uint16_t node_u110eu1192_jamo_seq[] = {
@@ -36998,7 +36998,7 @@ static const struct Node node_u110eu1194u11bc = {
 	0,
 	"u110eu1194u11bc",
 };
-static struct Node* const node_u110eu1194_children[] = {
+static const struct Node *node_u110eu1194_children[] = {
 	&node_u110eu1194u11ab,
 	&node_u110eu1194u11af,
 	&node_u110eu1194u11bc,
@@ -37089,7 +37089,7 @@ static const struct Node node_u110eu1199u11bc = {
 	0,
 	"u110eu1199u11bc",
 };
-static struct Node* const node_u110eu1199_children[] = {
+static const struct Node *node_u110eu1199_children[] = {
 	&node_u110eu1199u11ab,
 	&node_u110eu1199u11bc,
 };
@@ -37376,7 +37376,7 @@ static const struct Node node_u110eu119eu11dd = {
 	0,
 	"u110eu119eu11dd",
 };
-static struct Node* const node_u110eu119e_children[] = {
+static const struct Node *node_u110eu119e_children[] = {
 	&node_u110eu119eu11a8,
 	&node_u110eu119eu11ab,
 	&node_u110eu119eu11ae,
@@ -37514,7 +37514,7 @@ static const struct Node node_u110eu11a1u11f0 = {
 	0,
 	"u110eu11a1u11f0",
 };
-static struct Node* const node_u110eu11a1_children[] = {
+static const struct Node *node_u110eu11a1_children[] = {
 	&node_u110eu11a1u11a8,
 	&node_u110eu11a1u11ab,
 	&node_u110eu11a1u11af,
@@ -37607,7 +37607,7 @@ static const struct Node node_u110eud7c2 = {
 	0,
 	"u110eud7c2",
 };
-static struct Node* const node_u110e_children[] = {
+static const struct Node *node_u110e_children[] = {
 	&node_u110eu1161,
 	&node_u110eu1163,
 	&node_u110eu1165,
@@ -37740,7 +37740,7 @@ static const struct Node node_u110fu1161u11f0 = {
 	0,
 	"u110fu1161u11f0",
 };
-static struct Node* const node_u110fu1161_children[] = {
+static const struct Node *node_u110fu1161_children[] = {
 	&node_u110fu1161u11d0,
 	&node_u110fu1161u11d9,
 	&node_u110fu1161u11e2,
@@ -37806,7 +37806,7 @@ static const struct Node node_u110fu1163u11f9 = {
 	0,
 	"u110fu1163u11f9",
 };
-static struct Node* const node_u110fu1163_children[] = {
+static const struct Node *node_u110fu1163_children[] = {
 	&node_u110fu1163u11e2,
 	&node_u110fu1163u11f0,
 	&node_u110fu1163u11f9,
@@ -37855,7 +37855,7 @@ static const struct Node node_u110fu1165u11f9 = {
 	0,
 	"u110fu1165u11f9",
 };
-static struct Node* const node_u110fu1165_children[] = {
+static const struct Node *node_u110fu1165_children[] = {
 	&node_u110fu1165u11d9,
 	&node_u110fu1165u11f9,
 };
@@ -37933,7 +37933,7 @@ static const struct Node node_u110fu1167u11f9 = {
 	0,
 	"u110fu1167u11f9",
 };
-static struct Node* const node_u110fu1167_children[] = {
+static const struct Node *node_u110fu1167_children[] = {
 	&node_u110fu1167u11d9,
 	&node_u110fu1167u11e2,
 	&node_u110fu1167u11f0,
@@ -37998,7 +37998,7 @@ static const struct Node node_u110fu1169u11f0 = {
 	0,
 	"u110fu1169u11f0",
 };
-static struct Node* const node_u110fu1169_children[] = {
+static const struct Node *node_u110fu1169_children[] = {
 	&node_u110fu1169u11d9,
 	&node_u110fu1169u11e2,
 	&node_u110fu1169u11f0,
@@ -38047,7 +38047,7 @@ static const struct Node node_u110fu116au11f0 = {
 	0,
 	"u110fu116au11f0",
 };
-static struct Node* const node_u110fu116a_children[] = {
+static const struct Node *node_u110fu116a_children[] = {
 	&node_u110fu116au11d9,
 	&node_u110fu116au11f0,
 };
@@ -38080,7 +38080,7 @@ static const struct Node node_u110fu116cu11f0 = {
 	0,
 	"u110fu116cu11f0",
 };
-static struct Node* const node_u110fu116c_children[] = {
+static const struct Node *node_u110fu116c_children[] = {
 	&node_u110fu116cu11f0,
 };
 static const uint16_t node_u110fu116c_jamo_seq[] = {
@@ -38127,7 +38127,7 @@ static const struct Node node_u110fu116du11e2 = {
 	0,
 	"u110fu116du11e2",
 };
-static struct Node* const node_u110fu116d_children[] = {
+static const struct Node *node_u110fu116d_children[] = {
 	&node_u110fu116du11d9,
 	&node_u110fu116du11e2,
 };
@@ -38205,7 +38205,7 @@ static const struct Node node_u110fu116eu11f9 = {
 	0,
 	"u110fu116eu11f9",
 };
-static struct Node* const node_u110fu116e_children[] = {
+static const struct Node *node_u110fu116e_children[] = {
 	&node_u110fu116eu11d9,
 	&node_u110fu116eu11e2,
 	&node_u110fu116eu11f0,
@@ -38255,7 +38255,7 @@ static const struct Node node_u110fu116fu11f9 = {
 	0,
 	"u110fu116fu11f9",
 };
-static struct Node* const node_u110fu116f_children[] = {
+static const struct Node *node_u110fu116f_children[] = {
 	&node_u110fu116fu11d9,
 	&node_u110fu116fu11f9,
 };
@@ -38303,7 +38303,7 @@ static const struct Node node_u110fu1172u11f9 = {
 	0,
 	"u110fu1172u11f9",
 };
-static struct Node* const node_u110fu1172_children[] = {
+static const struct Node *node_u110fu1172_children[] = {
 	&node_u110fu1172u11f0,
 	&node_u110fu1172u11f9,
 };
@@ -38366,7 +38366,7 @@ static const struct Node node_u110fu1173u11f0 = {
 	0,
 	"u110fu1173u11f0",
 };
-static struct Node* const node_u110fu1173_children[] = {
+static const struct Node *node_u110fu1173_children[] = {
 	&node_u110fu1173u11d9,
 	&node_u110fu1173u11e2,
 	&node_u110fu1173u11f0,
@@ -38400,7 +38400,7 @@ static const struct Node node_u110fu1174u11f9 = {
 	0,
 	"u110fu1174u11f9",
 };
-static struct Node* const node_u110fu1174_children[] = {
+static const struct Node *node_u110fu1174_children[] = {
 	&node_u110fu1174u11f9,
 };
 static const uint16_t node_u110fu1174_jamo_seq[] = {
@@ -38462,7 +38462,7 @@ static const struct Node node_u110fu1175u11f9 = {
 	0,
 	"u110fu1175u11f9",
 };
-static struct Node* const node_u110fu1175_children[] = {
+static const struct Node *node_u110fu1175_children[] = {
 	&node_u110fu1175u11d9,
 	&node_u110fu1175u11f0,
 	&node_u110fu1175u11f9,
@@ -38609,7 +38609,7 @@ static const struct Node node_u110fu1189u11bc = {
 	0,
 	"u110fu1189u11bc",
 };
-static struct Node* const node_u110fu1189_children[] = {
+static const struct Node *node_u110fu1189_children[] = {
 	&node_u110fu1189u11ab,
 	&node_u110fu1189u11bc,
 };
@@ -38773,7 +38773,7 @@ static const struct Node node_u110fu1191u11f9 = {
 	0,
 	"u110fu1191u11f9",
 };
-static struct Node* const node_u110fu1191_children[] = {
+static const struct Node *node_u110fu1191_children[] = {
 	&node_u110fu1191u11a8,
 	&node_u110fu1191u11ab,
 	&node_u110fu1191u11af,
@@ -38810,7 +38810,7 @@ static const struct Node node_u110fu1192u11bc = {
 	0,
 	"u110fu1192u11bc",
 };
-static struct Node* const node_u110fu1192_children[] = {
+static const struct Node *node_u110fu1192_children[] = {
 	&node_u110fu1192u11bc,
 };
 static const uint16_t node_u110fu1192_jamo_seq[] = {
@@ -38842,7 +38842,7 @@ static const struct Node node_u110fu1194u11bc = {
 	0,
 	"u110fu1194u11bc",
 };
-static struct Node* const node_u110fu1194_children[] = {
+static const struct Node *node_u110fu1194_children[] = {
 	&node_u110fu1194u11bc,
 };
 static const uint16_t node_u110fu1194_jamo_seq[] = {
@@ -38931,7 +38931,7 @@ static const struct Node node_u110fu1199u11bc = {
 	0,
 	"u110fu1199u11bc",
 };
-static struct Node* const node_u110fu1199_children[] = {
+static const struct Node *node_u110fu1199_children[] = {
 	&node_u110fu1199u11ab,
 	&node_u110fu1199u11bc,
 };
@@ -38978,7 +38978,7 @@ static const struct Node node_u110fu119bu11af = {
 	0,
 	"u110fu119bu11af",
 };
-static struct Node* const node_u110fu119b_children[] = {
+static const struct Node *node_u110fu119b_children[] = {
 	&node_u110fu119bu11af,
 };
 static const uint16_t node_u110fu119b_jamo_seq[] = {
@@ -39115,7 +39115,7 @@ static const struct Node node_u110fu119eu11c0 = {
 	0,
 	"u110fu119eu11c0",
 };
-static struct Node* const node_u110fu119e_children[] = {
+static const struct Node *node_u110fu119e_children[] = {
 	&node_u110fu119eu11a8,
 	&node_u110fu119eu11ab,
 	&node_u110fu119eu11ae,
@@ -39244,7 +39244,7 @@ static const struct Node node_u110fu11a1u11f0 = {
 	0,
 	"u110fu11a1u11f0",
 };
-static struct Node* const node_u110fu11a1_children[] = {
+static const struct Node *node_u110fu11a1_children[] = {
 	&node_u110fu11a1u11a8,
 	&node_u110fu11a1u11ab,
 	&node_u110fu11a1u11af,
@@ -39282,7 +39282,7 @@ static const struct Node node_u110fud7b5u11ab = {
 	0,
 	"u110fud7b5u11ab",
 };
-static struct Node* const node_u110fud7b5_children[] = {
+static const struct Node *node_u110fud7b5_children[] = {
 	&node_u110fud7b5u11ab,
 };
 static const uint16_t node_u110fud7b5_jamo_seq[] = {
@@ -39370,7 +39370,7 @@ static const struct Node node_u110fud7c3u11ab = {
 	0,
 	"u110fud7c3u11ab",
 };
-static struct Node* const node_u110fud7c3_children[] = {
+static const struct Node *node_u110fud7c3_children[] = {
 	&node_u110fud7c3u11ab,
 };
 static const uint16_t node_u110fud7c3_jamo_seq[] = {
@@ -39387,7 +39387,7 @@ static const struct Node node_u110fud7c3 = {
 	node_u110fud7c3_children,
 	"u110fud7c3",
 };
-static struct Node* const node_u110f_children[] = {
+static const struct Node *node_u110f_children[] = {
 	&node_u110fu1161,
 	&node_u110fu1163,
 	&node_u110fu1165,
@@ -39505,7 +39505,7 @@ static const struct Node node_u1110u1161u11f9 = {
 	0,
 	"u1110u1161u11f9",
 };
-static struct Node* const node_u1110u1161_children[] = {
+static const struct Node *node_u1110u1161_children[] = {
 	&node_u1110u1161u11d9,
 	&node_u1110u1161u11e2,
 	&node_u1110u1161u11f0,
@@ -39555,7 +39555,7 @@ static const struct Node node_u1110u1163u11f0 = {
 	0,
 	"u1110u1163u11f0",
 };
-static struct Node* const node_u1110u1163_children[] = {
+static const struct Node *node_u1110u1163_children[] = {
 	&node_u1110u1163u11e2,
 	&node_u1110u1163u11f0,
 };
@@ -39633,7 +39633,7 @@ static const struct Node node_u1110u1165u11f1 = {
 	0,
 	"u1110u1165u11f1",
 };
-static struct Node* const node_u1110u1165_children[] = {
+static const struct Node *node_u1110u1165_children[] = {
 	&node_u1110u1165u11dd,
 	&node_u1110u1165u11e6,
 	&node_u1110u1165u11f0,
@@ -39698,7 +39698,7 @@ static const struct Node node_u1110u1167u11f9 = {
 	0,
 	"u1110u1167u11f9",
 };
-static struct Node* const node_u1110u1167_children[] = {
+static const struct Node *node_u1110u1167_children[] = {
 	&node_u1110u1167u11d9,
 	&node_u1110u1167u11f0,
 	&node_u1110u1167u11f9,
@@ -39732,7 +39732,7 @@ static const struct Node node_u1110u1168u11f0 = {
 	0,
 	"u1110u1168u11f0",
 };
-static struct Node* const node_u1110u1168_children[] = {
+static const struct Node *node_u1110u1168_children[] = {
 	&node_u1110u1168u11f0,
 };
 static const uint16_t node_u1110u1168_jamo_seq[] = {
@@ -39839,7 +39839,7 @@ static const struct Node node_u1110u1169ud7e5 = {
 	0,
 	"u1110u1169ud7e5",
 };
-static struct Node* const node_u1110u1169_children[] = {
+static const struct Node *node_u1110u1169_children[] = {
 	&node_u1110u1169u11d0,
 	&node_u1110u1169u11d9,
 	&node_u1110u1169u11e2,
@@ -39891,7 +39891,7 @@ static const struct Node node_u1110u116au11f0 = {
 	0,
 	"u1110u116au11f0",
 };
-static struct Node* const node_u1110u116a_children[] = {
+static const struct Node *node_u1110u116a_children[] = {
 	&node_u1110u116au11d9,
 	&node_u1110u116au11f0,
 };
@@ -39954,7 +39954,7 @@ static const struct Node node_u1110u116du11f0 = {
 	0,
 	"u1110u116du11f0",
 };
-static struct Node* const node_u1110u116d_children[] = {
+static const struct Node *node_u1110u116d_children[] = {
 	&node_u1110u116du11d9,
 	&node_u1110u116du11e2,
 	&node_u1110u116du11f0,
@@ -40048,7 +40048,7 @@ static const struct Node node_u1110u116eu11f9 = {
 	0,
 	"u1110u116eu11f9",
 };
-static struct Node* const node_u1110u116e_children[] = {
+static const struct Node *node_u1110u116e_children[] = {
 	&node_u1110u116eu11d0,
 	&node_u1110u116eu11d9,
 	&node_u1110u116eu11e2,
@@ -40084,7 +40084,7 @@ static const struct Node node_u1110u116fu11f9 = {
 	0,
 	"u1110u116fu11f9",
 };
-static struct Node* const node_u1110u116f_children[] = {
+static const struct Node *node_u1110u116f_children[] = {
 	&node_u1110u116fu11f9,
 };
 static const uint16_t node_u1110u116f_jamo_seq[] = {
@@ -40146,7 +40146,7 @@ static const struct Node node_u1110u1172u11f0 = {
 	0,
 	"u1110u1172u11f0",
 };
-static struct Node* const node_u1110u1172_children[] = {
+static const struct Node *node_u1110u1172_children[] = {
 	&node_u1110u1172u11d9,
 	&node_u1110u1172u11e2,
 	&node_u1110u1172u11f0,
@@ -40240,7 +40240,7 @@ static const struct Node node_u1110u1173u11f0 = {
 	0,
 	"u1110u1173u11f0",
 };
-static struct Node* const node_u1110u1173_children[] = {
+static const struct Node *node_u1110u1173_children[] = {
 	&node_u1110u1173u11d0,
 	&node_u1110u1173u11d7,
 	&node_u1110u1173u11d9,
@@ -40276,7 +40276,7 @@ static const struct Node node_u1110u1174u11f9 = {
 	0,
 	"u1110u1174u11f9",
 };
-static struct Node* const node_u1110u1174_children[] = {
+static const struct Node *node_u1110u1174_children[] = {
 	&node_u1110u1174u11f9,
 };
 static const uint16_t node_u1110u1174_jamo_seq[] = {
@@ -40338,7 +40338,7 @@ static const struct Node node_u1110u1175u11f0 = {
 	0,
 	"u1110u1175u11f0",
 };
-static struct Node* const node_u1110u1175_children[] = {
+static const struct Node *node_u1110u1175_children[] = {
 	&node_u1110u1175u11d9,
 	&node_u1110u1175u11e6,
 	&node_u1110u1175u11f0,
@@ -40429,7 +40429,7 @@ static const struct Node node_u1110u117bu11af = {
 	0,
 	"u1110u117bu11af",
 };
-static struct Node* const node_u1110u117b_children[] = {
+static const struct Node *node_u1110u117b_children[] = {
 	&node_u1110u117bu11ae,
 	&node_u1110u117bu11af,
 };
@@ -40462,7 +40462,7 @@ static const struct Node node_u1110u1182u11af = {
 	0,
 	"u1110u1182u11af",
 };
-static struct Node* const node_u1110u1182_children[] = {
+static const struct Node *node_u1110u1182_children[] = {
 	&node_u1110u1182u11af,
 };
 static const uint16_t node_u1110u1182_jamo_seq[] = {
@@ -40508,7 +40508,7 @@ static const struct Node node_u1110u1189u11ab = {
 	0,
 	"u1110u1189u11ab",
 };
-static struct Node* const node_u1110u1189_children[] = {
+static const struct Node *node_u1110u1189_children[] = {
 	&node_u1110u1189u11ab,
 };
 static const uint16_t node_u1110u1189_jamo_seq[] = {
@@ -40624,7 +40624,7 @@ static const struct Node node_u1110u1199u11ab = {
 	0,
 	"u1110u1199u11ab",
 };
-static struct Node* const node_u1110u1199_children[] = {
+static const struct Node *node_u1110u1199_children[] = {
 	&node_u1110u1199u11ab,
 };
 static const uint16_t node_u1110u1199_jamo_seq[] = {
@@ -40806,7 +40806,7 @@ static const struct Node node_u1110u119eu11bd = {
 	0,
 	"u1110u119eu11bd",
 };
-static struct Node* const node_u1110u119e_children[] = {
+static const struct Node *node_u1110u119e_children[] = {
 	&node_u1110u119eu11a8,
 	&node_u1110u119eu11ab,
 	&node_u1110u119eu11ae,
@@ -40953,7 +40953,7 @@ static const struct Node node_u1110u11a1u11f9 = {
 	0,
 	"u1110u11a1u11f9",
 };
-static struct Node* const node_u1110u11a1_children[] = {
+static const struct Node *node_u1110u11a1_children[] = {
 	&node_u1110u11a1u11a8,
 	&node_u1110u11a1u11ab,
 	&node_u1110u11a1u11af,
@@ -41019,7 +41019,7 @@ static const struct Node node_u1110ud7c0 = {
 	0,
 	"u1110ud7c0",
 };
-static struct Node* const node_u1110_children[] = {
+static const struct Node *node_u1110_children[] = {
 	&node_u1110u1161,
 	&node_u1110u1163,
 	&node_u1110u1165,
@@ -41187,7 +41187,7 @@ static const struct Node node_u1111u1161u11f9 = {
 	0,
 	"u1111u1161u11f9",
 };
-static struct Node* const node_u1111u1161_children[] = {
+static const struct Node *node_u1111u1161_children[] = {
 	&node_u1111u1161u11d0,
 	&node_u1111u1161u11d8,
 	&node_u1111u1161u11d9,
@@ -41226,7 +41226,7 @@ static const struct Node node_u1111u1162u11f9 = {
 	0,
 	"u1111u1162u11f9",
 };
-static struct Node* const node_u1111u1162_children[] = {
+static const struct Node *node_u1111u1162_children[] = {
 	&node_u1111u1162u11f9,
 };
 static const uint16_t node_u1111u1162_jamo_seq[] = {
@@ -41258,7 +41258,7 @@ static const struct Node node_u1111u1163u11e2 = {
 	0,
 	"u1111u1163u11e2",
 };
-static struct Node* const node_u1111u1163_children[] = {
+static const struct Node *node_u1111u1163_children[] = {
 	&node_u1111u1163u11e2,
 };
 static const uint16_t node_u1111u1163_jamo_seq[] = {
@@ -41305,7 +41305,7 @@ static const struct Node node_u1111u1165u11f0 = {
 	0,
 	"u1111u1165u11f0",
 };
-static struct Node* const node_u1111u1165_children[] = {
+static const struct Node *node_u1111u1165_children[] = {
 	&node_u1111u1165u11d0,
 	&node_u1111u1165u11f0,
 };
@@ -41338,7 +41338,7 @@ static const struct Node node_u1111u1166u11c7 = {
 	0,
 	"u1111u1166u11c7",
 };
-static struct Node* const node_u1111u1166_children[] = {
+static const struct Node *node_u1111u1166_children[] = {
 	&node_u1111u1166u11c7,
 };
 static const uint16_t node_u1111u1166_jamo_seq[] = {
@@ -41430,7 +41430,7 @@ static const struct Node node_u1111u1167u11f9 = {
 	0,
 	"u1111u1167u11f9",
 };
-static struct Node* const node_u1111u1167_children[] = {
+static const struct Node *node_u1111u1167_children[] = {
 	&node_u1111u1167u11c7,
 	&node_u1111u1167u11d9,
 	&node_u1111u1167u11e2,
@@ -41496,7 +41496,7 @@ static const struct Node node_u1111u1169u11f0 = {
 	0,
 	"u1111u1169u11f0",
 };
-static struct Node* const node_u1111u1169_children[] = {
+static const struct Node *node_u1111u1169_children[] = {
 	&node_u1111u1169u11d9,
 	&node_u1111u1169u11e2,
 	&node_u1111u1169u11f0,
@@ -41545,7 +41545,7 @@ static const struct Node node_u1111u116du11e6 = {
 	0,
 	"u1111u116du11e6",
 };
-static struct Node* const node_u1111u116d_children[] = {
+static const struct Node *node_u1111u116d_children[] = {
 	&node_u1111u116du11e2,
 	&node_u1111u116du11e6,
 };
@@ -41638,7 +41638,7 @@ static const struct Node node_u1111u116eu11f1 = {
 	0,
 	"u1111u116eu11f1",
 };
-static struct Node* const node_u1111u116e_children[] = {
+static const struct Node *node_u1111u116e_children[] = {
 	&node_u1111u116eu11d0,
 	&node_u1111u116eu11d9,
 	&node_u1111u116eu11e2,
@@ -41674,7 +41674,7 @@ static const struct Node node_u1111u116fu11f9 = {
 	0,
 	"u1111u116fu11f9",
 };
-static struct Node* const node_u1111u116f_children[] = {
+static const struct Node *node_u1111u116f_children[] = {
 	&node_u1111u116fu11f9,
 };
 static const uint16_t node_u1111u116f_jamo_seq[] = {
@@ -41706,7 +41706,7 @@ static const struct Node node_u1111u1171u11f9 = {
 	0,
 	"u1111u1171u11f9",
 };
-static struct Node* const node_u1111u1171_children[] = {
+static const struct Node *node_u1111u1171_children[] = {
 	&node_u1111u1171u11f9,
 };
 static const uint16_t node_u1111u1171_jamo_seq[] = {
@@ -41753,7 +41753,7 @@ static const struct Node node_u1111u1172u11f0 = {
 	0,
 	"u1111u1172u11f0",
 };
-static struct Node* const node_u1111u1172_children[] = {
+static const struct Node *node_u1111u1172_children[] = {
 	&node_u1111u1172u11e2,
 	&node_u1111u1172u11f0,
 };
@@ -41801,7 +41801,7 @@ static const struct Node node_u1111u1173u11f0 = {
 	0,
 	"u1111u1173u11f0",
 };
-static struct Node* const node_u1111u1173_children[] = {
+static const struct Node *node_u1111u1173_children[] = {
 	&node_u1111u1173u11d9,
 	&node_u1111u1173u11f0,
 };
@@ -41849,7 +41849,7 @@ static const struct Node node_u1111u1174u11f9 = {
 	0,
 	"u1111u1174u11f9",
 };
-static struct Node* const node_u1111u1174_children[] = {
+static const struct Node *node_u1111u1174_children[] = {
 	&node_u1111u1174u11f0,
 	&node_u1111u1174u11f9,
 };
@@ -41912,7 +41912,7 @@ static const struct Node node_u1111u1175u11f9 = {
 	0,
 	"u1111u1175u11f9",
 };
-static struct Node* const node_u1111u1175_children[] = {
+static const struct Node *node_u1111u1175_children[] = {
 	&node_u1111u1175u11d9,
 	&node_u1111u1175u11f0,
 	&node_u1111u1175u11f9,
@@ -41988,7 +41988,7 @@ static const struct Node node_u1111u117cu11af = {
 	0,
 	"u1111u117cu11af",
 };
-static struct Node* const node_u1111u117c_children[] = {
+static const struct Node *node_u1111u117c_children[] = {
 	&node_u1111u117cu11af,
 };
 static const uint16_t node_u1111u117c_jamo_seq[] = {
@@ -42062,7 +42062,7 @@ static const struct Node node_u1111u118eu11ab = {
 	0,
 	"u1111u118eu11ab",
 };
-static struct Node* const node_u1111u118e_children[] = {
+static const struct Node *node_u1111u118e_children[] = {
 	&node_u1111u118eu11ab,
 };
 static const uint16_t node_u1111u118e_jamo_seq[] = {
@@ -42136,7 +42136,7 @@ static const struct Node node_u1111u1199u11ab = {
 	0,
 	"u1111u1199u11ab",
 };
-static struct Node* const node_u1111u1199_children[] = {
+static const struct Node *node_u1111u1199_children[] = {
 	&node_u1111u1199u11ab,
 };
 static const uint16_t node_u1111u1199_jamo_seq[] = {
@@ -42378,7 +42378,7 @@ static const struct Node node_u1111u119eu11e7 = {
 	0,
 	"u1111u119eu11e7",
 };
-static struct Node* const node_u1111u119e_children[] = {
+static const struct Node *node_u1111u119e_children[] = {
 	&node_u1111u119eu11a8,
 	&node_u1111u119eu11ab,
 	&node_u1111u119eu11ae,
@@ -42424,7 +42424,7 @@ static const struct Node node_u1111u119fu11ab = {
 	0,
 	"u1111u119fu11ab",
 };
-static struct Node* const node_u1111u119f_children[] = {
+static const struct Node *node_u1111u119f_children[] = {
 	&node_u1111u119fu11ab,
 };
 static const uint16_t node_u1111u119f_jamo_seq[] = {
@@ -42561,7 +42561,7 @@ static const struct Node node_u1111u11a1u11f0 = {
 	0,
 	"u1111u11a1u11f0",
 };
-static struct Node* const node_u1111u11a1_children[] = {
+static const struct Node *node_u1111u11a1_children[] = {
 	&node_u1111u11a1u11a8,
 	&node_u1111u11a1u11ab,
 	&node_u1111u11a1u11af,
@@ -42641,7 +42641,7 @@ static const struct Node node_u1111ud7c0 = {
 	0,
 	"u1111ud7c0",
 };
-static struct Node* const node_u1111_children[] = {
+static const struct Node *node_u1111_children[] = {
 	&node_u1111u1161,
 	&node_u1111u1162,
 	&node_u1111u1163,
@@ -42825,7 +42825,7 @@ static const struct Node node_u1112u1161ud7e2 = {
 	0,
 	"u1112u1161ud7e2",
 };
-static struct Node* const node_u1112u1161_children[] = {
+static const struct Node *node_u1112u1161_children[] = {
 	&node_u1112u1161u11ce,
 	&node_u1112u1161u11cf,
 	&node_u1112u1161u11d0,
@@ -42895,7 +42895,7 @@ static const struct Node node_u1112u1162ud7f6 = {
 	0,
 	"u1112u1162ud7f6",
 };
-static struct Node* const node_u1112u1162_children[] = {
+static const struct Node *node_u1112u1162_children[] = {
 	&node_u1112u1162u11eb,
 	&node_u1112u1162u11f0,
 	&node_u1112u1162ud7f6,
@@ -42974,7 +42974,7 @@ static const struct Node node_u1112u1163u11f9 = {
 	0,
 	"u1112u1163u11f9",
 };
-static struct Node* const node_u1112u1163_children[] = {
+static const struct Node *node_u1112u1163_children[] = {
 	&node_u1112u1163u11c7,
 	&node_u1112u1163u11e2,
 	&node_u1112u1163u11f0,
@@ -43009,7 +43009,7 @@ static const struct Node node_u1112u1164u11f0 = {
 	0,
 	"u1112u1164u11f0",
 };
-static struct Node* const node_u1112u1164_children[] = {
+static const struct Node *node_u1112u1164_children[] = {
 	&node_u1112u1164u11f0,
 };
 static const uint16_t node_u1112u1164_jamo_seq[] = {
@@ -43086,7 +43086,7 @@ static const struct Node node_u1112u1165u11f1 = {
 	0,
 	"u1112u1165u11f1",
 };
-static struct Node* const node_u1112u1165_children[] = {
+static const struct Node *node_u1112u1165_children[] = {
 	&node_u1112u1165u11d0,
 	&node_u1112u1165u11d9,
 	&node_u1112u1165u11f0,
@@ -43166,7 +43166,7 @@ static const struct Node node_u1112u1167u11f9 = {
 	0,
 	"u1112u1167u11f9",
 };
-static struct Node* const node_u1112u1167_children[] = {
+static const struct Node *node_u1112u1167_children[] = {
 	&node_u1112u1167u11d9,
 	&node_u1112u1167u11e2,
 	&node_u1112u1167u11f0,
@@ -43201,7 +43201,7 @@ static const struct Node node_u1112u1168u11d9 = {
 	0,
 	"u1112u1168u11d9",
 };
-static struct Node* const node_u1112u1168_children[] = {
+static const struct Node *node_u1112u1168_children[] = {
 	&node_u1112u1168u11d9,
 };
 static const uint16_t node_u1112u1168_jamo_seq[] = {
@@ -43353,7 +43353,7 @@ static const struct Node node_u1112u1169u11f1 = {
 	0,
 	"u1112u1169u11f1",
 };
-static struct Node* const node_u1112u1169_children[] = {
+static const struct Node *node_u1112u1169_children[] = {
 	&node_u1112u1169u11c7,
 	&node_u1112u1169u11cd,
 	&node_u1112u1169u11d9,
@@ -43423,7 +43423,7 @@ static const struct Node node_u1112u116au11f1 = {
 	0,
 	"u1112u116au11f1",
 };
-static struct Node* const node_u1112u116a_children[] = {
+static const struct Node *node_u1112u116a_children[] = {
 	&node_u1112u116au11d9,
 	&node_u1112u116au11f0,
 	&node_u1112u116au11f1,
@@ -43457,7 +43457,7 @@ static const struct Node node_u1112u116bu11f9 = {
 	0,
 	"u1112u116bu11f9",
 };
-static struct Node* const node_u1112u116b_children[] = {
+static const struct Node *node_u1112u116b_children[] = {
 	&node_u1112u116bu11f9,
 };
 static const uint16_t node_u1112u116b_jamo_seq[] = {
@@ -43504,7 +43504,7 @@ static const struct Node node_u1112u116cu11f9 = {
 	0,
 	"u1112u116cu11f9",
 };
-static struct Node* const node_u1112u116c_children[] = {
+static const struct Node *node_u1112u116c_children[] = {
 	&node_u1112u116cu11f0,
 	&node_u1112u116cu11f9,
 };
@@ -43552,7 +43552,7 @@ static const struct Node node_u1112u116du11e2 = {
 	0,
 	"u1112u116du11e2",
 };
-static struct Node* const node_u1112u116d_children[] = {
+static const struct Node *node_u1112u116d_children[] = {
 	&node_u1112u116du11d9,
 	&node_u1112u116du11e2,
 };
@@ -43660,7 +43660,7 @@ static const struct Node node_u1112u116eu11f9 = {
 	0,
 	"u1112u116eu11f9",
 };
-static struct Node* const node_u1112u116e_children[] = {
+static const struct Node *node_u1112u116e_children[] = {
 	&node_u1112u116eu11d9,
 	&node_u1112u116eu11dd,
 	&node_u1112u116eu11e2,
@@ -43727,7 +43727,7 @@ static const struct Node node_u1112u116fu11f9 = {
 	0,
 	"u1112u116fu11f9",
 };
-static struct Node* const node_u1112u116f_children[] = {
+static const struct Node *node_u1112u116f_children[] = {
 	&node_u1112u116fu11d9,
 	&node_u1112u116fu11f0,
 	&node_u1112u116fu11f9,
@@ -43776,7 +43776,7 @@ static const struct Node node_u1112u1171u11f9 = {
 	0,
 	"u1112u1171u11f9",
 };
-static struct Node* const node_u1112u1171_children[] = {
+static const struct Node *node_u1112u1171_children[] = {
 	&node_u1112u1171u11f0,
 	&node_u1112u1171u11f9,
 };
@@ -43839,7 +43839,7 @@ static const struct Node node_u1112u1172u11f0 = {
 	0,
 	"u1112u1172u11f0",
 };
-static struct Node* const node_u1112u1172_children[] = {
+static const struct Node *node_u1112u1172_children[] = {
 	&node_u1112u1172u11d9,
 	&node_u1112u1172u11e2,
 	&node_u1112u1172u11f0,
@@ -43948,7 +43948,7 @@ static const struct Node node_u1112u1173ud7d4 = {
 	0,
 	"u1112u1173ud7d4",
 };
-static struct Node* const node_u1112u1173_children[] = {
+static const struct Node *node_u1112u1173_children[] = {
 	&node_u1112u1173u11c3,
 	&node_u1112u1173u11d0,
 	&node_u1112u1173u11d9,
@@ -44015,7 +44015,7 @@ static const struct Node node_u1112u1174u11f9 = {
 	0,
 	"u1112u1174u11f9",
 };
-static struct Node* const node_u1112u1174_children[] = {
+static const struct Node *node_u1112u1174_children[] = {
 	&node_u1112u1174u11eb,
 	&node_u1112u1174u11f0,
 	&node_u1112u1174u11f9,
@@ -44184,7 +44184,7 @@ static const struct Node node_u1112u1175ud7e1 = {
 	0,
 	"u1112u1175ud7e1",
 };
-static struct Node* const node_u1112u1175_children[] = {
+static const struct Node *node_u1112u1175_children[] = {
 	&node_u1112u1175u11d9,
 	&node_u1112u1175u11dc,
 	&node_u1112u1175u11dd,
@@ -44325,7 +44325,7 @@ static const struct Node node_u1112u117cu11f9 = {
 	0,
 	"u1112u117cu11f9",
 };
-static struct Node* const node_u1112u117c_children[] = {
+static const struct Node *node_u1112u117c_children[] = {
 	&node_u1112u117cu11ab,
 	&node_u1112u117cu11b7,
 	&node_u1112u117cu11f9,
@@ -44374,7 +44374,7 @@ static const struct Node node_u1112u117fu11f9 = {
 	0,
 	"u1112u117fu11f9",
 };
-static struct Node* const node_u1112u117f_children[] = {
+static const struct Node *node_u1112u117f_children[] = {
 	&node_u1112u117fu11ab,
 	&node_u1112u117fu11f9,
 };
@@ -44435,7 +44435,7 @@ static const struct Node node_u1112u1184u11bc = {
 	0,
 	"u1112u1184u11bc",
 };
-static struct Node* const node_u1112u1184_children[] = {
+static const struct Node *node_u1112u1184_children[] = {
 	&node_u1112u1184u11bc,
 };
 static const uint16_t node_u1112u1184_jamo_seq[] = {
@@ -44481,7 +44481,7 @@ static const struct Node node_u1112u1188u11ab = {
 	0,
 	"u1112u1188u11ab",
 };
-static struct Node* const node_u1112u1188_children[] = {
+static const struct Node *node_u1112u1188_children[] = {
 	&node_u1112u1188u11ab,
 };
 static const uint16_t node_u1112u1188_jamo_seq[] = {
@@ -44528,7 +44528,7 @@ static const struct Node node_u1112u1189u11bc = {
 	0,
 	"u1112u1189u11bc",
 };
-static struct Node* const node_u1112u1189_children[] = {
+static const struct Node *node_u1112u1189_children[] = {
 	&node_u1112u1189u11ab,
 	&node_u1112u1189u11bc,
 };
@@ -44590,7 +44590,7 @@ static const struct Node node_u1112u118bu11af = {
 	0,
 	"u1112u118bu11af",
 };
-static struct Node* const node_u1112u118b_children[] = {
+static const struct Node *node_u1112u118b_children[] = {
 	&node_u1112u118bu11ab,
 	&node_u1112u118bu11af,
 };
@@ -44637,7 +44637,7 @@ static const struct Node node_u1112u118eu11ab = {
 	0,
 	"u1112u118eu11ab",
 };
-static struct Node* const node_u1112u118e_children[] = {
+static const struct Node *node_u1112u118e_children[] = {
 	&node_u1112u118eu11ab,
 };
 static const uint16_t node_u1112u118e_jamo_seq[] = {
@@ -44759,7 +44759,7 @@ static const struct Node node_u1112u1191u11f9 = {
 	0,
 	"u1112u1191u11f9",
 };
-static struct Node* const node_u1112u1191_children[] = {
+static const struct Node *node_u1112u1191_children[] = {
 	&node_u1112u1191u11a8,
 	&node_u1112u1191u11ab,
 	&node_u1112u1191u11af,
@@ -44812,7 +44812,7 @@ static const struct Node node_u1112u1192u11bc = {
 	0,
 	"u1112u1192u11bc",
 };
-static struct Node* const node_u1112u1192_children[] = {
+static const struct Node *node_u1112u1192_children[] = {
 	&node_u1112u1192u11af,
 	&node_u1112u1192u11bc,
 };
@@ -44845,7 +44845,7 @@ static const struct Node node_u1112u1194u11bc = {
 	0,
 	"u1112u1194u11bc",
 };
-static struct Node* const node_u1112u1194_children[] = {
+static const struct Node *node_u1112u1194_children[] = {
 	&node_u1112u1194u11bc,
 };
 static const uint16_t node_u1112u1194_jamo_seq[] = {
@@ -44934,7 +44934,7 @@ static const struct Node node_u1112u1199u11bc = {
 	0,
 	"u1112u1199u11bc",
 };
-static struct Node* const node_u1112u1199_children[] = {
+static const struct Node *node_u1112u1199_children[] = {
 	&node_u1112u1199u11ab,
 	&node_u1112u1199u11bc,
 };
@@ -45296,7 +45296,7 @@ static const struct Node node_u1112u119eu11f9 = {
 	0,
 	"u1112u119eu11f9",
 };
-static struct Node* const node_u1112u119e_children[] = {
+static const struct Node *node_u1112u119e_children[] = {
 	&node_u1112u119eu11a8,
 	&node_u1112u119eu11ab,
 	&node_u1112u119eu11ae,
@@ -45349,7 +45349,7 @@ static const struct Node node_u1112u119fu11ab = {
 	0,
 	"u1112u119fu11ab",
 };
-static struct Node* const node_u1112u119f_children[] = {
+static const struct Node *node_u1112u119f_children[] = {
 	&node_u1112u119fu11ab,
 };
 static const uint16_t node_u1112u119f_jamo_seq[] = {
@@ -45546,7 +45546,7 @@ static const struct Node node_u1112u11a1ud7e8 = {
 	0,
 	"u1112u11a1ud7e8",
 };
-static struct Node* const node_u1112u11a1_children[] = {
+static const struct Node *node_u1112u11a1_children[] = {
 	&node_u1112u11a1u11a8,
 	&node_u1112u11a1u11ab,
 	&node_u1112u11a1u11ae,
@@ -45603,7 +45603,7 @@ static const struct Node node_u1112ud7b2u11ab = {
 	0,
 	"u1112ud7b2u11ab",
 };
-static struct Node* const node_u1112ud7b2_children[] = {
+static const struct Node *node_u1112ud7b2_children[] = {
 	&node_u1112ud7b2u11ab,
 };
 static const uint16_t node_u1112ud7b2_jamo_seq[] = {
@@ -45719,7 +45719,7 @@ static const struct Node node_u1112ud7c3u11ab = {
 	0,
 	"u1112ud7c3u11ab",
 };
-static struct Node* const node_u1112ud7c3_children[] = {
+static const struct Node *node_u1112ud7c3_children[] = {
 	&node_u1112ud7c3u11ab,
 };
 static const uint16_t node_u1112ud7c3_jamo_seq[] = {
@@ -45736,7 +45736,7 @@ static const struct Node node_u1112ud7c3 = {
 	node_u1112ud7c3_children,
 	"u1112ud7c3",
 };
-static struct Node* const node_u1112_children[] = {
+static const struct Node *node_u1112_children[] = {
 	&node_u1112u1161,
 	&node_u1112u1162,
 	&node_u1112u1163,
@@ -45906,7 +45906,7 @@ static const struct Node node_u1113u1168u11ab = {
 	0,
 	"u1113u1168u11ab",
 };
-static struct Node* const node_u1113u1168_children[] = {
+static const struct Node *node_u1113u1168_children[] = {
 	&node_u1113u1168u11ab,
 };
 static const uint16_t node_u1113u1168_jamo_seq[] = {
@@ -46189,7 +46189,7 @@ static const struct Node node_u1113ud7b5 = {
 	0,
 	"u1113ud7b5",
 };
-static struct Node* const node_u1113_children[] = {
+static const struct Node *node_u1113_children[] = {
 	&node_u1113u1161,
 	&node_u1113u1162,
 	&node_u1113u1163,
@@ -46259,7 +46259,7 @@ static const struct Node node_u1114u1163u11bc = {
 	0,
 	"u1114u1163u11bc",
 };
-static struct Node* const node_u1114u1163_children[] = {
+static const struct Node *node_u1114u1163_children[] = {
 	&node_u1114u1163u11bc,
 };
 static const uint16_t node_u1114u1163_jamo_seq[] = {
@@ -46347,7 +46347,7 @@ static const struct Node node_u1114u1173u11ab = {
 	0,
 	"u1114u1173u11ab",
 };
-static struct Node* const node_u1114u1173_children[] = {
+static const struct Node *node_u1114u1173_children[] = {
 	&node_u1114u1173u11ab,
 };
 static const uint16_t node_u1114u1173_jamo_seq[] = {
@@ -46379,7 +46379,7 @@ static const struct Node node_u1114u119eu11ab = {
 	0,
 	"u1114u119eu11ab",
 };
-static struct Node* const node_u1114u119e_children[] = {
+static const struct Node *node_u1114u119e_children[] = {
 	&node_u1114u119eu11ab,
 };
 static const uint16_t node_u1114u119e_jamo_seq[] = {
@@ -46396,7 +46396,7 @@ static const struct Node node_u1114u119e = {
 	node_u1114u119e_children,
 	"u1114u119e",
 };
-static struct Node* const node_u1114_children[] = {
+static const struct Node *node_u1114_children[] = {
 	&node_u1114u1161,
 	&node_u1114u1163,
 	&node_u1114u1165,
@@ -46434,7 +46434,7 @@ static const struct Node node_u1115u1161u11ab = {
 	0,
 	"u1115u1161u11ab",
 };
-static struct Node* const node_u1115u1161_children[] = {
+static const struct Node *node_u1115u1161_children[] = {
 	&node_u1115u1161u11ab,
 };
 static const uint16_t node_u1115u1161_jamo_seq[] = {
@@ -46508,7 +46508,7 @@ static const struct Node node_u1115u1166u11ab = {
 	0,
 	"u1115u1166u11ab",
 };
-static struct Node* const node_u1115u1166_children[] = {
+static const struct Node *node_u1115u1166_children[] = {
 	&node_u1115u1166u11ab,
 };
 static const uint16_t node_u1115u1166_jamo_seq[] = {
@@ -46568,7 +46568,7 @@ static const struct Node node_u1115u1169u11ab = {
 	0,
 	"u1115u1169u11ab",
 };
-static struct Node* const node_u1115u1169_children[] = {
+static const struct Node *node_u1115u1169_children[] = {
 	&node_u1115u1169u11ab,
 };
 static const uint16_t node_u1115u1169_jamo_seq[] = {
@@ -46837,7 +46837,7 @@ static const struct Node node_u1115ud7b5 = {
 	0,
 	"u1115ud7b5",
 };
-static struct Node* const node_u1115_children[] = {
+static const struct Node *node_u1115_children[] = {
 	&node_u1115u1161,
 	&node_u1115u1162,
 	&node_u1115u1163,
@@ -47242,7 +47242,7 @@ static const struct Node node_u1116ud7b5 = {
 	0,
 	"u1116ud7b5",
 };
-static struct Node* const node_u1116_children[] = {
+static const struct Node *node_u1116_children[] = {
 	&node_u1116u1161,
 	&node_u1116u1162,
 	&node_u1116u1163,
@@ -47298,7 +47298,7 @@ static const struct Node node_u1117u1173u11af = {
 	0,
 	"u1117u1173u11af",
 };
-static struct Node* const node_u1117u1173_children[] = {
+static const struct Node *node_u1117u1173_children[] = {
 	&node_u1117u1173u11af,
 };
 static const uint16_t node_u1117u1173_jamo_seq[] = {
@@ -47330,7 +47330,7 @@ static const struct Node node_u1117u1175u11af = {
 	0,
 	"u1117u1175u11af",
 };
-static struct Node* const node_u1117u1175_children[] = {
+static const struct Node *node_u1117u1175_children[] = {
 	&node_u1117u1175u11af,
 };
 static const uint16_t node_u1117u1175_jamo_seq[] = {
@@ -47347,7 +47347,7 @@ static const struct Node node_u1117u1175 = {
 	node_u1117u1175_children,
 	"u1117u1175",
 };
-static struct Node* const node_u1117_children[] = {
+static const struct Node *node_u1117_children[] = {
 	&node_u1117u1173,
 	&node_u1117u1175,
 };
@@ -47409,7 +47409,7 @@ static const struct Node node_u1118u1161u11bc = {
 	0,
 	"u1118u1161u11bc",
 };
-static struct Node* const node_u1118u1161_children[] = {
+static const struct Node *node_u1118u1161_children[] = {
 	&node_u1118u1161u11a8,
 	&node_u1118u1161u11ab,
 	&node_u1118u1161u11bc,
@@ -47472,7 +47472,7 @@ static const struct Node node_u1118u1166u11b8 = {
 	0,
 	"u1118u1166u11b8",
 };
-static struct Node* const node_u1118u1166_children[] = {
+static const struct Node *node_u1118u1166_children[] = {
 	&node_u1118u1166u11af,
 	&node_u1118u1166u11b8,
 };
@@ -47550,7 +47550,7 @@ static const struct Node node_u1118u1169u11ba = {
 	0,
 	"u1118u1169u11ba",
 };
-static struct Node* const node_u1118u1169_children[] = {
+static const struct Node *node_u1118u1169_children[] = {
 	&node_u1118u1169u11a8,
 	&node_u1118u1169u11ab,
 	&node_u1118u1169u11b7,
@@ -47585,7 +47585,7 @@ static const struct Node node_u1118u116du11ab = {
 	0,
 	"u1118u116du11ab",
 };
-static struct Node* const node_u1118u116d_children[] = {
+static const struct Node *node_u1118u116d_children[] = {
 	&node_u1118u116du11ab,
 };
 static const uint16_t node_u1118u116d_jamo_seq[] = {
@@ -47631,7 +47631,7 @@ static const struct Node node_u1118u1172u11a8 = {
 	0,
 	"u1118u1172u11a8",
 };
-static struct Node* const node_u1118u1172_children[] = {
+static const struct Node *node_u1118u1172_children[] = {
 	&node_u1118u1172u11a8,
 };
 static const uint16_t node_u1118u1172_jamo_seq[] = {
@@ -47707,7 +47707,7 @@ static const struct Node node_u1118u1174u11b8 = {
 	0,
 	"u1118u1174u11b8",
 };
-static struct Node* const node_u1118u1174_children[] = {
+static const struct Node *node_u1118u1174_children[] = {
 	&node_u1118u1174u11a8,
 	&node_u1118u1174u11ab,
 	&node_u1118u1174u11b8,
@@ -47756,7 +47756,7 @@ static const struct Node node_u1118u119eu11bc = {
 	0,
 	"u1118u119eu11bc",
 };
-static struct Node* const node_u1118u119e_children[] = {
+static const struct Node *node_u1118u119e_children[] = {
 	&node_u1118u119eu11ab,
 	&node_u1118u119eu11bc,
 };
@@ -47804,7 +47804,7 @@ static const struct Node node_u1118u11a1u11b7 = {
 	0,
 	"u1118u11a1u11b7",
 };
-static struct Node* const node_u1118u11a1_children[] = {
+static const struct Node *node_u1118u11a1_children[] = {
 	&node_u1118u11a1u11a8,
 	&node_u1118u11a1u11b7,
 };
@@ -47822,7 +47822,7 @@ static const struct Node node_u1118u11a1 = {
 	node_u1118u11a1_children,
 	"u1118u11a1",
 };
-static struct Node* const node_u1118_children[] = {
+static const struct Node *node_u1118_children[] = {
 	&node_u1118u1161,
 	&node_u1118u1165,
 	&node_u1118u1166,
@@ -47893,7 +47893,7 @@ static const struct Node node_u1119u1161u11bc = {
 	0,
 	"u1119u1161u11bc",
 };
-static struct Node* const node_u1119u1161_children[] = {
+static const struct Node *node_u1119u1161_children[] = {
 	&node_u1119u1161u11a8,
 	&node_u1119u1161u11ab,
 	&node_u1119u1161u11bc,
@@ -47927,7 +47927,7 @@ static const struct Node node_u1119u1162u11ab = {
 	0,
 	"u1119u1162u11ab",
 };
-static struct Node* const node_u1119u1162_children[] = {
+static const struct Node *node_u1119u1162_children[] = {
 	&node_u1119u1162u11ab,
 };
 static const uint16_t node_u1119u1162_jamo_seq[] = {
@@ -47959,7 +47959,7 @@ static const struct Node node_u1119u1163u11bc = {
 	0,
 	"u1119u1163u11bc",
 };
-static struct Node* const node_u1119u1163_children[] = {
+static const struct Node *node_u1119u1163_children[] = {
 	&node_u1119u1163u11bc,
 };
 static const uint16_t node_u1119u1163_jamo_seq[] = {
@@ -48006,7 +48006,7 @@ static const struct Node node_u1119u1165u11bc = {
 	0,
 	"u1119u1165u11bc",
 };
-static struct Node* const node_u1119u1165_children[] = {
+static const struct Node *node_u1119u1165_children[] = {
 	&node_u1119u1165u11ab,
 	&node_u1119u1165u11bc,
 };
@@ -48039,7 +48039,7 @@ static const struct Node node_u1119u1166u11a8 = {
 	0,
 	"u1119u1166u11a8",
 };
-static struct Node* const node_u1119u1166_children[] = {
+static const struct Node *node_u1119u1166_children[] = {
 	&node_u1119u1166u11a8,
 };
 static const uint16_t node_u1119u1166_jamo_seq[] = {
@@ -48071,7 +48071,7 @@ static const struct Node node_u1119u1167u11a8 = {
 	0,
 	"u1119u1167u11a8",
 };
-static struct Node* const node_u1119u1167_children[] = {
+static const struct Node *node_u1119u1167_children[] = {
 	&node_u1119u1167u11a8,
 };
 static const uint16_t node_u1119u1167_jamo_seq[] = {
@@ -48103,7 +48103,7 @@ static const struct Node node_u1119u1168u11ab = {
 	0,
 	"u1119u1168u11ab",
 };
-static struct Node* const node_u1119u1168_children[] = {
+static const struct Node *node_u1119u1168_children[] = {
 	&node_u1119u1168u11ab,
 };
 static const uint16_t node_u1119u1168_jamo_seq[] = {
@@ -48135,7 +48135,7 @@ static const struct Node node_u1119u1169u11bc = {
 	0,
 	"u1119u1169u11bc",
 };
-static struct Node* const node_u1119u1169_children[] = {
+static const struct Node *node_u1119u1169_children[] = {
 	&node_u1119u1169u11bc,
 };
 static const uint16_t node_u1119u1169_jamo_seq[] = {
@@ -48196,7 +48196,7 @@ static const struct Node node_u1119u116eu11bc = {
 	0,
 	"u1119u116eu11bc",
 };
-static struct Node* const node_u1119u116e_children[] = {
+static const struct Node *node_u1119u116e_children[] = {
 	&node_u1119u116eu11ab,
 	&node_u1119u116eu11bc,
 };
@@ -48315,7 +48315,7 @@ static const struct Node node_u1119u1173u11d0 = {
 	0,
 	"u1119u1173u11d0",
 };
-static struct Node* const node_u1119u1173_children[] = {
+static const struct Node *node_u1119u1173_children[] = {
 	&node_u1119u1173u11af,
 	&node_u1119u1173u11bc,
 	&node_u1119u1173u11d0,
@@ -48364,7 +48364,7 @@ static const struct Node node_u1119u1175u11bc = {
 	0,
 	"u1119u1175u11bc",
 };
-static struct Node* const node_u1119u1175_children[] = {
+static const struct Node *node_u1119u1175_children[] = {
 	&node_u1119u1175u11ab,
 	&node_u1119u1175u11bc,
 };
@@ -48439,7 +48439,7 @@ static const struct Node node_u1119u1189u11ab = {
 	0,
 	"u1119u1189u11ab",
 };
-static struct Node* const node_u1119u1189_children[] = {
+static const struct Node *node_u1119u1189_children[] = {
 	&node_u1119u1189u11ab,
 };
 static const uint16_t node_u1119u1189_jamo_seq[] = {
@@ -48498,7 +48498,7 @@ static const struct Node node_u1119u119b = {
 	0,
 	"u1119u119b",
 };
-static struct Node* const node_u1119_children[] = {
+static const struct Node *node_u1119_children[] = {
 	&node_u1119u1161,
 	&node_u1119u1162,
 	&node_u1119u1163,
@@ -48551,7 +48551,7 @@ static const struct Node node_u111au1161u11ab = {
 	0,
 	"u111au1161u11ab",
 };
-static struct Node* const node_u111au1161_children[] = {
+static const struct Node *node_u111au1161_children[] = {
 	&node_u111au1161u11ab,
 };
 static const uint16_t node_u111au1161_jamo_seq[] = {
@@ -48583,7 +48583,7 @@ static const struct Node node_u111au1163u11bc = {
 	0,
 	"u111au1163u11bc",
 };
-static struct Node* const node_u111au1163_children[] = {
+static const struct Node *node_u111au1163_children[] = {
 	&node_u111au1163u11bc,
 };
 static const uint16_t node_u111au1163_jamo_seq[] = {
@@ -48642,7 +48642,7 @@ static const struct Node node_u111au1175 = {
 	0,
 	"u111au1175",
 };
-static struct Node* const node_u111a_children[] = {
+static const struct Node *node_u111a_children[] = {
 	&node_u111au1161,
 	&node_u111au1163,
 	&node_u111au1169,
@@ -48705,7 +48705,7 @@ static const struct Node node_u111cu1161u11ae = {
 	0,
 	"u111cu1161u11ae",
 };
-static struct Node* const node_u111cu1161_children[] = {
+static const struct Node *node_u111cu1161_children[] = {
 	&node_u111cu1161u11ab,
 	&node_u111cu1161u11ae,
 };
@@ -48823,7 +48823,7 @@ static const struct Node node_u111cu1168u11ae = {
 	0,
 	"u111cu1168u11ae",
 };
-static struct Node* const node_u111cu1168_children[] = {
+static const struct Node *node_u111cu1168_children[] = {
 	&node_u111cu1168u11ab,
 	&node_u111cu1168u11ae,
 };
@@ -48886,7 +48886,7 @@ static const struct Node node_u111cu1169u11ae = {
 	0,
 	"u111cu1169u11ae",
 };
-static struct Node* const node_u111cu1169_children[] = {
+static const struct Node *node_u111cu1169_children[] = {
 	&node_u111cu1169u11a8,
 	&node_u111cu1169u11ab,
 	&node_u111cu1169u11ae,
@@ -48991,7 +48991,7 @@ static const struct Node node_u111cu116eu11bc = {
 	0,
 	"u111cu116eu11bc",
 };
-static struct Node* const node_u111cu116e_children[] = {
+static const struct Node *node_u111cu116e_children[] = {
 	&node_u111cu116eu11ab,
 	&node_u111cu116eu11bc,
 };
@@ -49108,7 +49108,7 @@ static const struct Node node_u111cu1175u11ab = {
 	0,
 	"u111cu1175u11ab",
 };
-static struct Node* const node_u111cu1175_children[] = {
+static const struct Node *node_u111cu1175_children[] = {
 	&node_u111cu1175u11ab,
 };
 static const uint16_t node_u111cu1175_jamo_seq[] = {
@@ -49209,7 +49209,7 @@ static const struct Node node_u111cud7b5 = {
 	0,
 	"u111cud7b5",
 };
-static struct Node* const node_u111c_children[] = {
+static const struct Node *node_u111c_children[] = {
 	&node_u111cu1161,
 	&node_u111cu1162,
 	&node_u111cu1163,
@@ -49295,7 +49295,7 @@ static const struct Node node_u111du1161u11f0 = {
 	0,
 	"u111du1161u11f0",
 };
-static struct Node* const node_u111du1161_children[] = {
+static const struct Node *node_u111du1161_children[] = {
 	&node_u111du1161u11ab,
 	&node_u111du1161u11bc,
 	&node_u111du1161u11f0,
@@ -49358,7 +49358,7 @@ static const struct Node node_u111du116au11f9 = {
 	0,
 	"u111du116au11f9",
 };
-static struct Node* const node_u111du116a_children[] = {
+static const struct Node *node_u111du116a_children[] = {
 	&node_u111du116au11ab,
 	&node_u111du116au11f9,
 };
@@ -49421,7 +49421,7 @@ static const struct Node node_u111du116eu11f9 = {
 	0,
 	"u111du116eu11f9",
 };
-static struct Node* const node_u111du116e_children[] = {
+static const struct Node *node_u111du116e_children[] = {
 	&node_u111du116eu11ab,
 	&node_u111du116eu11bc,
 	&node_u111du116eu11f9,
@@ -49469,7 +49469,7 @@ static const struct Node node_u111du1172u11ab = {
 	0,
 	"u111du1172u11ab",
 };
-static struct Node* const node_u111du1172_children[] = {
+static const struct Node *node_u111du1172_children[] = {
 	&node_u111du1172u11ab,
 };
 static const uint16_t node_u111du1172_jamo_seq[] = {
@@ -49516,7 +49516,7 @@ static const struct Node node_u111du1173u11f9 = {
 	0,
 	"u111du1173u11f9",
 };
-static struct Node* const node_u111du1173_children[] = {
+static const struct Node *node_u111du1173_children[] = {
 	&node_u111du1173u11ab,
 	&node_u111du1173u11f9,
 };
@@ -49549,7 +49549,7 @@ static const struct Node node_u111du1175u11bc = {
 	0,
 	"u111du1175u11bc",
 };
-static struct Node* const node_u111du1175_children[] = {
+static const struct Node *node_u111du1175_children[] = {
 	&node_u111du1175u11bc,
 };
 static const uint16_t node_u111du1175_jamo_seq[] = {
@@ -49581,7 +49581,7 @@ static const struct Node node_u111dud7b9u11ab = {
 	0,
 	"u111dud7b9u11ab",
 };
-static struct Node* const node_u111dud7b9_children[] = {
+static const struct Node *node_u111dud7b9_children[] = {
 	&node_u111dud7b9u11ab,
 };
 static const uint16_t node_u111dud7b9_jamo_seq[] = {
@@ -49598,7 +49598,7 @@ static const struct Node node_u111dud7b9 = {
 	node_u111dud7b9_children,
 	"u111dud7b9",
 };
-static struct Node* const node_u111d_children[] = {
+static const struct Node *node_u111d_children[] = {
 	&node_u111du1161,
 	&node_u111du1169,
 	&node_u111du116a,
@@ -49652,7 +49652,7 @@ static const struct Node node_u111eu1161u11b7 = {
 	0,
 	"u111eu1161u11b7",
 };
-static struct Node* const node_u111eu1161_children[] = {
+static const struct Node *node_u111eu1161_children[] = {
 	&node_u111eu1161u11a8,
 	&node_u111eu1161u11b7,
 };
@@ -49685,7 +49685,7 @@ static const struct Node node_u111eu1162u11ab = {
 	0,
 	"u111eu1162u11ab",
 };
-static struct Node* const node_u111eu1162_children[] = {
+static const struct Node *node_u111eu1162_children[] = {
 	&node_u111eu1162u11ab,
 };
 static const uint16_t node_u111eu1162_jamo_seq[] = {
@@ -49717,7 +49717,7 @@ static const struct Node node_u111eu1165u11ba = {
 	0,
 	"u111eu1165u11ba",
 };
-static struct Node* const node_u111eu1165_children[] = {
+static const struct Node *node_u111eu1165_children[] = {
 	&node_u111eu1165u11ba,
 };
 static const uint16_t node_u111eu1165_jamo_seq[] = {
@@ -49749,7 +49749,7 @@ static const struct Node node_u111eu1166u11af = {
 	0,
 	"u111eu1166u11af",
 };
-static struct Node* const node_u111eu1166_children[] = {
+static const struct Node *node_u111eu1166_children[] = {
 	&node_u111eu1166u11af,
 };
 static const uint16_t node_u111eu1166_jamo_seq[] = {
@@ -49796,7 +49796,7 @@ static const struct Node node_u111eu1167u11ba = {
 	0,
 	"u111eu1167u11ba",
 };
-static struct Node* const node_u111eu1167_children[] = {
+static const struct Node *node_u111eu1167_children[] = {
 	&node_u111eu1167u11ab,
 	&node_u111eu1167u11ba,
 };
@@ -49829,7 +49829,7 @@ static const struct Node node_u111eu1168u11af = {
 	0,
 	"u111eu1168u11af",
 };
-static struct Node* const node_u111eu1168_children[] = {
+static const struct Node *node_u111eu1168_children[] = {
 	&node_u111eu1168u11af,
 };
 static const uint16_t node_u111eu1168_jamo_seq[] = {
@@ -49861,7 +49861,7 @@ static const struct Node node_u111eu1169u11ba = {
 	0,
 	"u111eu1169u11ba",
 };
-static struct Node* const node_u111eu1169_children[] = {
+static const struct Node *node_u111eu1169_children[] = {
 	&node_u111eu1169u11ba,
 };
 static const uint16_t node_u111eu1169_jamo_seq[] = {
@@ -49893,7 +49893,7 @@ static const struct Node node_u111eu116cu11ba = {
 	0,
 	"u111eu116cu11ba",
 };
-static struct Node* const node_u111eu116c_children[] = {
+static const struct Node *node_u111eu116c_children[] = {
 	&node_u111eu116cu11ba,
 };
 static const uint16_t node_u111eu116c_jamo_seq[] = {
@@ -49955,7 +49955,7 @@ static const struct Node node_u111eu116eu11ba = {
 	0,
 	"u111eu116eu11ba",
 };
-static struct Node* const node_u111eu116e_children[] = {
+static const struct Node *node_u111eu116e_children[] = {
 	&node_u111eu116eu11af,
 	&node_u111eu116eu11b7,
 	&node_u111eu116eu11ba,
@@ -50076,7 +50076,7 @@ static const struct Node node_u111eu1173u11ba = {
 	0,
 	"u111eu1173u11ba",
 };
-static struct Node* const node_u111eu1173_children[] = {
+static const struct Node *node_u111eu1173_children[] = {
 	&node_u111eu1173u11ab,
 	&node_u111eu1173u11ae,
 	&node_u111eu1173u11af,
@@ -50111,7 +50111,7 @@ static const struct Node node_u111eu1174u11ba = {
 	0,
 	"u111eu1174u11ba",
 };
-static struct Node* const node_u111eu1174_children[] = {
+static const struct Node *node_u111eu1174_children[] = {
 	&node_u111eu1174u11ba,
 };
 static const uint16_t node_u111eu1174_jamo_seq[] = {
@@ -50173,7 +50173,7 @@ static const struct Node node_u111eu1175u11ba = {
 	0,
 	"u111eu1175u11ba",
 };
-static struct Node* const node_u111eu1175_children[] = {
+static const struct Node *node_u111eu1175_children[] = {
 	&node_u111eu1175u11af,
 	&node_u111eu1175u11b7,
 	&node_u111eu1175u11ba,
@@ -50207,7 +50207,7 @@ static const struct Node node_u111eu119eu11af = {
 	0,
 	"u111eu119eu11af",
 };
-static struct Node* const node_u111eu119e_children[] = {
+static const struct Node *node_u111eu119e_children[] = {
 	&node_u111eu119eu11af,
 };
 static const uint16_t node_u111eu119e_jamo_seq[] = {
@@ -50254,7 +50254,7 @@ static const struct Node node_u111eu11a1u11ba = {
 	0,
 	"u111eu11a1u11ba",
 };
-static struct Node* const node_u111eu11a1_children[] = {
+static const struct Node *node_u111eu11a1_children[] = {
 	&node_u111eu11a1u11ab,
 	&node_u111eu11a1u11ba,
 };
@@ -50272,7 +50272,7 @@ static const struct Node node_u111eu11a1 = {
 	node_u111eu11a1_children,
 	"u111eu11a1",
 };
-static struct Node* const node_u111e_children[] = {
+static const struct Node *node_u111e_children[] = {
 	&node_u111eu1161,
 	&node_u111eu1162,
 	&node_u111eu1165,
@@ -50318,7 +50318,7 @@ static const struct Node node_u111fu1167 = {
 	0,
 	"u111fu1167",
 };
-static struct Node* const node_u111f_children[] = {
+static const struct Node *node_u111f_children[] = {
 	&node_u111fu1167,
 };
 static const uint16_t node_u111f_jamo_seq[] = {
@@ -50424,7 +50424,7 @@ static const struct Node node_u1120u1161u11ba = {
 	0,
 	"u1120u1161u11ba",
 };
-static struct Node* const node_u1120u1161_children[] = {
+static const struct Node *node_u1120u1161_children[] = {
 	&node_u1120u1161u11a8,
 	&node_u1120u1161u11ab,
 	&node_u1120u1161u11af,
@@ -50594,7 +50594,7 @@ static const struct Node node_u1120u1165u11d5 = {
 	0,
 	"u1120u1165u11d5",
 };
-static struct Node* const node_u1120u1165_children[] = {
+static const struct Node *node_u1120u1165_children[] = {
 	&node_u1120u1165u11a8,
 	&node_u1120u1165u11ab,
 	&node_u1120u1165u11ae,
@@ -50648,7 +50648,7 @@ static const struct Node node_u1120u1166u11ba = {
 	0,
 	"u1120u1166u11ba",
 };
-static struct Node* const node_u1120u1166_children[] = {
+static const struct Node *node_u1120u1166_children[] = {
 	&node_u1120u1166u11ab,
 	&node_u1120u1166u11ba,
 };
@@ -50681,7 +50681,7 @@ static const struct Node node_u1120u1167u11ba = {
 	0,
 	"u1120u1167u11ba",
 };
-static struct Node* const node_u1120u1167_children[] = {
+static const struct Node *node_u1120u1167_children[] = {
 	&node_u1120u1167u11ba,
 };
 static const uint16_t node_u1120u1167_jamo_seq[] = {
@@ -50713,7 +50713,7 @@ static const struct Node node_u1120u1168u11ba = {
 	0,
 	"u1120u1168u11ba",
 };
-static struct Node* const node_u1120u1168_children[] = {
+static const struct Node *node_u1120u1168_children[] = {
 	&node_u1120u1168u11ba,
 };
 static const uint16_t node_u1120u1168_jamo_seq[] = {
@@ -50790,7 +50790,7 @@ static const struct Node node_u1120u1169u11bc = {
 	0,
 	"u1120u1169u11bc",
 };
-static struct Node* const node_u1120u1169_children[] = {
+static const struct Node *node_u1120u1169_children[] = {
 	&node_u1120u1169u11a8,
 	&node_u1120u1169u11af,
 	&node_u1120u1169u11b7,
@@ -50853,7 +50853,7 @@ static const struct Node node_u1120u116cu11ba = {
 	0,
 	"u1120u116cu11ba",
 };
-static struct Node* const node_u1120u116c_children[] = {
+static const struct Node *node_u1120u116c_children[] = {
 	&node_u1120u116cu11ba,
 };
 static const uint16_t node_u1120u116c_jamo_seq[] = {
@@ -50989,7 +50989,7 @@ static const struct Node node_u1120u116eu11f0 = {
 	0,
 	"u1120u116eu11f0",
 };
-static struct Node* const node_u1120u116e_children[] = {
+static const struct Node *node_u1120u116e_children[] = {
 	&node_u1120u116eu11a8,
 	&node_u1120u116eu11af,
 	&node_u1120u116eu11b2,
@@ -51070,7 +51070,7 @@ static const struct Node node_u1120u1171u11ba = {
 	0,
 	"u1120u1171u11ba",
 };
-static struct Node* const node_u1120u1171_children[] = {
+static const struct Node *node_u1120u1171_children[] = {
 	&node_u1120u1171u11af,
 	&node_u1120u1171u11ba,
 };
@@ -51282,7 +51282,7 @@ static const struct Node node_u1120u1173u11bd = {
 	0,
 	"u1120u1173u11bd",
 };
-static struct Node* const node_u1120u1173_children[] = {
+static const struct Node *node_u1120u1173_children[] = {
 	&node_u1120u1173u11a8,
 	&node_u1120u1173u11ab,
 	&node_u1120u1173u11ae,
@@ -51340,7 +51340,7 @@ static const struct Node node_u1120u1174u11ba = {
 	0,
 	"u1120u1174u11ba",
 };
-static struct Node* const node_u1120u1174_children[] = {
+static const struct Node *node_u1120u1174_children[] = {
 	&node_u1120u1174u11af,
 	&node_u1120u1174u11ba,
 };
@@ -51448,7 +51448,7 @@ static const struct Node node_u1120u1175u11d0 = {
 	0,
 	"u1120u1175u11d0",
 };
-static struct Node* const node_u1120u1175_children[] = {
+static const struct Node *node_u1120u1175_children[] = {
 	&node_u1120u1175u11a8,
 	&node_u1120u1175u11ab,
 	&node_u1120u1175u11af,
@@ -51587,7 +51587,7 @@ static const struct Node node_u1120u119eu11ba = {
 	0,
 	"u1120u119eu11ba",
 };
-static struct Node* const node_u1120u119e_children[] = {
+static const struct Node *node_u1120u119e_children[] = {
 	&node_u1120u119eu11ab,
 	&node_u1120u119eu11ae,
 	&node_u1120u119eu11af,
@@ -51638,7 +51638,7 @@ static const struct Node node_u1120u11a1u11ba = {
 	0,
 	"u1120u11a1u11ba",
 };
-static struct Node* const node_u1120u11a1_children[] = {
+static const struct Node *node_u1120u11a1_children[] = {
 	&node_u1120u11a1u11ab,
 	&node_u1120u11a1u11ba,
 };
@@ -51670,7 +51670,7 @@ static const struct Node node_u1120ud7b5 = {
 	0,
 	"u1120ud7b5",
 };
-static struct Node* const node_u1120_children[] = {
+static const struct Node *node_u1120_children[] = {
 	&node_u1120u1161,
 	&node_u1120u1162,
 	&node_u1120u1163,
@@ -51906,7 +51906,7 @@ static const struct Node node_u1121u1161ud7f2 = {
 	0,
 	"u1121u1161ud7f2",
 };
-static struct Node* const node_u1121u1161_children[] = {
+static const struct Node *node_u1121u1161_children[] = {
 	&node_u1121u1161u11a8,
 	&node_u1121u1161u11ab,
 	&node_u1121u1161u11ae,
@@ -51950,7 +51950,7 @@ static const struct Node node_u1121u1162u11b8 = {
 	0,
 	"u1121u1162u11b8",
 };
-static struct Node* const node_u1121u1162_children[] = {
+static const struct Node *node_u1121u1162_children[] = {
 	&node_u1121u1162u11b8,
 };
 static const uint16_t node_u1121u1162_jamo_seq[] = {
@@ -52027,7 +52027,7 @@ static const struct Node node_u1121u1163u11f0 = {
 	0,
 	"u1121u1163u11f0",
 };
-static struct Node* const node_u1121u1163_children[] = {
+static const struct Node *node_u1121u1163_children[] = {
 	&node_u1121u1163u11bc,
 	&node_u1121u1163u11c1,
 	&node_u1121u1163u11c2,
@@ -52136,7 +52136,7 @@ static const struct Node node_u1121u1165u11ba = {
 	0,
 	"u1121u1165u11ba",
 };
-static struct Node* const node_u1121u1165_children[] = {
+static const struct Node *node_u1121u1165_children[] = {
 	&node_u1121u1165u11a8,
 	&node_u1121u1165u11ab,
 	&node_u1121u1165u11af,
@@ -52187,7 +52187,7 @@ static const struct Node node_u1121u1166u11af = {
 	0,
 	"u1121u1166u11af",
 };
-static struct Node* const node_u1121u1166_children[] = {
+static const struct Node *node_u1121u1166_children[] = {
 	&node_u1121u1166u11ab,
 	&node_u1121u1166u11af,
 };
@@ -52280,7 +52280,7 @@ static const struct Node node_u1121u1167u11ba = {
 	0,
 	"u1121u1167u11ba",
 };
-static struct Node* const node_u1121u1167_children[] = {
+static const struct Node *node_u1121u1167_children[] = {
 	&node_u1121u1167u11a8,
 	&node_u1121u1167u11ab,
 	&node_u1121u1167u11af,
@@ -52316,7 +52316,7 @@ static const struct Node node_u1121u1168u11ab = {
 	0,
 	"u1121u1168u11ab",
 };
-static struct Node* const node_u1121u1168_children[] = {
+static const struct Node *node_u1121u1168_children[] = {
 	&node_u1121u1168u11ab,
 };
 static const uint16_t node_u1121u1168_jamo_seq[] = {
@@ -52453,7 +52453,7 @@ static const struct Node node_u1121u1169u11f0 = {
 	0,
 	"u1121u1169u11f0",
 };
-static struct Node* const node_u1121u1169_children[] = {
+static const struct Node *node_u1121u1169_children[] = {
 	&node_u1121u1169u11a8,
 	&node_u1121u1169u11ab,
 	&node_u1121u1169u11ae,
@@ -52522,7 +52522,7 @@ static const struct Node node_u1121u116au11f9 = {
 	0,
 	"u1121u116au11f9",
 };
-static struct Node* const node_u1121u116a_children[] = {
+static const struct Node *node_u1121u116a_children[] = {
 	&node_u1121u116au11bc,
 	&node_u1121u116au11f0,
 	&node_u1121u116au11f9,
@@ -52556,7 +52556,7 @@ static const struct Node node_u1121u116bu11ba = {
 	0,
 	"u1121u116bu11ba",
 };
-static struct Node* const node_u1121u116b_children[] = {
+static const struct Node *node_u1121u116b_children[] = {
 	&node_u1121u116bu11ba,
 };
 static const uint16_t node_u1121u116b_jamo_seq[] = {
@@ -52721,7 +52721,7 @@ static const struct Node node_u1121u116eu11d9 = {
 	0,
 	"u1121u116eu11d9",
 };
-static struct Node* const node_u1121u116e_children[] = {
+static const struct Node *node_u1121u116e_children[] = {
 	&node_u1121u116eu11a8,
 	&node_u1121u116eu11ab,
 	&node_u1121u116eu11af,
@@ -52832,7 +52832,7 @@ static const struct Node node_u1121u1172u11bd = {
 	0,
 	"u1121u1172u11bd",
 };
-static struct Node* const node_u1121u1172_children[] = {
+static const struct Node *node_u1121u1172_children[] = {
 	&node_u1121u1172u11b8,
 	&node_u1121u1172u11ba,
 	&node_u1121u1172u11bd,
@@ -52986,7 +52986,7 @@ static const struct Node node_u1121u1173u11d9 = {
 	0,
 	"u1121u1173u11d9",
 };
-static struct Node* const node_u1121u1173_children[] = {
+static const struct Node *node_u1121u1173_children[] = {
 	&node_u1121u1173u11a8,
 	&node_u1121u1173u11ab,
 	&node_u1121u1173u11ae,
@@ -53026,7 +53026,7 @@ static const struct Node node_u1121u1174u11a8 = {
 	0,
 	"u1121u1174u11a8",
 };
-static struct Node* const node_u1121u1174_children[] = {
+static const struct Node *node_u1121u1174_children[] = {
 	&node_u1121u1174u11a8,
 };
 static const uint16_t node_u1121u1174_jamo_seq[] = {
@@ -53163,7 +53163,7 @@ static const struct Node node_u1121u1175u11f0 = {
 	0,
 	"u1121u1175u11f0",
 };
-static struct Node* const node_u1121u1175_children[] = {
+static const struct Node *node_u1121u1175_children[] = {
 	&node_u1121u1175u11a8,
 	&node_u1121u1175u11ab,
 	&node_u1121u1175u11af,
@@ -53394,7 +53394,7 @@ static const struct Node node_u1121u119eud7f2 = {
 	0,
 	"u1121u119eud7f2",
 };
-static struct Node* const node_u1121u119e_children[] = {
+static const struct Node *node_u1121u119e_children[] = {
 	&node_u1121u119eu11ab,
 	&node_u1121u119eu11ae,
 	&node_u1121u119eu11af,
@@ -53436,7 +53436,7 @@ static const struct Node node_u1121u11a1u11ba = {
 	0,
 	"u1121u11a1u11ba",
 };
-static struct Node* const node_u1121u11a1_children[] = {
+static const struct Node *node_u1121u11a1_children[] = {
 	&node_u1121u11a1u11ba,
 };
 static const uint16_t node_u1121u11a1_jamo_seq[] = {
@@ -53467,7 +53467,7 @@ static const struct Node node_u1121ud7b5 = {
 	0,
 	"u1121ud7b5",
 };
-static struct Node* const node_u1121_children[] = {
+static const struct Node *node_u1121_children[] = {
 	&node_u1121u1161,
 	&node_u1121u1162,
 	&node_u1121u1163,
@@ -53553,7 +53553,7 @@ static const struct Node node_u1122u1162u11ba = {
 	0,
 	"u1122u1162u11ba",
 };
-static struct Node* const node_u1122u1162_children[] = {
+static const struct Node *node_u1122u1162_children[] = {
 	&node_u1122u1162u11ab,
 	&node_u1122u1162u11ba,
 };
@@ -53616,7 +53616,7 @@ static const struct Node node_u1122u1165u11e6 = {
 	0,
 	"u1122u1165u11e6",
 };
-static struct Node* const node_u1122u1165_children[] = {
+static const struct Node *node_u1122u1165_children[] = {
 	&node_u1122u1165u11b8,
 	&node_u1122u1165u11ba,
 	&node_u1122u1165u11e6,
@@ -53650,7 +53650,7 @@ static const struct Node node_u1122u1166u11af = {
 	0,
 	"u1122u1166u11af",
 };
-static struct Node* const node_u1122u1166_children[] = {
+static const struct Node *node_u1122u1166_children[] = {
 	&node_u1122u1166u11af,
 };
 static const uint16_t node_u1122u1166_jamo_seq[] = {
@@ -53697,7 +53697,7 @@ static const struct Node node_u1122u1167u11ba = {
 	0,
 	"u1122u1167u11ba",
 };
-static struct Node* const node_u1122u1167_children[] = {
+static const struct Node *node_u1122u1167_children[] = {
 	&node_u1122u1167u11a8,
 	&node_u1122u1167u11ba,
 };
@@ -53730,7 +53730,7 @@ static const struct Node node_u1122u1168u11ba = {
 	0,
 	"u1122u1168u11ba",
 };
-static struct Node* const node_u1122u1168_children[] = {
+static const struct Node *node_u1122u1168_children[] = {
 	&node_u1122u1168u11ba,
 };
 static const uint16_t node_u1122u1168_jamo_seq[] = {
@@ -53776,7 +53776,7 @@ static const struct Node node_u1122u116cu11ba = {
 	0,
 	"u1122u116cu11ba",
 };
-static struct Node* const node_u1122u116c_children[] = {
+static const struct Node *node_u1122u116c_children[] = {
 	&node_u1122u116cu11ba,
 };
 static const uint16_t node_u1122u116c_jamo_seq[] = {
@@ -53853,7 +53853,7 @@ static const struct Node node_u1122u116eu11ba = {
 	0,
 	"u1122u116eu11ba",
 };
-static struct Node* const node_u1122u116e_children[] = {
+static const struct Node *node_u1122u116e_children[] = {
 	&node_u1122u116eu11ab,
 	&node_u1122u116eu11af,
 	&node_u1122u116eu11b7,
@@ -53916,7 +53916,7 @@ static const struct Node node_u1122u1171u11ab = {
 	0,
 	"u1122u1171u11ab",
 };
-static struct Node* const node_u1122u1171_children[] = {
+static const struct Node *node_u1122u1171_children[] = {
 	&node_u1122u1171u11ab,
 };
 static const uint16_t node_u1122u1171_jamo_seq[] = {
@@ -53993,7 +53993,7 @@ static const struct Node node_u1122u1173u11ba = {
 	0,
 	"u1122u1173u11ba",
 };
-static struct Node* const node_u1122u1173_children[] = {
+static const struct Node *node_u1122u1173_children[] = {
 	&node_u1122u1173u11ab,
 	&node_u1122u1173u11af,
 	&node_u1122u1173u11b7,
@@ -54073,7 +54073,7 @@ static const struct Node node_u1122u1174u11ba = {
 	0,
 	"u1122u1174u11ba",
 };
-static struct Node* const node_u1122u1174_children[] = {
+static const struct Node *node_u1122u1174_children[] = {
 	&node_u1122u1174u11ab,
 	&node_u1122u1174u11af,
 	&node_u1122u1174u11b7,
@@ -54123,7 +54123,7 @@ static const struct Node node_u1122u1175u11b7 = {
 	0,
 	"u1122u1175u11b7",
 };
-static struct Node* const node_u1122u1175_children[] = {
+static const struct Node *node_u1122u1175_children[] = {
 	&node_u1122u1175u11af,
 	&node_u1122u1175u11b7,
 };
@@ -54156,7 +54156,7 @@ static const struct Node node_u1122u119eu11ab = {
 	0,
 	"u1122u119eu11ab",
 };
-static struct Node* const node_u1122u119e_children[] = {
+static const struct Node *node_u1122u119e_children[] = {
 	&node_u1122u119eu11ab,
 };
 static const uint16_t node_u1122u119e_jamo_seq[] = {
@@ -54173,7 +54173,7 @@ static const struct Node node_u1122u119e = {
 	node_u1122u119e_children,
 	"u1122u119e",
 };
-static struct Node* const node_u1122_children[] = {
+static const struct Node *node_u1122_children[] = {
 	&node_u1122u1161,
 	&node_u1122u1162,
 	&node_u1122u1165,
@@ -54219,7 +54219,7 @@ static const struct Node node_u1123u1161u11b8 = {
 	0,
 	"u1123u1161u11b8",
 };
-static struct Node* const node_u1123u1161_children[] = {
+static const struct Node *node_u1123u1161_children[] = {
 	&node_u1123u1161u11b8,
 };
 static const uint16_t node_u1123u1161_jamo_seq[] = {
@@ -54295,7 +54295,7 @@ static const struct Node node_u1123u1165u11ba = {
 	0,
 	"u1123u1165u11ba",
 };
-static struct Node* const node_u1123u1165_children[] = {
+static const struct Node *node_u1123u1165_children[] = {
 	&node_u1123u1165u11af,
 	&node_u1123u1165u11b2,
 	&node_u1123u1165u11ba,
@@ -54329,7 +54329,7 @@ static const struct Node node_u1123u1167u11ba = {
 	0,
 	"u1123u1167u11ba",
 };
-static struct Node* const node_u1123u1167_children[] = {
+static const struct Node *node_u1123u1167_children[] = {
 	&node_u1123u1167u11ba,
 };
 static const uint16_t node_u1123u1167_jamo_seq[] = {
@@ -54404,7 +54404,7 @@ static const struct Node node_u1123u116eu11b7 = {
 	0,
 	"u1123u116eu11b7",
 };
-static struct Node* const node_u1123u116e_children[] = {
+static const struct Node *node_u1123u116e_children[] = {
 	&node_u1123u116eu11af,
 	&node_u1123u116eu11b7,
 };
@@ -54437,7 +54437,7 @@ static const struct Node node_u1123u1172u11b7 = {
 	0,
 	"u1123u1172u11b7",
 };
-static struct Node* const node_u1123u1172_children[] = {
+static const struct Node *node_u1123u1172_children[] = {
 	&node_u1123u1172u11b7,
 };
 static const uint16_t node_u1123u1172_jamo_seq[] = {
@@ -54484,7 +54484,7 @@ static const struct Node node_u1123u1173u11ba = {
 	0,
 	"u1123u1173u11ba",
 };
-static struct Node* const node_u1123u1173_children[] = {
+static const struct Node *node_u1123u1173_children[] = {
 	&node_u1123u1173u11ab,
 	&node_u1123u1173u11ba,
 };
@@ -54531,7 +54531,7 @@ static const struct Node node_u1123u1175u11af = {
 	0,
 	"u1123u1175u11af",
 };
-static struct Node* const node_u1123u1175_children[] = {
+static const struct Node *node_u1123u1175_children[] = {
 	&node_u1123u1175u11af,
 };
 static const uint16_t node_u1123u1175_jamo_seq[] = {
@@ -54563,7 +54563,7 @@ static const struct Node node_u1123u119eu11af = {
 	0,
 	"u1123u119eu11af",
 };
-static struct Node* const node_u1123u119e_children[] = {
+static const struct Node *node_u1123u119e_children[] = {
 	&node_u1123u119eu11af,
 };
 static const uint16_t node_u1123u119e_jamo_seq[] = {
@@ -54594,7 +54594,7 @@ static const struct Node node_u1123u11a1 = {
 	0,
 	"u1123u11a1",
 };
-static struct Node* const node_u1123_children[] = {
+static const struct Node *node_u1123_children[] = {
 	&node_u1123u1161,
 	&node_u1123u1162,
 	&node_u1123u1165,
@@ -54650,7 +54650,7 @@ static const struct Node node_u1124u1168 = {
 	0,
 	"u1124u1168",
 };
-static struct Node* const node_u1124_children[] = {
+static const struct Node *node_u1124_children[] = {
 	&node_u1124u1167,
 	&node_u1124u1168,
 };
@@ -54709,7 +54709,7 @@ static const struct Node node_u1125u1173 = {
 	0,
 	"u1125u1173",
 };
-static struct Node* const node_u1125_children[] = {
+static const struct Node *node_u1125_children[] = {
 	&node_u1125u1165,
 	&node_u1125u1169,
 	&node_u1125u1173,
@@ -54742,7 +54742,7 @@ static const struct Node node_u1126u119eu11ab = {
 	0,
 	"u1126u119eu11ab",
 };
-static struct Node* const node_u1126u119e_children[] = {
+static const struct Node *node_u1126u119e_children[] = {
 	&node_u1126u119eu11ab,
 };
 static const uint16_t node_u1126u119e_jamo_seq[] = {
@@ -54759,7 +54759,7 @@ static const struct Node node_u1126u119e = {
 	node_u1126u119e_children,
 	"u1126u119e",
 };
-static struct Node* const node_u1126_children[] = {
+static const struct Node *node_u1126_children[] = {
 	&node_u1126u119e,
 };
 static const uint16_t node_u1126_jamo_seq[] = {
@@ -54865,7 +54865,7 @@ static const struct Node node_u1127u1161u11f0 = {
 	0,
 	"u1127u1161u11f0",
 };
-static struct Node* const node_u1127u1161_children[] = {
+static const struct Node *node_u1127u1161_children[] = {
 	&node_u1127u1161u11a8,
 	&node_u1127u1161u11ab,
 	&node_u1127u1161u11b7,
@@ -54946,7 +54946,7 @@ static const struct Node node_u1127u1163u11f0 = {
 	0,
 	"u1127u1163u11f0",
 };
-static struct Node* const node_u1127u1163_children[] = {
+static const struct Node *node_u1127u1163_children[] = {
 	&node_u1127u1163u11a8,
 	&node_u1127u1163u11bc,
 	&node_u1127u1163u11f0,
@@ -54980,7 +54980,7 @@ static const struct Node node_u1127u1165u11a8 = {
 	0,
 	"u1127u1165u11a8",
 };
-static struct Node* const node_u1127u1165_children[] = {
+static const struct Node *node_u1127u1165_children[] = {
 	&node_u1127u1165u11a8,
 };
 static const uint16_t node_u1127u1165_jamo_seq[] = {
@@ -55145,7 +55145,7 @@ static const struct Node node_u1127u1169u11f0 = {
 	0,
 	"u1127u1169u11f0",
 };
-static struct Node* const node_u1127u1169_children[] = {
+static const struct Node *node_u1127u1169_children[] = {
 	&node_u1127u1169u11a8,
 	&node_u1127u1169u11ab,
 	&node_u1127u1169u11b7,
@@ -55199,7 +55199,7 @@ static const struct Node node_u1127u116au11f0 = {
 	0,
 	"u1127u116au11f0",
 };
-static struct Node* const node_u1127u116a_children[] = {
+static const struct Node *node_u1127u116a_children[] = {
 	&node_u1127u116au11bc,
 	&node_u1127u116au11f0,
 };
@@ -55261,7 +55261,7 @@ static const struct Node node_u1127u116cu11af = {
 	0,
 	"u1127u116cu11af",
 };
-static struct Node* const node_u1127u116c_children[] = {
+static const struct Node *node_u1127u116c_children[] = {
 	&node_u1127u116cu11ab,
 	&node_u1127u116cu11af,
 };
@@ -55338,7 +55338,7 @@ static const struct Node node_u1127u116eu11b7 = {
 	0,
 	"u1127u116eu11b7",
 };
-static struct Node* const node_u1127u116e_children[] = {
+static const struct Node *node_u1127u116e_children[] = {
 	&node_u1127u116eu11a8,
 	&node_u1127u116eu11af,
 	&node_u1127u116eu11b7,
@@ -55476,7 +55476,7 @@ static const struct Node node_u1127u1173u11bd = {
 	0,
 	"u1127u1173u11bd",
 };
-static struct Node* const node_u1127u1173_children[] = {
+static const struct Node *node_u1127u1173_children[] = {
 	&node_u1127u1173u11a8,
 	&node_u1127u1173u11ab,
 	&node_u1127u1173u11ae,
@@ -55529,7 +55529,7 @@ static const struct Node node_u1127u1174u11f0 = {
 	0,
 	"u1127u1174u11f0",
 };
-static struct Node* const node_u1127u1174_children[] = {
+static const struct Node *node_u1127u1174_children[] = {
 	&node_u1127u1174u11bc,
 	&node_u1127u1174u11f0,
 };
@@ -55682,7 +55682,7 @@ static const struct Node node_u1127u1175ud7f2 = {
 	0,
 	"u1127u1175ud7f2",
 };
-static struct Node* const node_u1127u1175_children[] = {
+static const struct Node *node_u1127u1175_children[] = {
 	&node_u1127u1175u11a8,
 	&node_u1127u1175u11ab,
 	&node_u1127u1175u11ae,
@@ -55767,7 +55767,7 @@ static const struct Node node_u1127u119eu11b7 = {
 	0,
 	"u1127u119eu11b7",
 };
-static struct Node* const node_u1127u119e_children[] = {
+static const struct Node *node_u1127u119e_children[] = {
 	&node_u1127u119eu11a8,
 	&node_u1127u119eu11ab,
 	&node_u1127u119eu11af,
@@ -55832,7 +55832,7 @@ static const struct Node node_u1127u11a1u11bc = {
 	0,
 	"u1127u11a1u11bc",
 };
-static struct Node* const node_u1127u11a1_children[] = {
+static const struct Node *node_u1127u11a1_children[] = {
 	&node_u1127u11a1u11ab,
 	&node_u1127u11a1u11af,
 	&node_u1127u11a1u11bc,
@@ -55851,7 +55851,7 @@ static const struct Node node_u1127u11a1 = {
 	node_u1127u11a1_children,
 	"u1127u11a1",
 };
-static struct Node* const node_u1127_children[] = {
+static const struct Node *node_u1127_children[] = {
 	&node_u1127u1161,
 	&node_u1127u1162,
 	&node_u1127u1163,
@@ -55899,7 +55899,7 @@ static const struct Node node_u1128u1169u11bc = {
 	0,
 	"u1128u1169u11bc",
 };
-static struct Node* const node_u1128u1169_children[] = {
+static const struct Node *node_u1128u1169_children[] = {
 	&node_u1128u1169u11bc,
 };
 static const uint16_t node_u1128u1169_jamo_seq[] = {
@@ -55931,7 +55931,7 @@ static const struct Node node_u1128u119eu11af = {
 	0,
 	"u1128u119eu11af",
 };
-static struct Node* const node_u1128u119e_children[] = {
+static const struct Node *node_u1128u119e_children[] = {
 	&node_u1128u119eu11af,
 };
 static const uint16_t node_u1128u119e_jamo_seq[] = {
@@ -55948,7 +55948,7 @@ static const struct Node node_u1128u119e = {
 	node_u1128u119e_children,
 	"u1128u119e",
 };
-static struct Node* const node_u1128_children[] = {
+static const struct Node *node_u1128_children[] = {
 	&node_u1128u1169,
 	&node_u1128u119e,
 };
@@ -56069,7 +56069,7 @@ static const struct Node node_u1129u1165u11d5 = {
 	0,
 	"u1129u1165u11d5",
 };
-static struct Node* const node_u1129u1165_children[] = {
+static const struct Node *node_u1129u1165_children[] = {
 	&node_u1129u1165u11a8,
 	&node_u1129u1165u11af,
 	&node_u1129u1165u11b2,
@@ -56135,7 +56135,7 @@ static const struct Node node_u1129u1169u11b8 = {
 	0,
 	"u1129u1169u11b8",
 };
-static struct Node* const node_u1129u1169_children[] = {
+static const struct Node *node_u1129u1169_children[] = {
 	&node_u1129u1169u11b7,
 	&node_u1129u1169u11b8,
 };
@@ -56183,7 +56183,7 @@ static const struct Node node_u1129u116eu11fb = {
 	0,
 	"u1129u116eu11fb",
 };
-static struct Node* const node_u1129u116e_children[] = {
+static const struct Node *node_u1129u116e_children[] = {
 	&node_u1129u116eu11a8,
 	&node_u1129u116eu11fb,
 };
@@ -56231,7 +56231,7 @@ static const struct Node node_u1129u1171u11b7 = {
 	0,
 	"u1129u1171u11b7",
 };
-static struct Node* const node_u1129u1171_children[] = {
+static const struct Node *node_u1129u1171_children[] = {
 	&node_u1129u1171u11af,
 	&node_u1129u1171u11b7,
 };
@@ -56294,7 +56294,7 @@ static const struct Node node_u1129u1173u11ba = {
 	0,
 	"u1129u1173u11ba",
 };
-static struct Node* const node_u1129u1173_children[] = {
+static const struct Node *node_u1129u1173_children[] = {
 	&node_u1129u1173u11ab,
 	&node_u1129u1173u11ae,
 	&node_u1129u1173u11ba,
@@ -56328,7 +56328,7 @@ static const struct Node node_u1129u1174u11b7 = {
 	0,
 	"u1129u1174u11b7",
 };
-static struct Node* const node_u1129u1174_children[] = {
+static const struct Node *node_u1129u1174_children[] = {
 	&node_u1129u1174u11b7,
 };
 static const uint16_t node_u1129u1174_jamo_seq[] = {
@@ -56390,7 +56390,7 @@ static const struct Node node_u1129u1175u11b7 = {
 	0,
 	"u1129u1175u11b7",
 };
-static struct Node* const node_u1129u1175_children[] = {
+static const struct Node *node_u1129u1175_children[] = {
 	&node_u1129u1175u11ab,
 	&node_u1129u1175u11af,
 	&node_u1129u1175u11b7,
@@ -56439,7 +56439,7 @@ static const struct Node node_u1129u119eu11af = {
 	0,
 	"u1129u119eu11af",
 };
-static struct Node* const node_u1129u119e_children[] = {
+static const struct Node *node_u1129u119e_children[] = {
 	&node_u1129u119eu11ab,
 	&node_u1129u119eu11af,
 };
@@ -56471,7 +56471,7 @@ static const struct Node node_u1129u11a1 = {
 	0,
 	"u1129u11a1",
 };
-static struct Node* const node_u1129_children[] = {
+static const struct Node *node_u1129_children[] = {
 	&node_u1129u1161,
 	&node_u1129u1165,
 	&node_u1129u1167,
@@ -56512,7 +56512,7 @@ static const struct Node node_u112au1161u11ab = {
 	0,
 	"u112au1161u11ab",
 };
-static struct Node* const node_u112au1161_children[] = {
+static const struct Node *node_u112au1161_children[] = {
 	&node_u112au1161u11ab,
 };
 static const uint16_t node_u112au1161_jamo_seq[] = {
@@ -56544,7 +56544,7 @@ static const struct Node node_u112au1169u11ab = {
 	0,
 	"u112au1169u11ab",
 };
-static struct Node* const node_u112au1169_children[] = {
+static const struct Node *node_u112au1169_children[] = {
 	&node_u112au1169u11ab,
 };
 static const uint16_t node_u112au1169_jamo_seq[] = {
@@ -56590,7 +56590,7 @@ static const struct Node node_u112au1173u11af = {
 	0,
 	"u112au1173u11af",
 };
-static struct Node* const node_u112au1173_children[] = {
+static const struct Node *node_u112au1173_children[] = {
 	&node_u112au1173u11af,
 };
 static const uint16_t node_u112au1173_jamo_seq[] = {
@@ -56636,7 +56636,7 @@ static const struct Node node_u112au119eu11af = {
 	0,
 	"u112au119eu11af",
 };
-static struct Node* const node_u112au119e_children[] = {
+static const struct Node *node_u112au119e_children[] = {
 	&node_u112au119eu11af,
 };
 static const uint16_t node_u112au119e_jamo_seq[] = {
@@ -56653,7 +56653,7 @@ static const struct Node node_u112au119e = {
 	node_u112au119e_children,
 	"u112au119e",
 };
-static struct Node* const node_u112a_children[] = {
+static const struct Node *node_u112a_children[] = {
 	&node_u112au1161,
 	&node_u112au1169,
 	&node_u112au116d,
@@ -56869,7 +56869,7 @@ static const struct Node node_u112bu1161u11f9 = {
 	0,
 	"u112bu1161u11f9",
 };
-static struct Node* const node_u112bu1161_children[] = {
+static const struct Node *node_u112bu1161_children[] = {
 	&node_u112bu1161u11a8,
 	&node_u112bu1161u11ab,
 	&node_u112bu1161u11ae,
@@ -56928,7 +56928,7 @@ static const struct Node node_u112bu1162u11ba = {
 	0,
 	"u112bu1162u11ba",
 };
-static struct Node* const node_u112bu1162_children[] = {
+static const struct Node *node_u112bu1162_children[] = {
 	&node_u112bu1162u11ab,
 	&node_u112bu1162u11ba,
 };
@@ -57006,7 +57006,7 @@ static const struct Node node_u112bu1165u11bc = {
 	0,
 	"u112bu1165u11bc",
 };
-static struct Node* const node_u112bu1165_children[] = {
+static const struct Node *node_u112bu1165_children[] = {
 	&node_u112bu1165u11ab,
 	&node_u112bu1165u11b7,
 	&node_u112bu1165u11b8,
@@ -57041,7 +57041,7 @@ static const struct Node node_u112bu1166u11ba = {
 	0,
 	"u112bu1166u11ba",
 };
-static struct Node* const node_u112bu1166_children[] = {
+static const struct Node *node_u112bu1166_children[] = {
 	&node_u112bu1166u11ba,
 };
 static const uint16_t node_u112bu1166_jamo_seq[] = {
@@ -57118,7 +57118,7 @@ static const struct Node node_u112bu1167u11d9 = {
 	0,
 	"u112bu1167u11d9",
 };
-static struct Node* const node_u112bu1167_children[] = {
+static const struct Node *node_u112bu1167_children[] = {
 	&node_u112bu1167u11a8,
 	&node_u112bu1167u11af,
 	&node_u112bu1167u11ba,
@@ -57153,7 +57153,7 @@ static const struct Node node_u112bu1168u11ba = {
 	0,
 	"u112bu1168u11ba",
 };
-static struct Node* const node_u112bu1168_children[] = {
+static const struct Node *node_u112bu1168_children[] = {
 	&node_u112bu1168u11ba,
 };
 static const uint16_t node_u112bu1168_jamo_seq[] = {
@@ -57305,7 +57305,7 @@ static const struct Node node_u112bu1169u11dd = {
 	0,
 	"u112bu1169u11dd",
 };
-static struct Node* const node_u112bu1169_children[] = {
+static const struct Node *node_u112bu1169_children[] = {
 	&node_u112bu1169u11ab,
 	&node_u112bu1169u11af,
 	&node_u112bu1169u11b3,
@@ -57345,7 +57345,7 @@ static const struct Node node_u112bu116au11ab = {
 	0,
 	"u112bu116au11ab",
 };
-static struct Node* const node_u112bu116a_children[] = {
+static const struct Node *node_u112bu116a_children[] = {
 	&node_u112bu116au11ab,
 };
 static const uint16_t node_u112bu116a_jamo_seq[] = {
@@ -57511,7 +57511,7 @@ static const struct Node node_u112bu116eu11f9 = {
 	0,
 	"u112bu116eu11f9",
 };
-static struct Node* const node_u112bu116e_children[] = {
+static const struct Node *node_u112bu116e_children[] = {
 	&node_u112bu116eu11ab,
 	&node_u112bu116eu11af,
 	&node_u112bu116eu11b7,
@@ -57580,7 +57580,7 @@ static const struct Node node_u112bu1171u11d9 = {
 	0,
 	"u112bu1171u11d9",
 };
-static struct Node* const node_u112bu1171_children[] = {
+static const struct Node *node_u112bu1171_children[] = {
 	&node_u112bu1171u11af,
 	&node_u112bu1171u11d9,
 };
@@ -57613,7 +57613,7 @@ static const struct Node node_u112bu1172u11f9 = {
 	0,
 	"u112bu1172u11f9",
 };
-static struct Node* const node_u112bu1172_children[] = {
+static const struct Node *node_u112bu1172_children[] = {
 	&node_u112bu1172u11f9,
 };
 static const uint16_t node_u112bu1172_jamo_seq[] = {
@@ -57765,7 +57765,7 @@ static const struct Node node_u112bu1173u11e2 = {
 	0,
 	"u112bu1173u11e2",
 };
-static struct Node* const node_u112bu1173_children[] = {
+static const struct Node *node_u112bu1173_children[] = {
 	&node_u112bu1173u11ab,
 	&node_u112bu1173u11af,
 	&node_u112bu1173u11b3,
@@ -57879,7 +57879,7 @@ static const struct Node node_u112bu1175u11d9 = {
 	0,
 	"u112bu1175u11d9",
 };
-static struct Node* const node_u112bu1175_children[] = {
+static const struct Node *node_u112bu1175_children[] = {
 	&node_u112bu1175u11a8,
 	&node_u112bu1175u11ab,
 	&node_u112bu1175u11af,
@@ -58092,7 +58092,7 @@ static const struct Node node_u112bu119eu11eb = {
 	0,
 	"u112bu119eu11eb",
 };
-static struct Node* const node_u112bu119e_children[] = {
+static const struct Node *node_u112bu119e_children[] = {
 	&node_u112bu119eu11a8,
 	&node_u112bu119eu11ab,
 	&node_u112bu119eu11af,
@@ -58163,7 +58163,7 @@ static const struct Node node_u112bu11a1u11af = {
 	0,
 	"u112bu11a1u11af",
 };
-static struct Node* const node_u112bu11a1_children[] = {
+static const struct Node *node_u112bu11a1_children[] = {
 	&node_u112bu11a1u11a8,
 	&node_u112bu11a1u11ab,
 	&node_u112bu11a1u11af,
@@ -58182,7 +58182,7 @@ static const struct Node node_u112bu11a1 = {
 	node_u112bu11a1_children,
 	"u112bu11a1",
 };
-static struct Node* const node_u112b_children[] = {
+static const struct Node *node_u112b_children[] = {
 	&node_u112bu1161,
 	&node_u112bu1162,
 	&node_u112bu1165,
@@ -58278,7 +58278,7 @@ static const struct Node node_u112cu1161u11f9 = {
 	0,
 	"u112cu1161u11f9",
 };
-static struct Node* const node_u112cu1161_children[] = {
+static const struct Node *node_u112cu1161_children[] = {
 	&node_u112cu1161u11ab,
 	&node_u112cu1161u11bc,
 	&node_u112cu1161u11f0,
@@ -58313,7 +58313,7 @@ static const struct Node node_u112cu1169u11ab = {
 	0,
 	"u112cu1169u11ab",
 };
-static struct Node* const node_u112cu1169_children[] = {
+static const struct Node *node_u112cu1169_children[] = {
 	&node_u112cu1169u11ab,
 };
 static const uint16_t node_u112cu1169_jamo_seq[] = {
@@ -58345,7 +58345,7 @@ static const struct Node node_u112cu116au11ab = {
 	0,
 	"u112cu116au11ab",
 };
-static struct Node* const node_u112cu116a_children[] = {
+static const struct Node *node_u112cu116a_children[] = {
 	&node_u112cu116au11ab,
 };
 static const uint16_t node_u112cu116a_jamo_seq[] = {
@@ -58422,7 +58422,7 @@ static const struct Node node_u112cu116eu11f9 = {
 	0,
 	"u112cu116eu11f9",
 };
-static struct Node* const node_u112cu116e_children[] = {
+static const struct Node *node_u112cu116e_children[] = {
 	&node_u112cu116eu11ab,
 	&node_u112cu116eu11bc,
 	&node_u112cu116eu11f0,
@@ -58457,7 +58457,7 @@ static const struct Node node_u112cu1172u11ab = {
 	0,
 	"u112cu1172u11ab",
 };
-static struct Node* const node_u112cu1172_children[] = {
+static const struct Node *node_u112cu1172_children[] = {
 	&node_u112cu1172u11ab,
 };
 static const uint16_t node_u112cu1172_jamo_seq[] = {
@@ -58534,7 +58534,7 @@ static const struct Node node_u112cu1173u11e2 = {
 	0,
 	"u112cu1173u11e2",
 };
-static struct Node* const node_u112cu1173_children[] = {
+static const struct Node *node_u112cu1173_children[] = {
 	&node_u112cu1173u11ab,
 	&node_u112cu1173u11b7,
 	&node_u112cu1173u11bc,
@@ -58582,7 +58582,7 @@ static const struct Node node_u112cu1175 = {
 	0,
 	"u112cu1175",
 };
-static struct Node* const node_u112c_children[] = {
+static const struct Node *node_u112c_children[] = {
 	&node_u112cu1161,
 	&node_u112cu1169,
 	&node_u112cu116a,
@@ -58815,7 +58815,7 @@ static const struct Node node_u112du1161u11f0 = {
 	0,
 	"u112du1161u11f0",
 };
-static struct Node* const node_u112du1161_children[] = {
+static const struct Node *node_u112du1161_children[] = {
 	&node_u112du1161u11a8,
 	&node_u112du1161u11a9,
 	&node_u112du1161u11aa,
@@ -58935,7 +58935,7 @@ static const struct Node node_u112du1162u11f0 = {
 	0,
 	"u112du1162u11f0",
 };
-static struct Node* const node_u112du1162_children[] = {
+static const struct Node *node_u112du1162_children[] = {
 	&node_u112du1162u11a8,
 	&node_u112du1162u11ab,
 	&node_u112du1162u11af,
@@ -58972,7 +58972,7 @@ static const struct Node node_u112du1163u11a8 = {
 	0,
 	"u112du1163u11a8",
 };
-static struct Node* const node_u112du1163_children[] = {
+static const struct Node *node_u112du1163_children[] = {
 	&node_u112du1163u11a8,
 };
 static const uint16_t node_u112du1163_jamo_seq[] = {
@@ -59004,7 +59004,7 @@ static const struct Node node_u112du1164u11ba = {
 	0,
 	"u112du1164u11ba",
 };
-static struct Node* const node_u112du1164_children[] = {
+static const struct Node *node_u112du1164_children[] = {
 	&node_u112du1164u11ba,
 };
 static const uint16_t node_u112du1164_jamo_seq[] = {
@@ -59216,7 +59216,7 @@ static const struct Node node_u112du1165u11f0 = {
 	0,
 	"u112du1165u11f0",
 };
-static struct Node* const node_u112du1165_children[] = {
+static const struct Node *node_u112du1165_children[] = {
 	&node_u112du1165u11a8,
 	&node_u112du1165u11a9,
 	&node_u112du1165u11ab,
@@ -59350,7 +59350,7 @@ static const struct Node node_u112du1166u11f0 = {
 	0,
 	"u112du1166u11f0",
 };
-static struct Node* const node_u112du1166_children[] = {
+static const struct Node *node_u112du1166_children[] = {
 	&node_u112du1166u11a8,
 	&node_u112du1166u11ab,
 	&node_u112du1166u11af,
@@ -59523,7 +59523,7 @@ static const struct Node node_u112du1167u11f0 = {
 	0,
 	"u112du1167u11f0",
 };
-static struct Node* const node_u112du1167_children[] = {
+static const struct Node *node_u112du1167_children[] = {
 	&node_u112du1167u11a8,
 	&node_u112du1167u11ab,
 	&node_u112du1167u11ae,
@@ -59773,7 +59773,7 @@ static const struct Node node_u112du1169ud7f0 = {
 	0,
 	"u112du1169ud7f0",
 };
-static struct Node* const node_u112du1169_children[] = {
+static const struct Node *node_u112du1169_children[] = {
 	&node_u112du1169u11a8,
 	&node_u112du1169u11aa,
 	&node_u112du1169u11ab,
@@ -59878,7 +59878,7 @@ static const struct Node node_u112du116au11f0 = {
 	0,
 	"u112du116au11f0",
 };
-static struct Node* const node_u112du116a_children[] = {
+static const struct Node *node_u112du116a_children[] = {
 	&node_u112du116au11a8,
 	&node_u112du116au11ab,
 	&node_u112du116au11af,
@@ -59944,7 +59944,7 @@ static const struct Node node_u112du116bu11bc = {
 	0,
 	"u112du116bu11bc",
 };
-static struct Node* const node_u112du116b_children[] = {
+static const struct Node *node_u112du116b_children[] = {
 	&node_u112du116bu11af,
 	&node_u112du116bu11b0,
 	&node_u112du116bu11bc,
@@ -60053,7 +60053,7 @@ static const struct Node node_u112du116cu11f0 = {
 	0,
 	"u112du116cu11f0",
 };
-static struct Node* const node_u112du116c_children[] = {
+static const struct Node *node_u112du116c_children[] = {
 	&node_u112du116cu11a8,
 	&node_u112du116cu11ab,
 	&node_u112du116cu11af,
@@ -60120,7 +60120,7 @@ static const struct Node node_u112du116du11b7 = {
 	0,
 	"u112du116du11b7",
 };
-static struct Node* const node_u112du116d_children[] = {
+static const struct Node *node_u112du116d_children[] = {
 	&node_u112du116du11ab,
 	&node_u112du116du11af,
 	&node_u112du116du11b7,
@@ -60379,7 +60379,7 @@ static const struct Node node_u112du116eud7e0 = {
 	0,
 	"u112du116eud7e0",
 };
-static struct Node* const node_u112du116e_children[] = {
+static const struct Node *node_u112du116e_children[] = {
 	&node_u112du116eu11a8,
 	&node_u112du116eu11ab,
 	&node_u112du116eu11ae,
@@ -60501,7 +60501,7 @@ static const struct Node node_u112du116fu11f0 = {
 	0,
 	"u112du116fu11f0",
 };
-static struct Node* const node_u112du116f_children[] = {
+static const struct Node *node_u112du116f_children[] = {
 	&node_u112du116fu11a8,
 	&node_u112du116fu11ab,
 	&node_u112du116fu11af,
@@ -60553,7 +60553,7 @@ static const struct Node node_u112du1170u11af = {
 	0,
 	"u112du1170u11af",
 };
-static struct Node* const node_u112du1170_children[] = {
+static const struct Node *node_u112du1170_children[] = {
 	&node_u112du1170u11ab,
 	&node_u112du1170u11af,
 };
@@ -60631,7 +60631,7 @@ static const struct Node node_u112du1171u11f0 = {
 	0,
 	"u112du1171u11f0",
 };
-static struct Node* const node_u112du1171_children[] = {
+static const struct Node *node_u112du1171_children[] = {
 	&node_u112du1171u11ab,
 	&node_u112du1171u11af,
 	&node_u112du1171u11b7,
@@ -60696,7 +60696,7 @@ static const struct Node node_u112du1172u11b7 = {
 	0,
 	"u112du1172u11b7",
 };
-static struct Node* const node_u112du1172_children[] = {
+static const struct Node *node_u112du1172_children[] = {
 	&node_u112du1172u11ab,
 	&node_u112du1172u11af,
 	&node_u112du1172u11b7,
@@ -61045,7 +61045,7 @@ static const struct Node node_u112du1173ud7f2 = {
 	0,
 	"u112du1173ud7f2",
 };
-static struct Node* const node_u112du1173_children[] = {
+static const struct Node *node_u112du1173_children[] = {
 	&node_u112du1173u11a8,
 	&node_u112du1173u11ab,
 	&node_u112du1173u11ad,
@@ -61158,7 +61158,7 @@ static const struct Node node_u112du1174u11d0 = {
 	0,
 	"u112du1174u11d0",
 };
-static struct Node* const node_u112du1174_children[] = {
+static const struct Node *node_u112du1174_children[] = {
 	&node_u112du1174u11ab,
 	&node_u112du1174u11af,
 	&node_u112du1174u11b7,
@@ -61344,7 +61344,7 @@ static const struct Node node_u112du1175u11c2 = {
 	0,
 	"u112du1175u11c2",
 };
-static struct Node* const node_u112du1175_children[] = {
+static const struct Node *node_u112du1175_children[] = {
 	&node_u112du1175u11a8,
 	&node_u112du1175u11ab,
 	&node_u112du1175u11ad,
@@ -61400,7 +61400,7 @@ static const struct Node node_u112du118fu11bc = {
 	0,
 	"u112du118fu11bc",
 };
-static struct Node* const node_u112du118f_children[] = {
+static const struct Node *node_u112du118f_children[] = {
 	&node_u112du118fu11bc,
 };
 static const uint16_t node_u112du118f_jamo_seq[] = {
@@ -61565,7 +61565,7 @@ static const struct Node node_u112du119eu11f0 = {
 	0,
 	"u112du119eu11f0",
 };
-static struct Node* const node_u112du119e_children[] = {
+static const struct Node *node_u112du119e_children[] = {
 	&node_u112du119eu11a8,
 	&node_u112du119eu11ab,
 	&node_u112du119eu11ae,
@@ -61709,7 +61709,7 @@ static const struct Node node_u112du11a1u11d9 = {
 	0,
 	"u112du11a1u11d9",
 };
-static struct Node* const node_u112du11a1_children[] = {
+static const struct Node *node_u112du11a1_children[] = {
 	&node_u112du11a1u11a8,
 	&node_u112du11a1u11ab,
 	&node_u112du11a1u11af,
@@ -61747,7 +61747,7 @@ static const struct Node node_u112dud7b5 = {
 	0,
 	"u112dud7b5",
 };
-static struct Node* const node_u112d_children[] = {
+static const struct Node *node_u112d_children[] = {
 	&node_u112du1161,
 	&node_u112du1162,
 	&node_u112du1163,
@@ -61805,7 +61805,7 @@ static const struct Node node_u112eu1161u11af = {
 	0,
 	"u112eu1161u11af",
 };
-static struct Node* const node_u112eu1161_children[] = {
+static const struct Node *node_u112eu1161_children[] = {
 	&node_u112eu1161u11af,
 };
 static const uint16_t node_u112eu1161_jamo_seq[] = {
@@ -61837,7 +61837,7 @@ static const struct Node node_u112eu1167u11a8 = {
 	0,
 	"u112eu1167u11a8",
 };
-static struct Node* const node_u112eu1167_children[] = {
+static const struct Node *node_u112eu1167_children[] = {
 	&node_u112eu1167u11a8,
 };
 static const uint16_t node_u112eu1167_jamo_seq[] = {
@@ -61896,7 +61896,7 @@ static const struct Node node_u112eu119e = {
 	0,
 	"u112eu119e",
 };
-static struct Node* const node_u112e_children[] = {
+static const struct Node *node_u112e_children[] = {
 	&node_u112eu1161,
 	&node_u112eu1167,
 	&node_u112eu1169,
@@ -62096,7 +62096,7 @@ static const struct Node node_u112fu1161ud7f6 = {
 	0,
 	"u112fu1161ud7f6",
 };
-static struct Node* const node_u112fu1161_children[] = {
+static const struct Node *node_u112fu1161_children[] = {
 	&node_u112fu1161u11a8,
 	&node_u112fu1161u11ab,
 	&node_u112fu1161u11ae,
@@ -62244,7 +62244,7 @@ static const struct Node node_u112fu1162u11f0 = {
 	0,
 	"u112fu1162u11f0",
 };
-static struct Node* const node_u112fu1162_children[] = {
+static const struct Node *node_u112fu1162_children[] = {
 	&node_u112fu1162u11a8,
 	&node_u112fu1162u11ab,
 	&node_u112fu1162u11af,
@@ -62313,7 +62313,7 @@ static const struct Node node_u112fu1163u11f0 = {
 	0,
 	"u112fu1163u11f0",
 };
-static struct Node* const node_u112fu1163_children[] = {
+static const struct Node *node_u112fu1163_children[] = {
 	&node_u112fu1163u11a8,
 	&node_u112fu1163u11bc,
 	&node_u112fu1163u11f0,
@@ -62526,7 +62526,7 @@ static const struct Node node_u112fu1165u11f0 = {
 	0,
 	"u112fu1165u11f0",
 };
-static struct Node* const node_u112fu1165_children[] = {
+static const struct Node *node_u112fu1165_children[] = {
 	&node_u112fu1165u11a8,
 	&node_u112fu1165u11ab,
 	&node_u112fu1165u11ae,
@@ -62644,7 +62644,7 @@ static const struct Node node_u112fu1166u11bc = {
 	0,
 	"u112fu1166u11bc",
 };
-static struct Node* const node_u112fu1166_children[] = {
+static const struct Node *node_u112fu1166_children[] = {
 	&node_u112fu1166u11a8,
 	&node_u112fu1166u11ab,
 	&node_u112fu1166u11af,
@@ -62726,7 +62726,7 @@ static const struct Node node_u112fu1167u11bc = {
 	0,
 	"u112fu1167u11bc",
 };
-static struct Node* const node_u112fu1167_children[] = {
+static const struct Node *node_u112fu1167_children[] = {
 	&node_u112fu1167u11a8,
 	&node_u112fu1167u11ab,
 	&node_u112fu1167u11ba,
@@ -62910,7 +62910,7 @@ static const struct Node node_u112fu1169u11f1 = {
 	0,
 	"u112fu1169u11f1",
 };
-static struct Node* const node_u112fu1169_children[] = {
+static const struct Node *node_u112fu1169_children[] = {
 	&node_u112fu1169u11a8,
 	&node_u112fu1169u11aa,
 	&node_u112fu1169u11ab,
@@ -62994,7 +62994,7 @@ static const struct Node node_u112fu116cu11af = {
 	0,
 	"u112fu116cu11af",
 };
-static struct Node* const node_u112fu116c_children[] = {
+static const struct Node *node_u112fu116c_children[] = {
 	&node_u112fu116cu11ab,
 	&node_u112fu116cu11af,
 };
@@ -63057,7 +63057,7 @@ static const struct Node node_u112fu116du11bc = {
 	0,
 	"u112fu116du11bc",
 };
-static struct Node* const node_u112fu116d_children[] = {
+static const struct Node *node_u112fu116d_children[] = {
 	&node_u112fu116du11a8,
 	&node_u112fu116du11ba,
 	&node_u112fu116du11bc,
@@ -63211,7 +63211,7 @@ static const struct Node node_u112fu116eu11f0 = {
 	0,
 	"u112fu116eu11f0",
 };
-static struct Node* const node_u112fu116e_children[] = {
+static const struct Node *node_u112fu116e_children[] = {
 	&node_u112fu116eu11a8,
 	&node_u112fu116eu11ab,
 	&node_u112fu116eu11af,
@@ -63324,7 +63324,7 @@ static const struct Node node_u112fu1171u11ba = {
 	0,
 	"u112fu1171u11ba",
 };
-static struct Node* const node_u112fu1171_children[] = {
+static const struct Node *node_u112fu1171_children[] = {
 	&node_u112fu1171u11ab,
 	&node_u112fu1171u11af,
 	&node_u112fu1171u11b7,
@@ -63419,7 +63419,7 @@ static const struct Node node_u112fu1172u11f0 = {
 	0,
 	"u112fu1172u11f0",
 };
-static struct Node* const node_u112fu1172_children[] = {
+static const struct Node *node_u112fu1172_children[] = {
 	&node_u112fu1172u11a8,
 	&node_u112fu1172u11af,
 	&node_u112fu1172u11b7,
@@ -63635,7 +63635,7 @@ static const struct Node node_u112fu1173u11f1 = {
 	0,
 	"u112fu1173u11f1",
 };
-static struct Node* const node_u112fu1173_children[] = {
+static const struct Node *node_u112fu1173_children[] = {
 	&node_u112fu1173u11a8,
 	&node_u112fu1173u11ab,
 	&node_u112fu1173u11ae,
@@ -63739,7 +63739,7 @@ static const struct Node node_u112fu1174u11eb = {
 	0,
 	"u112fu1174u11eb",
 };
-static struct Node* const node_u112fu1174_children[] = {
+static const struct Node *node_u112fu1174_children[] = {
 	&node_u112fu1174u11ab,
 	&node_u112fu1174u11af,
 	&node_u112fu1174u11ba,
@@ -63895,7 +63895,7 @@ static const struct Node node_u112fu1175ud7f2 = {
 	0,
 	"u112fu1175ud7f2",
 };
-static struct Node* const node_u112fu1175_children[] = {
+static const struct Node *node_u112fu1175_children[] = {
 	&node_u112fu1175u11a8,
 	&node_u112fu1175u11ab,
 	&node_u112fu1175u11ae,
@@ -63965,7 +63965,7 @@ static const struct Node node_u112fu117cu11bf = {
 	0,
 	"u112fu117cu11bf",
 };
-static struct Node* const node_u112fu117c_children[] = {
+static const struct Node *node_u112fu117c_children[] = {
 	&node_u112fu117cu11ba,
 	&node_u112fu117cu11bb,
 	&node_u112fu117cu11bf,
@@ -64191,7 +64191,7 @@ static const struct Node node_u112fu119eu11f0 = {
 	0,
 	"u112fu119eu11f0",
 };
-static struct Node* const node_u112fu119e_children[] = {
+static const struct Node *node_u112fu119e_children[] = {
 	&node_u112fu119eu11a8,
 	&node_u112fu119eu11ab,
 	&node_u112fu119eu11ae,
@@ -64338,7 +64338,7 @@ static const struct Node node_u112fu11a1u11f0 = {
 	0,
 	"u112fu11a1u11f0",
 };
-static struct Node* const node_u112fu11a1_children[] = {
+static const struct Node *node_u112fu11a1_children[] = {
 	&node_u112fu11a1u11a8,
 	&node_u112fu11a1u11ab,
 	&node_u112fu11a1u11af,
@@ -64376,7 +64376,7 @@ static const struct Node node_u112fud7b5 = {
 	0,
 	"u112fud7b5",
 };
-static struct Node* const node_u112f_children[] = {
+static const struct Node *node_u112f_children[] = {
 	&node_u112fu1161,
 	&node_u112fu1162,
 	&node_u112fu1163,
@@ -64448,7 +64448,7 @@ static const struct Node node_u1130u1162u11ab = {
 	0,
 	"u1130u1162u11ab",
 };
-static struct Node* const node_u1130u1162_children[] = {
+static const struct Node *node_u1130u1162_children[] = {
 	&node_u1130u1162u11ab,
 };
 static const uint16_t node_u1130u1162_jamo_seq[] = {
@@ -64494,7 +64494,7 @@ static const struct Node node_u1130u1165u11ba = {
 	0,
 	"u1130u1165u11ba",
 };
-static struct Node* const node_u1130u1165_children[] = {
+static const struct Node *node_u1130u1165_children[] = {
 	&node_u1130u1165u11ba,
 };
 static const uint16_t node_u1130u1165_jamo_seq[] = {
@@ -64540,7 +64540,7 @@ static const struct Node node_u1130u1167u11ba = {
 	0,
 	"u1130u1167u11ba",
 };
-static struct Node* const node_u1130u1167_children[] = {
+static const struct Node *node_u1130u1167_children[] = {
 	&node_u1130u1167u11ba,
 };
 static const uint16_t node_u1130u1167_jamo_seq[] = {
@@ -64601,7 +64601,7 @@ static const struct Node node_u1130u1172u11bc = {
 	0,
 	"u1130u1172u11bc",
 };
-static struct Node* const node_u1130u1172_children[] = {
+static const struct Node *node_u1130u1172_children[] = {
 	&node_u1130u1172u11ab,
 	&node_u1130u1172u11bc,
 };
@@ -64664,7 +64664,7 @@ static const struct Node node_u1130u1173u11b7 = {
 	0,
 	"u1130u1173u11b7",
 };
-static struct Node* const node_u1130u1173_children[] = {
+static const struct Node *node_u1130u1173_children[] = {
 	&node_u1130u1173u11ab,
 	&node_u1130u1173u11af,
 	&node_u1130u1173u11b7,
@@ -64698,7 +64698,7 @@ static const struct Node node_u1130u1175u11ab = {
 	0,
 	"u1130u1175u11ab",
 };
-static struct Node* const node_u1130u1175_children[] = {
+static const struct Node *node_u1130u1175_children[] = {
 	&node_u1130u1175u11ab,
 };
 static const uint16_t node_u1130u1175_jamo_seq[] = {
@@ -64715,7 +64715,7 @@ static const struct Node node_u1130u1175 = {
 	node_u1130u1175_children,
 	"u1130u1175",
 };
-static struct Node* const node_u1130_children[] = {
+static const struct Node *node_u1130_children[] = {
 	&node_u1130u1161,
 	&node_u1130u1162,
 	&node_u1130u1163,
@@ -64755,7 +64755,7 @@ static const struct Node node_u1131u1161u11af = {
 	0,
 	"u1131u1161u11af",
 };
-static struct Node* const node_u1131u1161_children[] = {
+static const struct Node *node_u1131u1161_children[] = {
 	&node_u1131u1161u11af,
 };
 static const uint16_t node_u1131u1161_jamo_seq[] = {
@@ -64801,7 +64801,7 @@ static const struct Node node_u1131u1173u11af = {
 	0,
 	"u1131u1173u11af",
 };
-static struct Node* const node_u1131u1173_children[] = {
+static const struct Node *node_u1131u1173_children[] = {
 	&node_u1131u1173u11af,
 };
 static const uint16_t node_u1131u1173_jamo_seq[] = {
@@ -64833,7 +64833,7 @@ static const struct Node node_u1131u119eu11af = {
 	0,
 	"u1131u119eu11af",
 };
-static struct Node* const node_u1131u119e_children[] = {
+static const struct Node *node_u1131u119e_children[] = {
 	&node_u1131u119eu11af,
 };
 static const uint16_t node_u1131u119e_jamo_seq[] = {
@@ -64850,7 +64850,7 @@ static const struct Node node_u1131u119e = {
 	node_u1131u119e_children,
 	"u1131u119e",
 };
-static struct Node* const node_u1131_children[] = {
+static const struct Node *node_u1131_children[] = {
 	&node_u1131u1161,
 	&node_u1131u1169,
 	&node_u1131u1173,
@@ -65049,7 +65049,7 @@ static const struct Node node_u1132u1161u11f0 = {
 	0,
 	"u1132u1161u11f0",
 };
-static struct Node* const node_u1132u1161_children[] = {
+static const struct Node *node_u1132u1161_children[] = {
 	&node_u1132u1161u11a8,
 	&node_u1132u1161u11ab,
 	&node_u1132u1161u11ae,
@@ -65167,7 +65167,7 @@ static const struct Node node_u1132u1162u11f0 = {
 	0,
 	"u1132u1162u11f0",
 };
-static struct Node* const node_u1132u1162_children[] = {
+static const struct Node *node_u1132u1162_children[] = {
 	&node_u1132u1162u11a8,
 	&node_u1132u1162u11ab,
 	&node_u1132u1162u11af,
@@ -65204,7 +65204,7 @@ static const struct Node node_u1132u1163u11b7 = {
 	0,
 	"u1132u1163u11b7",
 };
-static struct Node* const node_u1132u1163_children[] = {
+static const struct Node *node_u1132u1163_children[] = {
 	&node_u1132u1163u11b7,
 };
 static const uint16_t node_u1132u1163_jamo_seq[] = {
@@ -65356,7 +65356,7 @@ static const struct Node node_u1132u1165u11f0 = {
 	0,
 	"u1132u1165u11f0",
 };
-static struct Node* const node_u1132u1165_children[] = {
+static const struct Node *node_u1132u1165_children[] = {
 	&node_u1132u1165u11a8,
 	&node_u1132u1165u11ab,
 	&node_u1132u1165u11ae,
@@ -65441,7 +65441,7 @@ static const struct Node node_u1132u1166u11ba = {
 	0,
 	"u1132u1166u11ba",
 };
-static struct Node* const node_u1132u1166_children[] = {
+static const struct Node *node_u1132u1166_children[] = {
 	&node_u1132u1166u11ab,
 	&node_u1132u1166u11af,
 	&node_u1132u1166u11b7,
@@ -65581,7 +65581,7 @@ static const struct Node node_u1132u1167ud7f2 = {
 	0,
 	"u1132u1167ud7f2",
 };
-static struct Node* const node_u1132u1167_children[] = {
+static const struct Node *node_u1132u1167_children[] = {
 	&node_u1132u1167u11a8,
 	&node_u1132u1167u11ab,
 	&node_u1132u1167u11af,
@@ -65784,7 +65784,7 @@ static const struct Node node_u1132u1169u11f1 = {
 	0,
 	"u1132u1169u11f1",
 };
-static struct Node* const node_u1132u1169_children[] = {
+static const struct Node *node_u1132u1169_children[] = {
 	&node_u1132u1169u11a8,
 	&node_u1132u1169u11ab,
 	&node_u1132u1169u11af,
@@ -66017,7 +66017,7 @@ static const struct Node node_u1132u116eu11be = {
 	0,
 	"u1132u116eu11be",
 };
-static struct Node* const node_u1132u116e_children[] = {
+static const struct Node *node_u1132u116e_children[] = {
 	&node_u1132u116eu11a8,
 	&node_u1132u116eu11ab,
 	&node_u1132u116eu11ae,
@@ -66204,7 +66204,7 @@ static const struct Node node_u1132u1173u11bc = {
 	0,
 	"u1132u1173u11bc",
 };
-static struct Node* const node_u1132u1173_children[] = {
+static const struct Node *node_u1132u1173_children[] = {
 	&node_u1132u1173u11a8,
 	&node_u1132u1173u11ab,
 	&node_u1132u1173u11af,
@@ -66242,7 +66242,7 @@ static const struct Node node_u1132u1174u11af = {
 	0,
 	"u1132u1174u11af",
 };
-static struct Node* const node_u1132u1174_children[] = {
+static const struct Node *node_u1132u1174_children[] = {
 	&node_u1132u1174u11af,
 };
 static const uint16_t node_u1132u1174_jamo_seq[] = {
@@ -66409,7 +66409,7 @@ static const struct Node node_u1132u1175ud7f2 = {
 	0,
 	"u1132u1175ud7f2",
 };
-static struct Node* const node_u1132u1175_children[] = {
+static const struct Node *node_u1132u1175_children[] = {
 	&node_u1132u1175u11a8,
 	&node_u1132u1175u11ab,
 	&node_u1132u1175u11af,
@@ -66597,7 +66597,7 @@ static const struct Node node_u1132u119eu11d0 = {
 	0,
 	"u1132u119eu11d0",
 };
-static struct Node* const node_u1132u119e_children[] = {
+static const struct Node *node_u1132u119e_children[] = {
 	&node_u1132u119eu11a8,
 	&node_u1132u119eu11ab,
 	&node_u1132u119eu11af,
@@ -66741,7 +66741,7 @@ static const struct Node node_u1132u11a1u11f0 = {
 	0,
 	"u1132u11a1u11f0",
 };
-static struct Node* const node_u1132u11a1_children[] = {
+static const struct Node *node_u1132u11a1_children[] = {
 	&node_u1132u11a1u11a8,
 	&node_u1132u11a1u11ab,
 	&node_u1132u11a1u11af,
@@ -66779,7 +66779,7 @@ static const struct Node node_u1132ud7b5 = {
 	0,
 	"u1132ud7b5",
 };
-static struct Node* const node_u1132_children[] = {
+static const struct Node *node_u1132_children[] = {
 	&node_u1132u1161,
 	&node_u1132u1162,
 	&node_u1132u1163,
@@ -66863,7 +66863,7 @@ static const struct Node node_u1133u116eu11af = {
 	0,
 	"u1133u116eu11af",
 };
-static struct Node* const node_u1133u116e_children[] = {
+static const struct Node *node_u1133u116e_children[] = {
 	&node_u1133u116eu11af,
 };
 static const uint16_t node_u1133u116e_jamo_seq[] = {
@@ -66895,7 +66895,7 @@ static const struct Node node_u1133u1173u11af = {
 	0,
 	"u1133u1173u11af",
 };
-static struct Node* const node_u1133u1173_children[] = {
+static const struct Node *node_u1133u1173_children[] = {
 	&node_u1133u1173u11af,
 };
 static const uint16_t node_u1133u1173_jamo_seq[] = {
@@ -66940,7 +66940,7 @@ static const struct Node node_u1133u1175 = {
 	0,
 	"u1133u1175",
 };
-static struct Node* const node_u1133_children[] = {
+static const struct Node *node_u1133_children[] = {
 	&node_u1133u1161,
 	&node_u1133u1162,
 	&node_u1133u116e,
@@ -66975,7 +66975,7 @@ static const struct Node node_u1134u1173 = {
 	0,
 	"u1134u1173",
 };
-static struct Node* const node_u1134_children[] = {
+static const struct Node *node_u1134_children[] = {
 	&node_u1134u1173,
 };
 static const uint16_t node_u1134_jamo_seq[] = {
@@ -67021,7 +67021,7 @@ static const struct Node node_u1135u1173u11b7 = {
 	0,
 	"u1135u1173u11b7",
 };
-static struct Node* const node_u1135u1173_children[] = {
+static const struct Node *node_u1135u1173_children[] = {
 	&node_u1135u1173u11af,
 	&node_u1135u1173u11b7,
 };
@@ -67054,7 +67054,7 @@ static const struct Node node_u1135u1175u11af = {
 	0,
 	"u1135u1175u11af",
 };
-static struct Node* const node_u1135u1175_children[] = {
+static const struct Node *node_u1135u1175_children[] = {
 	&node_u1135u1175u11af,
 };
 static const uint16_t node_u1135u1175_jamo_seq[] = {
@@ -67071,7 +67071,7 @@ static const struct Node node_u1135u1175 = {
 	node_u1135u1175_children,
 	"u1135u1175",
 };
-static struct Node* const node_u1135_children[] = {
+static const struct Node *node_u1135_children[] = {
 	&node_u1135u1173,
 	&node_u1135u1175,
 };
@@ -67238,7 +67238,7 @@ static const struct Node node_u1136u1161u11f0 = {
 	0,
 	"u1136u1161u11f0",
 };
-static struct Node* const node_u1136u1161_children[] = {
+static const struct Node *node_u1136u1161_children[] = {
 	&node_u1136u1161u11a8,
 	&node_u1136u1161u11ab,
 	&node_u1136u1161u11af,
@@ -67354,7 +67354,7 @@ static const struct Node node_u1136u1162u11f0 = {
 	0,
 	"u1136u1162u11f0",
 };
-static struct Node* const node_u1136u1162_children[] = {
+static const struct Node *node_u1136u1162_children[] = {
 	&node_u1136u1162u11a8,
 	&node_u1136u1162u11ab,
 	&node_u1136u1162u11af,
@@ -67421,7 +67421,7 @@ static const struct Node node_u1136u1163u11f0 = {
 	0,
 	"u1136u1163u11f0",
 };
-static struct Node* const node_u1136u1163_children[] = {
+static const struct Node *node_u1136u1163_children[] = {
 	&node_u1136u1163u11a8,
 	&node_u1136u1163u11bc,
 	&node_u1136u1163u11f0,
@@ -67545,7 +67545,7 @@ static const struct Node node_u1136u1165u11bc = {
 	0,
 	"u1136u1165u11bc",
 };
-static struct Node* const node_u1136u1165_children[] = {
+static const struct Node *node_u1136u1165_children[] = {
 	&node_u1136u1165u11a8,
 	&node_u1136u1165u11ab,
 	&node_u1136u1165u11af,
@@ -67628,7 +67628,7 @@ static const struct Node node_u1136u1166u11ba = {
 	0,
 	"u1136u1166u11ba",
 };
-static struct Node* const node_u1136u1166_children[] = {
+static const struct Node *node_u1136u1166_children[] = {
 	&node_u1136u1166u11ab,
 	&node_u1136u1166u11af,
 	&node_u1136u1166u11b8,
@@ -67723,7 +67723,7 @@ static const struct Node node_u1136u1167u11f0 = {
 	0,
 	"u1136u1167u11f0",
 };
-static struct Node* const node_u1136u1167_children[] = {
+static const struct Node *node_u1136u1167_children[] = {
 	&node_u1136u1167u11a8,
 	&node_u1136u1167u11ab,
 	&node_u1136u1167u11af,
@@ -67759,7 +67759,7 @@ static const struct Node node_u1136u1168u11ab = {
 	0,
 	"u1136u1168u11ab",
 };
-static struct Node* const node_u1136u1168_children[] = {
+static const struct Node *node_u1136u1168_children[] = {
 	&node_u1136u1168u11ab,
 };
 static const uint16_t node_u1136u1168_jamo_seq[] = {
@@ -67911,7 +67911,7 @@ static const struct Node node_u1136u1169u11be = {
 	0,
 	"u1136u1169u11be",
 };
-static struct Node* const node_u1136u1169_children[] = {
+static const struct Node *node_u1136u1169_children[] = {
 	&node_u1136u1169u11a8,
 	&node_u1136u1169u11ab,
 	&node_u1136u1169u11af,
@@ -67951,7 +67951,7 @@ static const struct Node node_u1136u116au11a8 = {
 	0,
 	"u1136u116au11a8",
 };
-static struct Node* const node_u1136u116a_children[] = {
+static const struct Node *node_u1136u116a_children[] = {
 	&node_u1136u116au11a8,
 };
 static const uint16_t node_u1136u116a_jamo_seq[] = {
@@ -68028,7 +68028,7 @@ static const struct Node node_u1136u116cu11b7 = {
 	0,
 	"u1136u116cu11b7",
 };
-static struct Node* const node_u1136u116c_children[] = {
+static const struct Node *node_u1136u116c_children[] = {
 	&node_u1136u116cu11a8,
 	&node_u1136u116cu11ab,
 	&node_u1136u116cu11af,
@@ -68123,7 +68123,7 @@ static const struct Node node_u1136u116du11bc = {
 	0,
 	"u1136u116du11bc",
 };
-static struct Node* const node_u1136u116d_children[] = {
+static const struct Node *node_u1136u116d_children[] = {
 	&node_u1136u116du11a8,
 	&node_u1136u116du11ae,
 	&node_u1136u116du11b7,
@@ -68234,7 +68234,7 @@ static const struct Node node_u1136u116eu11bc = {
 	0,
 	"u1136u116eu11bc",
 };
-static struct Node* const node_u1136u116e_children[] = {
+static const struct Node *node_u1136u116e_children[] = {
 	&node_u1136u116eu11a8,
 	&node_u1136u116eu11ab,
 	&node_u1136u116eu11af,
@@ -68299,7 +68299,7 @@ static const struct Node node_u1136u1171u11a8 = {
 	0,
 	"u1136u1171u11a8",
 };
-static struct Node* const node_u1136u1171_children[] = {
+static const struct Node *node_u1136u1171_children[] = {
 	&node_u1136u1171u11a8,
 };
 static const uint16_t node_u1136u1171_jamo_seq[] = {
@@ -68361,7 +68361,7 @@ static const struct Node node_u1136u1172u11b7 = {
 	0,
 	"u1136u1172u11b7",
 };
-static struct Node* const node_u1136u1172_children[] = {
+static const struct Node *node_u1136u1172_children[] = {
 	&node_u1136u1172u11a8,
 	&node_u1136u1172u11af,
 	&node_u1136u1172u11b7,
@@ -68470,7 +68470,7 @@ static const struct Node node_u1136u1173u11bc = {
 	0,
 	"u1136u1173u11bc",
 };
-static struct Node* const node_u1136u1173_children[] = {
+static const struct Node *node_u1136u1173_children[] = {
 	&node_u1136u1173u11a8,
 	&node_u1136u1173u11ab,
 	&node_u1136u1173u11af,
@@ -68507,7 +68507,7 @@ static const struct Node node_u1136u1174u11af = {
 	0,
 	"u1136u1174u11af",
 };
-static struct Node* const node_u1136u1174_children[] = {
+static const struct Node *node_u1136u1174_children[] = {
 	&node_u1136u1174u11af,
 };
 static const uint16_t node_u1136u1174_jamo_seq[] = {
@@ -68689,7 +68689,7 @@ static const struct Node node_u1136u1175ud7f2 = {
 	0,
 	"u1136u1175ud7f2",
 };
-static struct Node* const node_u1136u1175_children[] = {
+static const struct Node *node_u1136u1175_children[] = {
 	&node_u1136u1175u11a8,
 	&node_u1136u1175u11ab,
 	&node_u1136u1175u11af,
@@ -68821,7 +68821,7 @@ static const struct Node node_u1136u119eu11bc = {
 	0,
 	"u1136u119eu11bc",
 };
-static struct Node* const node_u1136u119e_children[] = {
+static const struct Node *node_u1136u119e_children[] = {
 	&node_u1136u119eu11a8,
 	&node_u1136u119eu11ab,
 	&node_u1136u119eu11af,
@@ -68904,7 +68904,7 @@ static const struct Node node_u1136u11a1u11f0 = {
 	0,
 	"u1136u11a1u11f0",
 };
-static struct Node* const node_u1136u11a1_children[] = {
+static const struct Node *node_u1136u11a1_children[] = {
 	&node_u1136u11a1u11a8,
 	&node_u1136u11a1u11af,
 	&node_u1136u11a1u11bc,
@@ -68924,7 +68924,7 @@ static const struct Node node_u1136u11a1 = {
 	node_u1136u11a1_children,
 	"u1136u11a1",
 };
-static struct Node* const node_u1136_children[] = {
+static const struct Node *node_u1136_children[] = {
 	&node_u1136u1161,
 	&node_u1136u1162,
 	&node_u1136u1163,
@@ -69018,7 +69018,7 @@ static const struct Node node_u1137u119eu11b8 = {
 	0,
 	"u1137u119eu11b8",
 };
-static struct Node* const node_u1137u119e_children[] = {
+static const struct Node *node_u1137u119e_children[] = {
 	&node_u1137u119eu11af,
 	&node_u1137u119eu11b8,
 };
@@ -69036,7 +69036,7 @@ static const struct Node node_u1137u119e = {
 	node_u1137u119e_children,
 	"u1137u119e",
 };
-static struct Node* const node_u1137_children[] = {
+static const struct Node *node_u1137_children[] = {
 	&node_u1137u1169,
 	&node_u1137u1175,
 	&node_u1137u119e,
@@ -69069,7 +69069,7 @@ static const struct Node node_u1138u1161u11bc = {
 	0,
 	"u1138u1161u11bc",
 };
-static struct Node* const node_u1138u1161_children[] = {
+static const struct Node *node_u1138u1161_children[] = {
 	&node_u1138u1161u11bc,
 };
 static const uint16_t node_u1138u1161_jamo_seq[] = {
@@ -69116,7 +69116,7 @@ static const struct Node node_u1138u1165u11af = {
 	0,
 	"u1138u1165u11af",
 };
-static struct Node* const node_u1138u1165_children[] = {
+static const struct Node *node_u1138u1165_children[] = {
 	&node_u1138u1165u11ab,
 	&node_u1138u1165u11af,
 };
@@ -69208,7 +69208,7 @@ static const struct Node node_u1138u1169u11f0 = {
 	0,
 	"u1138u1169u11f0",
 };
-static struct Node* const node_u1138u1169_children[] = {
+static const struct Node *node_u1138u1169_children[] = {
 	&node_u1138u1169u11ab,
 	&node_u1138u1169u11ba,
 	&node_u1138u1169u11bc,
@@ -69286,7 +69286,7 @@ static const struct Node node_u1138u116cu11f0 = {
 	0,
 	"u1138u116cu11f0",
 };
-static struct Node* const node_u1138u116c_children[] = {
+static const struct Node *node_u1138u116c_children[] = {
 	&node_u1138u116cu11bc,
 	&node_u1138u116cu11f0,
 };
@@ -69347,7 +69347,7 @@ static const struct Node node_u1138u1173u11ab = {
 	0,
 	"u1138u1173u11ab",
 };
-static struct Node* const node_u1138u1173_children[] = {
+static const struct Node *node_u1138u1173_children[] = {
 	&node_u1138u1173u11ab,
 };
 static const uint16_t node_u1138u1173_jamo_seq[] = {
@@ -69406,7 +69406,7 @@ static const struct Node node_u1138u119e = {
 	0,
 	"u1138u119e",
 };
-static struct Node* const node_u1138_children[] = {
+static const struct Node *node_u1138_children[] = {
 	&node_u1138u1161,
 	&node_u1138u1165,
 	&node_u1138u1167,
@@ -69449,7 +69449,7 @@ static const struct Node node_u1139u1161u11af = {
 	0,
 	"u1139u1161u11af",
 };
-static struct Node* const node_u1139u1161_children[] = {
+static const struct Node *node_u1139u1161_children[] = {
 	&node_u1139u1161u11af,
 };
 static const uint16_t node_u1139u1161_jamo_seq[] = {
@@ -69481,7 +69481,7 @@ static const struct Node node_u1139u1165u11af = {
 	0,
 	"u1139u1165u11af",
 };
-static struct Node* const node_u1139u1165_children[] = {
+static const struct Node *node_u1139u1165_children[] = {
 	&node_u1139u1165u11af,
 };
 static const uint16_t node_u1139u1165_jamo_seq[] = {
@@ -69527,7 +69527,7 @@ static const struct Node node_u1139u1169u11b8 = {
 	0,
 	"u1139u1169u11b8",
 };
-static struct Node* const node_u1139u1169_children[] = {
+static const struct Node *node_u1139u1169_children[] = {
 	&node_u1139u1169u11b8,
 };
 static const uint16_t node_u1139u1169_jamo_seq[] = {
@@ -69559,7 +69559,7 @@ static const struct Node node_u1139u116eu11a8 = {
 	0,
 	"u1139u116eu11a8",
 };
-static struct Node* const node_u1139u116e_children[] = {
+static const struct Node *node_u1139u116e_children[] = {
 	&node_u1139u116eu11a8,
 };
 static const uint16_t node_u1139u116e_jamo_seq[] = {
@@ -69635,7 +69635,7 @@ static const struct Node node_u1139u1173u11ba = {
 	0,
 	"u1139u1173u11ba",
 };
-static struct Node* const node_u1139u1173_children[] = {
+static const struct Node *node_u1139u1173_children[] = {
 	&node_u1139u1173u11af,
 	&node_u1139u1173u11b7,
 	&node_u1139u1173u11ba,
@@ -69669,7 +69669,7 @@ static const struct Node node_u1139u1175u11bf = {
 	0,
 	"u1139u1175u11bf",
 };
-static struct Node* const node_u1139u1175_children[] = {
+static const struct Node *node_u1139u1175_children[] = {
 	&node_u1139u1175u11bf,
 };
 static const uint16_t node_u1139u1175_jamo_seq[] = {
@@ -69716,7 +69716,7 @@ static const struct Node node_u1139u119eu11b7 = {
 	0,
 	"u1139u119eu11b7",
 };
-static struct Node* const node_u1139u119e_children[] = {
+static const struct Node *node_u1139u119e_children[] = {
 	&node_u1139u119eu11af,
 	&node_u1139u119eu11b7,
 };
@@ -69734,7 +69734,7 @@ static const struct Node node_u1139u119e = {
 	node_u1139u119e_children,
 	"u1139u119e",
 };
-static struct Node* const node_u1139_children[] = {
+static const struct Node *node_u1139_children[] = {
 	&node_u1139u1161,
 	&node_u1139u1165,
 	&node_u1139u1166,
@@ -69773,7 +69773,7 @@ static const struct Node node_u113au1167u11ab = {
 	0,
 	"u113au1167u11ab",
 };
-static struct Node* const node_u113au1167_children[] = {
+static const struct Node *node_u113au1167_children[] = {
 	&node_u113au1167u11ab,
 };
 static const uint16_t node_u113au1167_jamo_seq[] = {
@@ -69805,7 +69805,7 @@ static const struct Node node_u113au116eu11ab = {
 	0,
 	"u113au116eu11ab",
 };
-static struct Node* const node_u113au116e_children[] = {
+static const struct Node *node_u113au116e_children[] = {
 	&node_u113au116eu11ab,
 };
 static const uint16_t node_u113au116e_jamo_seq[] = {
@@ -69851,7 +69851,7 @@ static const struct Node node_u113au119eu11af = {
 	0,
 	"u113au119eu11af",
 };
-static struct Node* const node_u113au119e_children[] = {
+static const struct Node *node_u113au119e_children[] = {
 	&node_u113au119eu11af,
 };
 static const uint16_t node_u113au119e_jamo_seq[] = {
@@ -69868,7 +69868,7 @@ static const struct Node node_u113au119e = {
 	node_u113au119e_children,
 	"u113au119e",
 };
-static struct Node* const node_u113a_children[] = {
+static const struct Node *node_u113a_children[] = {
 	&node_u113au1167,
 	&node_u113au116e,
 	&node_u113au1175,
@@ -69902,7 +69902,7 @@ static const struct Node node_u113bu1165u11af = {
 	0,
 	"u113bu1165u11af",
 };
-static struct Node* const node_u113bu1165_children[] = {
+static const struct Node *node_u113bu1165_children[] = {
 	&node_u113bu1165u11af,
 };
 static const uint16_t node_u113bu1165_jamo_seq[] = {
@@ -69948,7 +69948,7 @@ static const struct Node node_u113bu1173u11af = {
 	0,
 	"u113bu1173u11af",
 };
-static struct Node* const node_u113bu1173_children[] = {
+static const struct Node *node_u113bu1173_children[] = {
 	&node_u113bu1173u11af,
 };
 static const uint16_t node_u113bu1173_jamo_seq[] = {
@@ -69965,7 +69965,7 @@ static const struct Node node_u113bu1173 = {
 	node_u113bu1173_children,
 	"u113bu1173",
 };
-static struct Node* const node_u113b_children[] = {
+static const struct Node *node_u113b_children[] = {
 	&node_u113bu1165,
 	&node_u113bu1167,
 	&node_u113bu1173,
@@ -70013,7 +70013,7 @@ static const struct Node node_u113cu1161u11f0 = {
 	0,
 	"u113cu1161u11f0",
 };
-static struct Node* const node_u113cu1161_children[] = {
+static const struct Node *node_u113cu1161_children[] = {
 	&node_u113cu1161u11ab,
 	&node_u113cu1161u11f0,
 };
@@ -70090,7 +70090,7 @@ static const struct Node node_u113cu1163u11f0 = {
 	0,
 	"u113cu1163u11f0",
 };
-static struct Node* const node_u113cu1163_children[] = {
+static const struct Node *node_u113cu1163_children[] = {
 	&node_u113cu1163u11b7,
 	&node_u113cu1163u11e2,
 	&node_u113cu1163u11f0,
@@ -70124,7 +70124,7 @@ static const struct Node node_u113cu1165u11ab = {
 	0,
 	"u113cu1165u11ab",
 };
-static struct Node* const node_u113cu1165_children[] = {
+static const struct Node *node_u113cu1165_children[] = {
 	&node_u113cu1165u11ab,
 };
 static const uint16_t node_u113cu1165_jamo_seq[] = {
@@ -70156,7 +70156,7 @@ static const struct Node node_u113cu1167u11ab = {
 	0,
 	"u113cu1167u11ab",
 };
-static struct Node* const node_u113cu1167_children[] = {
+static const struct Node *node_u113cu1167_children[] = {
 	&node_u113cu1167u11ab,
 };
 static const uint16_t node_u113cu1167_jamo_seq[] = {
@@ -70217,7 +70217,7 @@ static const struct Node node_u113cu116eu11bc = {
 	0,
 	"u113cu116eu11bc",
 };
-static struct Node* const node_u113cu116e_children[] = {
+static const struct Node *node_u113cu116e_children[] = {
 	&node_u113cu116eu11ab,
 	&node_u113cu116eu11bc,
 };
@@ -70264,7 +70264,7 @@ static const struct Node node_u113cu1172u11ab = {
 	0,
 	"u113cu1172u11ab",
 };
-static struct Node* const node_u113cu1172_children[] = {
+static const struct Node *node_u113cu1172_children[] = {
 	&node_u113cu1172u11ab,
 };
 static const uint16_t node_u113cu1172_jamo_seq[] = {
@@ -70311,7 +70311,7 @@ static const struct Node node_u113cu1173u11eb = {
 	0,
 	"u113cu1173u11eb",
 };
-static struct Node* const node_u113cu1173_children[] = {
+static const struct Node *node_u113cu1173_children[] = {
 	&node_u113cu1173u11ab,
 	&node_u113cu1173u11eb,
 };
@@ -70344,7 +70344,7 @@ static const struct Node node_u113cu1175u11bc = {
 	0,
 	"u113cu1175u11bc",
 };
-static struct Node* const node_u113cu1175_children[] = {
+static const struct Node *node_u113cu1175_children[] = {
 	&node_u113cu1175u11bc,
 };
 static const uint16_t node_u113cu1175_jamo_seq[] = {
@@ -70376,7 +70376,7 @@ static const struct Node node_u113cu1191u11ab = {
 	0,
 	"u113cu1191u11ab",
 };
-static struct Node* const node_u113cu1191_children[] = {
+static const struct Node *node_u113cu1191_children[] = {
 	&node_u113cu1191u11ab,
 };
 static const uint16_t node_u113cu1191_jamo_seq[] = {
@@ -70393,7 +70393,7 @@ static const struct Node node_u113cu1191 = {
 	node_u113cu1191_children,
 	"u113cu1191",
 };
-static struct Node* const node_u113c_children[] = {
+static const struct Node *node_u113c_children[] = {
 	&node_u113cu1161,
 	&node_u113cu1162,
 	&node_u113cu1163,
@@ -70450,7 +70450,7 @@ static const struct Node node_u113du1163u11f0 = {
 	0,
 	"u113du1163u11f0",
 };
-static struct Node* const node_u113du1163_children[] = {
+static const struct Node *node_u113du1163_children[] = {
 	&node_u113du1163u11bc,
 	&node_u113du1163u11f0,
 };
@@ -70483,7 +70483,7 @@ static const struct Node node_u113du1167u11ab = {
 	0,
 	"u113du1167u11ab",
 };
-static struct Node* const node_u113du1167_children[] = {
+static const struct Node *node_u113du1167_children[] = {
 	&node_u113du1167u11ab,
 };
 static const uint16_t node_u113du1167_jamo_seq[] = {
@@ -70558,7 +70558,7 @@ static const struct Node node_u113du1172u11f0 = {
 	0,
 	"u113du1172u11f0",
 };
-static struct Node* const node_u113du1172_children[] = {
+static const struct Node *node_u113du1172_children[] = {
 	&node_u113du1172u11ab,
 	&node_u113du1172u11f0,
 };
@@ -70591,7 +70591,7 @@ static const struct Node node_u113du1173u11eb = {
 	0,
 	"u113du1173u11eb",
 };
-static struct Node* const node_u113du1173_children[] = {
+static const struct Node *node_u113du1173_children[] = {
 	&node_u113du1173u11eb,
 };
 static const uint16_t node_u113du1173_jamo_seq[] = {
@@ -70653,7 +70653,7 @@ static const struct Node node_u113du1175u11f9 = {
 	0,
 	"u113du1175u11f9",
 };
-static struct Node* const node_u113du1175_children[] = {
+static const struct Node *node_u113du1175_children[] = {
 	&node_u113du1175u11ab,
 	&node_u113du1175u11eb,
 	&node_u113du1175u11f9,
@@ -70687,7 +70687,7 @@ static const struct Node node_u113du1191u11ab = {
 	0,
 	"u113du1191u11ab",
 };
-static struct Node* const node_u113du1191_children[] = {
+static const struct Node *node_u113du1191_children[] = {
 	&node_u113du1191u11ab,
 };
 static const uint16_t node_u113du1191_jamo_seq[] = {
@@ -70718,7 +70718,7 @@ static const struct Node node_u113du1194 = {
 	0,
 	"u113du1194",
 };
-static struct Node* const node_u113d_children[] = {
+static const struct Node *node_u113d_children[] = {
 	&node_u113du1163,
 	&node_u113du1167,
 	&node_u113du116e,
@@ -70772,7 +70772,7 @@ static const struct Node node_u113eu1161u11ae = {
 	0,
 	"u113eu1161u11ae",
 };
-static struct Node* const node_u113eu1161_children[] = {
+static const struct Node *node_u113eu1161_children[] = {
 	&node_u113eu1161u11ab,
 	&node_u113eu1161u11ae,
 };
@@ -70834,7 +70834,7 @@ static const struct Node node_u113eu1163u11e2 = {
 	0,
 	"u113eu1163u11e2",
 };
-static struct Node* const node_u113eu1163_children[] = {
+static const struct Node *node_u113eu1163_children[] = {
 	&node_u113eu1163u11b7,
 	&node_u113eu1163u11e2,
 };
@@ -70867,7 +70867,7 @@ static const struct Node node_u113eu1167u11ab = {
 	0,
 	"u113eu1167u11ab",
 };
-static struct Node* const node_u113eu1167_children[] = {
+static const struct Node *node_u113eu1167_children[] = {
 	&node_u113eu1167u11ab,
 };
 static const uint16_t node_u113eu1167_jamo_seq[] = {
@@ -70956,7 +70956,7 @@ static const struct Node node_u113eu116eu11bc = {
 	0,
 	"u113eu116eu11bc",
 };
-static struct Node* const node_u113eu116e_children[] = {
+static const struct Node *node_u113eu116e_children[] = {
 	&node_u113eu116eu11a8,
 	&node_u113eu116eu11bc,
 };
@@ -71003,7 +71003,7 @@ static const struct Node node_u113eu1172u11ab = {
 	0,
 	"u113eu1172u11ab",
 };
-static struct Node* const node_u113eu1172_children[] = {
+static const struct Node *node_u113eu1172_children[] = {
 	&node_u113eu1172u11ab,
 };
 static const uint16_t node_u113eu1172_jamo_seq[] = {
@@ -71050,7 +71050,7 @@ static const struct Node node_u113eu1173u11eb = {
 	0,
 	"u113eu1173u11eb",
 };
-static struct Node* const node_u113eu1173_children[] = {
+static const struct Node *node_u113eu1173_children[] = {
 	&node_u113eu1173u11bc,
 	&node_u113eu1173u11eb,
 };
@@ -71113,7 +71113,7 @@ static const struct Node node_u113eu1175u11e2 = {
 	0,
 	"u113eu1175u11e2",
 };
-static struct Node* const node_u113eu1175_children[] = {
+static const struct Node *node_u113eu1175_children[] = {
 	&node_u113eu1175u11ab,
 	&node_u113eu1175u11b7,
 	&node_u113eu1175u11e2,
@@ -71147,7 +71147,7 @@ static const struct Node node_u113eu1191u11ab = {
 	0,
 	"u113eu1191u11ab",
 };
-static struct Node* const node_u113eu1191_children[] = {
+static const struct Node *node_u113eu1191_children[] = {
 	&node_u113eu1191u11ab,
 };
 static const uint16_t node_u113eu1191_jamo_seq[] = {
@@ -71164,7 +71164,7 @@ static const struct Node node_u113eu1191 = {
 	node_u113eu1191_children,
 	"u113eu1191",
 };
-static struct Node* const node_u113e_children[] = {
+static const struct Node *node_u113e_children[] = {
 	&node_u113eu1161,
 	&node_u113eu1162,
 	&node_u113eu1163,
@@ -71207,7 +71207,7 @@ static const struct Node node_u113fu1163u11f0 = {
 	0,
 	"u113fu1163u11f0",
 };
-static struct Node* const node_u113fu1163_children[] = {
+static const struct Node *node_u113fu1163_children[] = {
 	&node_u113fu1163u11f0,
 };
 static const uint16_t node_u113fu1163_jamo_seq[] = {
@@ -71239,7 +71239,7 @@ static const struct Node node_u113fu1167u11ab = {
 	0,
 	"u113fu1167u11ab",
 };
-static struct Node* const node_u113fu1167_children[] = {
+static const struct Node *node_u113fu1167_children[] = {
 	&node_u113fu1167u11ab,
 };
 static const uint16_t node_u113fu1167_jamo_seq[] = {
@@ -71329,7 +71329,7 @@ static const struct Node node_u113fu1172u11f0 = {
 	0,
 	"u113fu1172u11f0",
 };
-static struct Node* const node_u113fu1172_children[] = {
+static const struct Node *node_u113fu1172_children[] = {
 	&node_u113fu1172u11a8,
 	&node_u113fu1172u11ab,
 	&node_u113fu1172u11f0,
@@ -71363,7 +71363,7 @@ static const struct Node node_u113fu1173u11eb = {
 	0,
 	"u113fu1173u11eb",
 };
-static struct Node* const node_u113fu1173_children[] = {
+static const struct Node *node_u113fu1173_children[] = {
 	&node_u113fu1173u11eb,
 };
 static const uint16_t node_u113fu1173_jamo_seq[] = {
@@ -71410,7 +71410,7 @@ static const struct Node node_u113fu1175u11f9 = {
 	0,
 	"u113fu1175u11f9",
 };
-static struct Node* const node_u113fu1175_children[] = {
+static const struct Node *node_u113fu1175_children[] = {
 	&node_u113fu1175u11ab,
 	&node_u113fu1175u11f9,
 };
@@ -71428,7 +71428,7 @@ static const struct Node node_u113fu1175 = {
 	node_u113fu1175_children,
 	"u113fu1175",
 };
-static struct Node* const node_u113f_children[] = {
+static const struct Node *node_u113f_children[] = {
 	&node_u113fu1163,
 	&node_u113fu1167,
 	&node_u113fu116e,
@@ -71600,7 +71600,7 @@ static const struct Node node_u1140u1161u11f0 = {
 	0,
 	"u1140u1161u11f0",
 };
-static struct Node* const node_u1140u1161_children[] = {
+static const struct Node *node_u1140u1161_children[] = {
 	&node_u1140u1161u11a8,
 	&node_u1140u1161u11ab,
 	&node_u1140u1161u11ae,
@@ -71701,7 +71701,7 @@ static const struct Node node_u1140u1162u11f0 = {
 	0,
 	"u1140u1162u11f0",
 };
-static struct Node* const node_u1140u1162_children[] = {
+static const struct Node *node_u1140u1162_children[] = {
 	&node_u1140u1162u11ab,
 	&node_u1140u1162u11ba,
 	&node_u1140u1162u11bc,
@@ -71857,7 +71857,7 @@ static const struct Node node_u1140u1163u11f9 = {
 	0,
 	"u1140u1163u11f9",
 };
-static struct Node* const node_u1140u1163_children[] = {
+static const struct Node *node_u1140u1163_children[] = {
 	&node_u1140u1163u11a8,
 	&node_u1140u1163u11ab,
 	&node_u1140u1163u11b7,
@@ -72047,7 +72047,7 @@ static const struct Node node_u1140u1165u11f0 = {
 	0,
 	"u1140u1165u11f0",
 };
-static struct Node* const node_u1140u1165_children[] = {
+static const struct Node *node_u1140u1165_children[] = {
 	&node_u1140u1165u11a8,
 	&node_u1140u1165u11ab,
 	&node_u1140u1165u11af,
@@ -72104,7 +72104,7 @@ static const struct Node node_u1140u1166u11ba = {
 	0,
 	"u1140u1166u11ba",
 };
-static struct Node* const node_u1140u1166_children[] = {
+static const struct Node *node_u1140u1166_children[] = {
 	&node_u1140u1166u11ab,
 	&node_u1140u1166u11ba,
 };
@@ -72272,7 +72272,7 @@ static const struct Node node_u1140u1167u11f9 = {
 	0,
 	"u1140u1167u11f9",
 };
-static struct Node* const node_u1140u1167_children[] = {
+static const struct Node *node_u1140u1167_children[] = {
 	&node_u1140u1167u11a8,
 	&node_u1140u1167u11ab,
 	&node_u1140u1167u11af,
@@ -72373,7 +72373,7 @@ static const struct Node node_u1140u1168u11bc = {
 	0,
 	"u1140u1168u11bc",
 };
-static struct Node* const node_u1140u1168_children[] = {
+static const struct Node *node_u1140u1168_children[] = {
 	&node_u1140u1168u11ab,
 	&node_u1140u1168u11ae,
 	&node_u1140u1168u11b7,
@@ -72514,7 +72514,7 @@ static const struct Node node_u1140u1169u11f0 = {
 	0,
 	"u1140u1169u11f0",
 };
-static struct Node* const node_u1140u1169_children[] = {
+static const struct Node *node_u1140u1169_children[] = {
 	&node_u1140u1169u11ab,
 	&node_u1140u1169u11af,
 	&node_u1140u1169u11b7,
@@ -72685,7 +72685,7 @@ static const struct Node node_u1140u116du11f0 = {
 	0,
 	"u1140u116du11f0",
 };
-static struct Node* const node_u1140u116d_children[] = {
+static const struct Node *node_u1140u116d_children[] = {
 	&node_u1140u116du11a8,
 	&node_u1140u116du11b7,
 	&node_u1140u116du11ba,
@@ -72888,7 +72888,7 @@ static const struct Node node_u1140u116eu11f0 = {
 	0,
 	"u1140u116eu11f0",
 };
-static struct Node* const node_u1140u116e_children[] = {
+static const struct Node *node_u1140u116e_children[] = {
 	&node_u1140u116eu11a8,
 	&node_u1140u116eu11ab,
 	&node_u1140u116eu11af,
@@ -72959,7 +72959,7 @@ static const struct Node node_u1140u1171u11ab = {
 	0,
 	"u1140u1171u11ab",
 };
-static struct Node* const node_u1140u1171_children[] = {
+static const struct Node *node_u1140u1171_children[] = {
 	&node_u1140u1171u11ab,
 };
 static const uint16_t node_u1140u1171_jamo_seq[] = {
@@ -73126,7 +73126,7 @@ static const struct Node node_u1140u1172u11f9 = {
 	0,
 	"u1140u1172u11f9",
 };
-static struct Node* const node_u1140u1172_children[] = {
+static const struct Node *node_u1140u1172_children[] = {
 	&node_u1140u1172u11a8,
 	&node_u1140u1172u11ab,
 	&node_u1140u1172u11b7,
@@ -73392,7 +73392,7 @@ static const struct Node node_u1140u1173ud7f0 = {
 	0,
 	"u1140u1173ud7f0",
 };
-static struct Node* const node_u1140u1173_children[] = {
+static const struct Node *node_u1140u1173_children[] = {
 	&node_u1140u1173u11a8,
 	&node_u1140u1173u11ab,
 	&node_u1140u1173u11af,
@@ -73454,7 +73454,7 @@ static const struct Node node_u1140u1174u11ba = {
 	0,
 	"u1140u1174u11ba",
 };
-static struct Node* const node_u1140u1174_children[] = {
+static const struct Node *node_u1140u1174_children[] = {
 	&node_u1140u1174u11ab,
 	&node_u1140u1174u11ba,
 };
@@ -73682,7 +73682,7 @@ static const struct Node node_u1140u1175u11f9 = {
 	0,
 	"u1140u1175u11f9",
 };
-static struct Node* const node_u1140u1175_children[] = {
+static const struct Node *node_u1140u1175_children[] = {
 	&node_u1140u1175u11a8,
 	&node_u1140u1175u11ab,
 	&node_u1140u1175u11ae,
@@ -73755,7 +73755,7 @@ static const struct Node node_u1140u1189u11ab = {
 	0,
 	"u1140u1189u11ab",
 };
-static struct Node* const node_u1140u1189_children[] = {
+static const struct Node *node_u1140u1189_children[] = {
 	&node_u1140u1189u11ab,
 };
 static const uint16_t node_u1140u1189_jamo_seq[] = {
@@ -73801,7 +73801,7 @@ static const struct Node node_u1140u118fu11ab = {
 	0,
 	"u1140u118fu11ab",
 };
-static struct Node* const node_u1140u118f_children[] = {
+static const struct Node *node_u1140u118f_children[] = {
 	&node_u1140u118fu11ab,
 };
 static const uint16_t node_u1140u118f_jamo_seq[] = {
@@ -73863,7 +73863,7 @@ static const struct Node node_u1140u1191u11d9 = {
 	0,
 	"u1140u1191u11d9",
 };
-static struct Node* const node_u1140u1191_children[] = {
+static const struct Node *node_u1140u1191_children[] = {
 	&node_u1140u1191u11ab,
 	&node_u1140u1191u11af,
 	&node_u1140u1191u11d9,
@@ -73897,7 +73897,7 @@ static const struct Node node_u1140u1192u11bc = {
 	0,
 	"u1140u1192u11bc",
 };
-static struct Node* const node_u1140u1192_children[] = {
+static const struct Node *node_u1140u1192_children[] = {
 	&node_u1140u1192u11bc,
 };
 static const uint16_t node_u1140u1192_jamo_seq[] = {
@@ -73929,7 +73929,7 @@ static const struct Node node_u1140u1194u11bc = {
 	0,
 	"u1140u1194u11bc",
 };
-static struct Node* const node_u1140u1194_children[] = {
+static const struct Node *node_u1140u1194_children[] = {
 	&node_u1140u1194u11bc,
 };
 static const uint16_t node_u1140u1194_jamo_seq[] = {
@@ -74200,7 +74200,7 @@ static const struct Node node_u1140u119eu11eb = {
 	0,
 	"u1140u119eu11eb",
 };
-static struct Node* const node_u1140u119e_children[] = {
+static const struct Node *node_u1140u119e_children[] = {
 	&node_u1140u119eu11a8,
 	&node_u1140u119eu11ab,
 	&node_u1140u119eu11ae,
@@ -74292,7 +74292,7 @@ static const struct Node node_u1140u11a1u11ba = {
 	0,
 	"u1140u11a1u11ba",
 };
-static struct Node* const node_u1140u11a1_children[] = {
+static const struct Node *node_u1140u11a1_children[] = {
 	&node_u1140u11a1u11ab,
 	&node_u1140u11a1u11af,
 	&node_u1140u11a1u11b8,
@@ -74326,7 +74326,7 @@ static const struct Node node_u1140ud7b5 = {
 	0,
 	"u1140ud7b5",
 };
-static struct Node* const node_u1140_children[] = {
+static const struct Node *node_u1140_children[] = {
 	&node_u1140u1161,
 	&node_u1140u1162,
 	&node_u1140u1163,
@@ -74388,7 +74388,7 @@ static const struct Node node_u1141u1161u11a8 = {
 	0,
 	"u1141u1161u11a8",
 };
-static struct Node* const node_u1141u1161_children[] = {
+static const struct Node *node_u1141u1161_children[] = {
 	&node_u1141u1161u11a8,
 };
 static const uint16_t node_u1141u1161_jamo_seq[] = {
@@ -74434,7 +74434,7 @@ static const struct Node node_u1141u1163u11ab = {
 	0,
 	"u1141u1163u11ab",
 };
-static struct Node* const node_u1141u1163_children[] = {
+static const struct Node *node_u1141u1163_children[] = {
 	&node_u1141u1163u11ab,
 };
 static const uint16_t node_u1141u1163_jamo_seq[] = {
@@ -74508,7 +74508,7 @@ static const struct Node node_u1141u1168u11ab = {
 	0,
 	"u1141u1168u11ab",
 };
-static struct Node* const node_u1141u1168_children[] = {
+static const struct Node *node_u1141u1168_children[] = {
 	&node_u1141u1168u11ab,
 };
 static const uint16_t node_u1141u1168_jamo_seq[] = {
@@ -74555,7 +74555,7 @@ static const struct Node node_u1141u1169u11ab = {
 	0,
 	"u1141u1169u11ab",
 };
-static struct Node* const node_u1141u1169_children[] = {
+static const struct Node *node_u1141u1169_children[] = {
 	&node_u1141u1169u11a8,
 	&node_u1141u1169u11ab,
 };
@@ -74588,7 +74588,7 @@ static const struct Node node_u1141u116au11ab = {
 	0,
 	"u1141u116au11ab",
 };
-static struct Node* const node_u1141u116a_children[] = {
+static const struct Node *node_u1141u116a_children[] = {
 	&node_u1141u116au11ab,
 };
 static const uint16_t node_u1141u116a_jamo_seq[] = {
@@ -74662,7 +74662,7 @@ static const struct Node node_u1141u116eu11ab = {
 	0,
 	"u1141u116eu11ab",
 };
-static struct Node* const node_u1141u116e_children[] = {
+static const struct Node *node_u1141u116e_children[] = {
 	&node_u1141u116eu11ab,
 };
 static const uint16_t node_u1141u116e_jamo_seq[] = {
@@ -74778,7 +74778,7 @@ static const struct Node node_u1141u1175u11ab = {
 	0,
 	"u1141u1175u11ab",
 };
-static struct Node* const node_u1141u1175_children[] = {
+static const struct Node *node_u1141u1175_children[] = {
 	&node_u1141u1175u11ab,
 };
 static const uint16_t node_u1141u1175_jamo_seq[] = {
@@ -74879,7 +74879,7 @@ static const struct Node node_u1141ud7b5 = {
 	0,
 	"u1141ud7b5",
 };
-static struct Node* const node_u1141_children[] = {
+static const struct Node *node_u1141_children[] = {
 	&node_u1141u1161,
 	&node_u1141u1162,
 	&node_u1141u1163,
@@ -74935,7 +74935,7 @@ static const struct Node node_u1142u1161u11ab = {
 	0,
 	"u1142u1161u11ab",
 };
-static struct Node* const node_u1142u1161_children[] = {
+static const struct Node *node_u1142u1161_children[] = {
 	&node_u1142u1161u11ab,
 };
 static const uint16_t node_u1142u1161_jamo_seq[] = {
@@ -74967,7 +74967,7 @@ static const struct Node node_u1142u1165u11af = {
 	0,
 	"u1142u1165u11af",
 };
-static struct Node* const node_u1142u1165_children[] = {
+static const struct Node *node_u1142u1165_children[] = {
 	&node_u1142u1165u11af,
 };
 static const uint16_t node_u1142u1165_jamo_seq[] = {
@@ -74999,7 +74999,7 @@ static const struct Node node_u1142u1166u11ab = {
 	0,
 	"u1142u1166u11ab",
 };
-static struct Node* const node_u1142u1166_children[] = {
+static const struct Node *node_u1142u1166_children[] = {
 	&node_u1142u1166u11ab,
 };
 static const uint16_t node_u1142u1166_jamo_seq[] = {
@@ -75046,7 +75046,7 @@ static const struct Node node_u1142u1169u11af = {
 	0,
 	"u1142u1169u11af",
 };
-static struct Node* const node_u1142u1169_children[] = {
+static const struct Node *node_u1142u1169_children[] = {
 	&node_u1142u1169u11ab,
 	&node_u1142u1169u11af,
 };
@@ -75079,7 +75079,7 @@ static const struct Node node_u1142u1173u11b7 = {
 	0,
 	"u1142u1173u11b7",
 };
-static struct Node* const node_u1142u1173_children[] = {
+static const struct Node *node_u1142u1173_children[] = {
 	&node_u1142u1173u11b7,
 };
 static const uint16_t node_u1142u1173_jamo_seq[] = {
@@ -75125,7 +75125,7 @@ static const struct Node node_u1142u1175u11bc = {
 	0,
 	"u1142u1175u11bc",
 };
-static struct Node* const node_u1142u1175_children[] = {
+static const struct Node *node_u1142u1175_children[] = {
 	&node_u1142u1175u11bc,
 };
 static const uint16_t node_u1142u1175_jamo_seq[] = {
@@ -75157,7 +75157,7 @@ static const struct Node node_u1142u119eu11b7 = {
 	0,
 	"u1142u119eu11b7",
 };
-static struct Node* const node_u1142u119e_children[] = {
+static const struct Node *node_u1142u119e_children[] = {
 	&node_u1142u119eu11b7,
 };
 static const uint16_t node_u1142u119e_jamo_seq[] = {
@@ -75174,7 +75174,7 @@ static const struct Node node_u1142u119e = {
 	node_u1142u119e_children,
 	"u1142u119e",
 };
-static struct Node* const node_u1142_children[] = {
+static const struct Node *node_u1142_children[] = {
 	&node_u1142u1161,
 	&node_u1142u1165,
 	&node_u1142u1166,
@@ -75239,7 +75239,7 @@ static const struct Node node_u1143u11a1 = {
 	0,
 	"u1143u11a1",
 };
-static struct Node* const node_u1143_children[] = {
+static const struct Node *node_u1143_children[] = {
 	&node_u1143u116e,
 	&node_u1143u119e,
 	&node_u1143u11a1,
@@ -75302,7 +75302,7 @@ static const struct Node node_u1144u1161u11b7 = {
 	0,
 	"u1144u1161u11b7",
 };
-static struct Node* const node_u1144u1161_children[] = {
+static const struct Node *node_u1144u1161_children[] = {
 	&node_u1144u1161u11ab,
 	&node_u1144u1161u11af,
 	&node_u1144u1161u11b7,
@@ -75351,7 +75351,7 @@ static const struct Node node_u1144u1162u11b7 = {
 	0,
 	"u1144u1162u11b7",
 };
-static struct Node* const node_u1144u1162_children[] = {
+static const struct Node *node_u1144u1162_children[] = {
 	&node_u1144u1162u11af,
 	&node_u1144u1162u11b7,
 };
@@ -75399,7 +75399,7 @@ static const struct Node node_u1144u1165u11c0 = {
 	0,
 	"u1144u1165u11c0",
 };
-static struct Node* const node_u1144u1165_children[] = {
+static const struct Node *node_u1144u1165_children[] = {
 	&node_u1144u1165u11af,
 	&node_u1144u1165u11c0,
 };
@@ -75462,7 +75462,7 @@ static const struct Node node_u1144u1166u11c0 = {
 	0,
 	"u1144u1166u11c0",
 };
-static struct Node* const node_u1144u1166_children[] = {
+static const struct Node *node_u1144u1166_children[] = {
 	&node_u1144u1166u11ab,
 	&node_u1144u1166u11af,
 	&node_u1144u1166u11c0,
@@ -75510,7 +75510,7 @@ static const struct Node node_u1144u1168u11ab = {
 	0,
 	"u1144u1168u11ab",
 };
-static struct Node* const node_u1144u1168_children[] = {
+static const struct Node *node_u1144u1168_children[] = {
 	&node_u1144u1168u11ab,
 };
 static const uint16_t node_u1144u1168_jamo_seq[] = {
@@ -75572,7 +75572,7 @@ static const struct Node node_u1144u1169u11c0 = {
 	0,
 	"u1144u1169u11c0",
 };
-static struct Node* const node_u1144u1169_children[] = {
+static const struct Node *node_u1144u1169_children[] = {
 	&node_u1144u1169u11ab,
 	&node_u1144u1169u11af,
 	&node_u1144u1169u11c0,
@@ -75606,7 +75606,7 @@ static const struct Node node_u1144u116au11b7 = {
 	0,
 	"u1144u116au11b7",
 };
-static struct Node* const node_u1144u116a_children[] = {
+static const struct Node *node_u1144u116a_children[] = {
 	&node_u1144u116au11b7,
 };
 static const uint16_t node_u1144u116a_jamo_seq[] = {
@@ -75667,7 +75667,7 @@ static const struct Node node_u1144u116eu11af = {
 	0,
 	"u1144u116eu11af",
 };
-static struct Node* const node_u1144u116e_children[] = {
+static const struct Node *node_u1144u116e_children[] = {
 	&node_u1144u116eu11ab,
 	&node_u1144u116eu11af,
 };
@@ -75714,7 +75714,7 @@ static const struct Node node_u1144u1170u11af = {
 	0,
 	"u1144u1170u11af",
 };
-static struct Node* const node_u1144u1170_children[] = {
+static const struct Node *node_u1144u1170_children[] = {
 	&node_u1144u1170u11af,
 };
 static const uint16_t node_u1144u1170_jamo_seq[] = {
@@ -75746,7 +75746,7 @@ static const struct Node node_u1144u1171u11bc = {
 	0,
 	"u1144u1171u11bc",
 };
-static struct Node* const node_u1144u1171_children[] = {
+static const struct Node *node_u1144u1171_children[] = {
 	&node_u1144u1171u11bc,
 };
 static const uint16_t node_u1144u1171_jamo_seq[] = {
@@ -75807,7 +75807,7 @@ static const struct Node node_u1144u1173u11af = {
 	0,
 	"u1144u1173u11af",
 };
-static struct Node* const node_u1144u1173_children[] = {
+static const struct Node *node_u1144u1173_children[] = {
 	&node_u1144u1173u11ab,
 	&node_u1144u1173u11af,
 };
@@ -75914,7 +75914,7 @@ static const struct Node node_u1144u1175u11bf = {
 	0,
 	"u1144u1175u11bf",
 };
-static struct Node* const node_u1144u1175_children[] = {
+static const struct Node *node_u1144u1175_children[] = {
 	&node_u1144u1175u11a8,
 	&node_u1144u1175u11ab,
 	&node_u1144u1175u11af,
@@ -75963,7 +75963,7 @@ static const struct Node node_u1144u11a1 = {
 	0,
 	"u1144u11a1",
 };
-static struct Node* const node_u1144_children[] = {
+static const struct Node *node_u1144_children[] = {
 	&node_u1144u1161,
 	&node_u1144u1162,
 	&node_u1144u1165,
@@ -76027,7 +76027,7 @@ static const struct Node node_u1145u1161u11bc = {
 	0,
 	"u1145u1161u11bc",
 };
-static struct Node* const node_u1145u1161_children[] = {
+static const struct Node *node_u1145u1161_children[] = {
 	&node_u1145u1161u11ab,
 	&node_u1145u1161u11bc,
 };
@@ -76119,7 +76119,7 @@ static const struct Node node_u1145u1165u11bc = {
 	0,
 	"u1145u1165u11bc",
 };
-static struct Node* const node_u1145u1165_children[] = {
+static const struct Node *node_u1145u1165_children[] = {
 	&node_u1145u1165u11ab,
 	&node_u1145u1165u11af,
 	&node_u1145u1165u11b7,
@@ -76182,7 +76182,7 @@ static const struct Node node_u1145u1168u11ab = {
 	0,
 	"u1145u1168u11ab",
 };
-static struct Node* const node_u1145u1168_children[] = {
+static const struct Node *node_u1145u1168_children[] = {
 	&node_u1145u1168u11ab,
 };
 static const uint16_t node_u1145u1168_jamo_seq[] = {
@@ -76214,7 +76214,7 @@ static const struct Node node_u1145u1169u11ab = {
 	0,
 	"u1145u1169u11ab",
 };
-static struct Node* const node_u1145u1169_children[] = {
+static const struct Node *node_u1145u1169_children[] = {
 	&node_u1145u1169u11ab,
 };
 static const uint16_t node_u1145u1169_jamo_seq[] = {
@@ -76246,7 +76246,7 @@ static const struct Node node_u1145u116eu11ab = {
 	0,
 	"u1145u116eu11ab",
 };
-static struct Node* const node_u1145u116e_children[] = {
+static const struct Node *node_u1145u116e_children[] = {
 	&node_u1145u116eu11ab,
 };
 static const uint16_t node_u1145u116e_jamo_seq[] = {
@@ -76320,7 +76320,7 @@ static const struct Node node_u1145u1173u11ab = {
 	0,
 	"u1145u1173u11ab",
 };
-static struct Node* const node_u1145u1173_children[] = {
+static const struct Node *node_u1145u1173_children[] = {
 	&node_u1145u1173u11ab,
 };
 static const uint16_t node_u1145u1173_jamo_seq[] = {
@@ -76352,7 +76352,7 @@ static const struct Node node_u1145u1174u11ab = {
 	0,
 	"u1145u1174u11ab",
 };
-static struct Node* const node_u1145u1174_children[] = {
+static const struct Node *node_u1145u1174_children[] = {
 	&node_u1145u1174u11ab,
 };
 static const uint16_t node_u1145u1174_jamo_seq[] = {
@@ -76384,7 +76384,7 @@ static const struct Node node_u1145u1175u11af = {
 	0,
 	"u1145u1175u11af",
 };
-static struct Node* const node_u1145u1175_children[] = {
+static const struct Node *node_u1145u1175_children[] = {
 	&node_u1145u1175u11af,
 };
 static const uint16_t node_u1145u1175_jamo_seq[] = {
@@ -76459,7 +76459,7 @@ static const struct Node node_u1145u1189u11bc = {
 	0,
 	"u1145u1189u11bc",
 };
-static struct Node* const node_u1145u1189_children[] = {
+static const struct Node *node_u1145u1189_children[] = {
 	&node_u1145u1189u11ab,
 	&node_u1145u1189u11bc,
 };
@@ -76506,7 +76506,7 @@ static const struct Node node_u1145u118eu11ab = {
 	0,
 	"u1145u118eu11ab",
 };
-static struct Node* const node_u1145u118e_children[] = {
+static const struct Node *node_u1145u118e_children[] = {
 	&node_u1145u118eu11ab,
 };
 static const uint16_t node_u1145u118e_jamo_seq[] = {
@@ -76580,7 +76580,7 @@ static const struct Node node_u1145u119eu11af = {
 	0,
 	"u1145u119eu11af",
 };
-static struct Node* const node_u1145u119e_children[] = {
+static const struct Node *node_u1145u119e_children[] = {
 	&node_u1145u119eu11af,
 };
 static const uint16_t node_u1145u119e_jamo_seq[] = {
@@ -76597,7 +76597,7 @@ static const struct Node node_u1145u119e = {
 	node_u1145u119e_children,
 	"u1145u119e",
 };
-static struct Node* const node_u1145_children[] = {
+static const struct Node *node_u1145_children[] = {
 	&node_u1145u1161,
 	&node_u1145u1162,
 	&node_u1145u1165,
@@ -76999,7 +76999,7 @@ static const struct Node node_u1146ud7b5 = {
 	0,
 	"u1146ud7b5",
 };
-static struct Node* const node_u1146_children[] = {
+static const struct Node *node_u1146_children[] = {
 	&node_u1146u1161,
 	&node_u1146u1162,
 	&node_u1146u1163,
@@ -77055,7 +77055,7 @@ static const struct Node node_u1147u1163u11ab = {
 	0,
 	"u1147u1163u11ab",
 };
-static struct Node* const node_u1147u1163_children[] = {
+static const struct Node *node_u1147u1163_children[] = {
 	&node_u1147u1163u11ab,
 };
 static const uint16_t node_u1147u1163_jamo_seq[] = {
@@ -77102,7 +77102,7 @@ static const struct Node node_u1147u1167u11ba = {
 	0,
 	"u1147u1167u11ba",
 };
-static struct Node* const node_u1147u1167_children[] = {
+static const struct Node *node_u1147u1167_children[] = {
 	&node_u1147u1167u11ab,
 	&node_u1147u1167u11ba,
 };
@@ -77135,7 +77135,7 @@ static const struct Node node_u1147u1168u11ba = {
 	0,
 	"u1147u1168u11ba",
 };
-static struct Node* const node_u1147u1168_children[] = {
+static const struct Node *node_u1147u1168_children[] = {
 	&node_u1147u1168u11ba,
 };
 static const uint16_t node_u1147u1168_jamo_seq[] = {
@@ -77212,7 +77212,7 @@ static const struct Node node_u1147u116du11e2 = {
 	0,
 	"u1147u116du11e2",
 };
-static struct Node* const node_u1147u116d_children[] = {
+static const struct Node *node_u1147u116d_children[] = {
 	&node_u1147u116du11ab,
 	&node_u1147u116du11b7,
 	&node_u1147u116du11ba,
@@ -77290,7 +77290,7 @@ static const struct Node node_u1147u1172u11b7 = {
 	0,
 	"u1147u1172u11b7",
 };
-static struct Node* const node_u1147u1172_children[] = {
+static const struct Node *node_u1147u1172_children[] = {
 	&node_u1147u1172u11ab,
 	&node_u1147u1172u11b7,
 };
@@ -77323,7 +77323,7 @@ static const struct Node node_u1147u1175u11ab = {
 	0,
 	"u1147u1175u11ab",
 };
-static struct Node* const node_u1147u1175_children[] = {
+static const struct Node *node_u1147u1175_children[] = {
 	&node_u1147u1175u11ab,
 };
 static const uint16_t node_u1147u1175_jamo_seq[] = {
@@ -77355,7 +77355,7 @@ static const struct Node node_u1147u118eu11ab = {
 	0,
 	"u1147u118eu11ab",
 };
-static struct Node* const node_u1147u118e_children[] = {
+static const struct Node *node_u1147u118e_children[] = {
 	&node_u1147u118eu11ab,
 };
 static const uint16_t node_u1147u118e_jamo_seq[] = {
@@ -77372,7 +77372,7 @@ static const struct Node node_u1147u118e = {
 	node_u1147u118e_children,
 	"u1147u118e",
 };
-static struct Node* const node_u1147_children[] = {
+static const struct Node *node_u1147_children[] = {
 	&node_u1147u1163,
 	&node_u1147u1167,
 	&node_u1147u1168,
@@ -77426,7 +77426,7 @@ static const struct Node node_u1148u1161u11bc = {
 	0,
 	"u1148u1161u11bc",
 };
-static struct Node* const node_u1148u1161_children[] = {
+static const struct Node *node_u1148u1161_children[] = {
 	&node_u1148u1161u11ab,
 	&node_u1148u1161u11bc,
 };
@@ -77503,7 +77503,7 @@ static const struct Node node_u1148u1165u11bc = {
 	0,
 	"u1148u1165u11bc",
 };
-static struct Node* const node_u1148u1165_children[] = {
+static const struct Node *node_u1148u1165_children[] = {
 	&node_u1148u1165u11ab,
 	&node_u1148u1165u11b7,
 	&node_u1148u1165u11bc,
@@ -77580,7 +77580,7 @@ static const struct Node node_u1148u116eu11bc = {
 	0,
 	"u1148u116eu11bc",
 };
-static struct Node* const node_u1148u116e_children[] = {
+static const struct Node *node_u1148u116e_children[] = {
 	&node_u1148u116eu11ab,
 	&node_u1148u116eu11bc,
 };
@@ -77725,7 +77725,7 @@ static const struct Node node_u1148u1189u11ab = {
 	0,
 	"u1148u1189u11ab",
 };
-static struct Node* const node_u1148u1189_children[] = {
+static const struct Node *node_u1148u1189_children[] = {
 	&node_u1148u1189u11ab,
 };
 static const uint16_t node_u1148u1189_jamo_seq[] = {
@@ -77756,7 +77756,7 @@ static const struct Node node_u1148u1194 = {
 	0,
 	"u1148u1194",
 };
-static struct Node* const node_u1148_children[] = {
+static const struct Node *node_u1148_children[] = {
 	&node_u1148u1161,
 	&node_u1148u1162,
 	&node_u1148u1165,
@@ -77817,7 +77817,7 @@ static const struct Node node_u1149u1161u11bc = {
 	0,
 	"u1149u1161u11bc",
 };
-static struct Node* const node_u1149u1161_children[] = {
+static const struct Node *node_u1149u1161_children[] = {
 	&node_u1149u1161u11ab,
 	&node_u1149u1161u11bc,
 };
@@ -77879,7 +77879,7 @@ static const struct Node node_u1149u1165u11bc = {
 	0,
 	"u1149u1165u11bc",
 };
-static struct Node* const node_u1149u1165_children[] = {
+static const struct Node *node_u1149u1165_children[] = {
 	&node_u1149u1165u11ab,
 	&node_u1149u1165u11bc,
 };
@@ -77927,7 +77927,7 @@ static const struct Node node_u1149u116eu11bc = {
 	0,
 	"u1149u116eu11bc",
 };
-static struct Node* const node_u1149u116e_children[] = {
+static const struct Node *node_u1149u116e_children[] = {
 	&node_u1149u116eu11ab,
 	&node_u1149u116eu11bc,
 };
@@ -78016,7 +78016,7 @@ static const struct Node node_u1149u1189u11ab = {
 	0,
 	"u1149u1189u11ab",
 };
-static struct Node* const node_u1149u1189_children[] = {
+static const struct Node *node_u1149u1189_children[] = {
 	&node_u1149u1189u11ab,
 };
 static const uint16_t node_u1149u1189_jamo_seq[] = {
@@ -78048,7 +78048,7 @@ static const struct Node node_u1149u118eu11ab = {
 	0,
 	"u1149u118eu11ab",
 };
-static struct Node* const node_u1149u118e_children[] = {
+static const struct Node *node_u1149u118e_children[] = {
 	&node_u1149u118eu11ab,
 };
 static const uint16_t node_u1149u118e_jamo_seq[] = {
@@ -78079,7 +78079,7 @@ static const struct Node node_u1149u1194 = {
 	0,
 	"u1149u1194",
 };
-static struct Node* const node_u1149_children[] = {
+static const struct Node *node_u1149_children[] = {
 	&node_u1149u1161,
 	&node_u1149u1162,
 	&node_u1149u1165,
@@ -78119,7 +78119,7 @@ static const struct Node node_u114au1173 = {
 	0,
 	"u114au1173",
 };
-static struct Node* const node_u114a_children[] = {
+static const struct Node *node_u114a_children[] = {
 	&node_u114au1173,
 };
 static const uint16_t node_u114a_jamo_seq[] = {
@@ -78210,7 +78210,7 @@ static const struct Node node_u114bu1161u11d8 = {
 	0,
 	"u114bu1161u11d8",
 };
-static struct Node* const node_u114bu1161_children[] = {
+static const struct Node *node_u114bu1161_children[] = {
 	&node_u114bu1161u11a8,
 	&node_u114bu1161u11ab,
 	&node_u114bu1161u11af,
@@ -78261,7 +78261,7 @@ static const struct Node node_u114bu1162u11bf = {
 	0,
 	"u114bu1162u11bf",
 };
-static struct Node* const node_u114bu1162_children[] = {
+static const struct Node *node_u114bu1162_children[] = {
 	&node_u114bu1162u11ab,
 	&node_u114bu1162u11bf,
 };
@@ -78339,7 +78339,7 @@ static const struct Node node_u114bu1165u11bc = {
 	0,
 	"u114bu1165u11bc",
 };
-static struct Node* const node_u114bu1165_children[] = {
+static const struct Node *node_u114bu1165_children[] = {
 	&node_u114bu1165u11ab,
 	&node_u114bu1165u11af,
 	&node_u114bu1165u11b7,
@@ -78419,7 +78419,7 @@ static const struct Node node_u114bu1166u11bf = {
 	0,
 	"u114bu1166u11bf",
 };
-static struct Node* const node_u114bu1166_children[] = {
+static const struct Node *node_u114bu1166_children[] = {
 	&node_u114bu1166u11a8,
 	&node_u114bu1166u11ab,
 	&node_u114bu1166u11af,
@@ -78529,7 +78529,7 @@ static const struct Node node_u114bu1169u11d8 = {
 	0,
 	"u114bu1169u11d8",
 };
-static struct Node* const node_u114bu1169_children[] = {
+static const struct Node *node_u114bu1169_children[] = {
 	&node_u114bu1169u11ab,
 	&node_u114bu1169u11af,
 	&node_u114bu1169u11b1,
@@ -78580,7 +78580,7 @@ static const struct Node node_u114bu116bu11ab = {
 	0,
 	"u114bu116bu11ab",
 };
-static struct Node* const node_u114bu116b_children[] = {
+static const struct Node *node_u114bu116b_children[] = {
 	&node_u114bu116bu11ab,
 };
 static const uint16_t node_u114bu116b_jamo_seq[] = {
@@ -78657,7 +78657,7 @@ static const struct Node node_u114bu116eu11c0 = {
 	0,
 	"u114bu116eu11c0",
 };
-static struct Node* const node_u114bu116e_children[] = {
+static const struct Node *node_u114bu116e_children[] = {
 	&node_u114bu116eu11ab,
 	&node_u114bu116eu11af,
 	&node_u114bu116eu11bf,
@@ -78692,7 +78692,7 @@ static const struct Node node_u114bu116fu11ab = {
 	0,
 	"u114bu116fu11ab",
 };
-static struct Node* const node_u114bu116f_children[] = {
+static const struct Node *node_u114bu116f_children[] = {
 	&node_u114bu116fu11ab,
 };
 static const uint16_t node_u114bu116f_jamo_seq[] = {
@@ -78724,7 +78724,7 @@ static const struct Node node_u114bu1170u11ab = {
 	0,
 	"u114bu1170u11ab",
 };
-static struct Node* const node_u114bu1170_children[] = {
+static const struct Node *node_u114bu1170_children[] = {
 	&node_u114bu1170u11ab,
 };
 static const uint16_t node_u114bu1170_jamo_seq[] = {
@@ -78786,7 +78786,7 @@ static const struct Node node_u114bu1171u11af = {
 	0,
 	"u114bu1171u11af",
 };
-static struct Node* const node_u114bu1171_children[] = {
+static const struct Node *node_u114bu1171_children[] = {
 	&node_u114bu1171u11a8,
 	&node_u114bu1171u11ab,
 	&node_u114bu1171u11af,
@@ -78820,7 +78820,7 @@ static const struct Node node_u114bu1172u11b7 = {
 	0,
 	"u114bu1172u11b7",
 };
-static struct Node* const node_u114bu1172_children[] = {
+static const struct Node *node_u114bu1172_children[] = {
 	&node_u114bu1172u11b7,
 };
 static const uint16_t node_u114bu1172_jamo_seq[] = {
@@ -78852,7 +78852,7 @@ static const struct Node node_u114bu1173u11af = {
 	0,
 	"u114bu1173u11af",
 };
-static struct Node* const node_u114bu1173_children[] = {
+static const struct Node *node_u114bu1173_children[] = {
 	&node_u114bu1173u11af,
 };
 static const uint16_t node_u114bu1173_jamo_seq[] = {
@@ -78959,7 +78959,7 @@ static const struct Node node_u114bu1175u11c1 = {
 	0,
 	"u114bu1175u11c1",
 };
-static struct Node* const node_u114bu1175_children[] = {
+static const struct Node *node_u114bu1175_children[] = {
 	&node_u114bu1175u11ab,
 	&node_u114bu1175u11af,
 	&node_u114bu1175u11bc,
@@ -78996,7 +78996,7 @@ static const struct Node node_u114bu1189u11ab = {
 	0,
 	"u114bu1189u11ab",
 };
-static struct Node* const node_u114bu1189_children[] = {
+static const struct Node *node_u114bu1189_children[] = {
 	&node_u114bu1189u11ab,
 };
 static const uint16_t node_u114bu1189_jamo_seq[] = {
@@ -79041,7 +79041,7 @@ static const struct Node node_u114bu11a1 = {
 	0,
 	"u114bu11a1",
 };
-static struct Node* const node_u114b_children[] = {
+static const struct Node *node_u114b_children[] = {
 	&node_u114bu1161,
 	&node_u114bu1162,
 	&node_u114bu1165,
@@ -79223,7 +79223,7 @@ static const struct Node node_u114cu1161u11f9 = {
 	0,
 	"u114cu1161u11f9",
 };
-static struct Node* const node_u114cu1161_children[] = {
+static const struct Node *node_u114cu1161_children[] = {
 	&node_u114cu1161u11a8,
 	&node_u114cu1161u11ab,
 	&node_u114cu1161u11af,
@@ -79279,7 +79279,7 @@ static const struct Node node_u114cu1162u11bc = {
 	0,
 	"u114cu1162u11bc",
 };
-static struct Node* const node_u114cu1162_children[] = {
+static const struct Node *node_u114cu1162_children[] = {
 	&node_u114cu1162u11ba,
 	&node_u114cu1162u11bc,
 };
@@ -79357,7 +79357,7 @@ static const struct Node node_u114cu1163u11f0 = {
 	0,
 	"u114cu1163u11f0",
 };
-static struct Node* const node_u114cu1163_children[] = {
+static const struct Node *node_u114cu1163_children[] = {
 	&node_u114cu1163u11a8,
 	&node_u114cu1163u11ab,
 	&node_u114cu1163u11bc,
@@ -79392,7 +79392,7 @@ static const struct Node node_u114cu1164u11ba = {
 	0,
 	"u114cu1164u11ba",
 };
-static struct Node* const node_u114cu1164_children[] = {
+static const struct Node *node_u114cu1164_children[] = {
 	&node_u114cu1164u11ba,
 };
 static const uint16_t node_u114cu1164_jamo_seq[] = {
@@ -79559,7 +79559,7 @@ static const struct Node node_u114cu1165u11f0 = {
 	0,
 	"u114cu1165u11f0",
 };
-static struct Node* const node_u114cu1165_children[] = {
+static const struct Node *node_u114cu1165_children[] = {
 	&node_u114cu1165u11a8,
 	&node_u114cu1165u11ab,
 	&node_u114cu1165u11af,
@@ -79660,7 +79660,7 @@ static const struct Node node_u114cu1166u11f0 = {
 	0,
 	"u114cu1166u11f0",
 };
-static struct Node* const node_u114cu1166_children[] = {
+static const struct Node *node_u114cu1166_children[] = {
 	&node_u114cu1166u11ab,
 	&node_u114cu1166u11ba,
 	&node_u114cu1166u11bc,
@@ -79846,7 +79846,7 @@ static const struct Node node_u114cu1167u11f4 = {
 	0,
 	"u114cu1167u11f4",
 };
-static struct Node* const node_u114cu1167_children[] = {
+static const struct Node *node_u114cu1167_children[] = {
 	&node_u114cu1167u11a8,
 	&node_u114cu1167u11ab,
 	&node_u114cu1167u11af,
@@ -79903,7 +79903,7 @@ static const struct Node node_u114cu1168u11bc = {
 	0,
 	"u114cu1168u11bc",
 };
-static struct Node* const node_u114cu1168_children[] = {
+static const struct Node *node_u114cu1168_children[] = {
 	&node_u114cu1168u11ba,
 	&node_u114cu1168u11bc,
 };
@@ -80071,7 +80071,7 @@ static const struct Node node_u114cu1169u11f0 = {
 	0,
 	"u114cu1169u11f0",
 };
-static struct Node* const node_u114cu1169_children[] = {
+static const struct Node *node_u114cu1169_children[] = {
 	&node_u114cu1169u11a8,
 	&node_u114cu1169u11ab,
 	&node_u114cu1169u11af,
@@ -80217,7 +80217,7 @@ static const struct Node node_u114cu116au11f0 = {
 	0,
 	"u114cu116au11f0",
 };
-static struct Node* const node_u114cu116a_children[] = {
+static const struct Node *node_u114cu116a_children[] = {
 	&node_u114cu116au11a8,
 	&node_u114cu116au11ab,
 	&node_u114cu116au11af,
@@ -80256,7 +80256,7 @@ static const struct Node node_u114cu116bu11bc = {
 	0,
 	"u114cu116bu11bc",
 };
-static struct Node* const node_u114cu116b_children[] = {
+static const struct Node *node_u114cu116b_children[] = {
 	&node_u114cu116bu11bc,
 };
 static const uint16_t node_u114cu116b_jamo_seq[] = {
@@ -80318,7 +80318,7 @@ static const struct Node node_u114cu116cu11f0 = {
 	0,
 	"u114cu116cu11f0",
 };
-static struct Node* const node_u114cu116c_children[] = {
+static const struct Node *node_u114cu116c_children[] = {
 	&node_u114cu116cu11ab,
 	&node_u114cu116cu11bc,
 	&node_u114cu116cu11f0,
@@ -80382,7 +80382,7 @@ static const struct Node node_u114cu116du11f0 = {
 	0,
 	"u114cu116du11f0",
 };
-static struct Node* const node_u114cu116d_children[] = {
+static const struct Node *node_u114cu116d_children[] = {
 	&node_u114cu116du11b7,
 	&node_u114cu116du11e2,
 	&node_u114cu116du11f0,
@@ -80506,7 +80506,7 @@ static const struct Node node_u114cu116eu11e2 = {
 	0,
 	"u114cu116eu11e2",
 };
-static struct Node* const node_u114cu116e_children[] = {
+static const struct Node *node_u114cu116e_children[] = {
 	&node_u114cu116eu11a8,
 	&node_u114cu116eu11ab,
 	&node_u114cu116eu11af,
@@ -80604,7 +80604,7 @@ static const struct Node node_u114cu116fu11f0 = {
 	0,
 	"u114cu116fu11f0",
 };
-static struct Node* const node_u114cu116f_children[] = {
+static const struct Node *node_u114cu116f_children[] = {
 	&node_u114cu116fu11ab,
 	&node_u114cu116fu11af,
 	&node_u114cu116fu11bc,
@@ -80699,7 +80699,7 @@ static const struct Node node_u114cu1171u11f0 = {
 	0,
 	"u114cu1171u11f0",
 };
-static struct Node* const node_u114cu1171_children[] = {
+static const struct Node *node_u114cu1171_children[] = {
 	&node_u114cu1171u11af,
 	&node_u114cu1171u11bc,
 	&node_u114cu1171u11d9,
@@ -80809,7 +80809,7 @@ static const struct Node node_u114cu1172u11e2 = {
 	0,
 	"u114cu1172u11e2",
 };
-static struct Node* const node_u114cu1172_children[] = {
+static const struct Node *node_u114cu1172_children[] = {
 	&node_u114cu1172u11a8,
 	&node_u114cu1172u11ab,
 	&node_u114cu1172u11af,
@@ -80951,7 +80951,7 @@ static const struct Node node_u114cu1173u11f0 = {
 	0,
 	"u114cu1173u11f0",
 };
-static struct Node* const node_u114cu1173_children[] = {
+static const struct Node *node_u114cu1173_children[] = {
 	&node_u114cu1173u11a8,
 	&node_u114cu1173u11ab,
 	&node_u114cu1173u11af,
@@ -80990,7 +80990,7 @@ static const struct Node node_u114cu1174u11bc = {
 	0,
 	"u114cu1174u11bc",
 };
-static struct Node* const node_u114cu1174_children[] = {
+static const struct Node *node_u114cu1174_children[] = {
 	&node_u114cu1174u11bc,
 };
 static const uint16_t node_u114cu1174_jamo_seq[] = {
@@ -81112,7 +81112,7 @@ static const struct Node node_u114cu1175u11f0 = {
 	0,
 	"u114cu1175u11f0",
 };
-static struct Node* const node_u114cu1175_children[] = {
+static const struct Node *node_u114cu1175_children[] = {
 	&node_u114cu1175u11ab,
 	&node_u114cu1175u11ae,
 	&node_u114cu1175u11af,
@@ -81164,7 +81164,7 @@ static const struct Node node_u114cu1185u11bc = {
 	0,
 	"u114cu1185u11bc",
 };
-static struct Node* const node_u114cu1185_children[] = {
+static const struct Node *node_u114cu1185_children[] = {
 	&node_u114cu1185u11bc,
 };
 static const uint16_t node_u114cu1185_jamo_seq[] = {
@@ -81241,7 +81241,7 @@ static const struct Node node_u114cu1191u11f9 = {
 	0,
 	"u114cu1191u11f9",
 };
-static struct Node* const node_u114cu1191_children[] = {
+static const struct Node *node_u114cu1191_children[] = {
 	&node_u114cu1191u11a8,
 	&node_u114cu1191u11ab,
 	&node_u114cu1191u11f0,
@@ -81350,7 +81350,7 @@ static const struct Node node_u114cu119eu11ba = {
 	0,
 	"u114cu119eu11ba",
 };
-static struct Node* const node_u114cu119e_children[] = {
+static const struct Node *node_u114cu119e_children[] = {
 	&node_u114cu119eu11a8,
 	&node_u114cu119eu11ab,
 	&node_u114cu119eu11ae,
@@ -81386,7 +81386,7 @@ static const struct Node node_u114cu11a1u11a8 = {
 	0,
 	"u114cu11a1u11a8",
 };
-static struct Node* const node_u114cu11a1_children[] = {
+static const struct Node *node_u114cu11a1_children[] = {
 	&node_u114cu11a1u11a8,
 };
 static const uint16_t node_u114cu11a1_jamo_seq[] = {
@@ -81403,7 +81403,7 @@ static const struct Node node_u114cu11a1 = {
 	node_u114cu11a1_children,
 	"u114cu11a1",
 };
-static struct Node* const node_u114c_children[] = {
+static const struct Node *node_u114c_children[] = {
 	&node_u114cu1161,
 	&node_u114cu1162,
 	&node_u114cu1163,
@@ -81460,7 +81460,7 @@ static const struct Node node_u114du1173u11af = {
 	0,
 	"u114du1173u11af",
 };
-static struct Node* const node_u114du1173_children[] = {
+static const struct Node *node_u114du1173_children[] = {
 	&node_u114du1173u11af,
 };
 static const uint16_t node_u114du1173_jamo_seq[] = {
@@ -81492,7 +81492,7 @@ static const struct Node node_u114du1175u11af = {
 	0,
 	"u114du1175u11af",
 };
-static struct Node* const node_u114du1175_children[] = {
+static const struct Node *node_u114du1175_children[] = {
 	&node_u114du1175u11af,
 };
 static const uint16_t node_u114du1175_jamo_seq[] = {
@@ -81509,7 +81509,7 @@ static const struct Node node_u114du1175 = {
 	node_u114du1175_children,
 	"u114du1175",
 };
-static struct Node* const node_u114d_children[] = {
+static const struct Node *node_u114d_children[] = {
 	&node_u114du1173,
 	&node_u114du1175,
 };
@@ -81571,7 +81571,7 @@ static const struct Node node_u114eu1161u11e2 = {
 	0,
 	"u114eu1161u11e2",
 };
-static struct Node* const node_u114eu1161_children[] = {
+static const struct Node *node_u114eu1161_children[] = {
 	&node_u114eu1161u11ab,
 	&node_u114eu1161u11b7,
 	&node_u114eu1161u11e2,
@@ -81619,7 +81619,7 @@ static const struct Node node_u114eu1163u11bc = {
 	0,
 	"u114eu1163u11bc",
 };
-static struct Node* const node_u114eu1163_children[] = {
+static const struct Node *node_u114eu1163_children[] = {
 	&node_u114eu1163u11bc,
 };
 static const uint16_t node_u114eu1163_jamo_seq[] = {
@@ -81651,7 +81651,7 @@ static const struct Node node_u114eu1165u11ab = {
 	0,
 	"u114eu1165u11ab",
 };
-static struct Node* const node_u114eu1165_children[] = {
+static const struct Node *node_u114eu1165_children[] = {
 	&node_u114eu1165u11ab,
 };
 static const uint16_t node_u114eu1165_jamo_seq[] = {
@@ -81698,7 +81698,7 @@ static const struct Node node_u114eu1167u11f9 = {
 	0,
 	"u114eu1167u11f9",
 };
-static struct Node* const node_u114eu1167_children[] = {
+static const struct Node *node_u114eu1167_children[] = {
 	&node_u114eu1167u11ab,
 	&node_u114eu1167u11f9,
 };
@@ -81802,7 +81802,7 @@ static const struct Node node_u114eu116eu11bc = {
 	0,
 	"u114eu116eu11bc",
 };
-static struct Node* const node_u114eu116e_children[] = {
+static const struct Node *node_u114eu116e_children[] = {
 	&node_u114eu116eu11ab,
 	&node_u114eu116eu11bc,
 };
@@ -81864,7 +81864,7 @@ static const struct Node node_u114eu1172u11bc = {
 	0,
 	"u114eu1172u11bc",
 };
-static struct Node* const node_u114eu1172_children[] = {
+static const struct Node *node_u114eu1172_children[] = {
 	&node_u114eu1172u11ab,
 	&node_u114eu1172u11bc,
 };
@@ -81927,7 +81927,7 @@ static const struct Node node_u114eu1173u11eb = {
 	0,
 	"u114eu1173u11eb",
 };
-static struct Node* const node_u114eu1173_children[] = {
+static const struct Node *node_u114eu1173_children[] = {
 	&node_u114eu1173u11ab,
 	&node_u114eu1173u11ba,
 	&node_u114eu1173u11eb,
@@ -82006,7 +82006,7 @@ static const struct Node node_u114eu1175u11eb = {
 	0,
 	"u114eu1175u11eb",
 };
-static struct Node* const node_u114eu1175_children[] = {
+static const struct Node *node_u114eu1175_children[] = {
 	&node_u114eu1175u11ab,
 	&node_u114eu1175u11b7,
 	&node_u114eu1175u11e2,
@@ -82055,7 +82055,7 @@ static const struct Node node_u114eu1191u11ab = {
 	0,
 	"u114eu1191u11ab",
 };
-static struct Node* const node_u114eu1191_children[] = {
+static const struct Node *node_u114eu1191_children[] = {
 	&node_u114eu1191u11ab,
 };
 static const uint16_t node_u114eu1191_jamo_seq[] = {
@@ -82072,7 +82072,7 @@ static const struct Node node_u114eu1191 = {
 	node_u114eu1191_children,
 	"u114eu1191",
 };
-static struct Node* const node_u114e_children[] = {
+static const struct Node *node_u114e_children[] = {
 	&node_u114eu1161,
 	&node_u114eu1162,
 	&node_u114eu1163,
@@ -82163,7 +82163,7 @@ static const struct Node node_u114fu1161u11f0 = {
 	0,
 	"u114fu1161u11f0",
 };
-static struct Node* const node_u114fu1161_children[] = {
+static const struct Node *node_u114fu1161_children[] = {
 	&node_u114fu1161u11ab,
 	&node_u114fu1161u11b7,
 	&node_u114fu1161u11e2,
@@ -82227,7 +82227,7 @@ static const struct Node node_u114fu1163u11f0 = {
 	0,
 	"u114fu1163u11f0",
 };
-static struct Node* const node_u114fu1163_children[] = {
+static const struct Node *node_u114fu1163_children[] = {
 	&node_u114fu1163u11b7,
 	&node_u114fu1163u11f0,
 };
@@ -82260,7 +82260,7 @@ static const struct Node node_u114fu1165u11ab = {
 	0,
 	"u114fu1165u11ab",
 };
-static struct Node* const node_u114fu1165_children[] = {
+static const struct Node *node_u114fu1165_children[] = {
 	&node_u114fu1165u11ab,
 };
 static const uint16_t node_u114fu1165_jamo_seq[] = {
@@ -82292,7 +82292,7 @@ static const struct Node node_u114fu1167u11ab = {
 	0,
 	"u114fu1167u11ab",
 };
-static struct Node* const node_u114fu1167_children[] = {
+static const struct Node *node_u114fu1167_children[] = {
 	&node_u114fu1167u11ab,
 };
 static const uint16_t node_u114fu1167_jamo_seq[] = {
@@ -82366,7 +82366,7 @@ static const struct Node node_u114fu1172u11f0 = {
 	0,
 	"u114fu1172u11f0",
 };
-static struct Node* const node_u114fu1172_children[] = {
+static const struct Node *node_u114fu1172_children[] = {
 	&node_u114fu1172u11f0,
 };
 static const uint16_t node_u114fu1172_jamo_seq[] = {
@@ -82413,7 +82413,7 @@ static const struct Node node_u114fu1173u11f0 = {
 	0,
 	"u114fu1173u11f0",
 };
-static struct Node* const node_u114fu1173_children[] = {
+static const struct Node *node_u114fu1173_children[] = {
 	&node_u114fu1173u11eb,
 	&node_u114fu1173u11f0,
 };
@@ -82446,7 +82446,7 @@ static const struct Node node_u114fu1175u11ab = {
 	0,
 	"u114fu1175u11ab",
 };
-static struct Node* const node_u114fu1175_children[] = {
+static const struct Node *node_u114fu1175_children[] = {
 	&node_u114fu1175u11ab,
 };
 static const uint16_t node_u114fu1175_jamo_seq[] = {
@@ -82478,7 +82478,7 @@ static const struct Node node_u114fu1191u11ab = {
 	0,
 	"u114fu1191u11ab",
 };
-static struct Node* const node_u114fu1191_children[] = {
+static const struct Node *node_u114fu1191_children[] = {
 	&node_u114fu1191u11ab,
 };
 static const uint16_t node_u114fu1191_jamo_seq[] = {
@@ -82523,7 +82523,7 @@ static const struct Node node_u114fu11a1 = {
 	0,
 	"u114fu11a1",
 };
-static struct Node* const node_u114f_children[] = {
+static const struct Node *node_u114f_children[] = {
 	&node_u114fu1161,
 	&node_u114fu1162,
 	&node_u114fu1163,
@@ -82627,7 +82627,7 @@ static const struct Node node_u1150u1161u11e2 = {
 	0,
 	"u1150u1161u11e2",
 };
-static struct Node* const node_u1150u1161_children[] = {
+static const struct Node *node_u1150u1161_children[] = {
 	&node_u1150u1161u11ab,
 	&node_u1150u1161u11ae,
 	&node_u1150u1161u11b7,
@@ -82707,7 +82707,7 @@ static const struct Node node_u1150u1163u11f0 = {
 	0,
 	"u1150u1163u11f0",
 };
-static struct Node* const node_u1150u1163_children[] = {
+static const struct Node *node_u1150u1163_children[] = {
 	&node_u1150u1163u11b7,
 	&node_u1150u1163u11e2,
 	&node_u1150u1163u11f0,
@@ -82741,7 +82741,7 @@ static const struct Node node_u1150u1167u11ab = {
 	0,
 	"u1150u1167u11ab",
 };
-static struct Node* const node_u1150u1167_children[] = {
+static const struct Node *node_u1150u1167_children[] = {
 	&node_u1150u1167u11ab,
 };
 static const uint16_t node_u1150u1167_jamo_seq[] = {
@@ -82787,7 +82787,7 @@ static const struct Node node_u1150u116au11bc = {
 	0,
 	"u1150u116au11bc",
 };
-static struct Node* const node_u1150u116a_children[] = {
+static const struct Node *node_u1150u116a_children[] = {
 	&node_u1150u116au11bc,
 };
 static const uint16_t node_u1150u116a_jamo_seq[] = {
@@ -82834,7 +82834,7 @@ static const struct Node node_u1150u116eu11f9 = {
 	0,
 	"u1150u116eu11f9",
 };
-static struct Node* const node_u1150u116e_children[] = {
+static const struct Node *node_u1150u116e_children[] = {
 	&node_u1150u116eu11bc,
 	&node_u1150u116eu11f9,
 };
@@ -82897,7 +82897,7 @@ static const struct Node node_u1150u1172u11f0 = {
 	0,
 	"u1150u1172u11f0",
 };
-static struct Node* const node_u1150u1172_children[] = {
+static const struct Node *node_u1150u1172_children[] = {
 	&node_u1150u1172u11a8,
 	&node_u1150u1172u11ab,
 	&node_u1150u1172u11f0,
@@ -82946,7 +82946,7 @@ static const struct Node node_u1150u1173u11eb = {
 	0,
 	"u1150u1173u11eb",
 };
-static struct Node* const node_u1150u1173_children[] = {
+static const struct Node *node_u1150u1173_children[] = {
 	&node_u1150u1173u11b7,
 	&node_u1150u1173u11eb,
 };
@@ -83009,7 +83009,7 @@ static const struct Node node_u1150u1175u11f0 = {
 	0,
 	"u1150u1175u11f0",
 };
-static struct Node* const node_u1150u1175_children[] = {
+static const struct Node *node_u1150u1175_children[] = {
 	&node_u1150u1175u11ab,
 	&node_u1150u1175u11eb,
 	&node_u1150u1175u11f0,
@@ -83043,7 +83043,7 @@ static const struct Node node_u1150u1191u11ab = {
 	0,
 	"u1150u1191u11ab",
 };
-static struct Node* const node_u1150u1191_children[] = {
+static const struct Node *node_u1150u1191_children[] = {
 	&node_u1150u1191u11ab,
 };
 static const uint16_t node_u1150u1191_jamo_seq[] = {
@@ -83060,7 +83060,7 @@ static const struct Node node_u1150u1191 = {
 	node_u1150u1191_children,
 	"u1150u1191",
 };
-static struct Node* const node_u1150_children[] = {
+static const struct Node *node_u1150_children[] = {
 	&node_u1150u1161,
 	&node_u1150u1162,
 	&node_u1150u1163,
@@ -83116,7 +83116,7 @@ static const struct Node node_u1151u1161u11c2 = {
 	0,
 	"u1151u1161u11c2",
 };
-static struct Node* const node_u1151u1161_children[] = {
+static const struct Node *node_u1151u1161_children[] = {
 	&node_u1151u1161u11ab,
 	&node_u1151u1161u11c2,
 };
@@ -83208,7 +83208,7 @@ static const struct Node node_u1151u1163u11f0 = {
 	0,
 	"u1151u1163u11f0",
 };
-static struct Node* const node_u1151u1163_children[] = {
+static const struct Node *node_u1151u1163_children[] = {
 	&node_u1151u1163u11b7,
 	&node_u1151u1163u11b8,
 	&node_u1151u1163u11e2,
@@ -83243,7 +83243,7 @@ static const struct Node node_u1151u1167u11ab = {
 	0,
 	"u1151u1167u11ab",
 };
-static struct Node* const node_u1151u1167_children[] = {
+static const struct Node *node_u1151u1167_children[] = {
 	&node_u1151u1167u11ab,
 };
 static const uint16_t node_u1151u1167_jamo_seq[] = {
@@ -83303,7 +83303,7 @@ static const struct Node node_u1151u1172u11f0 = {
 	0,
 	"u1151u1172u11f0",
 };
-static struct Node* const node_u1151u1172_children[] = {
+static const struct Node *node_u1151u1172_children[] = {
 	&node_u1151u1172u11f0,
 };
 static const uint16_t node_u1151u1172_jamo_seq[] = {
@@ -83350,7 +83350,7 @@ static const struct Node node_u1151u1173u11e2 = {
 	0,
 	"u1151u1173u11e2",
 };
-static struct Node* const node_u1151u1173_children[] = {
+static const struct Node *node_u1151u1173_children[] = {
 	&node_u1151u1173u11b7,
 	&node_u1151u1173u11e2,
 };
@@ -83428,7 +83428,7 @@ static const struct Node node_u1151u1175u11f0 = {
 	0,
 	"u1151u1175u11f0",
 };
-static struct Node* const node_u1151u1175_children[] = {
+static const struct Node *node_u1151u1175_children[] = {
 	&node_u1151u1175u11ab,
 	&node_u1151u1175u11b7,
 	&node_u1151u1175u11eb,
@@ -83463,7 +83463,7 @@ static const struct Node node_u1151u1191u11ab = {
 	0,
 	"u1151u1191u11ab",
 };
-static struct Node* const node_u1151u1191_children[] = {
+static const struct Node *node_u1151u1191_children[] = {
 	&node_u1151u1191u11ab,
 };
 static const uint16_t node_u1151u1191_jamo_seq[] = {
@@ -83480,7 +83480,7 @@ static const struct Node node_u1151u1191 = {
 	node_u1151u1191_children,
 	"u1151u1191",
 };
-static struct Node* const node_u1151_children[] = {
+static const struct Node *node_u1151_children[] = {
 	&node_u1151u1161,
 	&node_u1151u1162,
 	&node_u1151u1163,
@@ -83533,7 +83533,7 @@ static const struct Node node_u1152u116f = {
 	0,
 	"u1152u116f",
 };
-static struct Node* const node_u1152_children[] = {
+static const struct Node *node_u1152_children[] = {
 	&node_u1152u116e,
 	&node_u1152u116f,
 };
@@ -83565,7 +83565,7 @@ static const struct Node node_u1153u1175u11af = {
 	0,
 	"u1153u1175u11af",
 };
-static struct Node* const node_u1153u1175_children[] = {
+static const struct Node *node_u1153u1175_children[] = {
 	&node_u1153u1175u11af,
 };
 static const uint16_t node_u1153u1175_jamo_seq[] = {
@@ -83582,7 +83582,7 @@ static const struct Node node_u1153u1175 = {
 	node_u1153u1175_children,
 	"u1153u1175",
 };
-static struct Node* const node_u1153_children[] = {
+static const struct Node *node_u1153_children[] = {
 	&node_u1153u1175,
 };
 static const uint16_t node_u1153_jamo_seq[] = {
@@ -83613,7 +83613,7 @@ static const struct Node node_u1154u1161u11ab = {
 	0,
 	"u1154u1161u11ab",
 };
-static struct Node* const node_u1154u1161_children[] = {
+static const struct Node *node_u1154u1161_children[] = {
 	&node_u1154u1161u11ab,
 };
 static const uint16_t node_u1154u1161_jamo_seq[] = {
@@ -83659,7 +83659,7 @@ static const struct Node node_u1154u1165u11ab = {
 	0,
 	"u1154u1165u11ab",
 };
-static struct Node* const node_u1154u1165_children[] = {
+static const struct Node *node_u1154u1165_children[] = {
 	&node_u1154u1165u11ab,
 };
 static const uint16_t node_u1154u1165_jamo_seq[] = {
@@ -83691,7 +83691,7 @@ static const struct Node node_u1154u1167u11ab = {
 	0,
 	"u1154u1167u11ab",
 };
-static struct Node* const node_u1154u1167_children[] = {
+static const struct Node *node_u1154u1167_children[] = {
 	&node_u1154u1167u11ab,
 };
 static const uint16_t node_u1154u1167_jamo_seq[] = {
@@ -83780,7 +83780,7 @@ static const struct Node node_u1154u116eu11bc = {
 	0,
 	"u1154u116eu11bc",
 };
-static struct Node* const node_u1154u116e_children[] = {
+static const struct Node *node_u1154u116e_children[] = {
 	&node_u1154u116eu11ab,
 	&node_u1154u116eu11bc,
 };
@@ -83827,7 +83827,7 @@ static const struct Node node_u1154u1172u11ab = {
 	0,
 	"u1154u1172u11ab",
 };
-static struct Node* const node_u1154u1172_children[] = {
+static const struct Node *node_u1154u1172_children[] = {
 	&node_u1154u1172u11ab,
 };
 static const uint16_t node_u1154u1172_jamo_seq[] = {
@@ -83918,7 +83918,7 @@ static const struct Node node_u1154u1175u11f9 = {
 	0,
 	"u1154u1175u11f9",
 };
-static struct Node* const node_u1154u1175_children[] = {
+static const struct Node *node_u1154u1175_children[] = {
 	&node_u1154u1175u11ab,
 	&node_u1154u1175u11eb,
 	&node_u1154u1175u11f0,
@@ -83981,7 +83981,7 @@ static const struct Node node_u1154u1191u11ab = {
 	0,
 	"u1154u1191u11ab",
 };
-static struct Node* const node_u1154u1191_children[] = {
+static const struct Node *node_u1154u1191_children[] = {
 	&node_u1154u1191u11ab,
 };
 static const uint16_t node_u1154u1191_jamo_seq[] = {
@@ -84012,7 +84012,7 @@ static const struct Node node_u1154ud7b2 = {
 	0,
 	"u1154ud7b2",
 };
-static struct Node* const node_u1154_children[] = {
+static const struct Node *node_u1154_children[] = {
 	&node_u1154u1161,
 	&node_u1154u1162,
 	&node_u1154u1165,
@@ -84103,7 +84103,7 @@ static const struct Node node_u1155u1161u11f9 = {
 	0,
 	"u1155u1161u11f9",
 };
-static struct Node* const node_u1155u1161_children[] = {
+static const struct Node *node_u1155u1161_children[] = {
 	&node_u1155u1161u11ab,
 	&node_u1155u1161u11b7,
 	&node_u1155u1161u11e2,
@@ -84152,7 +84152,7 @@ static const struct Node node_u1155u1163u11f0 = {
 	0,
 	"u1155u1163u11f0",
 };
-static struct Node* const node_u1155u1163_children[] = {
+static const struct Node *node_u1155u1163_children[] = {
 	&node_u1155u1163u11f0,
 };
 static const uint16_t node_u1155u1163_jamo_seq[] = {
@@ -84184,7 +84184,7 @@ static const struct Node node_u1155u1167u11ab = {
 	0,
 	"u1155u1167u11ab",
 };
-static struct Node* const node_u1155u1167_children[] = {
+static const struct Node *node_u1155u1167_children[] = {
 	&node_u1155u1167u11ab,
 };
 static const uint16_t node_u1155u1167_jamo_seq[] = {
@@ -84230,7 +84230,7 @@ static const struct Node node_u1155u116au11ab = {
 	0,
 	"u1155u116au11ab",
 };
-static struct Node* const node_u1155u116a_children[] = {
+static const struct Node *node_u1155u116a_children[] = {
 	&node_u1155u116au11ab,
 };
 static const uint16_t node_u1155u116a_jamo_seq[] = {
@@ -84349,7 +84349,7 @@ static const struct Node node_u1155u1172u11f0 = {
 	0,
 	"u1155u1172u11f0",
 };
-static struct Node* const node_u1155u1172_children[] = {
+static const struct Node *node_u1155u1172_children[] = {
 	&node_u1155u1172u11a8,
 	&node_u1155u1172u11ab,
 	&node_u1155u1172u11bc,
@@ -84399,7 +84399,7 @@ static const struct Node node_u1155u1173u11eb = {
 	0,
 	"u1155u1173u11eb",
 };
-static struct Node* const node_u1155u1173_children[] = {
+static const struct Node *node_u1155u1173_children[] = {
 	&node_u1155u1173u11ab,
 	&node_u1155u1173u11eb,
 };
@@ -84492,7 +84492,7 @@ static const struct Node node_u1155u1175u11f9 = {
 	0,
 	"u1155u1175u11f9",
 };
-static struct Node* const node_u1155u1175_children[] = {
+static const struct Node *node_u1155u1175_children[] = {
 	&node_u1155u1175u11ab,
 	&node_u1155u1175u11b7,
 	&node_u1155u1175u11e2,
@@ -84528,7 +84528,7 @@ static const struct Node node_u1155u1191u11ab = {
 	0,
 	"u1155u1191u11ab",
 };
-static struct Node* const node_u1155u1191_children[] = {
+static const struct Node *node_u1155u1191_children[] = {
 	&node_u1155u1191u11ab,
 };
 static const uint16_t node_u1155u1191_jamo_seq[] = {
@@ -84559,7 +84559,7 @@ static const struct Node node_u1155u119b = {
 	0,
 	"u1155u119b",
 };
-static struct Node* const node_u1155_children[] = {
+static const struct Node *node_u1155_children[] = {
 	&node_u1155u1161,
 	&node_u1155u1162,
 	&node_u1155u1163,
@@ -84603,7 +84603,7 @@ static const struct Node node_u1156u1161u11ab = {
 	0,
 	"u1156u1161u11ab",
 };
-static struct Node* const node_u1156u1161_children[] = {
+static const struct Node *node_u1156u1161_children[] = {
 	&node_u1156u1161u11ab,
 };
 static const uint16_t node_u1156u1161_jamo_seq[] = {
@@ -84620,7 +84620,7 @@ static const struct Node node_u1156u1161 = {
 	node_u1156u1161_children,
 	"u1156u1161",
 };
-static struct Node* const node_u1156_children[] = {
+static const struct Node *node_u1156_children[] = {
 	&node_u1156u1161,
 };
 static const uint16_t node_u1156_jamo_seq[] = {
@@ -84651,7 +84651,7 @@ static const struct Node node_u1157u116eu11ab = {
 	0,
 	"u1157u116eu11ab",
 };
-static struct Node* const node_u1157u116e_children[] = {
+static const struct Node *node_u1157u116e_children[] = {
 	&node_u1157u116eu11ab,
 };
 static const uint16_t node_u1157u116e_jamo_seq[] = {
@@ -84668,7 +84668,7 @@ static const struct Node node_u1157u116e = {
 	node_u1157u116e_children,
 	"u1157u116e",
 };
-static struct Node* const node_u1157_children[] = {
+static const struct Node *node_u1157_children[] = {
 	&node_u1157u116e,
 };
 static const uint16_t node_u1157_jamo_seq[] = {
@@ -84834,7 +84834,7 @@ static const struct Node node_u1158u1161u11f0 = {
 	0,
 	"u1158u1161u11f0",
 };
-static struct Node* const node_u1158u1161_children[] = {
+static const struct Node *node_u1158u1161_children[] = {
 	&node_u1158u1161u11a8,
 	&node_u1158u1161u11ab,
 	&node_u1158u1161u11af,
@@ -84890,7 +84890,7 @@ static const struct Node node_u1158u1162u11f0 = {
 	0,
 	"u1158u1162u11f0",
 };
-static struct Node* const node_u1158u1162_children[] = {
+static const struct Node *node_u1158u1162_children[] = {
 	&node_u1158u1162u11bc,
 	&node_u1158u1162u11f0,
 };
@@ -85013,7 +85013,7 @@ static const struct Node node_u1158u1163u11f9 = {
 	0,
 	"u1158u1163u11f9",
 };
-static struct Node* const node_u1158u1163_children[] = {
+static const struct Node *node_u1158u1163_children[] = {
 	&node_u1158u1163u11ab,
 	&node_u1158u1163u11b7,
 	&node_u1158u1163u11b8,
@@ -85125,7 +85125,7 @@ static const struct Node node_u1158u1165u11f9 = {
 	0,
 	"u1158u1165u11f9",
 };
-static struct Node* const node_u1158u1165_children[] = {
+static const struct Node *node_u1158u1165_children[] = {
 	&node_u1158u1165u11ab,
 	&node_u1158u1165u11af,
 	&node_u1158u1165u11b7,
@@ -85161,7 +85161,7 @@ static const struct Node node_u1158u1166u11bc = {
 	0,
 	"u1158u1166u11bc",
 };
-static struct Node* const node_u1158u1166_children[] = {
+static const struct Node *node_u1158u1166_children[] = {
 	&node_u1158u1166u11bc,
 };
 static const uint16_t node_u1158u1166_jamo_seq[] = {
@@ -85298,7 +85298,7 @@ static const struct Node node_u1158u1167u11f9 = {
 	0,
 	"u1158u1167u11f9",
 };
-static struct Node* const node_u1158u1167_children[] = {
+static const struct Node *node_u1158u1167_children[] = {
 	&node_u1158u1167u11a8,
 	&node_u1158u1167u11ab,
 	&node_u1158u1167u11af,
@@ -85337,7 +85337,7 @@ static const struct Node node_u1158u1168u11bc = {
 	0,
 	"u1158u1168u11bc",
 };
-static struct Node* const node_u1158u1168_children[] = {
+static const struct Node *node_u1158u1168_children[] = {
 	&node_u1158u1168u11bc,
 };
 static const uint16_t node_u1158u1168_jamo_seq[] = {
@@ -85474,7 +85474,7 @@ static const struct Node node_u1158u1169u11f0 = {
 	0,
 	"u1158u1169u11f0",
 };
-static struct Node* const node_u1158u1169_children[] = {
+static const struct Node *node_u1158u1169_children[] = {
 	&node_u1158u1169u11a8,
 	&node_u1158u1169u11ab,
 	&node_u1158u1169u11af,
@@ -85603,7 +85603,7 @@ static const struct Node node_u1158u116au11f9 = {
 	0,
 	"u1158u116au11f9",
 };
-static struct Node* const node_u1158u116a_children[] = {
+static const struct Node *node_u1158u116a_children[] = {
 	&node_u1158u116au11a8,
 	&node_u1158u116au11ab,
 	&node_u1158u116au11af,
@@ -85641,7 +85641,7 @@ static const struct Node node_u1158u116bu11bc = {
 	0,
 	"u1158u116bu11bc",
 };
-static struct Node* const node_u1158u116b_children[] = {
+static const struct Node *node_u1158u116b_children[] = {
 	&node_u1158u116bu11bc,
 };
 static const uint16_t node_u1158u116b_jamo_seq[] = {
@@ -85703,7 +85703,7 @@ static const struct Node node_u1158u116cu11f0 = {
 	0,
 	"u1158u116cu11f0",
 };
-static struct Node* const node_u1158u116c_children[] = {
+static const struct Node *node_u1158u116c_children[] = {
 	&node_u1158u116cu11a8,
 	&node_u1158u116cu11bc,
 	&node_u1158u116cu11f0,
@@ -85752,7 +85752,7 @@ static const struct Node node_u1158u116du11e2 = {
 	0,
 	"u1158u116du11e2",
 };
-static struct Node* const node_u1158u116d_children[] = {
+static const struct Node *node_u1158u116d_children[] = {
 	&node_u1158u116du11b7,
 	&node_u1158u116du11e2,
 };
@@ -85890,7 +85890,7 @@ static const struct Node node_u1158u116eu11f9 = {
 	0,
 	"u1158u116eu11f9",
 };
-static struct Node* const node_u1158u116e_children[] = {
+static const struct Node *node_u1158u116e_children[] = {
 	&node_u1158u116eu11ab,
 	&node_u1158u116eu11b7,
 	&node_u1158u116eu11b8,
@@ -85944,7 +85944,7 @@ static const struct Node node_u1158u116fu11f9 = {
 	0,
 	"u1158u116fu11f9",
 };
-static struct Node* const node_u1158u116f_children[] = {
+static const struct Node *node_u1158u116f_children[] = {
 	&node_u1158u116fu11ab,
 	&node_u1158u116fu11f9,
 };
@@ -85977,7 +85977,7 @@ static const struct Node node_u1158u1171u11f9 = {
 	0,
 	"u1158u1171u11f9",
 };
-static struct Node* const node_u1158u1171_children[] = {
+static const struct Node *node_u1158u1171_children[] = {
 	&node_u1158u1171u11f9,
 };
 static const uint16_t node_u1158u1171_jamo_seq[] = {
@@ -86009,7 +86009,7 @@ static const struct Node node_u1158u1172u11b7 = {
 	0,
 	"u1158u1172u11b7",
 };
-static struct Node* const node_u1158u1172_children[] = {
+static const struct Node *node_u1158u1172_children[] = {
 	&node_u1158u1172u11b7,
 };
 static const uint16_t node_u1158u1172_jamo_seq[] = {
@@ -86116,7 +86116,7 @@ static const struct Node node_u1158u1173u11f0 = {
 	0,
 	"u1158u1173u11f0",
 };
-static struct Node* const node_u1158u1173_children[] = {
+static const struct Node *node_u1158u1173_children[] = {
 	&node_u1158u1173u11a8,
 	&node_u1158u1173u11ab,
 	&node_u1158u1173u11b7,
@@ -86198,7 +86198,7 @@ static const struct Node node_u1158u1174u11f9 = {
 	0,
 	"u1158u1174u11f9",
 };
-static struct Node* const node_u1158u1174_children[] = {
+static const struct Node *node_u1158u1174_children[] = {
 	&node_u1158u1174u11a8,
 	&node_u1158u1174u11c2,
 	&node_u1158u1174u11f0,
@@ -86293,7 +86293,7 @@ static const struct Node node_u1158u1175u11f9 = {
 	0,
 	"u1158u1175u11f9",
 };
-static struct Node* const node_u1158u1175_children[] = {
+static const struct Node *node_u1158u1175_children[] = {
 	&node_u1158u1175u11ab,
 	&node_u1158u1175u11b7,
 	&node_u1158u1175u11e2,
@@ -86329,7 +86329,7 @@ static const struct Node node_u1158u118fu11ab = {
 	0,
 	"u1158u118fu11ab",
 };
-static struct Node* const node_u1158u118f_children[] = {
+static const struct Node *node_u1158u118f_children[] = {
 	&node_u1158u118fu11ab,
 };
 static const uint16_t node_u1158u118f_jamo_seq[] = {
@@ -86421,7 +86421,7 @@ static const struct Node node_u1158u1191u11f0 = {
 	0,
 	"u1158u1191u11f0",
 };
-static struct Node* const node_u1158u1191_children[] = {
+static const struct Node *node_u1158u1191_children[] = {
 	&node_u1158u1191u11ab,
 	&node_u1158u1191u11af,
 	&node_u1158u1191u11bc,
@@ -86457,7 +86457,7 @@ static const struct Node node_u1158u1192u11bc = {
 	0,
 	"u1158u1192u11bc",
 };
-static struct Node* const node_u1158u1192_children[] = {
+static const struct Node *node_u1158u1192_children[] = {
 	&node_u1158u1192u11bc,
 };
 static const uint16_t node_u1158u1192_jamo_seq[] = {
@@ -86503,7 +86503,7 @@ static const struct Node node_u1158u119eu11ab = {
 	0,
 	"u1158u119eu11ab",
 };
-static struct Node* const node_u1158u119e_children[] = {
+static const struct Node *node_u1158u119e_children[] = {
 	&node_u1158u119eu11ab,
 };
 static const uint16_t node_u1158u119e_jamo_seq[] = {
@@ -86565,7 +86565,7 @@ static const struct Node node_u1158u11a1u11f0 = {
 	0,
 	"u1158u11a1u11f0",
 };
-static struct Node* const node_u1158u11a1_children[] = {
+static const struct Node *node_u1158u11a1_children[] = {
 	&node_u1158u11a1u11a8,
 	&node_u1158u11a1u11bc,
 	&node_u1158u11a1u11f0,
@@ -86584,7 +86584,7 @@ static const struct Node node_u1158u11a1 = {
 	node_u1158u11a1_children,
 	"u1158u11a1",
 };
-static struct Node* const node_u1158_children[] = {
+static const struct Node *node_u1158_children[] = {
 	&node_u1158u1161,
 	&node_u1158u1162,
 	&node_u1158u1163,
@@ -86775,7 +86775,7 @@ static const struct Node node_u1159u1161u11f0 = {
 	0,
 	"u1159u1161u11f0",
 };
-static struct Node* const node_u1159u1161_children[] = {
+static const struct Node *node_u1159u1161_children[] = {
 	&node_u1159u1161u11a8,
 	&node_u1159u1161u11ab,
 	&node_u1159u1161u11af,
@@ -86831,7 +86831,7 @@ static const struct Node node_u1159u1162u11f0 = {
 	0,
 	"u1159u1162u11f0",
 };
-static struct Node* const node_u1159u1162_children[] = {
+static const struct Node *node_u1159u1162_children[] = {
 	&node_u1159u1162u11bc,
 	&node_u1159u1162u11f0,
 };
@@ -86969,7 +86969,7 @@ static const struct Node node_u1159u1163u11f9 = {
 	0,
 	"u1159u1163u11f9",
 };
-static struct Node* const node_u1159u1163_children[] = {
+static const struct Node *node_u1159u1163_children[] = {
 	&node_u1159u1163u11a8,
 	&node_u1159u1163u11ab,
 	&node_u1159u1163u11b7,
@@ -87097,7 +87097,7 @@ static const struct Node node_u1159u1165u11d9 = {
 	0,
 	"u1159u1165u11d9",
 };
-static struct Node* const node_u1159u1165_children[] = {
+static const struct Node *node_u1159u1165_children[] = {
 	&node_u1159u1165u11ab,
 	&node_u1159u1165u11af,
 	&node_u1159u1165u11b7,
@@ -87134,7 +87134,7 @@ static const struct Node node_u1159u1166u11bc = {
 	0,
 	"u1159u1166u11bc",
 };
-static struct Node* const node_u1159u1166_children[] = {
+static const struct Node *node_u1159u1166_children[] = {
 	&node_u1159u1166u11bc,
 };
 static const uint16_t node_u1159u1166_jamo_seq[] = {
@@ -87271,7 +87271,7 @@ static const struct Node node_u1159u1167u11f0 = {
 	0,
 	"u1159u1167u11f0",
 };
-static struct Node* const node_u1159u1167_children[] = {
+static const struct Node *node_u1159u1167_children[] = {
 	&node_u1159u1167u11a8,
 	&node_u1159u1167u11ab,
 	&node_u1159u1167u11af,
@@ -87310,7 +87310,7 @@ static const struct Node node_u1159u1168u11bc = {
 	0,
 	"u1159u1168u11bc",
 };
-static struct Node* const node_u1159u1168_children[] = {
+static const struct Node *node_u1159u1168_children[] = {
 	&node_u1159u1168u11bc,
 };
 static const uint16_t node_u1159u1168_jamo_seq[] = {
@@ -87417,7 +87417,7 @@ static const struct Node node_u1159u1169u11f0 = {
 	0,
 	"u1159u1169u11f0",
 };
-static struct Node* const node_u1159u1169_children[] = {
+static const struct Node *node_u1159u1169_children[] = {
 	&node_u1159u1169u11a8,
 	&node_u1159u1169u11ab,
 	&node_u1159u1169u11b7,
@@ -87574,7 +87574,7 @@ static const struct Node node_u1159u116au11f9 = {
 	0,
 	"u1159u116au11f9",
 };
-static struct Node* const node_u1159u116a_children[] = {
+static const struct Node *node_u1159u116a_children[] = {
 	&node_u1159u116au11a8,
 	&node_u1159u116au11ab,
 	&node_u1159u116au11af,
@@ -87614,7 +87614,7 @@ static const struct Node node_u1159u116bu11bc = {
 	0,
 	"u1159u116bu11bc",
 };
-static struct Node* const node_u1159u116b_children[] = {
+static const struct Node *node_u1159u116b_children[] = {
 	&node_u1159u116bu11bc,
 };
 static const uint16_t node_u1159u116b_jamo_seq[] = {
@@ -87676,7 +87676,7 @@ static const struct Node node_u1159u116cu11f0 = {
 	0,
 	"u1159u116cu11f0",
 };
-static struct Node* const node_u1159u116c_children[] = {
+static const struct Node *node_u1159u116c_children[] = {
 	&node_u1159u116cu11a8,
 	&node_u1159u116cu11bc,
 	&node_u1159u116cu11f0,
@@ -87755,7 +87755,7 @@ static const struct Node node_u1159u116du11e2 = {
 	0,
 	"u1159u116du11e2",
 };
-static struct Node* const node_u1159u116d_children[] = {
+static const struct Node *node_u1159u116d_children[] = {
 	&node_u1159u116du11a8,
 	&node_u1159u116du11b7,
 	&node_u1159u116du11bc,
@@ -87910,7 +87910,7 @@ static const struct Node node_u1159u116eu11f9 = {
 	0,
 	"u1159u116eu11f9",
 };
-static struct Node* const node_u1159u116e_children[] = {
+static const struct Node *node_u1159u116e_children[] = {
 	&node_u1159u116eu11a8,
 	&node_u1159u116eu11ab,
 	&node_u1159u116eu11af,
@@ -87995,7 +87995,7 @@ static const struct Node node_u1159u116fu11d9 = {
 	0,
 	"u1159u116fu11d9",
 };
-static struct Node* const node_u1159u116f_children[] = {
+static const struct Node *node_u1159u116f_children[] = {
 	&node_u1159u116fu11ab,
 	&node_u1159u116fu11af,
 	&node_u1159u116fu11bc,
@@ -88030,7 +88030,7 @@ static const struct Node node_u1159u1171u11bc = {
 	0,
 	"u1159u1171u11bc",
 };
-static struct Node* const node_u1159u1171_children[] = {
+static const struct Node *node_u1159u1171_children[] = {
 	&node_u1159u1171u11bc,
 };
 static const uint16_t node_u1159u1171_jamo_seq[] = {
@@ -88107,7 +88107,7 @@ static const struct Node node_u1159u1172u11f9 = {
 	0,
 	"u1159u1172u11f9",
 };
-static struct Node* const node_u1159u1172_children[] = {
+static const struct Node *node_u1159u1172_children[] = {
 	&node_u1159u1172u11ab,
 	&node_u1159u1172u11b7,
 	&node_u1159u1172u11e2,
@@ -88232,7 +88232,7 @@ static const struct Node node_u1159u1173u11f9 = {
 	0,
 	"u1159u1173u11f9",
 };
-static struct Node* const node_u1159u1173_children[] = {
+static const struct Node *node_u1159u1173_children[] = {
 	&node_u1159u1173u11a8,
 	&node_u1159u1173u11ab,
 	&node_u1159u1173u11b7,
@@ -88285,7 +88285,7 @@ static const struct Node node_u1159u1174u11bc = {
 	0,
 	"u1159u1174u11bc",
 };
-static struct Node* const node_u1159u1174_children[] = {
+static const struct Node *node_u1159u1174_children[] = {
 	&node_u1159u1174u11ab,
 	&node_u1159u1174u11bc,
 };
@@ -88423,7 +88423,7 @@ static const struct Node node_u1159u1175u11f9 = {
 	0,
 	"u1159u1175u11f9",
 };
-static struct Node* const node_u1159u1175_children[] = {
+static const struct Node *node_u1159u1175_children[] = {
 	&node_u1159u1175u11ab,
 	&node_u1159u1175u11af,
 	&node_u1159u1175u11b7,
@@ -88537,7 +88537,7 @@ static const struct Node node_u1159u1191u11f0 = {
 	0,
 	"u1159u1191u11f0",
 };
-static struct Node* const node_u1159u1191_children[] = {
+static const struct Node *node_u1159u1191_children[] = {
 	&node_u1159u1191u11a8,
 	&node_u1159u1191u11ab,
 	&node_u1159u1191u11af,
@@ -88574,7 +88574,7 @@ static const struct Node node_u1159u1192u11bc = {
 	0,
 	"u1159u1192u11bc",
 };
-static struct Node* const node_u1159u1192_children[] = {
+static const struct Node *node_u1159u1192_children[] = {
 	&node_u1159u1192u11bc,
 };
 static const uint16_t node_u1159u1192_jamo_seq[] = {
@@ -88606,7 +88606,7 @@ static const struct Node node_u1159u1194u11bc = {
 	0,
 	"u1159u1194u11bc",
 };
-static struct Node* const node_u1159u1194_children[] = {
+static const struct Node *node_u1159u1194_children[] = {
 	&node_u1159u1194u11bc,
 };
 static const uint16_t node_u1159u1194_jamo_seq[] = {
@@ -88653,7 +88653,7 @@ static const struct Node node_u1159u119eu11b7 = {
 	0,
 	"u1159u119eu11b7",
 };
-static struct Node* const node_u1159u119e_children[] = {
+static const struct Node *node_u1159u119e_children[] = {
 	&node_u1159u119eu11ab,
 	&node_u1159u119eu11b7,
 };
@@ -88761,7 +88761,7 @@ static const struct Node node_u1159u11a1u11f0 = {
 	0,
 	"u1159u11a1u11f0",
 };
-static struct Node* const node_u1159u11a1_children[] = {
+static const struct Node *node_u1159u11a1_children[] = {
 	&node_u1159u11a1u11a8,
 	&node_u1159u11a1u11af,
 	&node_u1159u11a1u11b1,
@@ -88783,7 +88783,7 @@ static const struct Node node_u1159u11a1 = {
 	node_u1159u11a1_children,
 	"u1159u11a1",
 };
-static struct Node* const node_u1159_children[] = {
+static const struct Node *node_u1159_children[] = {
 	&node_u1159u1161,
 	&node_u1159u1162,
 	&node_u1159u1163,
@@ -88851,7 +88851,7 @@ static const struct Node node_u115au1173 = {
 	0,
 	"u115au1173",
 };
-static struct Node* const node_u115a_children[] = {
+static const struct Node *node_u115a_children[] = {
 	&node_u115au1165,
 	&node_u115au1173,
 };
@@ -88896,7 +88896,7 @@ static const struct Node node_u115bu1198 = {
 	0,
 	"u115bu1198",
 };
-static struct Node* const node_u115b_children[] = {
+static const struct Node *node_u115b_children[] = {
 	&node_u115bu1175,
 	&node_u115bu1198,
 };
@@ -88941,7 +88941,7 @@ static const struct Node node_u115cu1175 = {
 	0,
 	"u115cu1175",
 };
-static struct Node* const node_u115c_children[] = {
+static const struct Node *node_u115c_children[] = {
 	&node_u115cu1173,
 	&node_u115cu1175,
 };
@@ -88973,7 +88973,7 @@ static const struct Node node_u115du1163u11bc = {
 	0,
 	"u115du1163u11bc",
 };
-static struct Node* const node_u115du1163_children[] = {
+static const struct Node *node_u115du1163_children[] = {
 	&node_u115du1163u11bc,
 };
 static const uint16_t node_u115du1163_jamo_seq[] = {
@@ -89019,7 +89019,7 @@ static const struct Node node_u115du1172u11ab = {
 	0,
 	"u115du1172u11ab",
 };
-static struct Node* const node_u115du1172_children[] = {
+static const struct Node *node_u115du1172_children[] = {
 	&node_u115du1172u11ab,
 };
 static const uint16_t node_u115du1172_jamo_seq[] = {
@@ -89051,7 +89051,7 @@ static const struct Node node_u115du1175u11bc = {
 	0,
 	"u115du1175u11bc",
 };
-static struct Node* const node_u115du1175_children[] = {
+static const struct Node *node_u115du1175_children[] = {
 	&node_u115du1175u11bc,
 };
 static const uint16_t node_u115du1175_jamo_seq[] = {
@@ -89068,7 +89068,7 @@ static const struct Node node_u115du1175 = {
 	node_u115du1175_children,
 	"u115du1175",
 };
-static struct Node* const node_u115d_children[] = {
+static const struct Node *node_u115d_children[] = {
 	&node_u115du1163,
 	&node_u115du1169,
 	&node_u115du1172,
@@ -89117,7 +89117,7 @@ static const struct Node node_u115eu1175u11ef = {
 	0,
 	"u115eu1175u11ef",
 };
-static struct Node* const node_u115eu1175_children[] = {
+static const struct Node *node_u115eu1175_children[] = {
 	&node_u115eu1175u11bc,
 	&node_u115eu1175u11ef,
 };
@@ -89135,7 +89135,7 @@ static const struct Node node_u115eu1175 = {
 	node_u115eu1175_children,
 	"u115eu1175",
 };
-static struct Node* const node_u115e_children[] = {
+static const struct Node *node_u115e_children[] = {
 	&node_u115eu1175,
 };
 static const uint16_t node_u115e_jamo_seq[] = {
@@ -89301,7 +89301,7 @@ static const struct Node node_u115fu1161ud7f9 = {
 	0,
 	"u115fu1161ud7f9",
 };
-static struct Node* const node_u115fu1161_children[] = {
+static const struct Node *node_u115fu1161_children[] = {
 	&node_u115fu1161u11ae,
 	&node_u115fu1161u11af,
 	&node_u115fu1161u11b0,
@@ -89342,7 +89342,7 @@ static const struct Node node_u115fu1163u11ab = {
 	0,
 	"u115fu1163u11ab",
 };
-static struct Node* const node_u115fu1163_children[] = {
+static const struct Node *node_u115fu1163_children[] = {
 	&node_u115fu1163u11ab,
 };
 static const uint16_t node_u115fu1163_jamo_seq[] = {
@@ -89389,7 +89389,7 @@ static const struct Node node_u115fu1165u11b8 = {
 	0,
 	"u115fu1165u11b8",
 };
-static struct Node* const node_u115fu1165_children[] = {
+static const struct Node *node_u115fu1165_children[] = {
 	&node_u115fu1165u11af,
 	&node_u115fu1165u11b8,
 };
@@ -89422,7 +89422,7 @@ static const struct Node node_u115fu116eu11ab = {
 	0,
 	"u115fu116eu11ab",
 };
-static struct Node* const node_u115fu116e_children[] = {
+static const struct Node *node_u115fu116e_children[] = {
 	&node_u115fu116eu11ab,
 };
 static const uint16_t node_u115fu116e_jamo_seq[] = {
@@ -89514,7 +89514,7 @@ static const struct Node node_u115fu1175u11bc = {
 	0,
 	"u115fu1175u11bc",
 };
-static struct Node* const node_u115fu1175_children[] = {
+static const struct Node *node_u115fu1175_children[] = {
 	&node_u115fu1175u11a8,
 	&node_u115fu1175u11ab,
 	&node_u115fu1175u11af,
@@ -89550,7 +89550,7 @@ static const struct Node node_u115fu119eu11af = {
 	0,
 	"u115fu119eu11af",
 };
-static struct Node* const node_u115fu119e_children[] = {
+static const struct Node *node_u115fu119e_children[] = {
 	&node_u115fu119eu11af,
 };
 static const uint16_t node_u115fu119e_jamo_seq[] = {
@@ -89582,7 +89582,7 @@ static const struct Node node_u115fu11a3u11ae = {
 	0,
 	"u115fu11a3u11ae",
 };
-static struct Node* const node_u115fu11a3_children[] = {
+static const struct Node *node_u115fu11a3_children[] = {
 	&node_u115fu11a3u11ae,
 };
 static const uint16_t node_u115fu11a3_jamo_seq[] = {
@@ -89599,7 +89599,7 @@ static const struct Node node_u115fu11a3 = {
 	node_u115fu11a3_children,
 	"u115fu11a3",
 };
-static struct Node* const node_u115f_children[] = {
+static const struct Node *node_u115f_children[] = {
 	&node_u115fu1161,
 	&node_u115fu1163,
 	&node_u115fu1165,
@@ -91716,7 +91716,7 @@ static const struct Node node_ua960u1161u11af = {
 	0,
 	"ua960u1161u11af",
 };
-static struct Node* const node_ua960u1161_children[] = {
+static const struct Node *node_ua960u1161_children[] = {
 	&node_ua960u1161u11af,
 };
 static const uint16_t node_ua960u1161_jamo_seq[] = {
@@ -91733,7 +91733,7 @@ static const struct Node node_ua960u1161 = {
 	node_ua960u1161_children,
 	"ua960u1161",
 };
-static struct Node* const node_ua960_children[] = {
+static const struct Node *node_ua960_children[] = {
 	&node_ua960u1161,
 };
 static const uint16_t node_ua960_jamo_seq[] = {
@@ -91792,7 +91792,7 @@ static const struct Node node_ua961u116eu11af = {
 	0,
 	"ua961u116eu11af",
 };
-static struct Node* const node_ua961u116e_children[] = {
+static const struct Node *node_ua961u116e_children[] = {
 	&node_ua961u116eu11af,
 };
 static const uint16_t node_ua961u116e_jamo_seq[] = {
@@ -91809,7 +91809,7 @@ static const struct Node node_ua961u116e = {
 	node_ua961u116e_children,
 	"ua961u116e",
 };
-static struct Node* const node_ua961_children[] = {
+static const struct Node *node_ua961_children[] = {
 	&node_ua961u1161,
 	&node_ua961u1162,
 	&node_ua961u116e,
@@ -91857,7 +91857,7 @@ static const struct Node node_ua962u1172u11bc = {
 	0,
 	"ua962u1172u11bc",
 };
-static struct Node* const node_ua962u1172_children[] = {
+static const struct Node *node_ua962u1172_children[] = {
 	&node_ua962u1172u11af,
 	&node_ua962u1172u11bc,
 };
@@ -91904,7 +91904,7 @@ static const struct Node node_ua962u1175u11a8 = {
 	0,
 	"ua962u1175u11a8",
 };
-static struct Node* const node_ua962u1175_children[] = {
+static const struct Node *node_ua962u1175_children[] = {
 	&node_ua962u1175u11a8,
 };
 static const uint16_t node_ua962u1175_jamo_seq[] = {
@@ -91921,7 +91921,7 @@ static const struct Node node_ua962u1175 = {
 	node_ua962u1175_children,
 	"ua962u1175",
 };
-static struct Node* const node_ua962_children[] = {
+static const struct Node *node_ua962_children[] = {
 	&node_ua962u1172,
 	&node_ua962u1173,
 	&node_ua962u1175,
@@ -91954,7 +91954,7 @@ static const struct Node node_ua963u1163u11bc = {
 	0,
 	"ua963u1163u11bc",
 };
-static struct Node* const node_ua963u1163_children[] = {
+static const struct Node *node_ua963u1163_children[] = {
 	&node_ua963u1163u11bc,
 };
 static const uint16_t node_ua963u1163_jamo_seq[] = {
@@ -91985,7 +91985,7 @@ static const struct Node node_ua963u119e = {
 	0,
 	"ua963u119e",
 };
-static struct Node* const node_ua963_children[] = {
+static const struct Node *node_ua963_children[] = {
 	&node_ua963u1163,
 	&node_ua963u119e,
 };
@@ -92031,7 +92031,7 @@ static const struct Node node_ua964u1169u11ba = {
 	0,
 	"ua964u1169u11ba",
 };
-static struct Node* const node_ua964u1169_children[] = {
+static const struct Node *node_ua964u1169_children[] = {
 	&node_ua964u1169u11ba,
 };
 static const uint16_t node_ua964u1169_jamo_seq[] = {
@@ -92048,7 +92048,7 @@ static const struct Node node_ua964u1169 = {
 	node_ua964u1169_children,
 	"ua964u1169",
 };
-static struct Node* const node_ua964_children[] = {
+static const struct Node *node_ua964_children[] = {
 	&node_ua964u1161,
 	&node_ua964u1169,
 };
@@ -92079,7 +92079,7 @@ static const struct Node node_ua965u1161 = {
 	0,
 	"ua965u1161",
 };
-static struct Node* const node_ua965_children[] = {
+static const struct Node *node_ua965_children[] = {
 	&node_ua965u1161,
 };
 static const uint16_t node_ua965_jamo_seq[] = {
@@ -92122,7 +92122,7 @@ static const struct Node node_ua967u1161 = {
 	0,
 	"ua967u1161",
 };
-static struct Node* const node_ua967_children[] = {
+static const struct Node *node_ua967_children[] = {
 	&node_ua967u1161,
 };
 static const uint16_t node_ua967_jamo_seq[] = {
@@ -92153,7 +92153,7 @@ static const struct Node node_ua968u1161u11ab = {
 	0,
 	"ua968u1161u11ab",
 };
-static struct Node* const node_ua968u1161_children[] = {
+static const struct Node *node_ua968u1161_children[] = {
 	&node_ua968u1161u11ab,
 };
 static const uint16_t node_ua968u1161_jamo_seq[] = {
@@ -92170,7 +92170,7 @@ static const struct Node node_ua968u1161 = {
 	node_ua968u1161_children,
 	"ua968u1161",
 };
-static struct Node* const node_ua968_children[] = {
+static const struct Node *node_ua968_children[] = {
 	&node_ua968u1161,
 };
 static const uint16_t node_ua968_jamo_seq[] = {
@@ -92200,7 +92200,7 @@ static const struct Node node_ua969u1161 = {
 	0,
 	"ua969u1161",
 };
-static struct Node* const node_ua969_children[] = {
+static const struct Node *node_ua969_children[] = {
 	&node_ua969u1161,
 };
 static const uint16_t node_ua969_jamo_seq[] = {
@@ -92230,7 +92230,7 @@ static const struct Node node_ua96au1161 = {
 	0,
 	"ua96au1161",
 };
-static struct Node* const node_ua96a_children[] = {
+static const struct Node *node_ua96a_children[] = {
 	&node_ua96au1161,
 };
 static const uint16_t node_ua96a_jamo_seq[] = {
@@ -92274,7 +92274,7 @@ static const struct Node node_ua96bu11a1 = {
 	0,
 	"ua96bu11a1",
 };
-static struct Node* const node_ua96b_children[] = {
+static const struct Node *node_ua96b_children[] = {
 	&node_ua96bu119e,
 	&node_ua96bu11a1,
 };
@@ -92306,7 +92306,7 @@ static const struct Node node_ua96cu1169u11a8 = {
 	0,
 	"ua96cu1169u11a8",
 };
-static struct Node* const node_ua96cu1169_children[] = {
+static const struct Node *node_ua96cu1169_children[] = {
 	&node_ua96cu1169u11a8,
 };
 static const uint16_t node_ua96cu1169_jamo_seq[] = {
@@ -92337,7 +92337,7 @@ static const struct Node node_ua96cu1173 = {
 	0,
 	"ua96cu1173",
 };
-static struct Node* const node_ua96c_children[] = {
+static const struct Node *node_ua96c_children[] = {
 	&node_ua96cu1169,
 	&node_ua96cu1173,
 };
@@ -92397,7 +92397,7 @@ static const struct Node node_ua96du1172u11af = {
 	0,
 	"ua96du1172u11af",
 };
-static struct Node* const node_ua96du1172_children[] = {
+static const struct Node *node_ua96du1172_children[] = {
 	&node_ua96du1172u11af,
 };
 static const uint16_t node_ua96du1172_jamo_seq[] = {
@@ -92414,7 +92414,7 @@ static const struct Node node_ua96du1172 = {
 	node_ua96du1172_children,
 	"ua96du1172",
 };
-static struct Node* const node_ua96d_children[] = {
+static const struct Node *node_ua96d_children[] = {
 	&node_ua96du1165,
 	&node_ua96du1166,
 	&node_ua96du1172,
@@ -92446,7 +92446,7 @@ static const struct Node node_ua96eu1161 = {
 	0,
 	"ua96eu1161",
 };
-static struct Node* const node_ua96e_children[] = {
+static const struct Node *node_ua96e_children[] = {
 	&node_ua96eu1161,
 };
 static const uint16_t node_ua96e_jamo_seq[] = {
@@ -92518,7 +92518,7 @@ static const struct Node node_ua96fu1178 = {
 	0,
 	"ua96fu1178",
 };
-static struct Node* const node_ua96f_children[] = {
+static const struct Node *node_ua96f_children[] = {
 	&node_ua96fu1163,
 	&node_ua96fu1167,
 	&node_ua96fu1168,
@@ -92552,7 +92552,7 @@ static const struct Node node_ua970u1167u11af = {
 	0,
 	"ua970u1167u11af",
 };
-static struct Node* const node_ua970u1167_children[] = {
+static const struct Node *node_ua970u1167_children[] = {
 	&node_ua970u1167u11af,
 };
 static const uint16_t node_ua970u1167_jamo_seq[] = {
@@ -92583,7 +92583,7 @@ static const struct Node node_ua970u1169 = {
 	0,
 	"ua970u1169",
 };
-static struct Node* const node_ua970_children[] = {
+static const struct Node *node_ua970_children[] = {
 	&node_ua970u1167,
 	&node_ua970u1169,
 };
@@ -92615,7 +92615,7 @@ static const struct Node node_ua971u1169u11a8 = {
 	0,
 	"ua971u1169u11a8",
 };
-static struct Node* const node_ua971u1169_children[] = {
+static const struct Node *node_ua971u1169_children[] = {
 	&node_ua971u1169u11a8,
 };
 static const uint16_t node_ua971u1169_jamo_seq[] = {
@@ -92632,7 +92632,7 @@ static const struct Node node_ua971u1169 = {
 	node_ua971u1169_children,
 	"ua971u1169",
 };
-static struct Node* const node_ua971_children[] = {
+static const struct Node *node_ua971_children[] = {
 	&node_ua971u1169,
 };
 static const uint16_t node_ua971_jamo_seq[] = {
@@ -92662,7 +92662,7 @@ static const struct Node node_ua972u1161 = {
 	0,
 	"ua972u1161",
 };
-static struct Node* const node_ua972_children[] = {
+static const struct Node *node_ua972_children[] = {
 	&node_ua972u1161,
 };
 static const uint16_t node_ua972_jamo_seq[] = {
@@ -92734,7 +92734,7 @@ static const struct Node node_ua973u1173 = {
 	0,
 	"ua973u1173",
 };
-static struct Node* const node_ua973_children[] = {
+static const struct Node *node_ua973_children[] = {
 	&node_ua973u1169,
 	&node_ua973u116a,
 	&node_ua973u116b,
@@ -92768,7 +92768,7 @@ static const struct Node node_ua974u1161u11ab = {
 	0,
 	"ua974u1161u11ab",
 };
-static struct Node* const node_ua974u1161_children[] = {
+static const struct Node *node_ua974u1161_children[] = {
 	&node_ua974u1161u11ab,
 };
 static const uint16_t node_ua974u1161_jamo_seq[] = {
@@ -92785,7 +92785,7 @@ static const struct Node node_ua974u1161 = {
 	node_ua974u1161_children,
 	"ua974u1161",
 };
-static struct Node* const node_ua974_children[] = {
+static const struct Node *node_ua974_children[] = {
 	&node_ua974u1161,
 };
 static const uint16_t node_ua974_jamo_seq[] = {
@@ -92815,7 +92815,7 @@ static const struct Node node_ua975u1169 = {
 	0,
 	"ua975u1169",
 };
-static struct Node* const node_ua975_children[] = {
+static const struct Node *node_ua975_children[] = {
 	&node_ua975u1169,
 };
 static const uint16_t node_ua975_jamo_seq[] = {
@@ -92873,7 +92873,7 @@ static const struct Node node_ua976u1175 = {
 	0,
 	"ua976u1175",
 };
-static struct Node* const node_ua976_children[] = {
+static const struct Node *node_ua976_children[] = {
 	&node_ua976u1165,
 	&node_ua976u1169,
 	&node_ua976u1175,
@@ -92919,7 +92919,7 @@ static const struct Node node_ua977u116e = {
 	0,
 	"ua977u116e",
 };
-static struct Node* const node_ua977_children[] = {
+static const struct Node *node_ua977_children[] = {
 	&node_ua977u1169,
 	&node_ua977u116e,
 };
@@ -92995,7 +92995,7 @@ static const struct Node node_ua978u1166ud7d7 = {
 	0,
 	"ua978u1166ud7d7",
 };
-static struct Node* const node_ua978u1166_children[] = {
+static const struct Node *node_ua978u1166_children[] = {
 	&node_ua978u1166u11af,
 	&node_ua978u1166u11d0,
 	&node_ua978u1166ud7d7,
@@ -93014,7 +93014,7 @@ static const struct Node node_ua978u1166 = {
 	node_ua978u1166_children,
 	"ua978u1166",
 };
-static struct Node* const node_ua978_children[] = {
+static const struct Node *node_ua978_children[] = {
 	&node_ua978u1165,
 	&node_ua978u1166,
 };
@@ -93060,7 +93060,7 @@ static const struct Node node_ua979u119eu11af = {
 	0,
 	"ua979u119eu11af",
 };
-static struct Node* const node_ua979u119e_children[] = {
+static const struct Node *node_ua979u119e_children[] = {
 	&node_ua979u119eu11af,
 };
 static const uint16_t node_ua979u119e_jamo_seq[] = {
@@ -93077,7 +93077,7 @@ static const struct Node node_ua979u119e = {
 	node_ua979u119e_children,
 	"ua979u119e",
 };
-static struct Node* const node_ua979_children[] = {
+static const struct Node *node_ua979_children[] = {
 	&node_ua979u116e,
 	&node_ua979u119e,
 };
@@ -93109,7 +93109,7 @@ static const struct Node node_ua97au1175u11ab = {
 	0,
 	"ua97au1175u11ab",
 };
-static struct Node* const node_ua97au1175_children[] = {
+static const struct Node *node_ua97au1175_children[] = {
 	&node_ua97au1175u11ab,
 };
 static const uint16_t node_ua97au1175_jamo_seq[] = {
@@ -93126,7 +93126,7 @@ static const struct Node node_ua97au1175 = {
 	node_ua97au1175_children,
 	"ua97au1175",
 };
-static struct Node* const node_ua97a_children[] = {
+static const struct Node *node_ua97a_children[] = {
 	&node_ua97au1175,
 };
 static const uint16_t node_ua97a_jamo_seq[] = {
@@ -93157,7 +93157,7 @@ static const struct Node node_ua97bu1163u11bc = {
 	0,
 	"ua97bu1163u11bc",
 };
-static struct Node* const node_ua97bu1163_children[] = {
+static const struct Node *node_ua97bu1163_children[] = {
 	&node_ua97bu1163u11bc,
 };
 static const uint16_t node_ua97bu1163_jamo_seq[] = {
@@ -93203,7 +93203,7 @@ static const struct Node node_ua97bu116au11ab = {
 	0,
 	"ua97bu116au11ab",
 };
-static struct Node* const node_ua97bu116a_children[] = {
+static const struct Node *node_ua97bu116a_children[] = {
 	&node_ua97bu116au11ab,
 };
 static const uint16_t node_ua97bu116a_jamo_seq[] = {
@@ -93291,7 +93291,7 @@ static const struct Node node_ua97bu1172u11bc = {
 	0,
 	"ua97bu1172u11bc",
 };
-static struct Node* const node_ua97bu1172_children[] = {
+static const struct Node *node_ua97bu1172_children[] = {
 	&node_ua97bu1172u11bc,
 };
 static const uint16_t node_ua97bu1172_jamo_seq[] = {
@@ -93338,7 +93338,7 @@ static const struct Node node_ua97bu1175u11bc = {
 	0,
 	"ua97bu1175u11bc",
 };
-static struct Node* const node_ua97bu1175_children[] = {
+static const struct Node *node_ua97bu1175_children[] = {
 	&node_ua97bu1175u11ab,
 	&node_ua97bu1175u11bc,
 };
@@ -93371,7 +93371,7 @@ static const struct Node node_ua97bu118eu11ab = {
 	0,
 	"ua97bu118eu11ab",
 };
-static struct Node* const node_ua97bu118e_children[] = {
+static const struct Node *node_ua97bu118e_children[] = {
 	&node_ua97bu118eu11ab,
 };
 static const uint16_t node_ua97bu118e_jamo_seq[] = {
@@ -93431,7 +93431,7 @@ static const struct Node node_ua97bu1194u11ab = {
 	0,
 	"ua97bu1194u11ab",
 };
-static struct Node* const node_ua97bu1194_children[] = {
+static const struct Node *node_ua97bu1194_children[] = {
 	&node_ua97bu1194u11ab,
 };
 static const uint16_t node_ua97bu1194_jamo_seq[] = {
@@ -93448,7 +93448,7 @@ static const struct Node node_ua97bu1194 = {
 	node_ua97bu1194_children,
 	"ua97bu1194",
 };
-static struct Node* const node_ua97b_children[] = {
+static const struct Node *node_ua97b_children[] = {
 	&node_ua97bu1163,
 	&node_ua97bu1169,
 	&node_ua97bu116a,
@@ -94425,7 +94425,7 @@ static const struct Node node_ud7fb = {
 	0,
 	"ud7fb",
 };
-static struct Node* const node_root_children[] = {
+static const struct Node *node_root_children[] = {
 	&node_u1100,
 	&node_u1101,
 	&node_u1102,
@@ -94795,7 +94795,7 @@ static const struct Node node_root = {
 	"root",
 };
 
-static struct Node* nodelist[] = {
+static const struct Node* nodelist[] = {
 	&node_root,
 	&node_u1100,
 	&node_u1101,

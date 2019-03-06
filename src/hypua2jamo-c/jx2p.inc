@@ -1,6 +1,6 @@
-static struct Node* find_child(struct Node* node, uint16_t jamo_code) {
-	struct Node** childrenEnd;
-	struct Node** child;
+static const struct Node* find_child(const struct Node* node, uint16_t jamo_code) {
+	const struct Node** childrenEnd;
+	const struct Node** child;
 
 	if (node->childrenLen == 0) {
 		return NULL;

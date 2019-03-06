@@ -170,7 +170,7 @@ def tree_to_header(tree):
             child.id for child in node.children.values()
         ])
         if len(children) > 0:
-            yield 'static struct Node* const node_{}_children[] = {{'.format(
+            yield 'static const struct Node *node_{}_children[] = {{'.format(
                 node.id
             )
             for child_id in children:
@@ -227,7 +227,7 @@ def tree_to_header(tree):
 
     yield ''
 
-    yield 'static struct Node* nodelist[] = {'
+    yield 'static const struct Node* nodelist[] = {'
     for node in nodelist:
         yield '\t&node_{},'.format(node.id)
     yield '};'

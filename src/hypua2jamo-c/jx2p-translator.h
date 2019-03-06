@@ -1,17 +1,17 @@
 struct Node {
 	int index;
 	int jamo_seq_len;
-	uint16_t *jamo_seq;
+	const uint16_t *jamo_seq;
 	uint16_t jamo_code;
 	uint16_t pua_code;
 	int childrenLen;
-	struct Node** children;
+	const struct Node** children;
 	const char* node_name;
 };
 
 
 struct Translator {
-	struct Node *node;
+	const struct Node *node;
 };
 
 
