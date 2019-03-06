@@ -83,7 +83,7 @@ class StopWatch(object):
 def main():
     filename = '.benchmark.csv.{}'.format(time.time())
 
-    N = 1000
+    N = 100
     M = 1000
     chunk_sizes = [
         512,
@@ -92,13 +92,13 @@ def main():
     ]
 
     with io.open(filename, 'w', encoding='utf-8') as fp:
-        for chunk_size in chunk_sizes:
-            j2p_decoder_classes = [
-                ComposedJamoDecoderImplementationOnPurePython,
-                ComposedJamoDecoderImplementationOnCFFI,
-                ComposedJamoDecoderImplementationOnCython,
-            ]
-            for decoder_class in j2p_decoder_classes:
+        j2p_decoder_classes = [
+            ComposedJamoDecoderImplementationOnPurePython,
+            ComposedJamoDecoderImplementationOnCFFI,
+            ComposedJamoDecoderImplementationOnCython,
+        ]
+        for decoder_class in j2p_decoder_classes:
+            for chunk_size in chunk_sizes:
                 stopwatch = StopWatch()
                 for i in range(N):
                     stream = io.StringIO(
@@ -106,8 +106,8 @@ def main():
                     )
                     decoder = decoder_class()
                     while True:
-                        s = stream.read(512)
-                        if len(s) < 512:
+                        s = stream.read(chunk_size)
+                        if len(s) < chunk_size:
                             with stopwatch:
                                 decoder.decode(s, final=True)
                             break
@@ -120,20 +120,21 @@ def main():
                 elapsed_average = int(elapsed_average)
                 elapsed_average /= 1000000.0
                 fp.write('{},{},{},{},{},{}\n'.format(
-                    chunk_size,
                     platform.python_implementation(),
                     platform.python_version(),
                     platform.platform(),
                     decoder_class.__name__,
+                    chunk_size,
                     elapsed_average,
                 ))
 
-            encoder_classes = [
-                ComposedJamoEncoderImplementationOnPurePython,
-                ComposedJamoEncoderImplementationOnCFFI,
-                ComposedJamoEncoderImplementationOnCython,
-            ]
-            for encoder_class in encoder_classes:
+        encoder_classes = [
+            ComposedJamoEncoderImplementationOnPurePython,
+            ComposedJamoEncoderImplementationOnCFFI,
+            ComposedJamoEncoderImplementationOnCython,
+        ]
+        for encoder_class in encoder_classes:
+            for chunk_size in chunk_sizes:
                 stopwatch = StopWatch()
                 for i in range(N):
                     stream = io.StringIO(
@@ -141,8 +142,8 @@ def main():
                     )
                     encoder = encoder_class()
                     while True:
-                        s = stream.read(512)
-                        if len(s) < 512:
+                        s = stream.read(chunk_size)
+                        if len(s) < chunk_size:
                             with stopwatch:
                                 encoder.encode(s, final=True)
                             break
@@ -155,11 +156,11 @@ def main():
                 elapsed_average = int(elapsed_average)
                 elapsed_average /= 1000000.0
                 fp.write('{},{},{},{},{},{}\n'.format(
-                    chunk_size,
                     platform.python_implementation(),
                     platform.python_version(),
                     platform.platform(),
                     encoder_class.__name__,
+                    chunk_size,
                     elapsed_average,
                 ))
 
