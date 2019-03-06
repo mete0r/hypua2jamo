@@ -809,41 +809,41 @@ struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCyth
 struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython;
 struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython;
 
-/* "hypua2jamo/_cython.pyx":78
+/* "hypua2jamo/_cython.pyx":81
  * 
  * 
  * cdef class ComposedJamoDecoderImplementationOnCython:             # <<<<<<<<<<<<<<
  * 
- *     cdef void* _translator
+ *     cdef void* _decoder
  */
 struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython {
   PyObject_HEAD
-  void *_translator;
+  void *_decoder;
   int (*_calcsize)(void *, void *, int);
   int (*_calcsize_flush)(void *);
-  int (*_translate)(void *, void *, int, void *);
-  int (*_translate_flush)(void *, void *);
+  int (*_decode)(void *, void *, int, void *);
+  int (*_decode_flush)(void *, void *);
 };
 
 
-/* "hypua2jamo/_cython.pyx":152
+/* "hypua2jamo/_cython.pyx":155
  * 
  * 
  * cdef class DecomposedJamoDecoderImplementationOnCython:             # <<<<<<<<<<<<<<
  * 
- *     cdef void* _translator
+ *     cdef void* _decoder
  */
 struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython {
   PyObject_HEAD
-  void *_translator;
+  void *_decoder;
   int (*_calcsize)(void *, void *, int);
   int (*_calcsize_flush)(void *);
-  int (*_translate)(void *, void *, int, void *);
-  int (*_translate_flush)(void *, void *);
+  int (*_decode)(void *, void *, int, void *);
+  int (*_decode_flush)(void *, void *);
 };
 
 
-/* "hypua2jamo/_cython.pyx":226
+/* "hypua2jamo/_cython.pyx":229
  * 
  * 
  * cdef class ComposedJamoEncoderImplementationOnCython:             # <<<<<<<<<<<<<<
@@ -853,11 +853,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCyth
 struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython {
   PyObject_HEAD
   int (*_calcsize)(void *, int);
-  int (*_translate)(void *, int, void *);
+  int (*_encode)(void *, int, void *);
 };
 
 
-/* "hypua2jamo/_cython.pyx":271
+/* "hypua2jamo/_cython.pyx":274
  * 
  * 
  * cdef class DecomposedJamoEncoderImplementationOnCython:             # <<<<<<<<<<<<<<
@@ -867,7 +867,7 @@ struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython
 struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython {
   PyObject_HEAD
   int (*_calcsize)(void *, int);
-  int (*_translate)(void *, int, void *);
+  int (*_encode)(void *, int, void *);
 };
 
 
@@ -1324,12 +1324,12 @@ static PyObject *__pyx_tuple__9;
 static PyObject *__pyx_tuple__10;
 /* Late includes */
 
-/* "hypua2jamo/_cython.pyx":86
- *     cdef int (*_translate_flush)(void*, void*)
+/* "hypua2jamo/_cython.pyx":89
+ *     cdef int (*_decode_flush)(void*, void*)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         size = hypua_jc2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
  */
 
 /* Python wrapper */
@@ -1350,7 +1350,7 @@ static int __pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnC
 
 static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self) {
   int __pyx_v_size;
-  void *__pyx_v_translator;
+  void *__pyx_v_decoder;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -1358,196 +1358,196 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnC
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "hypua2jamo/_cython.pyx":87
+  /* "hypua2jamo/_cython.pyx":90
  * 
  *     def __cinit__(self):
- *         size = hypua_jc2p_translator_size()             # <<<<<<<<<<<<<<
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:
+ *         size = hypua_decoder_alloc_size()             # <<<<<<<<<<<<<<
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:
  */
-  __pyx_v_size = hypua_jc2p_translator_size();
+  __pyx_v_size = hypua_decoder_alloc_size();
 
-  /* "hypua2jamo/_cython.pyx":88
+  /* "hypua2jamo/_cython.pyx":91
  *     def __cinit__(self):
- *         size = hypua_jc2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)             # <<<<<<<<<<<<<<
- *         if not translator:
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)             # <<<<<<<<<<<<<<
+ *         if not decoder:
  *             raise MemoryError()
  */
-  __pyx_v_translator = PyMem_Malloc(__pyx_v_size);
+  __pyx_v_decoder = PyMem_Malloc(__pyx_v_size);
 
-  /* "hypua2jamo/_cython.pyx":89
- *         size = hypua_jc2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:             # <<<<<<<<<<<<<<
+  /* "hypua2jamo/_cython.pyx":92
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:             # <<<<<<<<<<<<<<
  *             raise MemoryError()
  * 
  */
-  __pyx_t_1 = ((!(__pyx_v_translator != 0)) != 0);
+  __pyx_t_1 = ((!(__pyx_v_decoder != 0)) != 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "hypua2jamo/_cython.pyx":90
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:
+    /* "hypua2jamo/_cython.pyx":93
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  * 
- *         hypua_jc2p_translator_init(translator)
+ *         hypua_decoder_init_jc2p(decoder)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 90, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 93, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":89
- *         size = hypua_jc2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:             # <<<<<<<<<<<<<<
+    /* "hypua2jamo/_cython.pyx":92
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:             # <<<<<<<<<<<<<<
  *             raise MemoryError()
  * 
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":92
+  /* "hypua2jamo/_cython.pyx":95
  *             raise MemoryError()
  * 
- *         hypua_jc2p_translator_init(translator)             # <<<<<<<<<<<<<<
- *         self._translator = translator
+ *         hypua_decoder_init_jc2p(decoder)             # <<<<<<<<<<<<<<
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:
  */
-  (void)(hypua_jc2p_translator_init(__pyx_v_translator));
+  hypua_decoder_init_jc2p(__pyx_v_decoder);
 
-  /* "hypua2jamo/_cython.pyx":93
+  /* "hypua2jamo/_cython.pyx":96
  * 
- *         hypua_jc2p_translator_init(translator)
- *         self._translator = translator             # <<<<<<<<<<<<<<
+ *         hypua_decoder_init_jc2p(decoder)
+ *         self._decoder = decoder             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
  */
-  __pyx_v_self->_translator = __pyx_v_translator;
+  __pyx_v_self->_decoder = __pyx_v_decoder;
 
-  /* "hypua2jamo/_cython.pyx":94
- *         hypua_jc2p_translator_init(translator)
- *         self._translator = translator
+  /* "hypua2jamo/_cython.pyx":97
+ *         hypua_decoder_init_jc2p(decoder)
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
   switch (__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE) {
     case 4:
 
-    /* "hypua2jamo/_cython.pyx":95
- *         self._translator = translator
+    /* "hypua2jamo/_cython.pyx":98
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize             # <<<<<<<<<<<<<<
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u4_translate
+ *             self._calcsize = hypua_decoder_calcsize_ucs4             # <<<<<<<<<<<<<<
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4
  */
-    __pyx_v_self->_calcsize = hypua_jc2p_translator_u4_calcsize;
+    __pyx_v_self->_calcsize = hypua_decoder_calcsize_ucs4;
 
-    /* "hypua2jamo/_cython.pyx":96
+    /* "hypua2jamo/_cython.pyx":99
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush             # <<<<<<<<<<<<<<
- *             self._translate = hypua_jc2p_translator_u4_translate
- *             self._translate_flush = hypua_jc2p_translator_u4_translate_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush             # <<<<<<<<<<<<<<
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  */
-    __pyx_v_self->_calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush;
+    __pyx_v_self->_calcsize_flush = hypua_decoder_calcsize_flush;
+
+    /* "hypua2jamo/_cython.pyx":100
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4             # <<<<<<<<<<<<<<
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
+ *         elif _UNICODE_SIZE == 2:
+ */
+    __pyx_v_self->_decode = hypua_decoder_decode_ucs4;
+
+    /* "hypua2jamo/_cython.pyx":101
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4             # <<<<<<<<<<<<<<
+ *         elif _UNICODE_SIZE == 2:
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ */
+    __pyx_v_self->_decode_flush = hypua_decoder_decode_flush_ucs4;
 
     /* "hypua2jamo/_cython.pyx":97
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u4_translate             # <<<<<<<<<<<<<<
- *             self._translate_flush = hypua_jc2p_translator_u4_translate_flush
- *         elif _UNICODE_SIZE == 2:
- */
-    __pyx_v_self->_translate = hypua_jc2p_translator_u4_translate;
-
-    /* "hypua2jamo/_cython.pyx":98
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u4_translate
- *             self._translate_flush = hypua_jc2p_translator_u4_translate_flush             # <<<<<<<<<<<<<<
- *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jc2p_translator_u2_calcsize
- */
-    __pyx_v_self->_translate_flush = hypua_jc2p_translator_u4_translate_flush;
-
-    /* "hypua2jamo/_cython.pyx":94
- *         hypua_jc2p_translator_init(translator)
- *         self._translator = translator
+ *         hypua_decoder_init_jc2p(decoder)
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jc2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
     break;
     case 2:
 
-    /* "hypua2jamo/_cython.pyx":100
- *             self._translate_flush = hypua_jc2p_translator_u4_translate_flush
+    /* "hypua2jamo/_cython.pyx":103
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jc2p_translator_u2_calcsize             # <<<<<<<<<<<<<<
- *             self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u2_translate
+ *             self._calcsize = hypua_decoder_calcsize_ucs2             # <<<<<<<<<<<<<<
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2
  */
-    __pyx_v_self->_calcsize = hypua_jc2p_translator_u2_calcsize;
+    __pyx_v_self->_calcsize = hypua_decoder_calcsize_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":101
+    /* "hypua2jamo/_cython.pyx":104
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jc2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush             # <<<<<<<<<<<<<<
- *             self._translate = hypua_jc2p_translator_u2_translate
- *             self._translate_flush = hypua_jc2p_translator_u2_translate_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush             # <<<<<<<<<<<<<<
+ *             self._decode = hypua_decoder_decode_ucs2
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  */
-    __pyx_v_self->_calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush;
+    __pyx_v_self->_calcsize_flush = hypua_decoder_calcsize_flush;
 
-    /* "hypua2jamo/_cython.pyx":102
- *             self._calcsize = hypua_jc2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u2_translate             # <<<<<<<<<<<<<<
- *             self._translate_flush = hypua_jc2p_translator_u2_translate_flush
+    /* "hypua2jamo/_cython.pyx":105
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2             # <<<<<<<<<<<<<<
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  *         else:
  */
-    __pyx_v_self->_translate = hypua_jc2p_translator_u2_translate;
+    __pyx_v_self->_decode = hypua_decoder_decode_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":103
- *             self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jc2p_translator_u2_translate
- *             self._translate_flush = hypua_jc2p_translator_u2_translate_flush             # <<<<<<<<<<<<<<
+    /* "hypua2jamo/_cython.pyx":106
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2             # <<<<<<<<<<<<<<
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)
  */
-    __pyx_v_self->_translate_flush = hypua_jc2p_translator_u2_translate_flush;
+    __pyx_v_self->_decode_flush = hypua_decoder_decode_flush_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":99
- *             self._translate = hypua_jc2p_translator_u4_translate
- *             self._translate_flush = hypua_jc2p_translator_u4_translate_flush
+    /* "hypua2jamo/_cython.pyx":102
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  *         elif _UNICODE_SIZE == 2:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jc2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
     break;
     default:
 
-    /* "hypua2jamo/_cython.pyx":105
- *             self._translate_flush = hypua_jc2p_translator_u2_translate_flush
+    /* "hypua2jamo/_cython.pyx":108
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 105, __pyx_L1_error)
+    __PYX_ERR(0, 108, __pyx_L1_error)
     break;
   }
 
-  /* "hypua2jamo/_cython.pyx":86
- *     cdef int (*_translate_flush)(void*, void*)
+  /* "hypua2jamo/_cython.pyx":89
+ *     cdef int (*_decode_flush)(void*, void*)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         size = hypua_jc2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
  */
 
   /* function exit code */
@@ -1563,11 +1563,11 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnC
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":107
+/* "hypua2jamo/_cython.pyx":110
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         PyMem_Free(self._translator)
+ *         PyMem_Free(self._decoder)
  * 
  */
 
@@ -1586,20 +1586,20 @@ static void __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOn
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "hypua2jamo/_cython.pyx":108
+  /* "hypua2jamo/_cython.pyx":111
  * 
  *     def __dealloc__(self):
- *         PyMem_Free(self._translator)             # <<<<<<<<<<<<<<
+ *         PyMem_Free(self._decoder)             # <<<<<<<<<<<<<<
  * 
  *     def getstate(self):
  */
-  PyMem_Free(__pyx_v_self->_translator);
+  PyMem_Free(__pyx_v_self->_decoder);
 
-  /* "hypua2jamo/_cython.pyx":107
+  /* "hypua2jamo/_cython.pyx":110
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         PyMem_Free(self._translator)
+ *         PyMem_Free(self._decoder)
  * 
  */
 
@@ -1607,11 +1607,11 @@ static void __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOn
   __Pyx_RefNannyFinishContext();
 }
 
-/* "hypua2jamo/_cython.pyx":110
- *         PyMem_Free(self._translator)
+/* "hypua2jamo/_cython.pyx":113
+ *         PyMem_Free(self._decoder)
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
- *         cdef int state = hypua_jc2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)
  */
 
@@ -1636,26 +1636,26 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("getstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":111
+  /* "hypua2jamo/_cython.pyx":114
  * 
  *     def getstate(self):
- *         cdef int state = hypua_jc2p_translator_getstate(self._translator)             # <<<<<<<<<<<<<<
+ *         cdef int state = hypua_decoder_getstate(self._decoder)             # <<<<<<<<<<<<<<
  *         return (b'', state)
  * 
  */
-  __pyx_v_state = hypua_jc2p_translator_getstate(__pyx_v_self->_translator);
+  __pyx_v_state = hypua_decoder_getstate(__pyx_v_self->_decoder);
 
-  /* "hypua2jamo/_cython.pyx":112
+  /* "hypua2jamo/_cython.pyx":115
  *     def getstate(self):
- *         cdef int state = hypua_jc2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)             # <<<<<<<<<<<<<<
  * 
  *     def setstate(self, state):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_state); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_state); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_kp_b_);
   __Pyx_GIVEREF(__pyx_kp_b_);
@@ -1667,11 +1667,11 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "hypua2jamo/_cython.pyx":110
- *         PyMem_Free(self._translator)
+  /* "hypua2jamo/_cython.pyx":113
+ *         PyMem_Free(self._decoder)
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
- *         cdef int state = hypua_jc2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)
  */
 
@@ -1687,12 +1687,12 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":114
+/* "hypua2jamo/_cython.pyx":117
  *         return (b'', state)
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
  *         cdef int stateint = state
- *         hypua_jc2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  */
 
 /* Python wrapper */
@@ -1715,31 +1715,31 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("setstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":115
+  /* "hypua2jamo/_cython.pyx":118
  * 
  *     def setstate(self, state):
  *         cdef int stateint = state             # <<<<<<<<<<<<<<
- *         hypua_jc2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_state); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_state); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 118, __pyx_L1_error)
   __pyx_v_stateint = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":116
+  /* "hypua2jamo/_cython.pyx":119
  *     def setstate(self, state):
  *         cdef int stateint = state
- *         hypua_jc2p_translator_setstate(self._translator, stateint)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, stateint)             # <<<<<<<<<<<<<<
  * 
  *     def reset(self):
  */
-  (void)(hypua_jc2p_translator_setstate(__pyx_v_self->_translator, __pyx_v_stateint));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, __pyx_v_stateint));
 
-  /* "hypua2jamo/_cython.pyx":114
+  /* "hypua2jamo/_cython.pyx":117
  *         return (b'', state)
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
  *         cdef int stateint = state
- *         hypua_jc2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  */
 
   /* function exit code */
@@ -1754,11 +1754,11 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":118
- *         hypua_jc2p_translator_setstate(self._translator, stateint)
+/* "hypua2jamo/_cython.pyx":121
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
- *         hypua_jc2p_translator_setstate(self._translator, 0)
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  */
 
@@ -1780,20 +1780,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reset", 0);
 
-  /* "hypua2jamo/_cython.pyx":119
+  /* "hypua2jamo/_cython.pyx":122
  * 
  *     def reset(self):
- *         hypua_jc2p_translator_setstate(self._translator, 0)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, 0)             # <<<<<<<<<<<<<<
  * 
  *     def decode(self, jamo_string, final=False):
  */
-  (void)(hypua_jc2p_translator_setstate(__pyx_v_self->_translator, 0));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, 0));
 
-  /* "hypua2jamo/_cython.pyx":118
- *         hypua_jc2p_translator_setstate(self._translator, stateint)
+  /* "hypua2jamo/_cython.pyx":121
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
- *         hypua_jc2p_translator_setstate(self._translator, 0)
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  */
 
@@ -1804,8 +1804,8 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":121
- *         hypua_jc2p_translator_setstate(self._translator, 0)
+/* "hypua2jamo/_cython.pyx":124
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  *     def decode(self, jamo_string, final=False):             # <<<<<<<<<<<<<<
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
@@ -1848,7 +1848,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "decode") < 0)) __PYX_ERR(0, 121, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "decode") < 0)) __PYX_ERR(0, 124, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1864,7 +1864,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("decode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 121, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("decode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 124, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoDecoderImplementationOnCython.decode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1901,17 +1901,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("decode", 0);
 
-  /* "hypua2jamo/_cython.pyx":122
+  /* "hypua2jamo/_cython.pyx":125
  * 
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)             # <<<<<<<<<<<<<<
  *         if jamo_buf is NULL:
  *             raise MemoryError()
  */
-  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_jamo_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_jamo_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 125, __pyx_L1_error)
   __pyx_v_jamo_buf = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":123
+  /* "hypua2jamo/_cython.pyx":126
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -1921,16 +1921,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   __pyx_t_2 = ((__pyx_v_jamo_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":124
+    /* "hypua2jamo/_cython.pyx":127
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jc2p_translator_getstate(self._translator)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 124, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 127, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":123
+    /* "hypua2jamo/_cython.pyx":126
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -1939,73 +1939,73 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":125
+  /* "hypua2jamo/_cython.pyx":128
  *         if jamo_buf is NULL:
  *             raise MemoryError()
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)             # <<<<<<<<<<<<<<
- *         cdef Py_ssize_t state = hypua_jc2p_translator_getstate(self._translator)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
  *         cdef Py_ssize_t pua_len = self._calcsize(
  */
-  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_jamo_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_jamo_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 128, __pyx_L1_error)
   __pyx_v_jamo_len = __pyx_t_3;
 
-  /* "hypua2jamo/_cython.pyx":126
+  /* "hypua2jamo/_cython.pyx":129
  *             raise MemoryError()
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jc2p_translator_getstate(self._translator)             # <<<<<<<<<<<<<<
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t pua_len = self._calcsize(
- *             self._translator, jamo_buf, jamo_len
+ *             self._decoder, jamo_buf, jamo_len
  */
-  __pyx_v_state = hypua_jc2p_translator_getstate(__pyx_v_self->_translator);
-
-  /* "hypua2jamo/_cython.pyx":127
- *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jc2p_translator_getstate(self._translator)
- *         cdef Py_ssize_t pua_len = self._calcsize(             # <<<<<<<<<<<<<<
- *             self._translator, jamo_buf, jamo_len
- *         )
- */
-  __pyx_v_pua_len = __pyx_v_self->_calcsize(__pyx_v_self->_translator, __pyx_v_jamo_buf, __pyx_v_jamo_len);
+  __pyx_v_state = hypua_decoder_getstate(__pyx_v_self->_decoder);
 
   /* "hypua2jamo/_cython.pyx":130
- *             self._translator, jamo_buf, jamo_len
+ *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
+ *         cdef Py_ssize_t pua_len = self._calcsize(             # <<<<<<<<<<<<<<
+ *             self._decoder, jamo_buf, jamo_len
+ *         )
+ */
+  __pyx_v_pua_len = __pyx_v_self->_calcsize(__pyx_v_self->_decoder, __pyx_v_jamo_buf, __pyx_v_jamo_len);
+
+  /* "hypua2jamo/_cython.pyx":133
+ *             self._decoder, jamo_buf, jamo_len
  *         )
  *         if final:             # <<<<<<<<<<<<<<
- *             pua_len += self._calcsize_flush(self._translator)
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "hypua2jamo/_cython.pyx":131
+    /* "hypua2jamo/_cython.pyx":134
  *         )
  *         if final:
- *             pua_len += self._calcsize_flush(self._translator)             # <<<<<<<<<<<<<<
+ *             pua_len += self._calcsize_flush(self._decoder)             # <<<<<<<<<<<<<<
  * 
- *         hypua_jc2p_translator_setstate(self._translator, state)
+ *         hypua_decoder_setstate(self._decoder, state)
  */
-    __pyx_v_pua_len = (__pyx_v_pua_len + __pyx_v_self->_calcsize_flush(__pyx_v_self->_translator));
+    __pyx_v_pua_len = (__pyx_v_pua_len + __pyx_v_self->_calcsize_flush(__pyx_v_self->_decoder));
 
-    /* "hypua2jamo/_cython.pyx":130
- *             self._translator, jamo_buf, jamo_len
+    /* "hypua2jamo/_cython.pyx":133
+ *             self._decoder, jamo_buf, jamo_len
  *         )
  *         if final:             # <<<<<<<<<<<<<<
- *             pua_len += self._calcsize_flush(self._translator)
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":133
- *             pua_len += self._calcsize_flush(self._translator)
+  /* "hypua2jamo/_cython.pyx":136
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
- *         hypua_jc2p_translator_setstate(self._translator, state)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, state)             # <<<<<<<<<<<<<<
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  */
-  (void)(hypua_jc2p_translator_setstate(__pyx_v_self->_translator, __pyx_v_state));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, __pyx_v_state));
 
-  /* "hypua2jamo/_cython.pyx":135
- *         hypua_jc2p_translator_setstate(self._translator, state)
+  /* "hypua2jamo/_cython.pyx":138
+ *         hypua_decoder_setstate(self._decoder, state)
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)             # <<<<<<<<<<<<<<
  *         if pua_buf is NULL:
@@ -2013,7 +2013,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
  */
   __pyx_v_pua_buf = ((Py_UNICODE *)PyMem_Malloc((__pyx_v_pua_len * __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE)));
 
-  /* "hypua2jamo/_cython.pyx":136
+  /* "hypua2jamo/_cython.pyx":139
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2023,16 +2023,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   __pyx_t_2 = ((__pyx_v_pua_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":137
+    /* "hypua2jamo/_cython.pyx":140
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t n_translated
  *         try:
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 137, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 140, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":136
+    /* "hypua2jamo/_cython.pyx":139
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2041,68 +2041,68 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":139
+  /* "hypua2jamo/_cython.pyx":142
  *             raise MemoryError()
  *         cdef Py_ssize_t n_translated
  *         try:             # <<<<<<<<<<<<<<
- *             n_translated = self._translate(
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+ *             n_translated = self._decode(
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  */
   /*try:*/ {
 
-    /* "hypua2jamo/_cython.pyx":140
+    /* "hypua2jamo/_cython.pyx":143
  *         cdef Py_ssize_t n_translated
  *         try:
- *             n_translated = self._translate(             # <<<<<<<<<<<<<<
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+ *             n_translated = self._decode(             # <<<<<<<<<<<<<<
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  */
-    __pyx_v_n_translated = __pyx_v_self->_translate(__pyx_v_self->_translator, __pyx_v_jamo_buf, __pyx_v_jamo_len, __pyx_v_pua_buf);
+    __pyx_v_n_translated = __pyx_v_self->_decode(__pyx_v_self->_decoder, __pyx_v_jamo_buf, __pyx_v_jamo_len, __pyx_v_pua_buf);
 
-    /* "hypua2jamo/_cython.pyx":143
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+    /* "hypua2jamo/_cython.pyx":146
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  *             if final:             # <<<<<<<<<<<<<<
- *                 n_translated += self._translate_flush(
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(
+ *                     self._decoder, pua_buf + n_translated
  */
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 143, __pyx_L7_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 146, __pyx_L7_error)
     if (__pyx_t_2) {
 
-      /* "hypua2jamo/_cython.pyx":144
+      /* "hypua2jamo/_cython.pyx":147
  *             )
  *             if final:
- *                 n_translated += self._translate_flush(             # <<<<<<<<<<<<<<
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(             # <<<<<<<<<<<<<<
+ *                     self._decoder, pua_buf + n_translated
  *                 )
  */
-      __pyx_v_n_translated = (__pyx_v_n_translated + __pyx_v_self->_translate_flush(__pyx_v_self->_translator, (__pyx_v_pua_buf + __pyx_v_n_translated)));
+      __pyx_v_n_translated = (__pyx_v_n_translated + __pyx_v_self->_decode_flush(__pyx_v_self->_decoder, (__pyx_v_pua_buf + __pyx_v_n_translated)));
 
-      /* "hypua2jamo/_cython.pyx":143
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+      /* "hypua2jamo/_cython.pyx":146
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  *             if final:             # <<<<<<<<<<<<<<
- *                 n_translated += self._translate_flush(
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(
+ *                     self._decoder, pua_buf + n_translated
  */
     }
 
-    /* "hypua2jamo/_cython.pyx":147
- *                     self._translator, pua_buf + n_translated
+    /* "hypua2jamo/_cython.pyx":150
+ *                     self._decoder, pua_buf + n_translated
  *                 )
  *             return PyUnicode_FromUnicode(pua_buf, n_translated)             # <<<<<<<<<<<<<<
  *         finally:
  *             PyMem_Free(pua_buf)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = PyUnicode_FromUnicode(__pyx_v_pua_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L7_error)
+    __pyx_t_4 = PyUnicode_FromUnicode(__pyx_v_pua_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 150, __pyx_L7_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L6_return;
   }
 
-  /* "hypua2jamo/_cython.pyx":149
+  /* "hypua2jamo/_cython.pyx":152
  *             return PyUnicode_FromUnicode(pua_buf, n_translated)
  *         finally:
  *             PyMem_Free(pua_buf)             # <<<<<<<<<<<<<<
@@ -2152,8 +2152,8 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
     }
   }
 
-  /* "hypua2jamo/_cython.pyx":121
- *         hypua_jc2p_translator_setstate(self._translator, 0)
+  /* "hypua2jamo/_cython.pyx":124
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  *     def decode(self, jamo_string, final=False):             # <<<<<<<<<<<<<<
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
@@ -2278,12 +2278,12 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":160
- *     cdef int (*_translate_flush)(void*, void*)
+/* "hypua2jamo/_cython.pyx":163
+ *     cdef int (*_decode_flush)(void*, void*)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         size = hypua_jd2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
  */
 
 /* Python wrapper */
@@ -2304,7 +2304,7 @@ static int __pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationO
 
 static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self) {
   int __pyx_v_size;
-  void *__pyx_v_translator;
+  void *__pyx_v_decoder;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -2312,196 +2312,196 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationO
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "hypua2jamo/_cython.pyx":161
+  /* "hypua2jamo/_cython.pyx":164
  * 
  *     def __cinit__(self):
- *         size = hypua_jd2p_translator_size()             # <<<<<<<<<<<<<<
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:
+ *         size = hypua_decoder_alloc_size()             # <<<<<<<<<<<<<<
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:
  */
-  __pyx_v_size = hypua_jd2p_translator_size();
+  __pyx_v_size = hypua_decoder_alloc_size();
 
-  /* "hypua2jamo/_cython.pyx":162
+  /* "hypua2jamo/_cython.pyx":165
  *     def __cinit__(self):
- *         size = hypua_jd2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)             # <<<<<<<<<<<<<<
- *         if not translator:
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)             # <<<<<<<<<<<<<<
+ *         if not decoder:
  *             raise MemoryError()
  */
-  __pyx_v_translator = PyMem_Malloc(__pyx_v_size);
+  __pyx_v_decoder = PyMem_Malloc(__pyx_v_size);
 
-  /* "hypua2jamo/_cython.pyx":163
- *         size = hypua_jd2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:             # <<<<<<<<<<<<<<
+  /* "hypua2jamo/_cython.pyx":166
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:             # <<<<<<<<<<<<<<
  *             raise MemoryError()
  * 
  */
-  __pyx_t_1 = ((!(__pyx_v_translator != 0)) != 0);
+  __pyx_t_1 = ((!(__pyx_v_decoder != 0)) != 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "hypua2jamo/_cython.pyx":164
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:
+    /* "hypua2jamo/_cython.pyx":167
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  * 
- *         hypua_jd2p_translator_init(translator)
+ *         hypua_decoder_init_jd2p(decoder)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 164, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 167, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":163
- *         size = hypua_jd2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
- *         if not translator:             # <<<<<<<<<<<<<<
+    /* "hypua2jamo/_cython.pyx":166
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
+ *         if not decoder:             # <<<<<<<<<<<<<<
  *             raise MemoryError()
  * 
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":166
+  /* "hypua2jamo/_cython.pyx":169
  *             raise MemoryError()
  * 
- *         hypua_jd2p_translator_init(translator)             # <<<<<<<<<<<<<<
- *         self._translator = translator
+ *         hypua_decoder_init_jd2p(decoder)             # <<<<<<<<<<<<<<
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:
  */
-  (void)(hypua_jd2p_translator_init(__pyx_v_translator));
+  hypua_decoder_init_jd2p(__pyx_v_decoder);
 
-  /* "hypua2jamo/_cython.pyx":167
+  /* "hypua2jamo/_cython.pyx":170
  * 
- *         hypua_jd2p_translator_init(translator)
- *         self._translator = translator             # <<<<<<<<<<<<<<
+ *         hypua_decoder_init_jd2p(decoder)
+ *         self._decoder = decoder             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
  */
-  __pyx_v_self->_translator = __pyx_v_translator;
+  __pyx_v_self->_decoder = __pyx_v_decoder;
 
-  /* "hypua2jamo/_cython.pyx":168
- *         hypua_jd2p_translator_init(translator)
- *         self._translator = translator
+  /* "hypua2jamo/_cython.pyx":171
+ *         hypua_decoder_init_jd2p(decoder)
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
   switch (__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE) {
     case 4:
 
-    /* "hypua2jamo/_cython.pyx":169
- *         self._translator = translator
+    /* "hypua2jamo/_cython.pyx":172
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize             # <<<<<<<<<<<<<<
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u4_translate
+ *             self._calcsize = hypua_decoder_calcsize_ucs4             # <<<<<<<<<<<<<<
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4
  */
-    __pyx_v_self->_calcsize = hypua_jd2p_translator_u4_calcsize;
+    __pyx_v_self->_calcsize = hypua_decoder_calcsize_ucs4;
 
-    /* "hypua2jamo/_cython.pyx":170
+    /* "hypua2jamo/_cython.pyx":173
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush             # <<<<<<<<<<<<<<
- *             self._translate = hypua_jd2p_translator_u4_translate
- *             self._translate_flush = hypua_jd2p_translator_u4_translate_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush             # <<<<<<<<<<<<<<
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  */
-    __pyx_v_self->_calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush;
+    __pyx_v_self->_calcsize_flush = hypua_decoder_calcsize_flush;
+
+    /* "hypua2jamo/_cython.pyx":174
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4             # <<<<<<<<<<<<<<
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
+ *         elif _UNICODE_SIZE == 2:
+ */
+    __pyx_v_self->_decode = hypua_decoder_decode_ucs4;
+
+    /* "hypua2jamo/_cython.pyx":175
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4             # <<<<<<<<<<<<<<
+ *         elif _UNICODE_SIZE == 2:
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ */
+    __pyx_v_self->_decode_flush = hypua_decoder_decode_flush_ucs4;
 
     /* "hypua2jamo/_cython.pyx":171
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u4_translate             # <<<<<<<<<<<<<<
- *             self._translate_flush = hypua_jd2p_translator_u4_translate_flush
- *         elif _UNICODE_SIZE == 2:
- */
-    __pyx_v_self->_translate = hypua_jd2p_translator_u4_translate;
-
-    /* "hypua2jamo/_cython.pyx":172
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u4_translate
- *             self._translate_flush = hypua_jd2p_translator_u4_translate_flush             # <<<<<<<<<<<<<<
- *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jd2p_translator_u2_calcsize
- */
-    __pyx_v_self->_translate_flush = hypua_jd2p_translator_u4_translate_flush;
-
-    /* "hypua2jamo/_cython.pyx":168
- *         hypua_jd2p_translator_init(translator)
- *         self._translator = translator
+ *         hypua_decoder_init_jd2p(decoder)
+ *         self._decoder = decoder
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jd2p_translator_u4_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs4
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
     break;
     case 2:
 
-    /* "hypua2jamo/_cython.pyx":174
- *             self._translate_flush = hypua_jd2p_translator_u4_translate_flush
+    /* "hypua2jamo/_cython.pyx":177
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jd2p_translator_u2_calcsize             # <<<<<<<<<<<<<<
- *             self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u2_translate
+ *             self._calcsize = hypua_decoder_calcsize_ucs2             # <<<<<<<<<<<<<<
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2
  */
-    __pyx_v_self->_calcsize = hypua_jd2p_translator_u2_calcsize;
+    __pyx_v_self->_calcsize = hypua_decoder_calcsize_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":175
+    /* "hypua2jamo/_cython.pyx":178
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_jd2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush             # <<<<<<<<<<<<<<
- *             self._translate = hypua_jd2p_translator_u2_translate
- *             self._translate_flush = hypua_jd2p_translator_u2_translate_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush             # <<<<<<<<<<<<<<
+ *             self._decode = hypua_decoder_decode_ucs2
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  */
-    __pyx_v_self->_calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush;
+    __pyx_v_self->_calcsize_flush = hypua_decoder_calcsize_flush;
 
-    /* "hypua2jamo/_cython.pyx":176
- *             self._calcsize = hypua_jd2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u2_translate             # <<<<<<<<<<<<<<
- *             self._translate_flush = hypua_jd2p_translator_u2_translate_flush
+    /* "hypua2jamo/_cython.pyx":179
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2             # <<<<<<<<<<<<<<
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  *         else:
  */
-    __pyx_v_self->_translate = hypua_jd2p_translator_u2_translate;
+    __pyx_v_self->_decode = hypua_decoder_decode_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":177
- *             self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush
- *             self._translate = hypua_jd2p_translator_u2_translate
- *             self._translate_flush = hypua_jd2p_translator_u2_translate_flush             # <<<<<<<<<<<<<<
+    /* "hypua2jamo/_cython.pyx":180
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
+ *             self._decode = hypua_decoder_decode_ucs2
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2             # <<<<<<<<<<<<<<
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)
  */
-    __pyx_v_self->_translate_flush = hypua_jd2p_translator_u2_translate_flush;
+    __pyx_v_self->_decode_flush = hypua_decoder_decode_flush_ucs2;
 
-    /* "hypua2jamo/_cython.pyx":173
- *             self._translate = hypua_jd2p_translator_u4_translate
- *             self._translate_flush = hypua_jd2p_translator_u4_translate_flush
+    /* "hypua2jamo/_cython.pyx":176
+ *             self._decode = hypua_decoder_decode_ucs4
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs4
  *         elif _UNICODE_SIZE == 2:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_jd2p_translator_u2_calcsize
- *             self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush
+ *             self._calcsize = hypua_decoder_calcsize_ucs2
+ *             self._calcsize_flush = hypua_decoder_calcsize_flush
  */
     break;
     default:
 
-    /* "hypua2jamo/_cython.pyx":179
- *             self._translate_flush = hypua_jd2p_translator_u2_translate_flush
+    /* "hypua2jamo/_cython.pyx":182
+ *             self._decode_flush = hypua_decoder_decode_flush_ucs2
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 179, __pyx_L1_error)
+    __PYX_ERR(0, 182, __pyx_L1_error)
     break;
   }
 
-  /* "hypua2jamo/_cython.pyx":160
- *     cdef int (*_translate_flush)(void*, void*)
+  /* "hypua2jamo/_cython.pyx":163
+ *     cdef int (*_decode_flush)(void*, void*)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         size = hypua_jd2p_translator_size()
- *         cdef void *translator = PyMem_Malloc(size)
+ *         size = hypua_decoder_alloc_size()
+ *         cdef void *decoder = PyMem_Malloc(size)
  */
 
   /* function exit code */
@@ -2517,11 +2517,11 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationO
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":181
+/* "hypua2jamo/_cython.pyx":184
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         PyMem_Free(self._translator)
+ *         PyMem_Free(self._decoder)
  * 
  */
 
@@ -2540,20 +2540,20 @@ static void __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementation
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "hypua2jamo/_cython.pyx":182
+  /* "hypua2jamo/_cython.pyx":185
  * 
  *     def __dealloc__(self):
- *         PyMem_Free(self._translator)             # <<<<<<<<<<<<<<
+ *         PyMem_Free(self._decoder)             # <<<<<<<<<<<<<<
  * 
  *     def getstate(self):
  */
-  PyMem_Free(__pyx_v_self->_translator);
+  PyMem_Free(__pyx_v_self->_decoder);
 
-  /* "hypua2jamo/_cython.pyx":181
+  /* "hypua2jamo/_cython.pyx":184
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         PyMem_Free(self._translator)
+ *         PyMem_Free(self._decoder)
  * 
  */
 
@@ -2561,11 +2561,11 @@ static void __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementation
   __Pyx_RefNannyFinishContext();
 }
 
-/* "hypua2jamo/_cython.pyx":184
- *         PyMem_Free(self._translator)
+/* "hypua2jamo/_cython.pyx":187
+ *         PyMem_Free(self._decoder)
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
- *         cdef int state = hypua_jd2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)
  */
 
@@ -2590,26 +2590,26 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("getstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":185
+  /* "hypua2jamo/_cython.pyx":188
  * 
  *     def getstate(self):
- *         cdef int state = hypua_jd2p_translator_getstate(self._translator)             # <<<<<<<<<<<<<<
+ *         cdef int state = hypua_decoder_getstate(self._decoder)             # <<<<<<<<<<<<<<
  *         return (b'', state)
  * 
  */
-  __pyx_v_state = hypua_jd2p_translator_getstate(__pyx_v_self->_translator);
+  __pyx_v_state = hypua_decoder_getstate(__pyx_v_self->_decoder);
 
-  /* "hypua2jamo/_cython.pyx":186
+  /* "hypua2jamo/_cython.pyx":189
  *     def getstate(self):
- *         cdef int state = hypua_jd2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)             # <<<<<<<<<<<<<<
  * 
  *     def setstate(self, state):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_state); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_state); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_kp_b_);
   __Pyx_GIVEREF(__pyx_kp_b_);
@@ -2621,11 +2621,11 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "hypua2jamo/_cython.pyx":184
- *         PyMem_Free(self._translator)
+  /* "hypua2jamo/_cython.pyx":187
+ *         PyMem_Free(self._decoder)
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
- *         cdef int state = hypua_jd2p_translator_getstate(self._translator)
+ *         cdef int state = hypua_decoder_getstate(self._decoder)
  *         return (b'', state)
  */
 
@@ -2641,12 +2641,12 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":188
+/* "hypua2jamo/_cython.pyx":191
  *         return (b'', state)
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
  *         cdef int stateint = state
- *         hypua_jd2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  */
 
 /* Python wrapper */
@@ -2669,31 +2669,31 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("setstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":189
+  /* "hypua2jamo/_cython.pyx":192
  * 
  *     def setstate(self, state):
  *         cdef int stateint = state             # <<<<<<<<<<<<<<
- *         hypua_jd2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_state); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_state); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 192, __pyx_L1_error)
   __pyx_v_stateint = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":190
+  /* "hypua2jamo/_cython.pyx":193
  *     def setstate(self, state):
  *         cdef int stateint = state
- *         hypua_jd2p_translator_setstate(self._translator, stateint)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, stateint)             # <<<<<<<<<<<<<<
  * 
  *     def reset(self):
  */
-  (void)(hypua_jd2p_translator_setstate(__pyx_v_self->_translator, __pyx_v_stateint));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, __pyx_v_stateint));
 
-  /* "hypua2jamo/_cython.pyx":188
+  /* "hypua2jamo/_cython.pyx":191
  *         return (b'', state)
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
  *         cdef int stateint = state
- *         hypua_jd2p_translator_setstate(self._translator, stateint)
+ *         hypua_decoder_setstate(self._decoder, stateint)
  */
 
   /* function exit code */
@@ -2708,11 +2708,11 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":192
- *         hypua_jd2p_translator_setstate(self._translator, stateint)
+/* "hypua2jamo/_cython.pyx":195
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
- *         hypua_jd2p_translator_setstate(self._translator, 0)
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  */
 
@@ -2734,20 +2734,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reset", 0);
 
-  /* "hypua2jamo/_cython.pyx":193
+  /* "hypua2jamo/_cython.pyx":196
  * 
  *     def reset(self):
- *         hypua_jd2p_translator_setstate(self._translator, 0)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, 0)             # <<<<<<<<<<<<<<
  * 
  *     def decode(self, jamo_string, final=False):
  */
-  (void)(hypua_jd2p_translator_setstate(__pyx_v_self->_translator, 0));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, 0));
 
-  /* "hypua2jamo/_cython.pyx":192
- *         hypua_jd2p_translator_setstate(self._translator, stateint)
+  /* "hypua2jamo/_cython.pyx":195
+ *         hypua_decoder_setstate(self._decoder, stateint)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
- *         hypua_jd2p_translator_setstate(self._translator, 0)
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  */
 
@@ -2758,8 +2758,8 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":195
- *         hypua_jd2p_translator_setstate(self._translator, 0)
+/* "hypua2jamo/_cython.pyx":198
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  *     def decode(self, jamo_string, final=False):             # <<<<<<<<<<<<<<
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
@@ -2802,7 +2802,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "decode") < 0)) __PYX_ERR(0, 195, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "decode") < 0)) __PYX_ERR(0, 198, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2818,7 +2818,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("decode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 195, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("decode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 198, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoDecoderImplementationOnCython.decode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2855,17 +2855,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("decode", 0);
 
-  /* "hypua2jamo/_cython.pyx":196
+  /* "hypua2jamo/_cython.pyx":199
  * 
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)             # <<<<<<<<<<<<<<
  *         if jamo_buf is NULL:
  *             raise MemoryError()
  */
-  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_jamo_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_jamo_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 199, __pyx_L1_error)
   __pyx_v_jamo_buf = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":197
+  /* "hypua2jamo/_cython.pyx":200
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2875,16 +2875,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   __pyx_t_2 = ((__pyx_v_jamo_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":198
+    /* "hypua2jamo/_cython.pyx":201
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jd2p_translator_getstate(self._translator)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 198, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 201, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":197
+    /* "hypua2jamo/_cython.pyx":200
  *     def decode(self, jamo_string, final=False):
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2893,73 +2893,73 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":199
+  /* "hypua2jamo/_cython.pyx":202
  *         if jamo_buf is NULL:
  *             raise MemoryError()
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)             # <<<<<<<<<<<<<<
- *         cdef Py_ssize_t state = hypua_jd2p_translator_getstate(self._translator)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
  *         cdef Py_ssize_t pua_len = self._calcsize(
  */
-  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_jamo_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_jamo_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 202, __pyx_L1_error)
   __pyx_v_jamo_len = __pyx_t_3;
 
-  /* "hypua2jamo/_cython.pyx":200
+  /* "hypua2jamo/_cython.pyx":203
  *             raise MemoryError()
  *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jd2p_translator_getstate(self._translator)             # <<<<<<<<<<<<<<
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t pua_len = self._calcsize(
- *             self._translator, jamo_buf, jamo_len
+ *             self._decoder, jamo_buf, jamo_len
  */
-  __pyx_v_state = hypua_jd2p_translator_getstate(__pyx_v_self->_translator);
-
-  /* "hypua2jamo/_cython.pyx":201
- *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
- *         cdef Py_ssize_t state = hypua_jd2p_translator_getstate(self._translator)
- *         cdef Py_ssize_t pua_len = self._calcsize(             # <<<<<<<<<<<<<<
- *             self._translator, jamo_buf, jamo_len
- *         )
- */
-  __pyx_v_pua_len = __pyx_v_self->_calcsize(__pyx_v_self->_translator, __pyx_v_jamo_buf, __pyx_v_jamo_len);
+  __pyx_v_state = hypua_decoder_getstate(__pyx_v_self->_decoder);
 
   /* "hypua2jamo/_cython.pyx":204
- *             self._translator, jamo_buf, jamo_len
+ *         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
+ *         cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
+ *         cdef Py_ssize_t pua_len = self._calcsize(             # <<<<<<<<<<<<<<
+ *             self._decoder, jamo_buf, jamo_len
+ *         )
+ */
+  __pyx_v_pua_len = __pyx_v_self->_calcsize(__pyx_v_self->_decoder, __pyx_v_jamo_buf, __pyx_v_jamo_len);
+
+  /* "hypua2jamo/_cython.pyx":207
+ *             self._decoder, jamo_buf, jamo_len
  *         )
  *         if final:             # <<<<<<<<<<<<<<
- *             pua_len += self._calcsize_flush(self._translator)
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 207, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "hypua2jamo/_cython.pyx":205
+    /* "hypua2jamo/_cython.pyx":208
  *         )
  *         if final:
- *             pua_len += self._calcsize_flush(self._translator)             # <<<<<<<<<<<<<<
+ *             pua_len += self._calcsize_flush(self._decoder)             # <<<<<<<<<<<<<<
  * 
- *         hypua_jd2p_translator_setstate(self._translator, state)
+ *         hypua_decoder_setstate(self._decoder, state)
  */
-    __pyx_v_pua_len = (__pyx_v_pua_len + __pyx_v_self->_calcsize_flush(__pyx_v_self->_translator));
+    __pyx_v_pua_len = (__pyx_v_pua_len + __pyx_v_self->_calcsize_flush(__pyx_v_self->_decoder));
 
-    /* "hypua2jamo/_cython.pyx":204
- *             self._translator, jamo_buf, jamo_len
+    /* "hypua2jamo/_cython.pyx":207
+ *             self._decoder, jamo_buf, jamo_len
  *         )
  *         if final:             # <<<<<<<<<<<<<<
- *             pua_len += self._calcsize_flush(self._translator)
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":207
- *             pua_len += self._calcsize_flush(self._translator)
+  /* "hypua2jamo/_cython.pyx":210
+ *             pua_len += self._calcsize_flush(self._decoder)
  * 
- *         hypua_jd2p_translator_setstate(self._translator, state)             # <<<<<<<<<<<<<<
+ *         hypua_decoder_setstate(self._decoder, state)             # <<<<<<<<<<<<<<
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  */
-  (void)(hypua_jd2p_translator_setstate(__pyx_v_self->_translator, __pyx_v_state));
+  (void)(hypua_decoder_setstate(__pyx_v_self->_decoder, __pyx_v_state));
 
-  /* "hypua2jamo/_cython.pyx":209
- *         hypua_jd2p_translator_setstate(self._translator, state)
+  /* "hypua2jamo/_cython.pyx":212
+ *         hypua_decoder_setstate(self._decoder, state)
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)             # <<<<<<<<<<<<<<
  *         if pua_buf is NULL:
@@ -2967,7 +2967,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
  */
   __pyx_v_pua_buf = ((Py_UNICODE *)PyMem_Malloc((__pyx_v_pua_len * __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE)));
 
-  /* "hypua2jamo/_cython.pyx":210
+  /* "hypua2jamo/_cython.pyx":213
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2977,16 +2977,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   __pyx_t_2 = ((__pyx_v_pua_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":211
+    /* "hypua2jamo/_cython.pyx":214
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t n_translated
  *         try:
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 211, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 214, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":210
+    /* "hypua2jamo/_cython.pyx":213
  * 
  *         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -2995,68 +2995,68 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":213
+  /* "hypua2jamo/_cython.pyx":216
  *             raise MemoryError()
  *         cdef Py_ssize_t n_translated
  *         try:             # <<<<<<<<<<<<<<
- *             n_translated = self._translate(
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+ *             n_translated = self._decode(
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  */
   /*try:*/ {
 
-    /* "hypua2jamo/_cython.pyx":214
+    /* "hypua2jamo/_cython.pyx":217
  *         cdef Py_ssize_t n_translated
  *         try:
- *             n_translated = self._translate(             # <<<<<<<<<<<<<<
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+ *             n_translated = self._decode(             # <<<<<<<<<<<<<<
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  */
-    __pyx_v_n_translated = __pyx_v_self->_translate(__pyx_v_self->_translator, __pyx_v_jamo_buf, __pyx_v_jamo_len, __pyx_v_pua_buf);
+    __pyx_v_n_translated = __pyx_v_self->_decode(__pyx_v_self->_decoder, __pyx_v_jamo_buf, __pyx_v_jamo_len, __pyx_v_pua_buf);
 
-    /* "hypua2jamo/_cython.pyx":217
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+    /* "hypua2jamo/_cython.pyx":220
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  *             if final:             # <<<<<<<<<<<<<<
- *                 n_translated += self._translate_flush(
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(
+ *                     self._decoder, pua_buf + n_translated
  */
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 217, __pyx_L7_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_final); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 220, __pyx_L7_error)
     if (__pyx_t_2) {
 
-      /* "hypua2jamo/_cython.pyx":218
+      /* "hypua2jamo/_cython.pyx":221
  *             )
  *             if final:
- *                 n_translated += self._translate_flush(             # <<<<<<<<<<<<<<
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(             # <<<<<<<<<<<<<<
+ *                     self._decoder, pua_buf + n_translated
  *                 )
  */
-      __pyx_v_n_translated = (__pyx_v_n_translated + __pyx_v_self->_translate_flush(__pyx_v_self->_translator, (__pyx_v_pua_buf + __pyx_v_n_translated)));
+      __pyx_v_n_translated = (__pyx_v_n_translated + __pyx_v_self->_decode_flush(__pyx_v_self->_decoder, (__pyx_v_pua_buf + __pyx_v_n_translated)));
 
-      /* "hypua2jamo/_cython.pyx":217
- *                 self._translator, jamo_buf, jamo_len, pua_buf
+      /* "hypua2jamo/_cython.pyx":220
+ *                 self._decoder, jamo_buf, jamo_len, pua_buf
  *             )
  *             if final:             # <<<<<<<<<<<<<<
- *                 n_translated += self._translate_flush(
- *                     self._translator, pua_buf + n_translated
+ *                 n_translated += self._decode_flush(
+ *                     self._decoder, pua_buf + n_translated
  */
     }
 
-    /* "hypua2jamo/_cython.pyx":221
- *                     self._translator, pua_buf + n_translated
+    /* "hypua2jamo/_cython.pyx":224
+ *                     self._decoder, pua_buf + n_translated
  *                 )
  *             return PyUnicode_FromUnicode(pua_buf, n_translated)             # <<<<<<<<<<<<<<
  *         finally:
  *             PyMem_Free(pua_buf)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = PyUnicode_FromUnicode(__pyx_v_pua_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L7_error)
+    __pyx_t_4 = PyUnicode_FromUnicode(__pyx_v_pua_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L7_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_r = __pyx_t_4;
     __pyx_t_4 = 0;
     goto __pyx_L6_return;
   }
 
-  /* "hypua2jamo/_cython.pyx":223
+  /* "hypua2jamo/_cython.pyx":226
  *             return PyUnicode_FromUnicode(pua_buf, n_translated)
  *         finally:
  *             PyMem_Free(pua_buf)             # <<<<<<<<<<<<<<
@@ -3106,8 +3106,8 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
     }
   }
 
-  /* "hypua2jamo/_cython.pyx":195
- *         hypua_jd2p_translator_setstate(self._translator, 0)
+  /* "hypua2jamo/_cython.pyx":198
+ *         hypua_decoder_setstate(self._decoder, 0)
  * 
  *     def decode(self, jamo_string, final=False):             # <<<<<<<<<<<<<<
  *         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
@@ -3232,12 +3232,12 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":231
- *     cdef int (*_translate)(void *src, int srclen, void *dst);
+/* "hypua2jamo/_cython.pyx":234
+ *     cdef int (*_encode)(void *src, int srclen, void *dst);
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jc4_translate_calcsize
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
  */
 
 /* Python wrapper */
@@ -3263,96 +3263,96 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnC
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "hypua2jamo/_cython.pyx":232
+  /* "hypua2jamo/_cython.pyx":235
  * 
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jc4_translate_calcsize
- *             self._translate = hypua_p2jc4_translate
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
+ *             self._encode = hypua_p2jc_ucs4_encode
  */
   switch (__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE) {
     case 4:
 
-    /* "hypua2jamo/_cython.pyx":233
+    /* "hypua2jamo/_cython.pyx":236
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jc4_translate_calcsize             # <<<<<<<<<<<<<<
- *             self._translate = hypua_p2jc4_translate
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize             # <<<<<<<<<<<<<<
+ *             self._encode = hypua_p2jc_ucs4_encode
  *         elif _UNICODE_SIZE == 2:
  */
-    __pyx_v_self->_calcsize = hypua_p2jc4_translate_calcsize;
+    __pyx_v_self->_calcsize = hypua_p2jc_ucs4_calcsize;
 
-    /* "hypua2jamo/_cython.pyx":234
+    /* "hypua2jamo/_cython.pyx":237
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jc4_translate_calcsize
- *             self._translate = hypua_p2jc4_translate             # <<<<<<<<<<<<<<
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
+ *             self._encode = hypua_p2jc_ucs4_encode             # <<<<<<<<<<<<<<
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jc2_translate_calcsize
+ *             self._calcsize = hypua_p2jc_ucs2_calcsize
  */
-    __pyx_v_self->_translate = hypua_p2jc4_translate;
+    __pyx_v_self->_encode = hypua_p2jc_ucs4_encode;
 
-    /* "hypua2jamo/_cython.pyx":232
+    /* "hypua2jamo/_cython.pyx":235
  * 
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jc4_translate_calcsize
- *             self._translate = hypua_p2jc4_translate
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
+ *             self._encode = hypua_p2jc_ucs4_encode
  */
     break;
     case 2:
 
-    /* "hypua2jamo/_cython.pyx":236
- *             self._translate = hypua_p2jc4_translate
+    /* "hypua2jamo/_cython.pyx":239
+ *             self._encode = hypua_p2jc_ucs4_encode
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jc2_translate_calcsize             # <<<<<<<<<<<<<<
- *             self._translate = hypua_p2jc2_translate
+ *             self._calcsize = hypua_p2jc_ucs2_calcsize             # <<<<<<<<<<<<<<
+ *             self._encode = hypua_p2jc_ucs2_encode
  *         else:
  */
-    __pyx_v_self->_calcsize = hypua_p2jc2_translate_calcsize;
+    __pyx_v_self->_calcsize = hypua_p2jc_ucs2_calcsize;
 
-    /* "hypua2jamo/_cython.pyx":237
+    /* "hypua2jamo/_cython.pyx":240
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jc2_translate_calcsize
- *             self._translate = hypua_p2jc2_translate             # <<<<<<<<<<<<<<
+ *             self._calcsize = hypua_p2jc_ucs2_calcsize
+ *             self._encode = hypua_p2jc_ucs2_encode             # <<<<<<<<<<<<<<
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)
  */
-    __pyx_v_self->_translate = hypua_p2jc2_translate;
+    __pyx_v_self->_encode = hypua_p2jc_ucs2_encode;
 
-    /* "hypua2jamo/_cython.pyx":235
- *             self._calcsize = hypua_p2jc4_translate_calcsize
- *             self._translate = hypua_p2jc4_translate
+    /* "hypua2jamo/_cython.pyx":238
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
+ *             self._encode = hypua_p2jc_ucs4_encode
  *         elif _UNICODE_SIZE == 2:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jc2_translate_calcsize
- *             self._translate = hypua_p2jc2_translate
+ *             self._calcsize = hypua_p2jc_ucs2_calcsize
+ *             self._encode = hypua_p2jc_ucs2_encode
  */
     break;
     default:
 
-    /* "hypua2jamo/_cython.pyx":239
- *             self._translate = hypua_p2jc2_translate
+    /* "hypua2jamo/_cython.pyx":242
+ *             self._encode = hypua_p2jc_ucs2_encode
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)             # <<<<<<<<<<<<<<
  * 
  *     def reset(self):
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 239, __pyx_L1_error)
+    __PYX_ERR(0, 242, __pyx_L1_error)
     break;
   }
 
-  /* "hypua2jamo/_cython.pyx":231
- *     cdef int (*_translate)(void *src, int srclen, void *dst);
+  /* "hypua2jamo/_cython.pyx":234
+ *     cdef int (*_encode)(void *src, int srclen, void *dst);
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jc4_translate_calcsize
+ *             self._calcsize = hypua_p2jc_ucs4_calcsize
  */
 
   /* function exit code */
@@ -3368,7 +3368,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnC
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":241
+/* "hypua2jamo/_cython.pyx":244
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -3401,7 +3401,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":244
+/* "hypua2jamo/_cython.pyx":247
  *         pass
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
@@ -3427,7 +3427,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":245
+  /* "hypua2jamo/_cython.pyx":248
  * 
  *     def getstate(self):
  *         return 0             # <<<<<<<<<<<<<<
@@ -3439,7 +3439,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   __pyx_r = __pyx_int_0;
   goto __pyx_L0;
 
-  /* "hypua2jamo/_cython.pyx":244
+  /* "hypua2jamo/_cython.pyx":247
  *         pass
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
@@ -3454,7 +3454,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":247
+/* "hypua2jamo/_cython.pyx":250
  *         return 0
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
@@ -3487,7 +3487,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":250
+/* "hypua2jamo/_cython.pyx":253
  *         pass
  * 
  *     def encode(self, pua_string, final=False):             # <<<<<<<<<<<<<<
@@ -3531,7 +3531,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "encode") < 0)) __PYX_ERR(0, 250, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "encode") < 0)) __PYX_ERR(0, 253, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3547,7 +3547,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("encode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 250, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("encode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 253, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoEncoderImplementationOnCython.encode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3585,17 +3585,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   PyObject *__pyx_t_15 = NULL;
   __Pyx_RefNannySetupContext("encode", 0);
 
-  /* "hypua2jamo/_cython.pyx":251
+  /* "hypua2jamo/_cython.pyx":254
  * 
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)             # <<<<<<<<<<<<<<
  *         if pua_buf is NULL:
  *             raise MemoryError()
  */
-  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_pua_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_pua_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 254, __pyx_L1_error)
   __pyx_v_pua_buf = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":252
+  /* "hypua2jamo/_cython.pyx":255
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -3605,16 +3605,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   __pyx_t_2 = ((__pyx_v_pua_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":253
+    /* "hypua2jamo/_cython.pyx":256
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 253, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 256, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":252
+    /* "hypua2jamo/_cython.pyx":255
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -3623,17 +3623,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":254
+  /* "hypua2jamo/_cython.pyx":257
  *         if pua_buf is NULL:
  *             raise MemoryError()
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  */
-  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_pua_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_pua_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 257, __pyx_L1_error)
   __pyx_v_pua_len = __pyx_t_3;
 
-  /* "hypua2jamo/_cython.pyx":255
+  /* "hypua2jamo/_cython.pyx":258
  *             raise MemoryError()
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)             # <<<<<<<<<<<<<<
@@ -3642,7 +3642,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
   __pyx_v_jamo_len = __pyx_v_self->_calcsize(__pyx_v_pua_buf, __pyx_v_pua_len);
 
-  /* "hypua2jamo/_cython.pyx":256
+  /* "hypua2jamo/_cython.pyx":259
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)             # <<<<<<<<<<<<<<
@@ -3651,7 +3651,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
   __pyx_v_jamo_buf = ((Py_UNICODE *)PyMem_Malloc((__pyx_v_jamo_len * __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE)));
 
-  /* "hypua2jamo/_cython.pyx":257
+  /* "hypua2jamo/_cython.pyx":260
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -3661,16 +3661,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   __pyx_t_2 = ((__pyx_v_jamo_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":258
+    /* "hypua2jamo/_cython.pyx":261
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t n_translated
  *         try:
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 258, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 261, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":257
+    /* "hypua2jamo/_cython.pyx":260
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -3679,27 +3679,27 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":260
+  /* "hypua2jamo/_cython.pyx":263
  *             raise MemoryError()
  *         cdef Py_ssize_t n_translated
  *         try:             # <<<<<<<<<<<<<<
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:
  */
   /*try:*/ {
 
-    /* "hypua2jamo/_cython.pyx":261
+    /* "hypua2jamo/_cython.pyx":264
  *         cdef Py_ssize_t n_translated
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)             # <<<<<<<<<<<<<<
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)             # <<<<<<<<<<<<<<
  *             if jamo_len != n_translated:
  *                 raise Exception(
  */
-    __pyx_v_n_translated = __pyx_v_self->_translate(__pyx_v_pua_buf, __pyx_v_pua_len, __pyx_v_jamo_buf);
+    __pyx_v_n_translated = __pyx_v_self->_encode(__pyx_v_pua_buf, __pyx_v_pua_len, __pyx_v_jamo_buf);
 
-    /* "hypua2jamo/_cython.pyx":262
+    /* "hypua2jamo/_cython.pyx":265
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:             # <<<<<<<<<<<<<<
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated
@@ -3707,26 +3707,26 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
     __pyx_t_2 = ((__pyx_v_jamo_len != __pyx_v_n_translated) != 0);
     if (unlikely(__pyx_t_2)) {
 
-      /* "hypua2jamo/_cython.pyx":264
+      /* "hypua2jamo/_cython.pyx":267
  *             if jamo_len != n_translated:
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated             # <<<<<<<<<<<<<<
  *                 )
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)
  */
-      __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_jamo_len); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L6_error)
+      __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_jamo_len); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 267, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 264, __pyx_L6_error)
+      __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_5);
 
-      /* "hypua2jamo/_cython.pyx":263
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+      /* "hypua2jamo/_cython.pyx":266
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:
  *                 raise Exception(             # <<<<<<<<<<<<<<
  *                     'p2jcx translation failed', jamo_len, n_translated
  *                 )
  */
-      __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 263, __pyx_L6_error)
+      __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 266, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_kp_s_p2jcx_translation_failed);
       __Pyx_GIVEREF(__pyx_kp_s_p2jcx_translation_failed);
@@ -3737,23 +3737,23 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
       PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_t_5);
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L6_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 266, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __PYX_ERR(0, 263, __pyx_L6_error)
+      __PYX_ERR(0, 266, __pyx_L6_error)
 
-      /* "hypua2jamo/_cython.pyx":262
+      /* "hypua2jamo/_cython.pyx":265
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:             # <<<<<<<<<<<<<<
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated
  */
     }
 
-    /* "hypua2jamo/_cython.pyx":266
+    /* "hypua2jamo/_cython.pyx":269
  *                     'p2jcx translation failed', jamo_len, n_translated
  *                 )
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)             # <<<<<<<<<<<<<<
@@ -3761,14 +3761,14 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  *             PyMem_Free(jamo_buf)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = PyUnicode_FromUnicode(__pyx_v_jamo_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 266, __pyx_L6_error)
+    __pyx_t_5 = PyUnicode_FromUnicode(__pyx_v_jamo_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 269, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L5_return;
   }
 
-  /* "hypua2jamo/_cython.pyx":268
+  /* "hypua2jamo/_cython.pyx":271
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)
  *         finally:
  *             PyMem_Free(jamo_buf)             # <<<<<<<<<<<<<<
@@ -3820,7 +3820,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
     }
   }
 
-  /* "hypua2jamo/_cython.pyx":250
+  /* "hypua2jamo/_cython.pyx":253
  *         pass
  * 
  *     def encode(self, pua_string, final=False):             # <<<<<<<<<<<<<<
@@ -3948,12 +3948,12 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":276
- *     cdef int (*_translate)(void *src, int srclen, void *dst);
+/* "hypua2jamo/_cython.pyx":279
+ *     cdef int (*_encode)(void *src, int srclen, void *dst);
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jd4_translate_calcsize
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
  */
 
 /* Python wrapper */
@@ -3979,96 +3979,96 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationO
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "hypua2jamo/_cython.pyx":277
+  /* "hypua2jamo/_cython.pyx":280
  * 
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jd4_translate_calcsize
- *             self._translate = hypua_p2jd4_translate
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
+ *             self._encode = hypua_p2jd_ucs4_encode
  */
   switch (__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE) {
     case 4:
 
-    /* "hypua2jamo/_cython.pyx":278
+    /* "hypua2jamo/_cython.pyx":281
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jd4_translate_calcsize             # <<<<<<<<<<<<<<
- *             self._translate = hypua_p2jd4_translate
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize             # <<<<<<<<<<<<<<
+ *             self._encode = hypua_p2jd_ucs4_encode
  *         elif _UNICODE_SIZE == 2:
  */
-    __pyx_v_self->_calcsize = hypua_p2jd4_translate_calcsize;
+    __pyx_v_self->_calcsize = hypua_p2jd_ucs4_calcsize;
 
-    /* "hypua2jamo/_cython.pyx":279
+    /* "hypua2jamo/_cython.pyx":282
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jd4_translate_calcsize
- *             self._translate = hypua_p2jd4_translate             # <<<<<<<<<<<<<<
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
+ *             self._encode = hypua_p2jd_ucs4_encode             # <<<<<<<<<<<<<<
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jd2_translate_calcsize
+ *             self._calcsize = hypua_p2jd_ucs2_calcsize
  */
-    __pyx_v_self->_translate = hypua_p2jd4_translate;
+    __pyx_v_self->_encode = hypua_p2jd_ucs4_encode;
 
-    /* "hypua2jamo/_cython.pyx":277
+    /* "hypua2jamo/_cython.pyx":280
  * 
  *     def __cinit__(self):
  *         if _UNICODE_SIZE == 4:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jd4_translate_calcsize
- *             self._translate = hypua_p2jd4_translate
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
+ *             self._encode = hypua_p2jd_ucs4_encode
  */
     break;
     case 2:
 
-    /* "hypua2jamo/_cython.pyx":281
- *             self._translate = hypua_p2jd4_translate
+    /* "hypua2jamo/_cython.pyx":284
+ *             self._encode = hypua_p2jd_ucs4_encode
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jd2_translate_calcsize             # <<<<<<<<<<<<<<
- *             self._translate = hypua_p2jd2_translate
+ *             self._calcsize = hypua_p2jd_ucs2_calcsize             # <<<<<<<<<<<<<<
+ *             self._encode = hypua_p2jd_ucs2_encode
  *         else:
  */
-    __pyx_v_self->_calcsize = hypua_p2jd2_translate_calcsize;
+    __pyx_v_self->_calcsize = hypua_p2jd_ucs2_calcsize;
 
-    /* "hypua2jamo/_cython.pyx":282
+    /* "hypua2jamo/_cython.pyx":285
  *         elif _UNICODE_SIZE == 2:
- *             self._calcsize = hypua_p2jd2_translate_calcsize
- *             self._translate = hypua_p2jd2_translate             # <<<<<<<<<<<<<<
+ *             self._calcsize = hypua_p2jd_ucs2_calcsize
+ *             self._encode = hypua_p2jd_ucs2_encode             # <<<<<<<<<<<<<<
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)
  */
-    __pyx_v_self->_translate = hypua_p2jd2_translate;
+    __pyx_v_self->_encode = hypua_p2jd_ucs2_encode;
 
-    /* "hypua2jamo/_cython.pyx":280
- *             self._calcsize = hypua_p2jd4_translate_calcsize
- *             self._translate = hypua_p2jd4_translate
+    /* "hypua2jamo/_cython.pyx":283
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
+ *             self._encode = hypua_p2jd_ucs4_encode
  *         elif _UNICODE_SIZE == 2:             # <<<<<<<<<<<<<<
- *             self._calcsize = hypua_p2jd2_translate_calcsize
- *             self._translate = hypua_p2jd2_translate
+ *             self._calcsize = hypua_p2jd_ucs2_calcsize
+ *             self._encode = hypua_p2jd_ucs2_encode
  */
     break;
     default:
 
-    /* "hypua2jamo/_cython.pyx":284
- *             self._translate = hypua_p2jd2_translate
+    /* "hypua2jamo/_cython.pyx":287
+ *             self._encode = hypua_p2jd_ucs2_encode
  *         else:
  *             raise AssertionError(_UNICODE_SIZE)             # <<<<<<<<<<<<<<
  * 
  *     def reset(self):
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 284, __pyx_L1_error)
+    __PYX_ERR(0, 287, __pyx_L1_error)
     break;
   }
 
-  /* "hypua2jamo/_cython.pyx":276
- *     cdef int (*_translate)(void *src, int srclen, void *dst);
+  /* "hypua2jamo/_cython.pyx":279
+ *     cdef int (*_encode)(void *src, int srclen, void *dst);
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         if _UNICODE_SIZE == 4:
- *             self._calcsize = hypua_p2jd4_translate_calcsize
+ *             self._calcsize = hypua_p2jd_ucs4_calcsize
  */
 
   /* function exit code */
@@ -4084,7 +4084,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationO
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":286
+/* "hypua2jamo/_cython.pyx":289
  *             raise AssertionError(_UNICODE_SIZE)
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
@@ -4117,7 +4117,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":289
+/* "hypua2jamo/_cython.pyx":292
  *         pass
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
@@ -4143,7 +4143,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getstate", 0);
 
-  /* "hypua2jamo/_cython.pyx":290
+  /* "hypua2jamo/_cython.pyx":293
  * 
  *     def getstate(self):
  *         return 0             # <<<<<<<<<<<<<<
@@ -4155,7 +4155,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   __pyx_r = __pyx_int_0;
   goto __pyx_L0;
 
-  /* "hypua2jamo/_cython.pyx":289
+  /* "hypua2jamo/_cython.pyx":292
  *         pass
  * 
  *     def getstate(self):             # <<<<<<<<<<<<<<
@@ -4170,7 +4170,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":292
+/* "hypua2jamo/_cython.pyx":295
  *         return 0
  * 
  *     def setstate(self, state):             # <<<<<<<<<<<<<<
@@ -4203,7 +4203,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   return __pyx_r;
 }
 
-/* "hypua2jamo/_cython.pyx":295
+/* "hypua2jamo/_cython.pyx":298
  *         pass
  * 
  *     def encode(self, pua_string, final=False):             # <<<<<<<<<<<<<<
@@ -4247,7 +4247,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "encode") < 0)) __PYX_ERR(0, 295, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "encode") < 0)) __PYX_ERR(0, 298, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4263,7 +4263,7 @@ static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("encode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 295, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("encode", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 298, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoEncoderImplementationOnCython.encode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4301,17 +4301,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   PyObject *__pyx_t_15 = NULL;
   __Pyx_RefNannySetupContext("encode", 0);
 
-  /* "hypua2jamo/_cython.pyx":296
+  /* "hypua2jamo/_cython.pyx":299
  * 
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)             # <<<<<<<<<<<<<<
  *         if pua_buf is NULL:
  *             raise MemoryError()
  */
-  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_pua_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_1 = PyUnicode_AsUnicode(__pyx_v_pua_string); if (unlikely(__pyx_t_1 == ((Py_UNICODE *)NULL))) __PYX_ERR(0, 299, __pyx_L1_error)
   __pyx_v_pua_buf = __pyx_t_1;
 
-  /* "hypua2jamo/_cython.pyx":297
+  /* "hypua2jamo/_cython.pyx":300
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -4321,16 +4321,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   __pyx_t_2 = ((__pyx_v_pua_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":298
+    /* "hypua2jamo/_cython.pyx":301
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 298, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 301, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":297
+    /* "hypua2jamo/_cython.pyx":300
  *     def encode(self, pua_string, final=False):
  *         cdef Py_UNICODE *pua_buf = PyUnicode_AsUnicode(pua_string)
  *         if pua_buf is NULL:             # <<<<<<<<<<<<<<
@@ -4339,17 +4339,17 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":299
+  /* "hypua2jamo/_cython.pyx":302
  *         if pua_buf is NULL:
  *             raise MemoryError()
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  */
-  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_pua_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_GetSize(__pyx_v_pua_string); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1L))) __PYX_ERR(0, 302, __pyx_L1_error)
   __pyx_v_pua_len = __pyx_t_3;
 
-  /* "hypua2jamo/_cython.pyx":300
+  /* "hypua2jamo/_cython.pyx":303
  *             raise MemoryError()
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)             # <<<<<<<<<<<<<<
@@ -4358,7 +4358,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
   __pyx_v_jamo_len = __pyx_v_self->_calcsize(__pyx_v_pua_buf, __pyx_v_pua_len);
 
-  /* "hypua2jamo/_cython.pyx":301
+  /* "hypua2jamo/_cython.pyx":304
  *         cdef Py_ssize_t pua_len = PyUnicode_GetSize(pua_string)
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)             # <<<<<<<<<<<<<<
@@ -4367,7 +4367,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
   __pyx_v_jamo_buf = ((Py_UNICODE *)PyMem_Malloc((__pyx_v_jamo_len * __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE)));
 
-  /* "hypua2jamo/_cython.pyx":302
+  /* "hypua2jamo/_cython.pyx":305
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -4377,16 +4377,16 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   __pyx_t_2 = ((__pyx_v_jamo_buf == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "hypua2jamo/_cython.pyx":303
+    /* "hypua2jamo/_cython.pyx":306
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  *         cdef Py_ssize_t n_translated
  *         try:
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 303, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 306, __pyx_L1_error)
 
-    /* "hypua2jamo/_cython.pyx":302
+    /* "hypua2jamo/_cython.pyx":305
  *         cdef Py_ssize_t jamo_len = self._calcsize(pua_buf, pua_len)
  *         cdef Py_UNICODE *jamo_buf = <Py_UNICODE *>PyMem_Malloc(jamo_len * _UNICODE_SIZE)
  *         if jamo_buf is NULL:             # <<<<<<<<<<<<<<
@@ -4395,27 +4395,27 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
   }
 
-  /* "hypua2jamo/_cython.pyx":305
+  /* "hypua2jamo/_cython.pyx":308
  *             raise MemoryError()
  *         cdef Py_ssize_t n_translated
  *         try:             # <<<<<<<<<<<<<<
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:
  */
   /*try:*/ {
 
-    /* "hypua2jamo/_cython.pyx":306
+    /* "hypua2jamo/_cython.pyx":309
  *         cdef Py_ssize_t n_translated
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)             # <<<<<<<<<<<<<<
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)             # <<<<<<<<<<<<<<
  *             if jamo_len != n_translated:
  *                 raise Exception(
  */
-    __pyx_v_n_translated = __pyx_v_self->_translate(__pyx_v_pua_buf, __pyx_v_pua_len, __pyx_v_jamo_buf);
+    __pyx_v_n_translated = __pyx_v_self->_encode(__pyx_v_pua_buf, __pyx_v_pua_len, __pyx_v_jamo_buf);
 
-    /* "hypua2jamo/_cython.pyx":307
+    /* "hypua2jamo/_cython.pyx":310
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:             # <<<<<<<<<<<<<<
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated
@@ -4423,26 +4423,26 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
     __pyx_t_2 = ((__pyx_v_jamo_len != __pyx_v_n_translated) != 0);
     if (unlikely(__pyx_t_2)) {
 
-      /* "hypua2jamo/_cython.pyx":309
+      /* "hypua2jamo/_cython.pyx":312
  *             if jamo_len != n_translated:
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated             # <<<<<<<<<<<<<<
  *                 )
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)
  */
-      __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_jamo_len); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 309, __pyx_L6_error)
+      __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_jamo_len); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 312, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 309, __pyx_L6_error)
+      __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_5);
 
-      /* "hypua2jamo/_cython.pyx":308
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+      /* "hypua2jamo/_cython.pyx":311
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:
  *                 raise Exception(             # <<<<<<<<<<<<<<
  *                     'p2jcx translation failed', jamo_len, n_translated
  *                 )
  */
-      __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 308, __pyx_L6_error)
+      __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 311, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_kp_s_p2jcx_translation_failed);
       __Pyx_GIVEREF(__pyx_kp_s_p2jcx_translation_failed);
@@ -4453,23 +4453,23 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
       PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_t_5);
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 308, __pyx_L6_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __PYX_ERR(0, 308, __pyx_L6_error)
+      __PYX_ERR(0, 311, __pyx_L6_error)
 
-      /* "hypua2jamo/_cython.pyx":307
+      /* "hypua2jamo/_cython.pyx":310
  *         try:
- *             n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+ *             n_translated = self._encode(pua_buf, pua_len, jamo_buf)
  *             if jamo_len != n_translated:             # <<<<<<<<<<<<<<
  *                 raise Exception(
  *                     'p2jcx translation failed', jamo_len, n_translated
  */
     }
 
-    /* "hypua2jamo/_cython.pyx":311
+    /* "hypua2jamo/_cython.pyx":314
  *                     'p2jcx translation failed', jamo_len, n_translated
  *                 )
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)             # <<<<<<<<<<<<<<
@@ -4477,14 +4477,14 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  *             PyMem_Free(jamo_buf)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = PyUnicode_FromUnicode(__pyx_v_jamo_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L6_error)
+    __pyx_t_5 = PyUnicode_FromUnicode(__pyx_v_jamo_buf, __pyx_v_n_translated); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 314, __pyx_L6_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_r = __pyx_t_5;
     __pyx_t_5 = 0;
     goto __pyx_L5_return;
   }
 
-  /* "hypua2jamo/_cython.pyx":313
+  /* "hypua2jamo/_cython.pyx":316
  *             return PyUnicode_FromUnicode(jamo_buf, n_translated)
  *         finally:
  *             PyMem_Free(jamo_buf)             # <<<<<<<<<<<<<<
@@ -4534,7 +4534,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
     }
   }
 
-  /* "hypua2jamo/_cython.pyx":295
+  /* "hypua2jamo/_cython.pyx":298
  *         pass
  * 
  *     def encode(self, pua_string, final=False):             # <<<<<<<<<<<<<<
@@ -5122,8 +5122,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 90, __pyx_L1_error)
-  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 108, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -5210,14 +5210,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "hypua2jamo/_cython.pyx":75
+  /* "hypua2jamo/_cython.pyx":78
  * 
  * 
  * cdef int _UNICODE_SIZE = array('u').itemsize             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_u); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_u); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
   __Pyx_RefNannyFinishContext();
@@ -5271,37 +5271,37 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
   __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoDecoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoDecoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
   __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoDecoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoDecoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
   __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoEncoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoEncoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 274, __pyx_L1_error)
   __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoEncoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoEncoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 274, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 274, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -5555,22 +5555,22 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "hypua2jamo/_cython.pyx":75
+  /* "hypua2jamo/_cython.pyx":78
  * 
  * 
  * cdef int _UNICODE_SIZE = array('u').itemsize             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_itemsize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_itemsize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE = __pyx_t_3;
 

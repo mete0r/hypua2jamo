@@ -27,8 +27,10 @@ include src/hypua2jamo/_cython.pyx
 include src/hypua2jamo/_cython2.c
 include src/hypua2jamo/_cython3.c
 include src/hypua2jamo-c/*.c
+include src/hypua2jamo-c/*.cpp
 include src/hypua2jamo-c/*.h
 include src/hypua2jamo-c/*.h.in
+include src/hypua2jamo-c/*.hpp
 include src/hypua2jamo-c/*.inc
 include src/hypua2jamo-c/*.py
 include src/hypua2jamo-c/CMakeLists.txt

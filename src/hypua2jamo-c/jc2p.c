@@ -10,81 +10,59 @@ typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
 #endif
 
-#include "jx2p-translator.h"
+#include "jx2p.h"
 #include "jc2p-tree.inc"
 
-#define TRANSLATOR(method)	hypua_jc2p_translator_ ## method
 
-#include "jx2p.inc"
-
-
-int hypua_jc2p_translator_size() {
-	return sizeof(struct Translator);
+void hypua_decoder_init_jc2p(void *decoder) {
+	hypua_decoder_init(
+			decoder,
+			&node_root,
+			nodelist,
+			sizeof(nodelist) / sizeof(nodelist[0])
+	);
 }
 
 
-void hypua_jc2p_translator_init(void *translator) {
-	struct Translator *t = translator;
-	t->node = &node_root;
-}
-
-
-int hypua_jc2p_translator_getstate(void *translator) {
-	struct Translator *t = translator;
-	return t->node->index;
-}
-
-
-int hypua_jc2p_translator_setstate(void *translator, int state) {
-	struct Translator *t = translator;
-	int oldstate = t->node->index;
-	if (state < 0 || state >= sizeof(nodelist)/sizeof(nodelist[0])) {
-		return -1;
-	}
-	t->node = nodelist[state];
-	return oldstate;
-}
-
-
-int hypua_jc2p2_translate_calcsize(const uint16_t *src, int srclen) {
+int hypua_jc2p_ucs2_calcsize(const uint16_t *src, int srclen) {
 	int dstlen = 0;
-	struct Translator translator;
-	hypua_jc2p_translator_init(&translator);
-	dstlen += hypua_jc2p_translator_u2_calcsize(&translator, src, srclen);
-	dstlen += hypua_jc2p_translator_u2_calcsize_flush(&translator);
+	struct Decoder decoder;
+	hypua_decoder_init_jc2p(&decoder);
+	dstlen += hypua_decoder_calcsize_ucs2(&decoder, src, srclen);
+	dstlen += hypua_decoder_calcsize_flush(&decoder);
 	return dstlen;
 }
 
 
-int hypua_jc2p2_translate(const uint16_t *src, int srclen, uint16_t *dst) {
+int hypua_jc2p_ucs2_decode(const uint16_t *src, int srclen, uint16_t *dst) {
 	int dstlen = 0;
-	struct Translator translator;
+	struct Decoder decoder;
 	uint16_t *dst_begin = dst;
 
-	hypua_jc2p_translator_init(&translator);
-	dst += hypua_jc2p_translator_u2_translate(&translator, src, srclen, dst);
-	dst += hypua_jc2p_translator_u2_translate_flush(&translator, dst);
+	hypua_decoder_init_jc2p(&decoder);
+	dst += hypua_decoder_decode_ucs2(&decoder, src, srclen, dst);
+	dst += hypua_decoder_decode_flush_ucs2(&decoder, dst);
 	return dst - dst_begin;
 }
 
 
-int hypua_jc2p4_translate_calcsize(const uint32_t *src, int srclen) {
+int hypua_jc2p_ucs4_calcsize(const uint32_t *src, int srclen) {
 	int dstlen = 0;
-	struct Translator translator;
-	hypua_jc2p_translator_init(&translator);
-	dstlen += hypua_jc2p_translator_u4_calcsize(&translator, src, srclen);
-	dstlen += hypua_jc2p_translator_u4_calcsize_flush(&translator);
+	struct Decoder decoder;
+	hypua_decoder_init_jc2p(&decoder);
+	dstlen += hypua_decoder_calcsize_ucs4(&decoder, src, srclen);
+	dstlen += hypua_decoder_calcsize_flush(&decoder);
 	return dstlen;
 }
 
 
-int hypua_jc2p4_translate(const uint32_t *src, int srclen, uint32_t *dst) {
+int hypua_jc2p_ucs4_decode(const uint32_t *src, int srclen, uint32_t *dst) {
 	int dstlen = 0;
-	struct Translator translator;
+	struct Decoder decoder;
 	uint32_t *dst_begin = dst;
 
-	hypua_jc2p_translator_init(&translator);
-	dst += hypua_jc2p_translator_u4_translate(&translator, src, srclen, dst);
-	dst += hypua_jc2p_translator_u4_translate_flush(&translator, dst);
+	hypua_decoder_init_jc2p(&decoder);
+	dst += hypua_decoder_decode_ucs4(&decoder, src, srclen, dst);
+	dst += hypua_decoder_decode_flush_ucs4(&decoder, dst);
 	return dst - dst_begin;
 }

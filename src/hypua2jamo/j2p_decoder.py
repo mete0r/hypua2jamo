@@ -52,6 +52,52 @@ except NameError:
 
 class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
 
+    def __init__(self, errors='strict'):
+        IncrementalDecoder.__init__(self, errors)
+
+        self.ffi = ffi = FFI()
+        decoder_alloc_size = _cffi.hypua_decoder_alloc_size()
+        decoder_alloc_array = array('b', b' ' * decoder_alloc_size)
+        decoder_buf, decoder_buflen = decoder_alloc_array.buffer_info()
+        decoder_ptr = ffi.cast('void *', decoder_buf)
+        self.init_decoder_c_implementation(decoder_ptr)
+
+        if _UNICODE_SIZE == 4:
+            calcsize = _cffi.hypua_decoder_calcsize_ucs4
+            decode = _cffi.hypua_decoder_decode_ucs4
+            decode_flush = _cffi.hypua_decoder_decode_flush_ucs4
+        elif _UNICODE_SIZE == 2:
+            calcsize = _cffi.hypua_decoder_calcsize_ucs2
+            decode = _cffi.hypua_decoder_decode_ucs2
+            decode_flush = _cffi.hypua_decoder_decode_flush_ucs2
+        else:
+            raise Exception(_UNICODE_SIZE)
+
+        self._getstate = partial(
+            _cffi.hypua_decoder_getstate,
+            decoder_ptr,
+        )
+        self._setstate = partial(
+            _cffi.hypua_decoder_setstate,
+            decoder_ptr,
+        )
+        self._calcsize = partial(
+            calcsize, decoder_ptr
+        )
+        self._calcsize_flush = partial(
+            _cffi.hypua_decoder_calcsize_flush, decoder_ptr
+        )
+        self._decode = partial(
+            decode, decoder_ptr
+        )
+        self._decode_flush = partial(
+            decode_flush, decoder_ptr
+        )
+
+        # keep reference to array:
+        #       to prevent for decoder_ptr to be gc'ed away
+        self.__decoder = decoder_alloc_array
+
     def getstate(self):
         state = self._getstate()
         return (b'', state)
@@ -74,7 +120,7 @@ class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
         pua_array = array('u', u' ' * pua_size)
         pua_ptr = pua_array.buffer_info()[0]
         pua_ptr = self.ffi.cast('void *', pua_ptr)
-        pua_len = self._translate(jamo_ptr, jamo_len, pua_ptr)
+        pua_len = self._decode(jamo_ptr, jamo_len, pua_ptr)
         if pua_size != pua_len:
             raise Exception('%r != %r', pua_size, pua_len)
 
@@ -93,7 +139,7 @@ class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
         pua_array = array('u', u' ' * pua_size)
         pua_ptr = pua_array.buffer_info()[0]
         pua_ptr = self.ffi.cast('void *', pua_ptr)
-        pua_len = self._translate(jamo_ptr, jamo_len, pua_ptr)
+        pua_len = self._decode_flush(pua_ptr)
         if pua_size != pua_len:
             raise Exception('%r != %r', pua_size, pua_len)
 
@@ -104,121 +150,16 @@ class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
 class ComposedJamoDecoderImplementationOnCFFI(
     JamoDecoderImplementationOnCFFI
 ):
-    def __init__(self, errors='strict'):
-        IncrementalDecoder.__init__(self, errors)
 
-        if _UNICODE_SIZE == 4:
-            _calcsize = \
-                _cffi.hypua_jc2p_translator_u4_calcsize
-            _calcsize_flush = \
-                _cffi.hypua_jc2p_translator_u4_calcsize_flush
-            _translate = \
-                _cffi.hypua_jc2p_translator_u4_translate
-            _translate_flush = \
-                _cffi.hypua_jc2p_translator_u4_translate_flush
-        elif _UNICODE_SIZE == 2:
-            _calcsize = \
-                _cffi.hypua_jc2p_translator_u2_calcsize
-            _calcsize_flush = \
-                _cffi.hypua_jc2p_translator_u2_calcsize_flush
-            _translate = \
-                _cffi.hypua_jc2p_translator_u2_translate
-            _translate_flush = \
-                _cffi.hypua_jc2p_translator_u2_translate_flush
-        else:
-            raise Exception(_UNICODE_SIZE)
-
-        self.ffi = ffi = FFI()
-        translator_size = _cffi.hypua_jc2p_translator_size()
-        translator_array = array('b', b' ' * translator_size)
-        translator_ptr, translator_len = translator_array.buffer_info()
-        translator_ptr = ffi.cast('void *', translator_ptr)
-        _cffi.hypua_jc2p_translator_init(translator_ptr)
-
-        self._getstate = partial(
-            _cffi.hypua_jc2p_translator_getstate,
-            translator_ptr,
-        )
-        self._setstate = partial(
-            _cffi.hypua_jc2p_translator_setstate,
-            translator_ptr,
-        )
-        self._calcsize = partial(
-            _calcsize, translator_ptr
-        )
-        self._calcsize_flush = partial(
-            _calcsize_flush, translator_ptr
-        )
-        self._translate = partial(
-            _translate, translator_ptr
-        )
-        self._translate_flush = partial(
-            _translate_flush, translator_ptr
-        )
-
-        # keep reference to array:
-        #       to prevent for translator_ptr to be gc'ed away
-        self.__translator = translator_array
+    def init_decoder_c_implementation(self, decoder_ptr):
+        _cffi.hypua_decoder_init_jc2p(decoder_ptr)
 
 
 class DecomposedJamoDecoderImplementationOnCFFI(
     JamoDecoderImplementationOnCFFI
 ):
-    def __init__(self, errors='strict'):
-        IncrementalDecoder.__init__(self, errors)
-
-        if _UNICODE_SIZE == 4:
-            _calcsize = \
-                _cffi.hypua_jd2p_translator_u4_calcsize
-            _calcsize_flush = \
-                _cffi.hypua_jd2p_translator_u4_calcsize_flush
-            _translate = \
-                _cffi.hypua_jd2p_translator_u4_translate
-            _translate_flush = \
-                _cffi.hypua_jd2p_translator_u4_translate_flush
-        elif _UNICODE_SIZE == 2:
-            _calcsize = \
-                _cffi.hypua_jd2p_translator_u2_calcsize
-            _calcsize_flush = \
-                _cffi.hypua_jd2p_translator_u2_calcsize_flush
-            _translate = \
-                _cffi.hypua_jd2p_translator_u2_translate
-            _translate_flush = \
-                _cffi.hypua_jd2p_translator_u2_translate_flush
-        else:
-            raise Exception(_UNICODE_SIZE)
-
-        self.ffi = ffi = FFI()
-        translator_size = _cffi.hypua_jd2p_translator_size()
-        translator_array = array('b', b' ' * translator_size)
-        translator_ptr, translator_len = translator_array.buffer_info()
-        translator_ptr = ffi.cast('void *', translator_ptr)
-        _cffi.hypua_jd2p_translator_init(translator_ptr)
-
-        self._getstate = partial(
-            _cffi.hypua_jd2p_translator_getstate,
-            translator_ptr,
-        )
-        self._setstate = partial(
-            _cffi.hypua_jd2p_translator_setstate,
-            translator_ptr,
-        )
-        self._calcsize = partial(
-            _calcsize, translator_ptr
-        )
-        self._calcsize_flush = partial(
-            _calcsize_flush, translator_ptr
-        )
-        self._translate = partial(
-            _translate, translator_ptr
-        )
-        self._translate_flush = partial(
-            _translate_flush, translator_ptr
-        )
-
-        # keep reference to array:
-        #       to prevent for translator_ptr to be gc'ed away
-        self.__translator = translator_array
+    def init_decoder_c_implementation(self, decoder_ptr):
+        _cffi.hypua_decoder_init_jd2p(decoder_ptr)
 
 
 class Node(object):

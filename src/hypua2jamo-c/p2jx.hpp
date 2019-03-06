@@ -1,20 +1,5 @@
-#include <string.h>
-
-#include "config.h"
-
-#ifdef HAVE_INTTYPES_H
-#include <inttypes.h>
-#else
-typedef unsigned int uint32_t;
-#endif
-
-
-typedef uint32_t codepoint_t;
-
-#include "p2jc-table.h"
-
-
-int hypua_p2jc4_translate_calcsize(const codepoint_t *src, int srclen) {
+template <typename codepoint_t>
+int calcsize(const codepoint_t *src, int srclen) {
 	const codepoint_t *jamo_seq;
 	int ret = 0;
 	const codepoint_t *src_end = src + srclen;
@@ -30,7 +15,8 @@ int hypua_p2jc4_translate_calcsize(const codepoint_t *src, int srclen) {
 }
 
 
-int hypua_p2jc4_translate(const codepoint_t *src, int srclen, codepoint_t *dst) {
+template <typename codepoint_t>
+int encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
 	const codepoint_t *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;

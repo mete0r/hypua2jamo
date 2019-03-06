@@ -39,9 +39,9 @@ class Fixtures(object):
         )
 
 
-class ConversionTest(TestCase):
+class TranslateTest(TestCase):
 
-    def test_conversion(self):
+    def test_translate(self):
         pua = u'나랏\u302e말\u302f미\u302e 中國귁에\u302e 달아\u302e 문와\u302e로 서르 디\u302e 아니\u302e\u302e'  # noqa
 
         from hypua2jamo import translate
@@ -51,7 +51,7 @@ class ConversionTest(TestCase):
 
         self.assertEquals(expected, result)
 
-    def test_p2jc(self):
+    def test_translate_composed(self):
         from hypua2jamo import translate
 
         jamo_string = translate(
@@ -62,7 +62,7 @@ class ConversionTest(TestCase):
             jamo_string,
         )
 
-    def test_p2jd(self):
+    def test_translate_decomposed(self):
         from hypua2jamo import translate
 
         jamo_string = translate(
@@ -74,66 +74,21 @@ class ConversionTest(TestCase):
             jamo_string,
         )
 
+
+class CFFITest(TestCase):
+
     pua_string = Fixtures.HunMinPreface.pua_string
     jamo_string = Fixtures.HunMinPreface.composed_jamo_string
 
-    def test_p2jcx(self):
-        pua = self.pua_string
-
+    def test_jc2p_calcsize(self):
         from cffi import FFI
         from hypua2jamo._cffi import lib
 
         unicode_size = array('u').itemsize
         if unicode_size == 4:
-            _calcsize = lib.hypua_p2jc4_translate_calcsize
-            _translate = lib.hypua_p2jc4_translate
+            _calcsize = lib.hypua_jc2p_ucs4_calcsize
         elif unicode_size == 2:
-            _calcsize = lib.hypua_p2jc2_translate_calcsize
-            _translate = lib.hypua_p2jc2_translate
-        else:
-            raise AssertionError(unicode_size)
-
-        ffi = FFI()
-
-        def calcsize(pua_string):
-            pua_array = array('u', pua_string)
-            pua_ptr, pua_len = pua_array.buffer_info()
-            pua_ptr = ffi.cast('void *', pua_ptr)
-
-            jamo_size = _calcsize(pua_ptr, pua_len)
-            return jamo_size
-
-        def translate(pua_string):
-            pua_array = array('u', pua_string)
-            pua_ptr, pua_len = pua_array.buffer_info()
-            pua_ptr = ffi.cast('void *', pua_ptr)
-
-            jamo_size = _calcsize(pua_ptr, pua_len)
-            jamo_array = array('u', u' '*jamo_size)
-            jamo_ptr = jamo_array.buffer_info()[0]
-            jamo_ptr = ffi.cast('void *', jamo_ptr)
-            jamo_len = _translate(pua_ptr, pua_len, jamo_ptr)
-            if jamo_size != jamo_len:
-                raise Exception(
-                    'p2jcx translation failed', jamo_size, jamo_len
-                )
-            return jamo_array.tounicode()
-
-        jamo_size = calcsize(pua)
-        self.assertEquals(51, jamo_size)
-
-        jamo = translate(pua)
-        self.assertEquals(self.jamo_string, jamo)
-
-    def test_jc2px_translate_calcsize(self):
-        from cffi import FFI
-        from hypua2jamo._cffi import lib
-
-        unicode_size = array('u').itemsize
-        if unicode_size == 4:
-            _calcsize = lib.hypua_jc2p4_translate_calcsize
-        elif unicode_size == 2:
-            _calcsize = lib.hypua_jc2p2_translate_calcsize
+            _calcsize = lib.hypua_jc2p_ucs2_calcsize
         else:
             raise AssertionError(unicode_size)
 
@@ -238,17 +193,17 @@ class ConversionTest(TestCase):
 
         self.assertEquals(40, calcsize(self.jamo_string))
 
-    def test_jc2px_translate(self):
+    def test_jc2p_decode(self):
         from cffi import FFI
         from hypua2jamo._cffi import lib
 
         unicode_size = array('u').itemsize
         if unicode_size == 4:
-            _translate = lib.hypua_jc2p4_translate
-            _calcsize = lib.hypua_jc2p4_translate_calcsize
+            _translate = lib.hypua_jc2p_ucs4_decode
+            _calcsize = lib.hypua_jc2p_ucs4_calcsize
         elif unicode_size == 2:
-            _translate = lib.hypua_jc2p2_translate
-            _calcsize = lib.hypua_jc2p2_translate_calcsize
+            _translate = lib.hypua_jc2p_ucs2_decode
+            _calcsize = lib.hypua_jc2p_ucs2_calcsize
         else:
             raise AssertionError(unicode_size)
 
@@ -333,7 +288,7 @@ class ConversionTest(TestCase):
         self.assertEquals(pua[:40], translate(jamo))
 
 
-class PUA2JamoIncrementalJamoEncoderTestBase(object):
+class JamoEncoderTestBase(object):
 
     PUA_STRING = Fixtures.HunMinPreface.pua_string
 
@@ -362,7 +317,7 @@ class PUA2JamoIncrementalJamoEncoderTestBase(object):
 
 class ComposedJamoEncoderImplementationOnPurePythonTest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
@@ -374,7 +329,7 @@ class ComposedJamoEncoderImplementationOnPurePythonTest(
 
 class DecomposedJamoEncoderImplementationOnPurePythonTest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
 
@@ -386,7 +341,7 @@ class DecomposedJamoEncoderImplementationOnPurePythonTest(
 
 class ComposedJamoEncoderImplementationOnCFFITest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
@@ -398,7 +353,7 @@ class ComposedJamoEncoderImplementationOnCFFITest(
 
 class DecomposedJamoEncoderImplementationOnCFFITest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
 
@@ -410,7 +365,7 @@ class DecomposedJamoEncoderImplementationOnCFFITest(
 
 class ComposedJamoEncoderImplementationOnCythonTest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
@@ -422,7 +377,7 @@ class ComposedJamoEncoderImplementationOnCythonTest(
 
 class DecomposedJamoEncoderImplementationOnCythonTest(
     TestCase,
-    PUA2JamoIncrementalJamoEncoderTestBase,
+    JamoEncoderTestBase,
 ):
     JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
 

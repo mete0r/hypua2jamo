@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 project (HanyangPUA)
-add_library(HanyangPUA STATIC p2jc4.c p2jd4.c p2jc2.c p2jd2.c jc2p.c jd2p.c)
+add_library(HanyangPUA STATIC p2jc-ucs4.cpp p2jc-ucs2.cpp p2jd-ucs4.cpp p2jd-ucs2.cpp jx2p.cpp jc2p.c jd2p.c)
 set_property(TARGET HanyangPUA PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 include(CheckIncludeFile)

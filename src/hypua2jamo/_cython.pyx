@@ -27,49 +27,52 @@ cdef extern from *:
     unicode PyUnicode_FromUnicode(Py_UNICODE *u, Py_ssize_t size)
 
 cdef extern from "hypua2jamo.h":
-    int hypua_p2jc4_translate_calcsize(void *src, int srclen);
-    int hypua_p2jc4_translate(void *src, int srclen, void *dst);
-    int hypua_p2jd4_translate_calcsize(void *src, int srclen);
-    int hypua_p2jd4_translate(void *src, int srclen, void *dst);
-    int hypua_p2jc2_translate_calcsize(void *src, int srclen);
-    int hypua_p2jc2_translate(void *src, int srclen, void *dst);
-    int hypua_p2jd2_translate_calcsize(void *src, int srclen);
-    int hypua_p2jd2_translate(void *src, int srclen, void *dst);
+    int hypua_p2jc_ucs4_calcsize(void *src, int srclen);
+    int hypua_p2jc_ucs4_encode(void *src, int srclen, void *dst);
+    int hypua_p2jc_ucs2_calcsize(void *src, int srclen);
+    int hypua_p2jc_ucs2_encode(void *src, int srclen, void *dst);
+    int hypua_p2jd_ucs4_calcsize(void *src, int srclen);
+    int hypua_p2jd_ucs4_encode(void *src, int srclen, void *dst);
+    int hypua_p2jd_ucs2_calcsize(void *src, int srclen);
+    int hypua_p2jd_ucs2_encode(void *src, int srclen, void *dst);
 
-    int hypua_jc2p4_translate_calcsize(void *src, int srclen);
-    int hypua_jc2p4_translate(void *src, int srclen, void *dst);
-    int hypua_jc2p2_translate_calcsize(void *src, int srclen);
-    int hypua_jc2p2_translate(void *src, int srclen, void *dst);
-    int hypua_jd2p4_translate_calcsize(void *src, int srclen);
-    int hypua_jd2p4_translate(void *src, int srclen, void *dst);
-    int hypua_jd2p2_translate_calcsize(void *src, int srclen);
-    int hypua_jd2p2_translate(void *src, int srclen, void *dst);
+    int hypua_jc2p_ucs4_calcsize(void *src, int srclen);
+    int hypua_jc2p_ucs4_decode(void *src, int srclen, void *dst);
+    int hypua_jc2p_ucs2_calcsize(void *src, int srclen);
+    int hypua_jc2p_ucs2_decode(void *src, int srclen, void *dst);
+    int hypua_jd2p_ucs4_calcsize(void *src, int srclen);
+    int hypua_jd2p_ucs4_decode(void *src, int srclen, void *dst);
+    int hypua_jd2p_ucs2_calcsize(void *src, int srclen);
+    int hypua_jd2p_ucs2_decode(void *src, int srclen, void *dst);
 
-    int hypua_jc2p_translator_size();
-    int hypua_jc2p_translator_init(void *);
-    int hypua_jc2p_translator_getstate(void *);
-    int hypua_jc2p_translator_setstate(void *, int);
-    int hypua_jc2p_translator_u2_calcsize(void *, void *src, int srclen);
-    int hypua_jc2p_translator_u2_calcsize_flush(void *);
-    int hypua_jc2p_translator_u2_translate(void *, void *src, int srclen, void *dst);
-    int hypua_jc2p_translator_u2_translate_flush(void *, void *dst);
-    int hypua_jc2p_translator_u4_calcsize(void *, void *src, int srclen);
-    int hypua_jc2p_translator_u4_calcsize_flush(void *);
-    int hypua_jc2p_translator_u4_translate(void *, void *src, int srclen, void *dst);
-    int hypua_jc2p_translator_u4_translate_flush(void *, void *dst);
-
-    int hypua_jd2p_translator_size();
-    int hypua_jd2p_translator_init(void *);
-    int hypua_jd2p_translator_getstate(void *);
-    int hypua_jd2p_translator_setstate(void *, int);
-    int hypua_jd2p_translator_u2_calcsize(void *, void *src, int srclen);
-    int hypua_jd2p_translator_u2_calcsize_flush(void *);
-    int hypua_jd2p_translator_u2_translate(void *, void *src, int srclen, void *dst);
-    int hypua_jd2p_translator_u2_translate_flush(void *, void *dst);
-    int hypua_jd2p_translator_u4_calcsize(void *, void *src, int srclen);
-    int hypua_jd2p_translator_u4_calcsize_flush(void *);
-    int hypua_jd2p_translator_u4_translate(void *, void *src, int srclen, void *dst);
-    int hypua_jd2p_translator_u4_translate_flush(void *, void *dst);
+    int hypua_decoder_alloc_size();
+    void hypua_decoder_init_jc2p(void *decoder);
+    void hypua_decoder_init_jd2p(void *decoder);
+    void hypua_decoder_init(
+        void *decoder,
+        void *root,
+        void *nodelist,
+        int nodelistLen
+    );
+    int hypua_decoder_getstate(void *decoder);
+    int hypua_decoder_setstate(void *decoder, int state);
+    int hypua_decoder_calcsize_ucs2(void *decoder, void *src, int srclen);
+    int hypua_decoder_calcsize_ucs4(void *decoder, void *src, int srclen);
+    int hypua_decoder_calcsize_flush(void *decoder);
+    int hypua_decoder_decode_ucs2(
+        void *decoder,
+        void *src,
+        int srclen,
+        void *dst
+    );
+    int hypua_decoder_decode_ucs4(
+        void *decoder,
+        void *src,
+        int srclen,
+        void *dst
+    );
+    int hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
+    int hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
 
 
 cdef int _UNICODE_SIZE = array('u').itemsize
@@ -77,72 +80,72 @@ cdef int _UNICODE_SIZE = array('u').itemsize
 
 cdef class ComposedJamoDecoderImplementationOnCython:
 
-    cdef void* _translator
+    cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
     cdef int (*_calcsize_flush)(void *)
-    cdef int (*_translate)(void*, void*, int, void*)
-    cdef int (*_translate_flush)(void*, void*)
+    cdef int (*_decode)(void*, void*, int, void*)
+    cdef int (*_decode_flush)(void*, void*)
 
     def __cinit__(self):
-        size = hypua_jc2p_translator_size()
-        cdef void *translator = PyMem_Malloc(size)
-        if not translator:
+        size = hypua_decoder_alloc_size()
+        cdef void *decoder = PyMem_Malloc(size)
+        if not decoder:
             raise MemoryError()
 
-        hypua_jc2p_translator_init(translator)
-        self._translator = translator
+        hypua_decoder_init_jc2p(decoder)
+        self._decoder = decoder
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_jc2p_translator_u4_calcsize
-            self._calcsize_flush = hypua_jc2p_translator_u4_calcsize_flush
-            self._translate = hypua_jc2p_translator_u4_translate
-            self._translate_flush = hypua_jc2p_translator_u4_translate_flush
+            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs4
+            self._decode_flush = hypua_decoder_decode_flush_ucs4
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_jc2p_translator_u2_calcsize
-            self._calcsize_flush = hypua_jc2p_translator_u2_calcsize_flush
-            self._translate = hypua_jc2p_translator_u2_translate
-            self._translate_flush = hypua_jc2p_translator_u2_translate_flush
+            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs2
+            self._decode_flush = hypua_decoder_decode_flush_ucs2
         else:
             raise AssertionError(_UNICODE_SIZE)
 
     def __dealloc__(self):
-        PyMem_Free(self._translator)
+        PyMem_Free(self._decoder)
 
     def getstate(self):
-        cdef int state = hypua_jc2p_translator_getstate(self._translator)
+        cdef int state = hypua_decoder_getstate(self._decoder)
         return (b'', state)
 
     def setstate(self, state):
         cdef int stateint = state
-        hypua_jc2p_translator_setstate(self._translator, stateint)
+        hypua_decoder_setstate(self._decoder, stateint)
 
     def reset(self):
-        hypua_jc2p_translator_setstate(self._translator, 0)
+        hypua_decoder_setstate(self._decoder, 0)
 
     def decode(self, jamo_string, final=False):
         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
         if jamo_buf is NULL:
             raise MemoryError()
         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
-        cdef Py_ssize_t state = hypua_jc2p_translator_getstate(self._translator)
+        cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
         cdef Py_ssize_t pua_len = self._calcsize(
-            self._translator, jamo_buf, jamo_len
+            self._decoder, jamo_buf, jamo_len
         )
         if final:
-            pua_len += self._calcsize_flush(self._translator)
+            pua_len += self._calcsize_flush(self._decoder)
 
-        hypua_jc2p_translator_setstate(self._translator, state)
+        hypua_decoder_setstate(self._decoder, state)
 
         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
         if pua_buf is NULL:
             raise MemoryError()
         cdef Py_ssize_t n_translated
         try:
-            n_translated = self._translate(
-                self._translator, jamo_buf, jamo_len, pua_buf
+            n_translated = self._decode(
+                self._decoder, jamo_buf, jamo_len, pua_buf
             )
             if final:
-                n_translated += self._translate_flush(
-                    self._translator, pua_buf + n_translated
+                n_translated += self._decode_flush(
+                    self._decoder, pua_buf + n_translated
                 )
             return PyUnicode_FromUnicode(pua_buf, n_translated)
         finally:
@@ -151,72 +154,72 @@ cdef class ComposedJamoDecoderImplementationOnCython:
 
 cdef class DecomposedJamoDecoderImplementationOnCython:
 
-    cdef void* _translator
+    cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
     cdef int (*_calcsize_flush)(void *)
-    cdef int (*_translate)(void*, void*, int, void*)
-    cdef int (*_translate_flush)(void*, void*)
+    cdef int (*_decode)(void*, void*, int, void*)
+    cdef int (*_decode_flush)(void*, void*)
 
     def __cinit__(self):
-        size = hypua_jd2p_translator_size()
-        cdef void *translator = PyMem_Malloc(size)
-        if not translator:
+        size = hypua_decoder_alloc_size()
+        cdef void *decoder = PyMem_Malloc(size)
+        if not decoder:
             raise MemoryError()
 
-        hypua_jd2p_translator_init(translator)
-        self._translator = translator
+        hypua_decoder_init_jd2p(decoder)
+        self._decoder = decoder
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_jd2p_translator_u4_calcsize
-            self._calcsize_flush = hypua_jd2p_translator_u4_calcsize_flush
-            self._translate = hypua_jd2p_translator_u4_translate
-            self._translate_flush = hypua_jd2p_translator_u4_translate_flush
+            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs4
+            self._decode_flush = hypua_decoder_decode_flush_ucs4
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_jd2p_translator_u2_calcsize
-            self._calcsize_flush = hypua_jd2p_translator_u2_calcsize_flush
-            self._translate = hypua_jd2p_translator_u2_translate
-            self._translate_flush = hypua_jd2p_translator_u2_translate_flush
+            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs2
+            self._decode_flush = hypua_decoder_decode_flush_ucs2
         else:
             raise AssertionError(_UNICODE_SIZE)
 
     def __dealloc__(self):
-        PyMem_Free(self._translator)
+        PyMem_Free(self._decoder)
 
     def getstate(self):
-        cdef int state = hypua_jd2p_translator_getstate(self._translator)
+        cdef int state = hypua_decoder_getstate(self._decoder)
         return (b'', state)
 
     def setstate(self, state):
         cdef int stateint = state
-        hypua_jd2p_translator_setstate(self._translator, stateint)
+        hypua_decoder_setstate(self._decoder, stateint)
 
     def reset(self):
-        hypua_jd2p_translator_setstate(self._translator, 0)
+        hypua_decoder_setstate(self._decoder, 0)
 
     def decode(self, jamo_string, final=False):
         cdef Py_UNICODE *jamo_buf = PyUnicode_AsUnicode(jamo_string)
         if jamo_buf is NULL:
             raise MemoryError()
         cdef Py_ssize_t jamo_len = PyUnicode_GetSize(jamo_string)
-        cdef Py_ssize_t state = hypua_jd2p_translator_getstate(self._translator)
+        cdef Py_ssize_t state = hypua_decoder_getstate(self._decoder)
         cdef Py_ssize_t pua_len = self._calcsize(
-            self._translator, jamo_buf, jamo_len
+            self._decoder, jamo_buf, jamo_len
         )
         if final:
-            pua_len += self._calcsize_flush(self._translator)
+            pua_len += self._calcsize_flush(self._decoder)
 
-        hypua_jd2p_translator_setstate(self._translator, state)
+        hypua_decoder_setstate(self._decoder, state)
 
         cdef Py_UNICODE *pua_buf = <Py_UNICODE *>PyMem_Malloc(pua_len * _UNICODE_SIZE)
         if pua_buf is NULL:
             raise MemoryError()
         cdef Py_ssize_t n_translated
         try:
-            n_translated = self._translate(
-                self._translator, jamo_buf, jamo_len, pua_buf
+            n_translated = self._decode(
+                self._decoder, jamo_buf, jamo_len, pua_buf
             )
             if final:
-                n_translated += self._translate_flush(
-                    self._translator, pua_buf + n_translated
+                n_translated += self._decode_flush(
+                    self._decoder, pua_buf + n_translated
                 )
             return PyUnicode_FromUnicode(pua_buf, n_translated)
         finally:
@@ -226,15 +229,15 @@ cdef class DecomposedJamoDecoderImplementationOnCython:
 cdef class ComposedJamoEncoderImplementationOnCython:
 
     cdef int (*_calcsize)(void *src, int srclen);
-    cdef int (*_translate)(void *src, int srclen, void *dst);
+    cdef int (*_encode)(void *src, int srclen, void *dst);
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_p2jc4_translate_calcsize
-            self._translate = hypua_p2jc4_translate
+            self._calcsize = hypua_p2jc_ucs4_calcsize
+            self._encode = hypua_p2jc_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_p2jc2_translate_calcsize
-            self._translate = hypua_p2jc2_translate
+            self._calcsize = hypua_p2jc_ucs2_calcsize
+            self._encode = hypua_p2jc_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -258,7 +261,7 @@ cdef class ComposedJamoEncoderImplementationOnCython:
             raise MemoryError()
         cdef Py_ssize_t n_translated
         try:
-            n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+            n_translated = self._encode(pua_buf, pua_len, jamo_buf)
             if jamo_len != n_translated:
                 raise Exception(
                     'p2jcx translation failed', jamo_len, n_translated
@@ -271,15 +274,15 @@ cdef class ComposedJamoEncoderImplementationOnCython:
 cdef class DecomposedJamoEncoderImplementationOnCython:
 
     cdef int (*_calcsize)(void *src, int srclen);
-    cdef int (*_translate)(void *src, int srclen, void *dst);
+    cdef int (*_encode)(void *src, int srclen, void *dst);
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_p2jd4_translate_calcsize
-            self._translate = hypua_p2jd4_translate
+            self._calcsize = hypua_p2jd_ucs4_calcsize
+            self._encode = hypua_p2jd_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_p2jd2_translate_calcsize
-            self._translate = hypua_p2jd2_translate
+            self._calcsize = hypua_p2jd_ucs2_calcsize
+            self._encode = hypua_p2jd_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -303,7 +306,7 @@ cdef class DecomposedJamoEncoderImplementationOnCython:
             raise MemoryError()
         cdef Py_ssize_t n_translated
         try:
-            n_translated = self._translate(pua_buf, pua_len, jamo_buf)
+            n_translated = self._encode(pua_buf, pua_len, jamo_buf)
             if jamo_len != n_translated:
                 raise Exception(
                     'p2jcx translation failed', jamo_len, n_translated

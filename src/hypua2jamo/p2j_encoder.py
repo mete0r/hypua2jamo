@@ -177,7 +177,7 @@ class PUA2JamoIncrementalEncoderImplementationOnCFFI(
         jamo_array = array('u', u' '*jamo_size)
         jamo_ptr = jamo_array.buffer_info()[0]
         jamo_ptr = ffi.cast('void *', jamo_ptr)
-        jamo_len = self._translate(pua_ptr, pua_len, jamo_ptr)
+        jamo_len = self._encode(pua_ptr, pua_len, jamo_ptr)
         if jamo_size != jamo_len:
             raise Exception(
                 'p2jcx translation failed', jamo_size, jamo_len
@@ -194,11 +194,11 @@ class ComposedJamoEncoderImplementationOnCFFI(
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
-            self._calcsize = _cffi.hypua_p2jc4_translate_calcsize
-            self._translate = _cffi.hypua_p2jc4_translate
+            self._calcsize = _cffi.hypua_p2jc_ucs4_calcsize
+            self._encode = _cffi.hypua_p2jc_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = _cffi.hypua_p2jc2_translate_calcsize
-            self._translate = _cffi.hypua_p2jc2_translate
+            self._calcsize = _cffi.hypua_p2jc_ucs2_calcsize
+            self._encode = _cffi.hypua_p2jc_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -212,11 +212,11 @@ class DecomposedJamoEncoderImplementationOnCFFI(
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
-            self._calcsize = _cffi.hypua_p2jd4_translate_calcsize
-            self._translate = _cffi.hypua_p2jd4_translate
+            self._calcsize = _cffi.hypua_p2jd_ucs4_calcsize
+            self._encode = _cffi.hypua_p2jd_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = _cffi.hypua_p2jd2_translate_calcsize
-            self._translate = _cffi.hypua_p2jd2_translate
+            self._calcsize = _cffi.hypua_p2jd_ucs2_calcsize
+            self._encode = _cffi.hypua_p2jd_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
