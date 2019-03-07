@@ -19,6 +19,9 @@
 from __future__ import absolute_import
 from contextlib import contextmanager
 from distutils.command.build import build as _build
+from distutils.errors import CCompilerError
+from distutils.errors import DistutilsExecError
+from distutils.errors import DistutilsPlatformError
 import io
 import os.path
 import re
@@ -181,10 +184,41 @@ class build(_build):
 @setup_dir
 def main():
     setuptools = import_setuptools()
+    from setuptools.extension import Extension
+    from setuptools.command.build_ext import build_ext
+
+    class optional_build_ext(build_ext):
+        '''
+        This class subclasses build_ext and allows
+        the building of C extensions to fail.
+        '''
+        def run(self):
+            try:
+                build_ext.run(self)
+            except DistutilsPlatformError as e:
+                self._unavailable(e)
+
+        def build_extension(self, ext):
+            try:
+                build_ext.build_extension(self, ext)
+            except (CCompilerError, DistutilsExecError, OSError) as e:
+                self._unavailable(e)
+
+        def _unavailable(self, e):
+            print('*' * 80)
+            print(
+                'WARNING: An optional code optimization (C extension) '
+                'could not be compiled. Optimization for this package '
+                'will not be available!'
+            )
+            print()
+            print(e)
+            print('*' * 80)
+
     setup_info['cmdclass'] = {
         'build': build,
+        'build_ext': optional_build_ext,
     }
-    from setuptools.extension import Extension
 
     if sys.platform == 'win32':
         library = 'build/hypua2jamo-c/HanyangPUA.lib'
