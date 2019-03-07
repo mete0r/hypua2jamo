@@ -264,6 +264,13 @@ def parse_p2j_mapping(filename):
         yield parsed[0][0], u''.join(unichr(x) for x in parsed[1])
 
 
+def parse_c2d_mapping(filename):
+    for parsed in ktugfile.parse_file(filename):
+        if not isinstance(parsed, tuple):
+            continue
+        yield parsed[1][0], u''.join(unichr(x) for x in parsed[0])
+
+
 if __name__ == '__main__':
     composed = dict(parse_p2j_mapping(
         'data/hypua2jamocomposed.txt'
@@ -301,4 +308,23 @@ if __name__ == '__main__':
             fp.write('\n')
     with io.open('src/hypua2jamo/jd2p.bin', 'wb') as fp:
         for pack in tree_to_pack(jd2p_tree):
+            fp.write(pack)
+
+    c2d_table = dict(parse_c2d_mapping(
+        'data/jamocompose.map'
+    ))
+    with io.open('src/hypua2jamo-c/c2d-table.h', 'wb') as fp:
+        for line in table_to_header('c2d', c2d_table):
+            fp.write(line)
+            fp.write('\n')
+    with io.open('src/hypua2jamo/c2d.bin', 'wb') as fp:
+        for pack in table_to_pack(c2d_table):
+            fp.write(pack)
+    d2c_tree = table_to_tree(c2d_table)
+    with io.open('src/hypua2jamo-c/d2c-tree.inc', 'wb') as fp:
+        for line in tree_to_header(d2c_tree):
+            fp.write(line.encode('utf-8'))
+            fp.write('\n')
+    with io.open('src/hypua2jamo/d2c.bin', 'wb') as fp:
+        for pack in tree_to_pack(d2c_tree):
             fp.write(pack)

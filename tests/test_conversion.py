@@ -292,7 +292,7 @@ class JamoEncoderTestBase(object):
 
     PUA_STRING = Fixtures.HunMinPreface.pua_string
 
-    def test_p2j_encoder(self):
+    def test_encoder(self):
         encoder = self.make_encoder()
 
         self.assertEqual(0, encoder.getstate())
@@ -322,21 +322,9 @@ class ComposedJamoEncoderImplementationOnPurePythonTest(
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
     def make_encoder(self):
-        from hypua2jamo.p2j_encoder\
+        from hypua2jamo.encoder\
             import ComposedJamoEncoderImplementationOnPurePython
         return ComposedJamoEncoderImplementationOnPurePython()
-
-
-class DecomposedJamoEncoderImplementationOnPurePythonTest(
-    TestCase,
-    JamoEncoderTestBase,
-):
-    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
-
-    def make_encoder(self):
-        from hypua2jamo.p2j_encoder\
-            import DecomposedJamoEncoderImplementationOnPurePython
-        return DecomposedJamoEncoderImplementationOnPurePython()
 
 
 class ComposedJamoEncoderImplementationOnCFFITest(
@@ -346,26 +334,9 @@ class ComposedJamoEncoderImplementationOnCFFITest(
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
     def make_encoder(self):
-        from hypua2jamo.p2j_encoder\
+        from hypua2jamo.encoder\
             import ComposedJamoEncoderImplementationOnCFFI
         return ComposedJamoEncoderImplementationOnCFFI()
-
-
-class DecomposedJamoEncoderImplementationOnCFFITest(
-    TestCase,
-    JamoEncoderTestBase,
-):
-    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
-
-    def make_encoder(self):
-        from hypua2jamo.p2j_encoder\
-            import DecomposedJamoEncoderImplementationOnCFFI
-        return DecomposedJamoEncoderImplementationOnCFFI()
-
-    def test_f7ca(self):
-        encoder = self.make_encoder()
-        jamo = encoder.encode(u'\uf7ca', final=True)
-        self.assertEqual(u'\u1109\u1109', jamo)
 
 
 class ComposedJamoEncoderImplementationOnCythonTest(
@@ -378,6 +349,35 @@ class ComposedJamoEncoderImplementationOnCythonTest(
         from hypua2jamo._cython\
             import ComposedJamoEncoderImplementationOnCython
         return ComposedJamoEncoderImplementationOnCython()
+
+
+class DecomposedJamoEncoderImplementationOnPurePythonTest(
+    TestCase,
+    JamoEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.encoder\
+            import DecomposedJamoEncoderImplementationOnPurePython
+        return DecomposedJamoEncoderImplementationOnPurePython()
+
+
+class DecomposedJamoEncoderImplementationOnCFFITest(
+    TestCase,
+    JamoEncoderTestBase,
+):
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.encoder\
+            import DecomposedJamoEncoderImplementationOnCFFI
+        return DecomposedJamoEncoderImplementationOnCFFI()
+
+    def test_f7ca(self):
+        encoder = self.make_encoder()
+        jamo = encoder.encode(u'\uf7ca', final=True)
+        self.assertEqual(u'\u1109\u1109', jamo)
 
 
 class DecomposedJamoEncoderImplementationOnCythonTest(
@@ -397,11 +397,50 @@ class DecomposedJamoEncoderImplementationOnCythonTest(
         self.assertEqual(u'\u1109\u1109', jamo)
 
 
+class DecomposingEncoderImplementationOnPurePythonTest(
+    TestCase,
+    JamoEncoderTestBase,
+):
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.encoder\
+            import DecomposingEncoderImplementationOnPurePython
+        return DecomposingEncoderImplementationOnPurePython()
+
+
+class DecomposingEncoderImplementationOnCFFITest(
+    TestCase,
+    JamoEncoderTestBase,
+):
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo.encoder\
+            import DecomposingEncoderImplementationOnCFFI
+        return DecomposingEncoderImplementationOnCFFI()
+
+
+class DecomposingEncoderImplementationOnCythonTest(
+    TestCase,
+    JamoEncoderTestBase,
+):
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_encoder(self):
+        from hypua2jamo._cython\
+            import DecomposingEncoderImplementationOnCython
+        return DecomposingEncoderImplementationOnCython()
+
+
 class JamoDecoderTestBase(object):
 
     PUA_STRING = Fixtures.HunMinPreface.pua_string
 
-    def test_j2p_decoder(self):
+    def test_decoder(self):
         decoder = self.make_decoder()
 
         self.assertEqual((b'', 0), decoder.getstate())
@@ -503,7 +542,7 @@ class ComposedJamoDecoderImplementationOnPurePythonTest(
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
     def make_decoder(self):
-        from hypua2jamo.j2p_decoder\
+        from hypua2jamo.decoder\
             import ComposedJamoDecoderImplementationOnPurePython
         return ComposedJamoDecoderImplementationOnPurePython()
 
@@ -516,35 +555,9 @@ class ComposedJamoDecoderImplementationOnCFFITest(
     JAMO_STRING = Fixtures.HunMinPreface.composed_jamo_string
 
     def make_decoder(self):
-        from hypua2jamo.j2p_decoder\
+        from hypua2jamo.decoder\
             import ComposedJamoDecoderImplementationOnCFFI
         return ComposedJamoDecoderImplementationOnCFFI()
-
-
-class DecomposedJamoDecoderImplementationOnPurePythonTest(
-    TestCase,
-    JamoDecoderTestBase
-):
-
-    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
-
-    def make_decoder(self):
-        from hypua2jamo.j2p_decoder\
-            import DecomposedJamoDecoderImplementationOnPurePython
-        return DecomposedJamoDecoderImplementationOnPurePython()
-
-
-class DecomposedJamoDecoderImplementationOnCFFITest(
-    TestCase,
-    JamoDecoderTestBase
-):
-
-    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
-
-    def make_decoder(self):
-        from hypua2jamo.j2p_decoder\
-            import DecomposedJamoDecoderImplementationOnCFFI
-        return DecomposedJamoDecoderImplementationOnCFFI()
 
 
 class ComposedJamoDecoderImplementationOnCythonTest(
@@ -561,6 +574,32 @@ class ComposedJamoDecoderImplementationOnCythonTest(
         return ComposedJamoDecoderImplementationOnCython()
 
 
+class DecomposedJamoDecoderImplementationOnPurePythonTest(
+    TestCase,
+    JamoDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.decoder\
+            import DecomposedJamoDecoderImplementationOnPurePython
+        return DecomposedJamoDecoderImplementationOnPurePython()
+
+
+class DecomposedJamoDecoderImplementationOnCFFITest(
+    TestCase,
+    JamoDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.decoder\
+            import DecomposedJamoDecoderImplementationOnCFFI
+        return DecomposedJamoDecoderImplementationOnCFFI()
+
+
 class DecomposedJamoDecoderImplementationOnCythonTest(
     TestCase,
     JamoDecoderTestBase
@@ -573,3 +612,45 @@ class DecomposedJamoDecoderImplementationOnCythonTest(
             import DecomposedJamoDecoderImplementationOnCython
 
         return DecomposedJamoDecoderImplementationOnCython()
+
+
+class ComposingDecoderImplementationOnPurePythonTest(
+    TestCase,
+    JamoDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.decoder\
+            import ComposingDecoderImplementationOnPurePython
+        return ComposingDecoderImplementationOnPurePython()
+
+
+class ComposingDecoderImplementationOnCFFITest(
+    TestCase,
+    JamoDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo.decoder\
+            import ComposingDecoderImplementationOnCFFI
+        return ComposingDecoderImplementationOnCFFI()
+
+
+class ComposingDecoderImplementationOnCythonTest(
+    TestCase,
+    JamoDecoderTestBase
+):
+
+    JAMO_STRING = Fixtures.HunMinPreface.decomposed_jamo_string
+    PUA_STRING = Fixtures.HunMinPreface.composed_jamo_string
+
+    def make_decoder(self):
+        from hypua2jamo._cython\
+            import ComposingDecoderImplementationOnCython
+        return ComposingDecoderImplementationOnCython()

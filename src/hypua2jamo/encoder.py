@@ -94,6 +94,7 @@ def load_pack(filename):
         return load_pack_fp(fp)
 
 
+c2d_mapping = load_pack('c2d.bin')
 p2jc_mapping = load_pack('p2jc.bin')
 p2jd_mapping = load_pack('p2jd.bin')
 
@@ -148,6 +149,18 @@ class DecomposedJamoEncoderImplementationOnPurePython(
     '''
 
     mapping = p2jd_mapping
+
+
+class DecomposingEncoderImplementationOnPurePython(
+    JamoEncoderImplementationOnPurePython
+):
+    '''
+    Jamo(composed)-to-Jamo(decomposed) encoder
+
+    Pure python implementation.
+    '''
+
+    mapping = c2d_mapping
 
 
 def encode_to_composed(pua_string):
@@ -245,12 +258,39 @@ class DecomposedJamoEncoderImplementationOnCFFI(
             raise AssertionError(_UNICODE_SIZE)
 
 
+class DecomposingEncoderImplementationOnCFFI(
+    JamoEncoderImplementationOnCFFI
+):
+    '''
+    PUA-to-Jamo(decomposed) encoder
+
+    CFFI implementation.
+    '''
+
+    def __init__(self, errors='strict'):
+        IncrementalEncoder.__init__(self, errors)
+
+        self._ffi = FFI()
+
+        if _UNICODE_SIZE == 4:
+            self._calcsize = _cffi.hypua_c2d_ucs4_calcsize
+            self._encode = _cffi.hypua_c2d_ucs4_encode
+        elif _UNICODE_SIZE == 2:
+            self._calcsize = _cffi.hypua_c2d_ucs2_calcsize
+            self._encode = _cffi.hypua_c2d_ucs2_encode
+        else:
+            raise AssertionError(_UNICODE_SIZE)
+
+
 if cython_available:
     ComposedJamoEncoder = _cython.ComposedJamoEncoderImplementationOnCython
     DecomposedJamoEncoder = _cython.DecomposedJamoEncoderImplementationOnCython
+    DecomposingEncoder = _cython.DecomposingEncoderImplementationOnCython
 elif cffi_available:
     ComposedJamoEncoder = ComposedJamoEncoderImplementationOnCFFI
     DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnCFFI
+    DecomposingEncoder = DecomposingEncoderImplementationOnCFFI
 else:
     ComposedJamoEncoder = ComposedJamoEncoderImplementationOnPurePython
     DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnPurePython
+    DecomposingEncoder = DecomposingEncoderImplementationOnPurePython

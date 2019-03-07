@@ -28,6 +28,10 @@ cdef extern from *:
     unicode PyUnicode_FromUnicode(Py_UNICODE *u, Py_ssize_t size)
 
 cdef extern from "hypua2jamo.h":
+    int hypua_c2d_ucs4_calcsize(void *src, int srclen);
+    int hypua_c2d_ucs4_encode(void *src, int srclen, void *dst);
+    int hypua_c2d_ucs2_calcsize(void *src, int srclen);
+    int hypua_c2d_ucs2_encode(void *src, int srclen, void *dst);
     int hypua_p2jc_ucs4_calcsize(void *src, int srclen);
     int hypua_p2jc_ucs4_encode(void *src, int srclen, void *dst);
     int hypua_p2jc_ucs2_calcsize(void *src, int srclen);
@@ -37,6 +41,10 @@ cdef extern from "hypua2jamo.h":
     int hypua_p2jd_ucs2_calcsize(void *src, int srclen);
     int hypua_p2jd_ucs2_encode(void *src, int srclen, void *dst);
 
+    int hypua_d2c_ucs4_calcsize(void *src, int srclen);
+    int hypua_d2c_ucs4_decode(void *src, int srclen, void *dst);
+    int hypua_d2c_ucs2_calcsize(void *src, int srclen);
+    int hypua_d2c_ucs2_decode(void *src, int srclen, void *dst);
     int hypua_jc2p_ucs4_calcsize(void *src, int srclen);
     int hypua_jc2p_ucs4_decode(void *src, int srclen, void *dst);
     int hypua_jc2p_ucs2_calcsize(void *src, int srclen);
@@ -49,6 +57,7 @@ cdef extern from "hypua2jamo.h":
     int hypua_decoder_alloc_size();
     void hypua_decoder_init_jc2p(void *decoder);
     void hypua_decoder_init_jd2p(void *decoder);
+    void hypua_decoder_init_d2c(void *decoder);
     void hypua_decoder_init(
         void *decoder,
         void *root,
@@ -196,6 +205,39 @@ cdef class DecomposedJamoDecoderImplementationOnCython(
             raise AssertionError(_UNICODE_SIZE)
 
 
+@embedsignature(True)
+cdef class ComposingDecoderImplementationOnCython(
+    JamoDecoderImplementationOnCython
+):
+    '''
+    Jamo(decomposed)-to-Jamo(composing) decoder
+
+    Cython implementation.
+    '''
+
+    def __cinit__(self):
+        size = hypua_decoder_alloc_size()
+        cdef void *decoder = PyMem_Malloc(size)
+        if not decoder:
+            raise MemoryError()
+
+        hypua_decoder_init_d2c(decoder)
+
+        self._decoder = decoder
+        if _UNICODE_SIZE == 4:
+            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs4
+            self._decode_flush = hypua_decoder_decode_flush_ucs4
+        elif _UNICODE_SIZE == 2:
+            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize_flush = hypua_decoder_calcsize_flush
+            self._decode = hypua_decoder_decode_ucs2
+            self._decode_flush = hypua_decoder_decode_flush_ucs2
+        else:
+            raise AssertionError(_UNICODE_SIZE)
+
+
 cdef class JamoEncoderImplementationOnCython:
     '''
     PUA-to-Jamo(composed) encoder
@@ -274,5 +316,26 @@ cdef class DecomposedJamoEncoderImplementationOnCython(
         elif _UNICODE_SIZE == 2:
             self._calcsize = hypua_p2jd_ucs2_calcsize
             self._encode = hypua_p2jd_ucs2_encode
+        else:
+            raise AssertionError(_UNICODE_SIZE)
+
+
+@embedsignature(True)
+cdef class DecomposingEncoderImplementationOnCython(
+    JamoEncoderImplementationOnCython
+):
+    '''
+    Jamo(composed)-to-Jamo(decomposed) encoder
+
+    Cython implementation.
+    '''
+
+    def __cinit__(self):
+        if _UNICODE_SIZE == 4:
+            self._calcsize = hypua_c2d_ucs4_calcsize
+            self._encode = hypua_c2d_ucs4_encode
+        elif _UNICODE_SIZE == 2:
+            self._calcsize = hypua_c2d_ucs2_calcsize
+            self._encode = hypua_c2d_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)

@@ -106,6 +106,8 @@ setup_info = {
     },
     'package_data': {
         'hypua2jamo': [
+            'c2d.bin',
+            'd2c.bin',
             'jc2p.bin',
             'jd2p.bin',
             'p2jc.bin',

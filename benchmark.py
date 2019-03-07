@@ -23,11 +23,11 @@ import io
 import platform
 import time
 
-from hypua2jamo.j2p_decoder import ComposedJamoDecoderImplementationOnPurePython  # noqa
-from hypua2jamo.j2p_decoder import ComposedJamoDecoderImplementationOnCFFI  # noqa
+from hypua2jamo.decoder import ComposedJamoDecoderImplementationOnPurePython  # noqa
+from hypua2jamo.decoder import ComposedJamoDecoderImplementationOnCFFI  # noqa
 from hypua2jamo._cython import ComposedJamoDecoderImplementationOnCython  # noqa
-from hypua2jamo.p2j_encoder import ComposedJamoEncoderImplementationOnPurePython  # noqa
-from hypua2jamo.p2j_encoder import ComposedJamoEncoderImplementationOnCFFI  # noqa
+from hypua2jamo.encoder import ComposedJamoEncoderImplementationOnPurePython  # noqa
+from hypua2jamo.encoder import ComposedJamoEncoderImplementationOnCFFI  # noqa
 from hypua2jamo._cython import ComposedJamoEncoderImplementationOnCython  # noqa
 
 
@@ -92,12 +92,12 @@ def main():
     ]
 
     with io.open(filename, 'w', encoding='utf-8') as fp:
-        j2p_decoder_classes = [
+        decoder_classes = [
             ComposedJamoDecoderImplementationOnPurePython,
             ComposedJamoDecoderImplementationOnCFFI,
             ComposedJamoDecoderImplementationOnCython,
         ]
-        for decoder_class in j2p_decoder_classes:
+        for decoder_class in decoder_classes:
             for chunk_size in chunk_sizes:
                 stopwatch = StopWatch()
                 for i in range(N):

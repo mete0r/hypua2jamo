@@ -172,6 +172,18 @@ class DecomposedJamoDecoderImplementationOnCFFI(
         _cffi.hypua_decoder_init_jd2p(decoder_ptr)
 
 
+class ComposingDecoderImplementationOnCFFI(
+    JamoDecoderImplementationOnCFFI
+):
+    '''
+    Decomposed Jamo-to-PUA decoder
+
+    CFFI implementation.
+    '''
+    def init_decoder_c_implementation(self, decoder_ptr):
+        _cffi.hypua_decoder_init_d2c(decoder_ptr)
+
+
 class Node(object):
     '''
     Node of Jamo -> PUA Tree
@@ -255,6 +267,7 @@ def load_tree(filename):
         return load_tree_fp(fp)
 
 
+_d2c_tree = load_tree('d2c.bin')
 _jc2p_tree = load_tree('jc2p.bin')
 _jd2p_tree = load_tree('jd2p.bin')
 
@@ -313,7 +326,6 @@ class JamoDecoderImplementationOnPurePython(
                     # 노드를 상향 추적하여 얻는다.
                     for n in _uptrace(self.nodelist, self.node):
                         outbuffer.append(n.jamo_char)
-                    outbuffer.append(jamo_char)
 
                 # 루트 상태로 복귀
                 self.node = root
@@ -359,6 +371,17 @@ class DecomposedJamoDecoderImplementationOnPurePython(
     nodelist = _jd2p_tree
 
 
+class ComposingDecoderImplementationOnPurePython(
+    JamoDecoderImplementationOnPurePython
+):
+    '''
+    Jamo(decomposed)-to-Jamo(composed) decoder
+
+    Pure python implementation.
+    '''
+    nodelist = _d2c_tree
+
+
 def _uptrace(nodelist, node):
     '''
     노드를 상향 추적한다.
@@ -378,15 +401,19 @@ def _uptrace(nodelist, node):
 if cython_available:
     ComposedJamoDecoder = _cython.ComposedJamoDecoderImplementationOnCython
     DecomposedJamoDecoder = _cython.DecomposedJamoDecoderImplementationOnCython
+    ComposingDecoder = _cython.ComposingDecoderImplementationOnCython
 elif cffi_available:
     ComposedJamoDecoder = ComposedJamoDecoderImplementationOnCFFI
     DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnCFFI
+    ComposingDecoder = ComposingDecoderImplementationOnCFFI
 else:
     ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
     DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
+    ComposingDecoder = ComposingDecoderImplementationOnPurePython
 
 
 # PyPy: Pure Python 구현이 압도적으로 빠르다.
 if platform.python_implementation() == 'PyPy':
     ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
     DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
+    ComposingDecoder = ComposingDecoderImplementationOnPurePython

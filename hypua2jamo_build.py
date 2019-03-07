@@ -29,6 +29,10 @@ ffi = FFI()
 
 ffi.cdef(
     '''
+int hypua_c2d_ucs4_calcsize(const unsigned int *src, int srclen);
+int hypua_c2d_ucs4_encode(const unsigned int *src, int srclen, unsigned int *dst);
+int hypua_c2d_ucs2_calcsize(const unsigned short *src, int srclen);
+int hypua_c2d_ucs2_encode(const unsigned short *src, int srclen, unsigned short *dst);
 int hypua_p2jc_ucs4_calcsize(const unsigned int *src, int srclen);
 int hypua_p2jc_ucs4_encode(const unsigned int *src, int srclen, unsigned int *dst);
 int hypua_p2jc_ucs2_calcsize(const unsigned short *src, int srclen);
@@ -38,6 +42,10 @@ int hypua_p2jd_ucs4_encode(const unsigned int *src, int srclen, unsigned int *ds
 int hypua_p2jd_ucs2_calcsize(const unsigned short *src, int srclen);
 int hypua_p2jd_ucs2_encode(const unsigned short *src, int srclen, unsigned short *dst);
 
+int hypua_d2c_ucs4_calcsize(const unsigned int *src, int srclen);
+int hypua_d2c_ucs4_decode(const unsigned int *src, int srclen, unsigned int *dst);
+int hypua_d2c_ucs2_calcsize(const unsigned short *src, int srclen);
+int hypua_d2c_ucs2_decode(const unsigned short *src, int srclen, unsigned short *dst);
 int hypua_jc2p_ucs4_calcsize(const unsigned int *src, int srclen);
 int hypua_jc2p_ucs4_decode(const unsigned int *src, int srclen, unsigned int *dst);
 int hypua_jc2p_ucs2_calcsize(const unsigned short *src, int srclen);
@@ -50,6 +58,7 @@ int hypua_jd2p_ucs2_decode(const unsigned short *src, int srclen, unsigned short
 int hypua_decoder_alloc_size();
 void hypua_decoder_init_jc2p(void *decoder);
 void hypua_decoder_init_jd2p(void *decoder);
+void hypua_decoder_init_d2c(void *decoder);
 void hypua_decoder_init(
     void *decoder,
     void *root,

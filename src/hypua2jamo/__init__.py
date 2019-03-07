@@ -38,8 +38,8 @@ def translate(pua, composed=True):
     :return: Syllable-Initial-Peak-Final encoded unicode string
     '''
 
-    from .p2j_encoder import ComposedJamoEncoder
-    from .p2j_encoder import DecomposedJamoEncoder
+    from .encoder import ComposedJamoEncoder
+    from .encoder import DecomposedJamoEncoder
 
     if composed:
         JamoEncoder = ComposedJamoEncoder
