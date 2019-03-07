@@ -64,6 +64,7 @@ version = get_version()
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
+    'sphinxarg.ext',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -135,9 +136,9 @@ latex_engine = 'xelatex'
 
 latex_elements = {
     'fontpkg': '''
-        \setmainfont{NanumMyeongjo}
-        \setsansfont{NanumGothic}
-        \setmonofont{NanumGothicCoding}
+        \\setmainfont{NanumMyeongjo}
+        \\setsansfont{NanumGothic}
+        \\setmonofont{NanumGothicCoding}
     '''
     # The paper size ('letterpaper' or 'a4paper').
     #

@@ -13,6 +13,7 @@ Contents:
 
    intro
    hypua2jamo
+   hypua2jamo-cli
 
 
 Indices and tables
