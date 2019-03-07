@@ -257,8 +257,15 @@ def tree_to_pack(tree):
             )
 
 
+def parse_p2j_mapping(filename):
+    for parsed in ktugfile.parse_file(filename):
+        if not isinstance(parsed, tuple):
+            continue
+        yield parsed[0][0], u''.join(unichr(x) for x in parsed[1])
+
+
 if __name__ == '__main__':
-    composed = dict(ktugfile.parse_file(
+    composed = dict(parse_p2j_mapping(
         'data/hypua2jamocomposed.txt'
     ))
     with io.open('src/hypua2jamo-c/p2jc-table.h', 'wb') as fp:
@@ -277,7 +284,7 @@ if __name__ == '__main__':
         for pack in tree_to_pack(jc2p_tree):
             fp.write(pack)
 
-    decomposed = dict(ktugfile.parse_file(
+    decomposed = dict(parse_p2j_mapping(
         'data/hypua2jamodecomposed.txt'
     ))
     with io.open('src/hypua2jamo-c/p2jd-table.h', 'wb') as fp:

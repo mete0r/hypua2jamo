@@ -3,6 +3,7 @@ babel >= 2.6.0
 coloredlogs >= 10.0
 cython >= 0.29.6
 jupyter
+parsec >= 3.4
 pip-tools >= 3.4.0
 pyside
 qtconsole >= 4.3.1
