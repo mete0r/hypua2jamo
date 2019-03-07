@@ -44,7 +44,6 @@ recursive-include docs/locale *.po
 recursive-exclude docs/locale *.mo
 recursive-include docs/static *.css
 exclude data2c.py
-exclude data2py.py
 exclude ktugfile.py
 prune data
 prune tests

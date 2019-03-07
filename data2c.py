@@ -261,11 +261,6 @@ if __name__ == '__main__':
     composed = dict(ktugfile.parse_file(
         'data/hypua2jamocomposed.txt'
     ))
-    jc2p_tree = table_to_tree(composed)
-    with io.open('src/hypua2jamo-c/jc2p-tree.inc', 'wb') as fp:
-        for line in tree_to_header(jc2p_tree):
-            fp.write(line.encode('utf-8'))
-            fp.write('\n')
     with io.open('src/hypua2jamo-c/p2jc-table.h', 'wb') as fp:
         for line in table_to_header('p2jc', composed):
             fp.write(line)
@@ -273,6 +268,11 @@ if __name__ == '__main__':
     with io.open('src/hypua2jamo/p2jc.bin', 'wb') as fp:
         for pack in table_to_pack(composed):
             fp.write(pack)
+    jc2p_tree = table_to_tree(composed)
+    with io.open('src/hypua2jamo-c/jc2p-tree.inc', 'wb') as fp:
+        for line in tree_to_header(jc2p_tree):
+            fp.write(line.encode('utf-8'))
+            fp.write('\n')
     with io.open('src/hypua2jamo/jc2p.bin', 'wb') as fp:
         for pack in tree_to_pack(jc2p_tree):
             fp.write(pack)
