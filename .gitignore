@@ -4,7 +4,9 @@
 *.egg-info
 /.coverage
 /.coverage.*
+/.eggs
 /.installed.cfg
+/.pip-sync
 /.tox
 /.benchmark.csv.*
 /bin
@@ -16,6 +18,7 @@
 /etc
 /include
 /lib
+/local
 /man
 /share
 /parts

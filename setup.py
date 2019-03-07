@@ -121,6 +121,7 @@ setup_info = {
     'setup_requires': setup_requires,
     'entry_points': {
         'console_scripts': [
+            'hypua2jamo = hypua2jamo.cli:main',
         ],
     },
     'classifiers': [
