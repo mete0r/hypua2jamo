@@ -106,7 +106,7 @@ def lookup(mapping, pua_code):
     return unichr(pua_code)
 
 
-class JamoEncoderImplementationOnPurePython(
+class BaseEncoderImplementation(
     IncrementalEncoder
 ):
 
@@ -127,8 +127,8 @@ class JamoEncoderImplementationOnPurePython(
         pass
 
 
-class ComposedJamoEncoderImplementationOnPurePython(
-    JamoEncoderImplementationOnPurePython
+class PUAComposedEncoder(
+    BaseEncoderImplementation
 ):
     '''
     PUA-to-Jamo(composed) encoder
@@ -139,8 +139,11 @@ class ComposedJamoEncoderImplementationOnPurePython(
     mapping = p2jc_mapping
 
 
-class DecomposedJamoEncoderImplementationOnPurePython(
-    JamoEncoderImplementationOnPurePython
+PUAComposedEncoderImplementationOnPurePython = PUAComposedEncoder
+
+
+class PUADecomposedEncoder(
+    BaseEncoderImplementation
 ):
     '''
     PUA-to-Jamo(decomposed) encoder
@@ -151,8 +154,11 @@ class DecomposedJamoEncoderImplementationOnPurePython(
     mapping = p2jd_mapping
 
 
-class DecomposingEncoderImplementationOnPurePython(
-    JamoEncoderImplementationOnPurePython
+PUADecomposedEncoderImplementationOnPurePython = PUADecomposedEncoder
+
+
+class JamoDecomposingEncoder(
+    BaseEncoderImplementation
 ):
     '''
     Jamo(composed)-to-Jamo(decomposed) encoder
@@ -161,6 +167,9 @@ class DecomposingEncoderImplementationOnPurePython(
     '''
 
     mapping = c2d_mapping
+
+
+JamoDecomposingEncoderImplementationOnPurePython = JamoDecomposingEncoder
 
 
 def encode_to_composed(pua_string):
@@ -177,7 +186,7 @@ def encode_to_decomposed(pua_string):
     )
 
 
-class JamoEncoderImplementationOnCFFI(
+class BaseEncoderImplementationOnCFFI(
     IncrementalEncoder
 ):
 
@@ -210,8 +219,8 @@ class JamoEncoderImplementationOnCFFI(
         return jamo_array.tounicode()
 
 
-class ComposedJamoEncoderImplementationOnCFFI(
-    JamoEncoderImplementationOnCFFI
+class PUAComposedEncoderImplementationOnCFFI(
+    BaseEncoderImplementationOnCFFI
 ):
     '''
     PUA-to-Jamo(composed) encoder
@@ -234,8 +243,8 @@ class ComposedJamoEncoderImplementationOnCFFI(
             raise AssertionError(_UNICODE_SIZE)
 
 
-class DecomposedJamoEncoderImplementationOnCFFI(
-    JamoEncoderImplementationOnCFFI
+class PUADecomposedEncoderImplementationOnCFFI(
+    BaseEncoderImplementationOnCFFI
 ):
     '''
     PUA-to-Jamo(decomposed) encoder
@@ -258,8 +267,8 @@ class DecomposedJamoEncoderImplementationOnCFFI(
             raise AssertionError(_UNICODE_SIZE)
 
 
-class DecomposingEncoderImplementationOnCFFI(
-    JamoEncoderImplementationOnCFFI
+class JamoDecomposingEncoderImplementationOnCFFI(
+    BaseEncoderImplementationOnCFFI
 ):
     '''
     PUA-to-Jamo(decomposed) encoder
@@ -283,14 +292,14 @@ class DecomposingEncoderImplementationOnCFFI(
 
 
 if cython_available:
-    ComposedJamoEncoder = _cython.ComposedJamoEncoderImplementationOnCython
-    DecomposedJamoEncoder = _cython.DecomposedJamoEncoderImplementationOnCython
-    DecomposingEncoder = _cython.DecomposingEncoderImplementationOnCython
+    PUAComposedEncoder = _cython.PUAComposedEncoderImplementationOnCython
+    PUADecomposedEncoder = _cython.PUADecomposedEncoderImplementationOnCython
+    JamoDecomposingEncoder = _cython.JamoDecomposingEncoderImplementationOnCython  # noqa
 elif cffi_available:
-    ComposedJamoEncoder = ComposedJamoEncoderImplementationOnCFFI
-    DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnCFFI
-    DecomposingEncoder = DecomposingEncoderImplementationOnCFFI
+    PUAComposedEncoder = PUAComposedEncoderImplementationOnCFFI
+    PUADecomposedEncoder = PUADecomposedEncoderImplementationOnCFFI
+    JamoDecomposingEncoder = JamoDecomposingEncoderImplementationOnCFFI
 else:
-    ComposedJamoEncoder = ComposedJamoEncoderImplementationOnPurePython
-    DecomposedJamoEncoder = DecomposedJamoEncoderImplementationOnPurePython
-    DecomposingEncoder = DecomposingEncoderImplementationOnPurePython
+    PUAComposedEncoder = PUAComposedEncoderImplementationOnPurePython
+    PUADecomposedEncoder = PUADecomposedEncoderImplementationOnPurePython
+    JamoDecomposingEncoder = JamoDecomposingEncoderImplementationOnPurePython

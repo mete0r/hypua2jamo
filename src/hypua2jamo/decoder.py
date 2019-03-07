@@ -50,7 +50,230 @@ except NameError:
     unichr = chr
 
 
-class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
+class Node(object):
+    '''
+    Node of Jamo -> PUA Tree
+    '''
+    __slots__ = (
+        'index',
+        'parent_index',
+        'jamo_char',
+        'pua_char',
+        'children',
+    )
+
+    def __repr__(self):
+        return 'Node(index={}, PUA={})'.format(
+            self.index, self.pua_char
+        )
+
+
+class NodeFormatJSON(object):
+
+    def format(self, node):
+        return {
+            'pua_char': node.pua_char,
+            'children': {
+                '{:04x}'.format(k): self.format(v)
+                for k, v in node.children.items()
+            }
+        }
+
+
+_node_struct = Struct('<iHH')
+
+
+def load_tree_fp(fp):
+    root = Node()
+    root.index = 0
+    root.parent_index = None
+    root.jamo_char = None
+    root.pua_char = None
+    root.children = {}
+
+    index = 1
+    nodelist = [root]
+    paths = [(None, None)]
+    while True:
+        data = fp.read(_node_struct.size)
+        if len(data) == 0:
+            break
+        jamo_code, pua_code, parent_id = _node_struct.unpack(data)
+        jamo_char = unichr(jamo_code) if jamo_code else None
+        pua_char = unichr(pua_code) if pua_code else None
+
+        node = Node()
+        node.index = index
+        node.parent_index = parent_id
+        node.jamo_char = jamo_char
+        node.pua_char = pua_char
+        node.children = {}
+
+        index += 1
+        nodelist.append(node)
+        paths.append((parent_id, jamo_char))
+
+    for node, (parent_id, jamo_char) in zip(nodelist[1:], paths[1:]):
+        if parent_id is None:
+            raise Exception()
+        if jamo_char is None:
+            raise Exception()
+        parent = nodelist[parent_id]
+        parent.children[jamo_char] = node
+
+    return nodelist
+
+
+def load_tree(filename):
+    filename = os.path.join(
+        os.path.dirname(__file__),
+        filename,
+    )
+    with io.open(filename, 'rb') as fp:
+        return load_tree_fp(fp)
+
+
+_d2c_tree = load_tree('d2c.bin')
+_jc2p_tree = load_tree('jc2p.bin')
+_jd2p_tree = load_tree('jd2p.bin')
+
+
+class BaseDecoderImplementationOnPurePython(
+    IncrementalDecoder
+):
+    nodelist = None
+
+    def __init__(self, errors='strict'):
+        IncrementalDecoder.__init__(self, errors)
+        self.node = self.nodelist[0]
+
+    def __repr__(self):
+        return '{}(node={})'.format(
+            type(self).__name__,
+            self.node,
+        )
+
+    def getstate(self):
+        state = self.node.index
+        return (b'', state)
+
+    def setstate(self, state):
+        index = state[1]
+        self.node = self.nodelist[index]
+
+    def reset(self):
+        self.node = self.nodelist[0]
+
+    def decode(self, jamo_string, final=False):
+        outbuffer = []
+        root = self.nodelist[0]
+        src_len = len(jamo_string)
+        src_index = 0
+        while src_index < src_len:
+            jamo_char = jamo_string[src_index]
+            try:
+                node = self.node.children[jamo_char]
+            except KeyError:
+                #
+                # 현재 노드에서 나갈 엣지가 없음
+                #
+
+                if self.node.index == 0:
+                    # 현 노드가 루트이면 입력 자모 문자를 그대로 출력
+                    outbuffer.append(jamo_char)
+                    src_index += 1
+                elif self.node.pua_char:
+                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
+                    # 해당 문자 출력
+                    outbuffer.append(self.node.pua_char)
+                else:
+                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
+                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
+                    # 노드를 상향 추적하여 얻는다.
+                    for n in _uptrace(self.nodelist, self.node):
+                        outbuffer.append(n.jamo_char)
+
+                # 루트 상태로 복귀
+                self.node = root
+            else:
+                # 다음 노드로 이행
+                self.node = node
+                src_index += 1
+        if final:
+            # 만약 루트 상태가 아니면
+            if self.node.index != 0:
+                if self.node.pua_char:
+                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
+                    # 해당 문자 출력
+                    outbuffer.append(self.node.pua_char)
+                else:
+                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
+                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
+                    # 노드를 상향 추적하여 얻는다.
+                    for n in _uptrace(self.nodelist, self.node):
+                        outbuffer.append(n.jamo_char)
+        return u''.join(outbuffer)
+
+
+class PUAComposedDecoder(
+    BaseDecoderImplementationOnPurePython
+):
+    '''
+    Composed Jamo-to-PUA decoder
+
+    Pure python implementation.
+    '''
+    nodelist = _jc2p_tree
+
+
+PUAComposedDecoderImplementationOnPurePython = PUAComposedDecoder
+
+
+class PUADecomposedDecoder(
+    BaseDecoderImplementationOnPurePython
+):
+    '''
+    Decomposed Jamo-to-PUA decoder
+
+    Pure python implementation.
+    '''
+    nodelist = _jd2p_tree
+
+
+PUADecomposedDecoderImplementationOnPurePython = PUADecomposedDecoder
+
+
+class JamoComposingDecoder(
+    BaseDecoderImplementationOnPurePython
+):
+    '''
+    Jamo(decomposed)-to-Jamo(composed) decoder
+
+    Pure python implementation.
+    '''
+    nodelist = _d2c_tree
+
+
+JamoComposingDecoderImplementationOnPurePython = JamoComposingDecoder
+
+
+def _uptrace(nodelist, node):
+    '''
+    노드를 상향 추적한다.
+
+    현 노드로부터 조상 노드들을 차례로 순회하며 반환한다.
+    루트 노드는 제외한다.
+    '''
+
+    if node.parent_index is None:
+        return
+    parent = nodelist[node.parent_index]
+    for x in _uptrace(nodelist, parent):
+        yield x
+    yield node
+
+
+class BaseDecoderImplementationOnCFFI(IncrementalDecoder):
 
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
@@ -147,8 +370,8 @@ class JamoDecoderImplementationOnCFFI(IncrementalDecoder):
         return result
 
 
-class ComposedJamoDecoderImplementationOnCFFI(
-    JamoDecoderImplementationOnCFFI
+class PUAComposedDecoderImplementationOnCFFI(
+    BaseDecoderImplementationOnCFFI
 ):
     '''
     Composed Jamo-to-PUA decoder
@@ -160,8 +383,8 @@ class ComposedJamoDecoderImplementationOnCFFI(
         _cffi.hypua_decoder_init_jc2p(decoder_ptr)
 
 
-class DecomposedJamoDecoderImplementationOnCFFI(
-    JamoDecoderImplementationOnCFFI
+class PUADecomposedDecoderImplementationOnCFFI(
+    BaseDecoderImplementationOnCFFI
 ):
     '''
     Decomposed Jamo-to-PUA decoder
@@ -172,8 +395,8 @@ class DecomposedJamoDecoderImplementationOnCFFI(
         _cffi.hypua_decoder_init_jd2p(decoder_ptr)
 
 
-class ComposingDecoderImplementationOnCFFI(
-    JamoDecoderImplementationOnCFFI
+class JamoComposingDecoderImplementationOnCFFI(
+    BaseDecoderImplementationOnCFFI
 ):
     '''
     Decomposed Jamo-to-PUA decoder
@@ -184,236 +407,22 @@ class ComposingDecoderImplementationOnCFFI(
         _cffi.hypua_decoder_init_d2c(decoder_ptr)
 
 
-class Node(object):
-    '''
-    Node of Jamo -> PUA Tree
-    '''
-    __slots__ = (
-        'index',
-        'parent_index',
-        'jamo_char',
-        'pua_char',
-        'children',
-    )
-
-    def __repr__(self):
-        return 'Node(index={}, PUA={})'.format(
-            self.index, self.pua_char
-        )
-
-
-class NodeFormatJSON(object):
-
-    def format(self, node):
-        return {
-            'pua_char': node.pua_char,
-            'children': {
-                '{:04x}'.format(k): self.format(v)
-                for k, v in node.children.items()
-            }
-        }
-
-
-_node_struct = Struct('<iHH')
-
-
-def load_tree_fp(fp):
-    root = Node()
-    root.index = 0
-    root.parent_index = None
-    root.jamo_char = None
-    root.pua_char = None
-    root.children = {}
-
-    index = 1
-    nodelist = [root]
-    paths = [(None, None)]
-    while True:
-        data = fp.read(_node_struct.size)
-        if len(data) == 0:
-            break
-        jamo_code, pua_code, parent_id = _node_struct.unpack(data)
-        jamo_char = unichr(jamo_code) if jamo_code else None
-        pua_char = unichr(pua_code) if pua_code else None
-
-        node = Node()
-        node.index = index
-        node.parent_index = parent_id
-        node.jamo_char = jamo_char
-        node.pua_char = pua_char
-        node.children = {}
-
-        index += 1
-        nodelist.append(node)
-        paths.append((parent_id, jamo_char))
-
-    for node, (parent_id, jamo_char) in zip(nodelist[1:], paths[1:]):
-        if parent_id is None:
-            raise Exception()
-        if jamo_char is None:
-            raise Exception()
-        parent = nodelist[parent_id]
-        parent.children[jamo_char] = node
-
-    return nodelist
-
-
-def load_tree(filename):
-    filename = os.path.join(
-        os.path.dirname(__file__),
-        filename,
-    )
-    with io.open(filename, 'rb') as fp:
-        return load_tree_fp(fp)
-
-
-_d2c_tree = load_tree('d2c.bin')
-_jc2p_tree = load_tree('jc2p.bin')
-_jd2p_tree = load_tree('jd2p.bin')
-
-
-class JamoDecoderImplementationOnPurePython(
-    IncrementalDecoder
-):
-    nodelist = None
-
-    def __init__(self, errors='strict'):
-        IncrementalDecoder.__init__(self, errors)
-        self.node = self.nodelist[0]
-
-    def __repr__(self):
-        return '{}(node={})'.format(
-            type(self).__name__,
-            self.node,
-        )
-
-    def getstate(self):
-        state = self.node.index
-        return (b'', state)
-
-    def setstate(self, state):
-        index = state[1]
-        self.node = self.nodelist[index]
-
-    def reset(self):
-        self.node = self.nodelist[0]
-
-    def decode(self, jamo_string, final=False):
-        outbuffer = []
-        root = self.nodelist[0]
-        src_len = len(jamo_string)
-        src_index = 0
-        while src_index < src_len:
-            jamo_char = jamo_string[src_index]
-            try:
-                node = self.node.children[jamo_char]
-            except KeyError:
-                #
-                # 현재 노드에서 나갈 엣지가 없음
-                #
-
-                if self.node.index == 0:
-                    # 현 노드가 루트이면 입력 자모 문자를 그대로 출력
-                    outbuffer.append(jamo_char)
-                    src_index += 1
-                elif self.node.pua_char:
-                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
-                    # 해당 문자 출력
-                    outbuffer.append(self.node.pua_char)
-                else:
-                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
-                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
-                    # 노드를 상향 추적하여 얻는다.
-                    for n in _uptrace(self.nodelist, self.node):
-                        outbuffer.append(n.jamo_char)
-
-                # 루트 상태로 복귀
-                self.node = root
-            else:
-                # 다음 노드로 이행
-                self.node = node
-                src_index += 1
-        if final:
-            # 만약 루트 상태가 아니면
-            if self.node.index != 0:
-                if self.node.pua_char:
-                    # 만약 현 노드에 PUA 문자가 매핑되어 있으면
-                    # 해당 문자 출력
-                    outbuffer.append(self.node.pua_char)
-                else:
-                    # 현 노드에 PUA 문자가 매핑되어 있지 않으므로
-                    # 입력 버퍼 자모열을 출력. 입력 버퍼 자모열은
-                    # 노드를 상향 추적하여 얻는다.
-                    for n in _uptrace(self.nodelist, self.node):
-                        outbuffer.append(n.jamo_char)
-        return u''.join(outbuffer)
-
-
-class ComposedJamoDecoderImplementationOnPurePython(
-    JamoDecoderImplementationOnPurePython
-):
-    '''
-    Composed Jamo-to-PUA decoder
-
-    Pure python implementation.
-    '''
-    nodelist = _jc2p_tree
-
-
-class DecomposedJamoDecoderImplementationOnPurePython(
-    JamoDecoderImplementationOnPurePython
-):
-    '''
-    Decomposed Jamo-to-PUA decoder
-
-    Pure python implementation.
-    '''
-    nodelist = _jd2p_tree
-
-
-class ComposingDecoderImplementationOnPurePython(
-    JamoDecoderImplementationOnPurePython
-):
-    '''
-    Jamo(decomposed)-to-Jamo(composed) decoder
-
-    Pure python implementation.
-    '''
-    nodelist = _d2c_tree
-
-
-def _uptrace(nodelist, node):
-    '''
-    노드를 상향 추적한다.
-
-    현 노드로부터 조상 노드들을 차례로 순회하며 반환한다.
-    루트 노드는 제외한다.
-    '''
-
-    if node.parent_index is None:
-        return
-    parent = nodelist[node.parent_index]
-    for x in _uptrace(nodelist, parent):
-        yield x
-    yield node
-
-
 if cython_available:
-    ComposedJamoDecoder = _cython.ComposedJamoDecoderImplementationOnCython
-    DecomposedJamoDecoder = _cython.DecomposedJamoDecoderImplementationOnCython
-    ComposingDecoder = _cython.ComposingDecoderImplementationOnCython
+    PUAComposedDecoder = _cython.PUAComposedDecoderImplementationOnCython
+    PUADecomposedDecoder = _cython.PUADecomposedDecoderImplementationOnCython
+    JamoComposingDecoder = _cython.JamoComposingDecoderImplementationOnCython
 elif cffi_available:
-    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnCFFI
-    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnCFFI
-    ComposingDecoder = ComposingDecoderImplementationOnCFFI
+    PUAComposedDecoder = PUAComposedDecoderImplementationOnCFFI
+    PUADecomposedDecoder = PUADecomposedDecoderImplementationOnCFFI
+    JamoComposingDecoder = JamoComposingDecoderImplementationOnCFFI
 else:
-    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
-    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
-    ComposingDecoder = ComposingDecoderImplementationOnPurePython
+    PUAComposedDecoder = PUAComposedDecoderImplementationOnPurePython
+    PUADecomposedDecoder = PUADecomposedDecoderImplementationOnPurePython
+    JamoComposingDecoder = JamoComposingDecoderImplementationOnPurePython
 
 
 # PyPy: Pure Python 구현이 압도적으로 빠르다.
 if platform.python_implementation() == 'PyPy':
-    ComposedJamoDecoder = ComposedJamoDecoderImplementationOnPurePython
-    DecomposedJamoDecoder = DecomposedJamoDecoderImplementationOnPurePython
-    ComposingDecoder = ComposingDecoderImplementationOnPurePython
+    PUAComposedDecoder = PUAComposedDecoderImplementationOnPurePython
+    PUADecomposedDecoder = PUADecomposedDecoderImplementationOnPurePython
+    JamoComposingDecoder = JamoComposingDecoderImplementationOnPurePython

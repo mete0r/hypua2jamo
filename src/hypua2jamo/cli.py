@@ -34,12 +34,12 @@ except ImportError:
     argcomplete = None
 
 from . import __version__
-from .encoder import ComposedJamoEncoder
-from .encoder import DecomposedJamoEncoder
-from .encoder import DecomposingEncoder
-from .decoder import ComposedJamoDecoder
-from .decoder import DecomposedJamoDecoder
-from .decoder import ComposingDecoder
+from .encoder import PUAComposedEncoder
+from .encoder import PUADecomposedEncoder
+from .encoder import JamoDecomposingEncoder
+from .decoder import PUAComposedDecoder
+from .decoder import PUADecomposedDecoder
+from .decoder import JamoComposingDecoder
 
 PY3 = sys.version_info.major == 3
 logger = logging.getLogger(__name__)
@@ -75,25 +75,25 @@ def main():
         translator_class = None
     elif source == 'composed':
         if target == 'decomposed':
-            translator_class = DecomposingEncoder
+            translator_class = JamoDecomposingEncoder
         elif target == 'pua':
-            translator_class = ComposedJamoDecoder
+            translator_class = PUAComposedDecoder
         else:
             logger.error(_('Unsupported target encoding: %s'), args.target)
             raise SystemExit(1)
     elif source == 'decomposed':
         if target == 'composed':
-            translator_class = ComposingDecoder
+            translator_class = JamoComposingDecoder
         elif target == 'pua':
-            translator_class = DecomposedJamoDecoder
+            translator_class = PUADecomposedDecoder
         else:
             logger.error(_('Unsupported target encoding: %s'), args.target)
             raise SystemExit(1)
     elif source == 'pua':
         if target == 'composed':
-            translator_class = ComposedJamoEncoder
+            translator_class = PUAComposedEncoder
         elif target == 'decomposed':
-            translator_class = DecomposedJamoEncoder
+            translator_class = PUADecomposedEncoder
         else:
             logger.error(_('Unsupported target encoding: %s'), args.target)
             raise SystemExit(1)

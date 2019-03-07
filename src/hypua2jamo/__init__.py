@@ -38,12 +38,12 @@ def translate(pua, composed=True):
     :return: Syllable-Initial-Peak-Final encoded unicode string
     '''
 
-    from .encoder import ComposedJamoEncoder
-    from .encoder import DecomposedJamoEncoder
+    from .encoder import PUAComposedEncoder
+    from .encoder import PUADecomposedEncoder
 
     if composed:
-        JamoEncoder = ComposedJamoEncoder
+        JamoEncoder = PUAComposedEncoder
     else:
-        JamoEncoder = DecomposedJamoEncoder
+        JamoEncoder = PUADecomposedEncoder
     encoder = JamoEncoder()
     return encoder.encode(pua, final=True)

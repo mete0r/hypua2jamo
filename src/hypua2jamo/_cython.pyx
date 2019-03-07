@@ -142,7 +142,7 @@ cdef class JamoDecoderImplementationOnCython:
 
 
 @embedsignature(True)
-cdef class ComposedJamoDecoderImplementationOnCython(
+cdef class PUAComposedDecoderImplementationOnCython(
     JamoDecoderImplementationOnCython
 ):
     '''
@@ -174,7 +174,7 @@ cdef class ComposedJamoDecoderImplementationOnCython(
 
 
 @embedsignature(True)
-cdef class DecomposedJamoDecoderImplementationOnCython(
+cdef class PUADecomposedDecoderImplementationOnCython(
     JamoDecoderImplementationOnCython
 ):
     '''
@@ -206,7 +206,7 @@ cdef class DecomposedJamoDecoderImplementationOnCython(
 
 
 @embedsignature(True)
-cdef class ComposingDecoderImplementationOnCython(
+cdef class JamoComposingDecoderImplementationOnCython(
     JamoDecoderImplementationOnCython
 ):
     '''
@@ -279,7 +279,7 @@ cdef class JamoEncoderImplementationOnCython:
 
 
 @embedsignature(True)
-cdef class ComposedJamoEncoderImplementationOnCython(
+cdef class PUAComposedEncoderImplementationOnCython(
     JamoEncoderImplementationOnCython
 ):
     '''
@@ -300,7 +300,7 @@ cdef class ComposedJamoEncoderImplementationOnCython(
 
 
 @embedsignature(True)
-cdef class DecomposedJamoEncoderImplementationOnCython(
+cdef class PUADecomposedEncoderImplementationOnCython(
     JamoEncoderImplementationOnCython
 ):
     '''
@@ -321,7 +321,7 @@ cdef class DecomposedJamoEncoderImplementationOnCython(
 
 
 @embedsignature(True)
-cdef class DecomposingEncoderImplementationOnCython(
+cdef class JamoDecomposingEncoderImplementationOnCython(
     JamoEncoderImplementationOnCython
 ):
     '''

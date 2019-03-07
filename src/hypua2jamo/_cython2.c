@@ -805,13 +805,13 @@ static const char *__pyx_f[] = {
 
 /*--- Type declarations ---*/
 struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython;
 struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython;
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython;
+struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython;
 
 /* "hypua2jamo/_cython.pyx":91
  * 
@@ -833,11 +833,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython {
 /* "hypua2jamo/_cython.pyx":145
  * 
  * @embedsignature(True)
- * cdef class ComposedJamoDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class PUAComposedDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoDecoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython __pyx_base;
 };
 
@@ -845,11 +845,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython
 /* "hypua2jamo/_cython.pyx":177
  * 
  * @embedsignature(True)
- * cdef class DecomposedJamoDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class PUADecomposedDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoDecoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython __pyx_base;
 };
 
@@ -857,11 +857,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCyth
 /* "hypua2jamo/_cython.pyx":209
  * 
  * @embedsignature(True)
- * cdef class ComposingDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class JamoComposingDecoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoDecoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython __pyx_base;
 };
 
@@ -883,11 +883,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython {
 /* "hypua2jamo/_cython.pyx":282
  * 
  * @embedsignature(True)
- * cdef class ComposedJamoEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class PUAComposedEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoEncoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython __pyx_base;
 };
 
@@ -895,11 +895,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython
 /* "hypua2jamo/_cython.pyx":303
  * 
  * @embedsignature(True)
- * cdef class DecomposedJamoEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class PUADecomposedEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoEncoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython __pyx_base;
 };
 
@@ -907,11 +907,11 @@ struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCyth
 /* "hypua2jamo/_cython.pyx":324
  * 
  * @embedsignature(True)
- * cdef class DecomposingEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
+ * cdef class JamoDecomposingEncoderImplementationOnCython(             # <<<<<<<<<<<<<<
  *     JamoEncoderImplementationOnCython
  * ):
  */
-struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython {
+struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython {
   struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython __pyx_base;
 };
 
@@ -1257,13 +1257,13 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'hypua2jamo._cython' */
 static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython = 0;
 static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython = 0;
-static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython = 0;
+static PyTypeObject *__pyx_ptype_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython = 0;
 static int __pyx_v_10hypua2jamo_7_cython__UNICODE_SIZE;
 #define __Pyx_MODULE_NAME "hypua2jamo._cython"
 extern int __pyx_module_is_main_hypua2jamo___cython;
@@ -1295,12 +1295,12 @@ static const char __pyx_k_AssertionError[] = "AssertionError";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_p2jcx_translation_failed[] = "p2jcx translation failed";
-static const char __pyx_k_ComposedJamoDecoderImplementatio[] = "ComposedJamoDecoderImplementationOnCython";
-static const char __pyx_k_ComposedJamoEncoderImplementatio[] = "ComposedJamoEncoderImplementationOnCython";
-static const char __pyx_k_ComposingDecoderImplementationOn[] = "ComposingDecoderImplementationOnCython";
-static const char __pyx_k_DecomposedJamoDecoderImplementat[] = "DecomposedJamoDecoderImplementationOnCython";
-static const char __pyx_k_DecomposedJamoEncoderImplementat[] = "DecomposedJamoEncoderImplementationOnCython";
-static const char __pyx_k_DecomposingEncoderImplementation[] = "DecomposingEncoderImplementationOnCython";
+static const char __pyx_k_PUAComposedDecoderImplementatio[] = "PUAComposedDecoderImplementationOnCython";
+static const char __pyx_k_PUAComposedEncoderImplementatio[] = "PUAComposedEncoderImplementationOnCython";
+static const char __pyx_k_JamoComposingDecoderImplementationOn[] = "JamoComposingDecoderImplementationOnCython";
+static const char __pyx_k_PUADecomposedDecoderImplementat[] = "PUADecomposedDecoderImplementationOnCython";
+static const char __pyx_k_PUADecomposedEncoderImplementat[] = "PUADecomposedEncoderImplementationOnCython";
+static const char __pyx_k_JamoDecomposingEncoderImplementation[] = "JamoDecomposingEncoderImplementationOnCython";
 static const char __pyx_k_JamoDecoderImplementationOnCytho[] = "JamoDecoderImplementationOnCython";
 static const char __pyx_k_JamoEncoderImplementationOnCytho[] = "JamoEncoderImplementationOnCython";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
@@ -1308,12 +1308,12 @@ static const char __pyx_k_self__calcsize_self__calcsize_fl[] = "self._calcsize,s
 static const char __pyx_k_self__calcsize_self__encode_cann[] = "self._calcsize,self._encode cannot be converted to a Python object for pickling";
 static PyObject *__pyx_kp_b_;
 static PyObject *__pyx_n_s_AssertionError;
-static PyObject *__pyx_n_s_ComposedJamoDecoderImplementatio;
-static PyObject *__pyx_n_s_ComposedJamoEncoderImplementatio;
-static PyObject *__pyx_n_s_ComposingDecoderImplementationOn;
-static PyObject *__pyx_n_s_DecomposedJamoDecoderImplementat;
-static PyObject *__pyx_n_s_DecomposedJamoEncoderImplementat;
-static PyObject *__pyx_n_s_DecomposingEncoderImplementation;
+static PyObject *__pyx_n_s_PUAComposedDecoderImplementatio;
+static PyObject *__pyx_n_s_PUAComposedEncoderImplementatio;
+static PyObject *__pyx_n_s_JamoComposingDecoderImplementationOn;
+static PyObject *__pyx_n_s_PUADecomposedDecoderImplementat;
+static PyObject *__pyx_n_s_PUADecomposedEncoderImplementat;
+static PyObject *__pyx_n_s_JamoDecomposingEncoderImplementation;
 static PyObject *__pyx_n_s_JamoDecoderImplementationOnCytho;
 static PyObject *__pyx_n_s_JamoEncoderImplementationOnCytho;
 static PyObject *__pyx_n_s_MemoryError;
@@ -1346,38 +1346,38 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCyt
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCython_8decode(struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython *__pyx_v_self, PyObject *__pyx_v_jamo_string, PyObject *__pyx_v_final); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCython_10__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCython_12__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_reset(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_2getstate(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_4setstate(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_state); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_6encode(struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self, PyObject *__pyx_v_pua_string, CYTHON_UNUSED PyObject *__pyx_v_final); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCython_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
@@ -2122,22 +2122,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCyt
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self) {
   int __pyx_v_size;
   void *__pyx_v_decoder;
   int __pyx_r;
@@ -2345,7 +2345,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnC
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2359,20 +2359,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnC
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_2__reduce_cython__[] = "ComposedJamoDecoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_2__reduce_cython__[] = "PUAComposedDecoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2399,7 +2399,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -2414,20 +2414,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_4__setstate_cython__[] = "ComposedJamoDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_4__setstate_cython__[] = "PUAComposedDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2454,7 +2454,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -2470,22 +2470,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementat
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self) {
   int __pyx_v_size;
   void *__pyx_v_decoder;
   int __pyx_r;
@@ -2693,7 +2693,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationO
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2707,20 +2707,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_2__reduce_cython__[] = "DecomposedJamoDecoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_2__reduce_cython__[] = "PUADecomposedDecoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2747,7 +2747,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -2762,20 +2762,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_4__setstate_cython__[] = "DecomposedJamoDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_4__setstate_cython__[] = "PUADecomposedDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2802,7 +2802,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -2818,22 +2818,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplement
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self) {
   int __pyx_v_size;
   void *__pyx_v_decoder;
   int __pyx_r;
@@ -3041,7 +3041,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCyth
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposingDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoComposingDecoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -3055,20 +3055,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCyth
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_2__reduce_cython__[] = "ComposingDecoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_2__reduce_cython__[] = "JamoComposingDecoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3095,7 +3095,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementation
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposingDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoComposingDecoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3110,20 +3110,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementation
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_4__setstate_cython__[] = "ComposingDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_4__setstate_cython__[] = "JamoComposingDecoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3150,7 +3150,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_38ComposingDecoderImplementation
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposingDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoComposingDecoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3746,22 +3746,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_33JamoEncoderImplementationOnCyt
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3866,7 +3866,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnC
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -3880,20 +3880,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnC
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_2__reduce_cython__[] = "ComposedJamoEncoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_2__reduce_cython__[] = "PUAComposedEncoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3920,7 +3920,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3935,20 +3935,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_4__setstate_cython__[] = "ComposedJamoEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_4__setstate_cython__[] = "PUAComposedEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3975,7 +3975,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.ComposedJamoEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUAComposedEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3991,22 +3991,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementat
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4111,7 +4111,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationO
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -4125,20 +4125,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_2__reduce_cython__[] = "DecomposedJamoEncoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_2__reduce_cython__[] = "PUADecomposedEncoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4165,7 +4165,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4180,20 +4180,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_4__setstate_cython__[] = "DecomposedJamoEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_4__setstate_cython__[] = "PUADecomposedEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4220,7 +4220,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposedJamoEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.PUADecomposedEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4236,22 +4236,22 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplement
  */
 
 /* Python wrapper */
-static int __pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython___cinit__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self) {
+static int __pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython___cinit__(struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4354,7 +4354,7 @@ static int __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCy
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposingEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoDecomposingEncoderImplementationOnCython.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -4368,20 +4368,20 @@ static int __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCy
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_2__reduce_cython__[] = "DecomposingEncoderImplementationOnCython.__reduce_cython__(self)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_2__reduce_cython__[] = "JamoDecomposingEncoderImplementationOnCython.__reduce_cython__(self)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_3__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_2__reduce_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4408,7 +4408,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementati
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposingEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoDecomposingEncoderImplementationOnCython.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4423,20 +4423,20 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementati
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_4__setstate_cython__[] = "DecomposingEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_4__setstate_cython__[] = "JamoDecomposingEncoderImplementationOnCython.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_5__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_4__setstate_cython__(((struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4463,7 +4463,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_40DecomposingEncoderImplementati
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("hypua2jamo._cython.DecomposingEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("hypua2jamo._cython.JamoDecomposingEncoderImplementationOnCython.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4566,26 +4566,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_JamoDecoderImplementationOn
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoDecoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_41PUAComposedDecoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.ComposedJamoDecoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.PUAComposedDecoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -4615,7 +4615,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplemen
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -4625,7 +4625,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplemen
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4640,26 +4640,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplemen
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoDecoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedDecoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.DecomposedJamoDecoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.PUADecomposedDecoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -4689,7 +4689,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplem
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -4699,7 +4699,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplem
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4714,26 +4714,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplem
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_38ComposingDecoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_38JamoComposingDecoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.ComposingDecoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.JamoComposingDecoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -4763,7 +4763,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementat
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -4773,7 +4773,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementat
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4876,26 +4876,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOn
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_41ComposedJamoEncoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_41PUAComposedEncoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.ComposedJamoEncoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.PUAComposedEncoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -4925,7 +4925,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplemen
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -4935,7 +4935,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplemen
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4950,26 +4950,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplemen
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_43DecomposedJamoEncoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_43PUADecomposedEncoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.DecomposedJamoEncoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.PUADecomposedEncoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -4999,7 +4999,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplem
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5009,7 +5009,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplem
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5024,26 +5024,26 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplem
   #endif
 };
 
-static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o = __pyx_tp_new_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython(t, a, k);
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython[] = {
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_2__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_40DecomposingEncoderImplementationOnCython_4__setstate_cython__},
+static PyMethodDef __pyx_methods_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython[] = {
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_3__reduce_cython__, METH_NOARGS, __pyx_doc_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_2__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_5__setstate_cython__, METH_O, __pyx_doc_10hypua2jamo_7_cython_40JamoDecomposingEncoderImplementationOnCython_4__setstate_cython__},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython = {
+static PyTypeObject __pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython = {
   PyVarObject_HEAD_INIT(0, 0)
-  "hypua2jamo._cython.DecomposingEncoderImplementationOnCython", /*tp_name*/
-  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython), /*tp_basicsize*/
+  "hypua2jamo._cython.JamoDecomposingEncoderImplementationOnCython", /*tp_name*/
+  sizeof(struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython, /*tp_dealloc*/
   0, /*tp_print*/
@@ -5073,7 +5073,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplement
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython, /*tp_methods*/
+  __pyx_methods_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -5083,7 +5083,7 @@ static PyTypeObject __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplement
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython, /*tp_new*/
+  __pyx_tp_new_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5146,12 +5146,12 @@ static struct PyModuleDef __pyx_moduledef = {
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_b_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 0, 0},
   {&__pyx_n_s_AssertionError, __pyx_k_AssertionError, sizeof(__pyx_k_AssertionError), 0, 0, 1, 1},
-  {&__pyx_n_s_ComposedJamoDecoderImplementatio, __pyx_k_ComposedJamoDecoderImplementatio, sizeof(__pyx_k_ComposedJamoDecoderImplementatio), 0, 0, 1, 1},
-  {&__pyx_n_s_ComposedJamoEncoderImplementatio, __pyx_k_ComposedJamoEncoderImplementatio, sizeof(__pyx_k_ComposedJamoEncoderImplementatio), 0, 0, 1, 1},
-  {&__pyx_n_s_ComposingDecoderImplementationOn, __pyx_k_ComposingDecoderImplementationOn, sizeof(__pyx_k_ComposingDecoderImplementationOn), 0, 0, 1, 1},
-  {&__pyx_n_s_DecomposedJamoDecoderImplementat, __pyx_k_DecomposedJamoDecoderImplementat, sizeof(__pyx_k_DecomposedJamoDecoderImplementat), 0, 0, 1, 1},
-  {&__pyx_n_s_DecomposedJamoEncoderImplementat, __pyx_k_DecomposedJamoEncoderImplementat, sizeof(__pyx_k_DecomposedJamoEncoderImplementat), 0, 0, 1, 1},
-  {&__pyx_n_s_DecomposingEncoderImplementation, __pyx_k_DecomposingEncoderImplementation, sizeof(__pyx_k_DecomposingEncoderImplementation), 0, 0, 1, 1},
+  {&__pyx_n_s_PUAComposedDecoderImplementatio, __pyx_k_PUAComposedDecoderImplementatio, sizeof(__pyx_k_PUAComposedDecoderImplementatio), 0, 0, 1, 1},
+  {&__pyx_n_s_PUAComposedEncoderImplementatio, __pyx_k_PUAComposedEncoderImplementatio, sizeof(__pyx_k_PUAComposedEncoderImplementatio), 0, 0, 1, 1},
+  {&__pyx_n_s_JamoComposingDecoderImplementationOn, __pyx_k_JamoComposingDecoderImplementationOn, sizeof(__pyx_k_JamoComposingDecoderImplementationOn), 0, 0, 1, 1},
+  {&__pyx_n_s_PUADecomposedDecoderImplementat, __pyx_k_PUADecomposedDecoderImplementat, sizeof(__pyx_k_PUADecomposedDecoderImplementat), 0, 0, 1, 1},
+  {&__pyx_n_s_PUADecomposedEncoderImplementat, __pyx_k_PUADecomposedEncoderImplementat, sizeof(__pyx_k_PUADecomposedEncoderImplementat), 0, 0, 1, 1},
+  {&__pyx_n_s_JamoDecomposingEncoderImplementation, __pyx_k_JamoDecomposingEncoderImplementation, sizeof(__pyx_k_JamoDecomposingEncoderImplementation), 0, 0, 1, 1},
   {&__pyx_n_s_JamoDecoderImplementationOnCytho, __pyx_k_JamoDecoderImplementationOnCytho, sizeof(__pyx_k_JamoDecoderImplementationOnCytho), 0, 0, 1, 1},
   {&__pyx_n_s_JamoEncoderImplementationOnCytho, __pyx_k_JamoEncoderImplementationOnCytho, sizeof(__pyx_k_JamoEncoderImplementationOnCytho), 0, 0, 1, 1},
   {&__pyx_n_s_MemoryError, __pyx_k_MemoryError, sizeof(__pyx_k_MemoryError), 0, 0, 1, 1},
@@ -5413,33 +5413,33 @@ static int __Pyx_modinit_type_init_code(void) {
   if (PyObject_SetAttr(__pyx_m, __pyx_n_s_JamoDecoderImplementationOnCytho, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  __pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoDecoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_ComposedJamoDecoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PUAComposedDecoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_PUAComposedDecoderImplementationOnCython;
+  __pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoDecoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_DecomposedJamoDecoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PUADecomposedDecoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_PUADecomposedDecoderImplementationOnCython;
+  __pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposingDecoderImplementationOn, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_ComposingDecoderImplementationOnCython;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_JamoComposingDecoderImplementationOn, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCython;
   if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
   __pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
@@ -5448,33 +5448,33 @@ static int __Pyx_modinit_type_init_code(void) {
   if (PyObject_SetAttr(__pyx_m, __pyx_n_s_JamoEncoderImplementationOnCytho, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
   __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  __pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ComposedJamoEncoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_ComposedJamoEncoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PUAComposedEncoderImplementatio, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_PUAComposedEncoderImplementationOnCython;
+  __pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposedJamoEncoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_DecomposedJamoEncoderImplementationOnCython;
-  __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
-  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
-  __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PUADecomposedEncoderImplementat, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_PUADecomposedEncoderImplementationOnCython;
+  __pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython.tp_base = __pyx_ptype_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython;
+  if (PyType_Ready(&__pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython.tp_dictoffset && __pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_DecomposingEncoderImplementation, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
-  __pyx_ptype_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_DecomposingEncoderImplementationOnCython;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_JamoDecomposingEncoderImplementation, (PyObject *)&__pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_ptype_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython = &__pyx_type_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCython;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;

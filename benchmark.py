@@ -23,12 +23,12 @@ import io
 import platform
 import time
 
-from hypua2jamo.decoder import ComposedJamoDecoderImplementationOnPurePython  # noqa
-from hypua2jamo.decoder import ComposedJamoDecoderImplementationOnCFFI  # noqa
-from hypua2jamo._cython import ComposedJamoDecoderImplementationOnCython  # noqa
-from hypua2jamo.encoder import ComposedJamoEncoderImplementationOnPurePython  # noqa
-from hypua2jamo.encoder import ComposedJamoEncoderImplementationOnCFFI  # noqa
-from hypua2jamo._cython import ComposedJamoEncoderImplementationOnCython  # noqa
+from hypua2jamo.decoder import PUAComposedDecoderImplementationOnPurePython  # noqa
+from hypua2jamo.decoder import PUAComposedDecoderImplementationOnCFFI  # noqa
+from hypua2jamo._cython import PUAComposedDecoderImplementationOnCython  # noqa
+from hypua2jamo.encoder import PUAComposedEncoderImplementationOnPurePython  # noqa
+from hypua2jamo.encoder import PUAComposedEncoderImplementationOnCFFI  # noqa
+from hypua2jamo._cython import PUAComposedEncoderImplementationOnCython  # noqa
 
 
 class Fixtures(object):
@@ -93,9 +93,9 @@ def main():
 
     with io.open(filename, 'w', encoding='utf-8') as fp:
         decoder_classes = [
-            ComposedJamoDecoderImplementationOnPurePython,
-            ComposedJamoDecoderImplementationOnCFFI,
-            ComposedJamoDecoderImplementationOnCython,
+            PUAComposedDecoderImplementationOnPurePython,
+            PUAComposedDecoderImplementationOnCFFI,
+            PUAComposedDecoderImplementationOnCython,
         ]
         for decoder_class in decoder_classes:
             for chunk_size in chunk_sizes:
@@ -129,9 +129,9 @@ def main():
                 ))
 
         encoder_classes = [
-            ComposedJamoEncoderImplementationOnPurePython,
-            ComposedJamoEncoderImplementationOnCFFI,
-            ComposedJamoEncoderImplementationOnCython,
+            PUAComposedEncoderImplementationOnPurePython,
+            PUAComposedEncoderImplementationOnCFFI,
+            PUAComposedEncoderImplementationOnCython,
         ]
         for encoder_class in encoder_classes:
             for chunk_size in chunk_sizes:
