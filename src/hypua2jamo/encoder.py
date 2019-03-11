@@ -47,8 +47,9 @@ except NameError:
     # for Python 3
     unichr = chr
 
-pua_groups_length_struct = Struct('<I')
-group_entry_struct = Struct('<HH')
+pua_groups_length_struct = Struct('<H')
+group_entry_struct = Struct('<H')
+mapping_struct = Struct('<HH')
 jamo_length_struct = Struct('<H')
 jamo_struct = Struct('<H')
 
@@ -63,25 +64,34 @@ def read_struct(fp, struct):
 def load_pack_fp(fp):
     pua_groups_length = read_struct(fp, pua_groups_length_struct)[0]
 
-    pua_groups = [
-        read_struct(fp, group_entry_struct)
+    grouplengths = [
+        read_struct(fp, group_entry_struct)[0]
         for i in range(0, pua_groups_length)
     ]
 
-    p2j_mapping = []
+    groups = []
+    targetidx = 0
+    for grouplen in grouplengths:
+        group = []
+        for i in range(0, grouplen):
+            source, targetlen = read_struct(fp, mapping_struct)
+            group.append((source, targetidx, targetlen))
+            targetidx += targetlen
+        pua_start = group[0][0]
+        pua_end = group[-1][0]
+        groups.append((pua_start, pua_end, group))
 
-    for pua_start, pua_end in pua_groups:
+    p2j_mapping = []
+    for pua_start, pua_end, group in groups:
         jamo_seq_list = []
-        for pua_code in range(pua_start, pua_end + 1):
-            jamo_code_list = []
-            jamo_length = read_struct(fp, jamo_length_struct)[0]
-            for i in range(jamo_length):
-                jamo_code = read_struct(fp, jamo_struct)[0]
-                jamo_code_list.append(jamo_code)
-            jamo_seq = ''.join(
-                unichr(jamo_code) for jamo_code in jamo_code_list
+        for mapping in group:
+            source, targetidx, targetlen = mapping
+            target_struct = Struct('<{}H'.format(targetlen))
+            target = read_struct(fp, target_struct)
+            target = ''.join(
+                unichr(jamo_code) for jamo_code in target
             )
-            jamo_seq_list.append(jamo_seq)
+            jamo_seq_list.append(target)
         p2j_mapping.append(
             (pua_start, pua_end, tuple(jamo_seq_list))
         )

@@ -80,7 +80,7 @@ class NodeFormatJSON(object):
         }
 
 
-_node_struct = Struct('<iHH')
+_node_struct = Struct('<hHH')
 
 
 def load_tree_fp(fp):
@@ -91,14 +91,16 @@ def load_tree_fp(fp):
     root.pua_char = None
     root.children = {}
 
-    index = 1
-    nodelist = [root]
-    paths = [(None, None)]
+    index = 0
+    nodelist = []
+    paths = []
     while True:
         data = fp.read(_node_struct.size)
         if len(data) == 0:
             break
-        jamo_code, pua_code, parent_id = _node_struct.unpack(data)
+        parent_id, jamo_code, pua_code = _node_struct.unpack(data)
+        if parent_id == -1:
+            parent_id = None
         jamo_char = unichr(jamo_code) if jamo_code else None
         pua_char = unichr(pua_code) if pua_code else None
 

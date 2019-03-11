@@ -53,6 +53,7 @@ jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==5.2.0    # via jupyter
 jupyter-core==4.4.0       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
 jupyter==1.0.0
+ktug-hanyang-pua==0.1.1
 markupsafe==1.0           # via jinja2
 mccabe==0.6.1             # via flake8
 mistune==0.8.3            # via nbconvert

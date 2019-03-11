@@ -128,3 +128,13 @@ test: requirements/test.txt cythonize
 test-report:
 	$(VENV) coverage xml
 	$(VENV) coverage html
+
+
+.PHONY: data
+data:
+	$(VENV) ktug-hanyang-pua -vvv -m table data/hypua2jamocomposed.txt	-F binary -o src/hypua2jamo/p2jc.bin
+	$(VENV) ktug-hanyang-pua -vvv -m table data/hypua2jamodecomposed.txt	-F binary -o src/hypua2jamo/p2jd.bin
+	$(VENV) ktug-hanyang-pua -vvv -m table data/jamocompose.map	-S	-F binary -o src/hypua2jamo/c2d.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/hypua2jamocomposed.txt	-F binary -o src/hypua2jamo/jc2p.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/hypua2jamodecomposed.txt	-F binary -o src/hypua2jamo/jd2p.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/jamocompose.map	-S	-F binary -o src/hypua2jamo/d2c.bin
