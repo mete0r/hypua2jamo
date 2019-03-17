@@ -19,7 +19,6 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
-from struct import Struct
 import io
 import sys
 
@@ -121,20 +120,24 @@ class Node(object):
         return repr(self.children)
 
 
-def mappings_to_tree(mappings):
-    root = Node()
-    root.jamo_seq = ()
-    for mapping in mappings:
-        pua_code = mapping.source[0]
-        jamo_codes = mapping.target
-        node = root
-        jamo_seq = []
-        for jamo_code in jamo_codes:
-            node = node.children.setdefault(jamo_code, Node())
-            jamo_seq.append(jamo_code)
-            node.jamo_seq = tuple(jamo_seq)
-        node.pua_code = pua_code
-    return root
+def nodelist_to_tree(nodelist):
+    tree = []
+
+    for link in nodelist:
+        node = Node()
+        node.pua_code = link.target
+        tree.append(node)
+
+        if link.parent >= 0:
+            parent = tree[link.parent]
+            parent.children[link.source] = node
+
+        if link.parent >= 0:
+            node.jamo_seq = parent.jamo_seq + (link.source,)
+        else:
+            node.jamo_seq = ()
+
+    return tree[0]
 
 
 def tree_bfs(root):
@@ -231,29 +234,6 @@ def tree_to_header(tree):
     yield '};'
 
 
-def tree_to_pack(tree):
-    nodelist = list(tree_bfs(tree))
-    assert nodelist[0] is tree
-    for index, node in enumerate(nodelist):
-        node.index = index
-
-    # jamo_code, pua_code, parent id
-    node_struct = Struct('<iHH')
-
-    # whole tree (except the root node)
-    for node in tree_bfs(tree):
-        parent_id = node.index
-        for jamo_char in sorted(node.children):
-            jamo_code = ord(jamo_char)
-            child = node.children[jamo_char]
-            pua_code = child.pua_code or 0
-            yield node_struct.pack(
-                jamo_code,
-                pua_code,
-                parent_id,
-            )
-
-
 def open_text_input(filename):
     if PY3:
         return io.open(filename, 'r', encoding='utf-8')
@@ -299,7 +279,7 @@ if __name__ == '__main__':
         for line in mapping_to_header('p2jc', p2jc_mappings):
             fp.write(line)
             fp.write('\n')
-    jc2p_tree = mappings_to_tree(p2jc_mappings)
+    jc2p_tree = nodelist_to_tree(jc2p_nodelist)
     with io.open('src/hypua2jamo-c/jc2p-tree.inc', 'wb') as fp:
         for line in tree_to_header(jc2p_tree):
             fp.write(line.encode('utf-8'))
@@ -316,7 +296,7 @@ if __name__ == '__main__':
         for line in mapping_to_header('p2jd', p2jd_mappings):
             fp.write(line)
             fp.write('\n')
-    jd2p_tree = mappings_to_tree(p2jd_mappings)
+    jd2p_tree = nodelist_to_tree(jd2p_nodelist)
     with io.open('src/hypua2jamo-c/jd2p-tree.inc', 'wb') as fp:
         for line in tree_to_header(jd2p_tree):
             fp.write(line.encode('utf-8'))
@@ -333,7 +313,7 @@ if __name__ == '__main__':
         for line in mapping_to_header('c2d', c2d_mappings):
             fp.write(line)
             fp.write('\n')
-    d2c_tree = mappings_to_tree(c2d_mappings)
+    d2c_tree = nodelist_to_tree(d2c_nodelist)
     with io.open('src/hypua2jamo-c/d2c-tree.inc', 'wb') as fp:
         for line in tree_to_header(d2c_tree):
             fp.write(line.encode('utf-8'))
