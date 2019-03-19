@@ -40,7 +40,6 @@ platform:
 
 install:
   - cmd: |
-      set
       cd
       cd c:\projects\hypua2jamo
       c:\python27\scripts\virtualenv .
