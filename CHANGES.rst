@@ -4,7 +4,7 @@ Changes
 0.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix wheel building for Python 3.5, 3.6 and 3.7.
 
 
 0.4.2 (2019-03-20)
