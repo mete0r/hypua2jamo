@@ -5,6 +5,7 @@ branches:
   only:
     - master
     - develop
+    - /\d+\.\d+\.\d+/
 
 clone_folder: c:\projects\hypua2jamo
 
