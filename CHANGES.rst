@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.1 (unreleased)
+0.4.1 (2019-03-20)
 ------------------
 
 - Release binary wheels.
