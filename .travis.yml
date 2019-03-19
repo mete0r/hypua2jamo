@@ -19,6 +19,14 @@ after_success:
 - coverage combine
 - coverage report
 - coveralls
+- echo [distutils]               > ~/.pypirc
+- echo index-servers = pypi     >> ~/.pypirc
+- echo [pypi]                   >> ~/.pypirc
+- echo username=mete0r          >> ~/.pypirc
+- echo password=$PYPIPASSWORD   >> ~/.pypirc
+- if [[ $TRAVIS_TAG ]]; then pip install twine; fi
+- if [[ $TRAVIS_TAG ]]; then python setup.py bdist_wheel; fi
+- if [[ $TRAVIS_TAG ]]; then twine upload dist/*.whl; fi
 deploy:
   provider: pypi
   twine_version: 1.13.0
@@ -30,3 +38,6 @@ deploy:
 cache: pip
 before_cache:
 - rm -f $HOME/.cache/pip/log/debug.log
+env:
+  global:
+    secure: BaDvppbzs10CcJTu0MTzsioFAl4fr1SY8iGkdCB6sfpaLQnQQ8eJvBwHbjeSLdanLPQwOv3MCkMKLT9NPC0dKhwiSo6ow+9GRAMK3td12zLntsJufAM7kCcS+fXzhxuaZSXolveLYKkASum+RZ0ldISnR2MUtxHUE15rZ1xSc9E=
