@@ -14,6 +14,8 @@ matrix:
     env: TOXENV=py37
   - python: pypy
     env: TOXENV=pypy
+    dist: xenial
+    sudo: true
 install:
 - pip install -U setuptools pip wheel "tox>=3.4.0" python-coveralls
 script:
