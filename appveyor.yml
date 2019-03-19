@@ -12,6 +12,11 @@ max_jobs: 2
 
 environment:
 
+  global:
+    TWINE_USERNAME: mete0r
+    TWINE_PASSWORD:
+      secure: HV3H4Fm8sm1lh5YU83vQBg==
+
   matrix:
     - TOXENV: py27
       python: 27
@@ -48,5 +53,7 @@ artifacts:
   - path: 'dist\*.whl'
     name: wheel
 
+deploy_script:
+  - ps: if ($env:APPVEYOR_REPO_TAG -eq $TRUE) { pip install twine; twine upload dist/*.whl }
 
-deploy: off
+deploy: on
