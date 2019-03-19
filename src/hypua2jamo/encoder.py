@@ -53,6 +53,9 @@ mapping_struct = Struct('<HH')
 jamo_length_struct = Struct('<H')
 jamo_struct = Struct('<H')
 
+ushort = Struct('<H')
+ushort_pair = Struct('<2H')
+
 
 def read_struct(fp, struct):
     data = fp.read(struct.size)
@@ -62,24 +65,24 @@ def read_struct(fp, struct):
 
 
 def load_pack_fp(fp):
-    pua_groups_length = read_struct(fp, pua_groups_length_struct)[0]
+    n_groups = read_struct(fp, ushort)[0]
 
-    grouplengths = [
-        read_struct(fp, group_entry_struct)[0]
-        for i in range(0, pua_groups_length)
+    groupheaders = [
+        read_struct(fp, ushort_pair)
+        for i in range(0, n_groups)
     ]
 
     groups = []
     targetidx = 0
-    for grouplen in grouplengths:
+    for source_start, grouplength in groupheaders:
+        source_end = source_start + grouplength - 1
         group = []
-        for i in range(0, grouplen):
-            source, targetlen = read_struct(fp, mapping_struct)
+        for i in range(0, grouplength):
+            source = source_start + i
+            targetlen = read_struct(fp, ushort)[0]
             group.append((source, targetidx, targetlen))
             targetidx += targetlen
-        pua_start = group[0][0]
-        pua_end = group[-1][0]
-        groups.append((pua_start, pua_end, group))
+        groups.append((source_start, source_end, group))
 
     p2j_mapping = []
     for pua_start, pua_end, group in groups:
