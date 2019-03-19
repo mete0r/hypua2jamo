@@ -3,7 +3,7 @@ image:
 
 branches:
   only:
-    - data2c
+    - develop
 
 clone_folder: c:\projects\hypua2jamo
 
