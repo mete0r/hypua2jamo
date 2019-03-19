@@ -21,6 +21,7 @@ after_success:
 - coveralls
 deploy:
   provider: pypi
+  twine_version: 1.13.0
   user: mete0r
   password:
     secure: EeecjW4fW5Nq+Mo/IINrqDiTvCpRBKBkznjwIA7XUQ59ox1vE0kEdun05JOgwIdt9w9lWt8Thum/BmIfG2J/35SIj7Xrv7ans0UvbtOodaED5jb5v7peV6ug0EOV7wukFWVVvLXuIjMNXQV5NgKxqy2wy24NGLGB3F+dGHDUCr8=
