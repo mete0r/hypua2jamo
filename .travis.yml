@@ -27,14 +27,6 @@ after_success:
 - if [[ $TRAVIS_TAG ]]; then pip install twine; fi
 - if [[ $TRAVIS_TAG ]]; then python setup.py bdist_wheel; fi
 - if [[ $TRAVIS_TAG ]]; then twine upload dist/*.whl; fi
-deploy:
-  provider: pypi
-  twine_version: 1.13.0
-  user: mete0r
-  password:
-    secure: EeecjW4fW5Nq+Mo/IINrqDiTvCpRBKBkznjwIA7XUQ59ox1vE0kEdun05JOgwIdt9w9lWt8Thum/BmIfG2J/35SIj7Xrv7ans0UvbtOodaED5jb5v7peV6ug0EOV7wukFWVVvLXuIjMNXQV5NgKxqy2wy24NGLGB3F+dGHDUCr8=
-  on:
-    tags: true
 cache: pip
 before_cache:
 - rm -f $HOME/.cache/pip/log/debug.log
