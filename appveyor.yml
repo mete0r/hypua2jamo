@@ -25,6 +25,15 @@ environment:
     - TOXENV: py34
       python: 34
       ccompiler: ccompiler-winsdk71.cmd
+    - TOXENV: py35
+      python: 34
+      ccompiler: ccompiler-winsdk71.cmd
+    - TOXENV: py36
+      python: 34
+      ccompiler: ccompiler-winsdk71.cmd
+    - TOXENV: py37
+      python: 34
+      ccompiler: ccompiler-winsdk71.cmd
 
 platform:
   - x86
