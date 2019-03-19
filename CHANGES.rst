@@ -5,3 +5,4 @@ Changes
 -----------------------
 
 - Modernize development environment.
+- encoder / decoder
