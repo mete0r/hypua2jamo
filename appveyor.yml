@@ -1,0 +1,51 @@
+image:
+  - Visual Studio 2015
+
+branches:
+  only:
+    - data2c
+
+clone_folder: c:\projects\hypua2jamo
+
+max_jobs: 2
+
+environment:
+
+  matrix:
+    - TOXENV: py27
+      python: 27
+      ccompiler: ccompiler-vc90.cmd
+    - TOXENV: py34
+      python: 34
+      ccompiler: ccompiler-winsdk71.cmd
+
+platform:
+  - x86
+
+install:
+  - cmd: |
+      set
+      cd
+      cd c:\projects\hypua2jamo
+      c:\python27\scripts\virtualenv .
+      call scripts\activate
+      pip install -U setuptools pip wheel "tox>=3.4.0"
+
+build_script:
+  - cmd: |
+      CALL "%ccompiler%"
+      "C:\\Python%python%\\Scripts\\pip" install wheel
+      "C:\\Python%python%\\python" setup.py bdist_wheel
+
+test_script:
+  - cmd: |
+      CALL "%ccompiler%"
+      tox
+      type .benchmark.csv.*
+
+artifacts:
+  - path: 'dist\*.whl'
+    name: wheel
+
+
+deploy: off

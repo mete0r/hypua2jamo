@@ -13,7 +13,7 @@ backports-abc==0.5        # via tornado
 backports.shutil-get-terminal-size==1.0.0  # via ipython
 bleach==2.1.4             # via nbconvert, readme-renderer
 certifi==2018.8.24        # via requests
-cffi==1.11.5              # via cmarkgfm
+cffi==1.11.5
 chardet==3.0.4            # via requests
 check-manifest==0.37
 click==6.7                # via pip-tools, sphinx-intl
@@ -22,15 +22,16 @@ colorama==0.3.9           # via zest.releaser
 coloredlogs==10.0
 configparser==3.5.0       # via entrypoints, flake8
 coverage==4.5.1
+cython==0.29.6
 decorator==4.3.0          # via ipython, traitlets
 defusedxml==0.5.0         # via nbconvert
-detox==0.15
+detox==0.18
 dnspython==1.15.0         # via eventlet
 docutils==0.14            # via pyroma, readme-renderer, restview, sphinx
 entrypoints==0.2.3        # via nbconvert
 enum34==1.1.6             # via eventlet, flake8, traitlets
 eventlet==0.24.1          # via detox
-first==2.0.1              # via pip-tools
+filelock==3.0.10          # via tox
 flake8==3.5.0
 funcsigs==1.0.2           # via pytest
 functools32==3.2.3.post2  # via jsonschema
@@ -52,6 +53,7 @@ jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==5.2.0    # via jupyter
 jupyter-core==4.4.0       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
 jupyter==1.0.0
+ktug-hanyang-pua==0.1.2
 markupsafe==1.0           # via jinja2
 mccabe==0.6.1             # via flake8
 mistune==0.8.3            # via nbconvert
@@ -62,10 +64,11 @@ nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
 notebook==5.6.0           # via jupyter, widgetsnbextension
 packaging==17.1           # via sphinx
 pandocfilters==1.4.2      # via nbconvert
+parsec==3.4
 pathlib2==2.3.2           # via ipython, pickleshare, pytest
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.4        # via ipython
-pip-tools==2.0.2
+pip-tools==3.4.0
 pkginfo==1.4.2            # via twine
 pluggy==0.7.1             # via pytest, tox
 prometheus-client==0.3.1  # via notebook
@@ -101,8 +104,9 @@ sphinx==1.8.1
 sphinxcontrib-websupport==1.1.0  # via sphinx
 terminado==0.8.1          # via notebook
 testpath==0.3.1           # via nbconvert
+toml==0.10.0              # via tox
 tornado==5.1              # via ipykernel, jupyter-client, notebook, terminado
-tox==3.2.1
+tox==3.6.1
 tqdm==4.25.0              # via twine
 traitlets==4.3.2          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
 twine==1.11.0             # via zest.releaser

@@ -106,8 +106,35 @@ bootstrap-virtualenv.py: requirements.txt bootstrap-virtualenv.in
 notebook:
 	$(VENV)	jupyter notebook --notebook-dir=notebooks
 
+.PHONY: cythonize
+cythonize:	src/hypua2jamo/_cython2.c \
+		src/hypua2jamo/_cython3.c
+
+src/hypua2jamo/_cython2.c: src/hypua2jamo/_cython.pyx
+	$(VENV) cython $< -o $@ -2
+src/hypua2jamo/_cython3.c: src/hypua2jamo/_cython.pyx
+	$(VENV) cython $< -o $@ -3
+
 .PHONY: test
-test: requirements/test.txt
+test: requirements/test.txt cythonize
 	$(VENV) detox -e py27,py34,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report
+	@cat	.benchmark.csv.* >	build/benchmark.csv
+	@rm  -f	.benchmark.csv.*
+	@cat 				build/benchmark.csv
+
+.PHONY: test-report
+test-report:
+	$(VENV) coverage xml
+	$(VENV) coverage html
+
+
+.PHONY: data
+data:
+	$(VENV) ktug-hanyang-pua -vvv -m table data/hypua2jamocomposed.txt	-F binary -o src/hypua2jamo/p2jc.bin
+	$(VENV) ktug-hanyang-pua -vvv -m table data/hypua2jamodecomposed.txt	-F binary -o src/hypua2jamo/p2jd.bin
+	$(VENV) ktug-hanyang-pua -vvv -m table data/jamocompose.map	-S	-F binary -o src/hypua2jamo/c2d.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/hypua2jamocomposed.txt	-F binary -o src/hypua2jamo/jc2p.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/hypua2jamodecomposed.txt	-F binary -o src/hypua2jamo/jd2p.bin
+	$(VENV) ktug-hanyang-pua -vvv -m tree data/jamocompose.map	-S	-F binary -o src/hypua2jamo/d2c.bin

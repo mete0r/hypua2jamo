@@ -18,9 +18,16 @@
 # along with hypua2jamo.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import absolute_import
 from contextlib import contextmanager
+from distutils.command.build import build as _build
+from distutils.errors import CCompilerError
+from distutils.errors import DistutilsExecError
+from distutils.errors import DistutilsPlatformError
 import io
 import os.path
 import re
+import shutil
+import subprocess
+import sys
 
 
 def setup_dir(f):
@@ -102,13 +109,22 @@ setup_info = {
     },
     'package_data': {
         'hypua2jamo': [
-            '*.pickle',
+            'c2d.bin',
+            'd2c.bin',
+            'jc2p.bin',
+            'jd2p.bin',
+            'p2jc.bin',
+            'p2jd.bin',
         ],
     },
+    'cffi_modules': [
+        'hypua2jamo_build.py:ffi',
+    ],
     'install_requires': install_requires,
     'setup_requires': setup_requires,
     'entry_points': {
         'console_scripts': [
+            'hypua2jamo = hypua2jamo.cli:main',
         ],
     },
     'classifiers': [
@@ -136,9 +152,88 @@ setup_info = {
 }
 
 
+class build(_build):
+    def run(self):
+        BUILD_DIR = 'build/hypua2jamo-c'
+        if os.path.exists(BUILD_DIR):
+            shutil.rmtree(BUILD_DIR)
+        os.makedirs(BUILD_DIR)
+        cwd = os.getcwd()
+        os.chdir(BUILD_DIR)
+        try:
+            if sys.platform == 'win32':
+                subprocess.check_call([
+                    'cmake',
+                    '-G', 'NMake Makefiles',
+                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                    '../../src/hypua2jamo-c'
+                ])
+                subprocess.check_call(['nmake'])
+            else:
+                subprocess.check_call([
+                    'cmake',
+                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                    '../../src/hypua2jamo-c',
+                ])
+                subprocess.check_call(['make'])
+        finally:
+            os.chdir(cwd)
+        _build.run(self)
+
+
 @setup_dir
 def main():
     setuptools = import_setuptools()
+    from setuptools.extension import Extension
+    from setuptools.command.build_ext import build_ext
+
+    class optional_build_ext(build_ext):
+        '''
+        This class subclasses build_ext and allows
+        the building of C extensions to fail.
+        '''
+        def run(self):
+            try:
+                build_ext.run(self)
+            except DistutilsPlatformError as e:
+                self._unavailable(e)
+
+        def build_extension(self, ext):
+            try:
+                build_ext.build_extension(self, ext)
+            except (CCompilerError, DistutilsExecError, OSError) as e:
+                self._unavailable(e)
+
+        def _unavailable(self, e):
+            print('*' * 80)
+            print(
+                'WARNING: An optional code optimization (C extension) '
+                'could not be compiled. Optimization for this package '
+                'will not be available!'
+            )
+            print()
+            print(e)
+            print('*' * 80)
+
+    setup_info['cmdclass'] = {
+        'build': build,
+        'build_ext': optional_build_ext,
+    }
+
+    if sys.platform == 'win32':
+        library = 'build/hypua2jamo-c/HanyangPUA.lib'
+    else:
+        library = 'build/hypua2jamo-c/libHanyangPUA.a'
+
+    setup_info['ext_modules'] = [
+        Extension('hypua2jamo._cython', [
+            'src/hypua2jamo/_cython' + str(sys.version_info.major) + '.c'
+        ], include_dirs=[
+            'src/hypua2jamo-c',
+        ], extra_objects=[
+            library,
+        ])
+    ]
     setuptools.setup(**setup_info)
 
 
