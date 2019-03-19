@@ -1,0 +1,5 @@
+#cmakedefine HAVE_INTTYPES_H
+#cmakedefine TYPESIZE_LONG    @TYPESIZE_LONG@
+#cmakedefine TYPESIZE_INT     @TYPESIZE_INT@
+#cmakedefine TYPESIZE_SHORT   @TYPESIZE_SHORT@
+#cmakedefine TYPESIZE_WCHAR_T @TYPESIZE_WCHAR_T@
