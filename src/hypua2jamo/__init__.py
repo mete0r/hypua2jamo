@@ -47,3 +47,17 @@ def translate(pua, composed=True):
         JamoEncoder = PUADecomposedEncoder
     encoder = JamoEncoder()
     return encoder.encode(pua, final=True)
+
+
+def codes2unicode(codes, composed=True):
+    ''' Convert Hanyang-PUA code iterable to Syllable-Initial-Peak-Final
+    encoded unicode string.
+
+    :param codes:
+        an iterable of Hanyang-PUA code
+    :param composed:
+        the result should be composed as much as possible (default True)
+    :return: Syllable-Initial-Peak-Final encoded unicode string
+    '''
+    pua = u''.join(unichr(code) for code in codes)
+    return translate(pua, composed=composed)

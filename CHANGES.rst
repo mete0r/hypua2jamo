@@ -4,7 +4,7 @@ Changes
 0.4.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Reintroduce codes2unicode() for backward compatibility.
 
 
 0.4.3 (2019-03-20)

@@ -74,6 +74,29 @@ class TranslateTest(TestCase):
             jamo_string,
         )
 
+    def test_codes2unicode_composed(self):
+        from hypua2jamo import codes2unicode
+
+        jamo_string = codes2unicode(
+            list(ord(ch) for ch in Fixtures.HunMinPreface.pua_string),
+        )
+        self.assertEqual(
+            Fixtures.HunMinPreface.composed_jamo_string,
+            jamo_string,
+        )
+
+    def test_codes2unicode_decomposed(self):
+        from hypua2jamo import codes2unicode
+
+        jamo_string = codes2unicode(
+            list(ord(ch) for ch in Fixtures.HunMinPreface.pua_string),
+            composed=False
+        )
+        self.assertEqual(
+            Fixtures.HunMinPreface.decomposed_jamo_string,
+            jamo_string,
+        )
+
 
 class CFFITest(TestCase):
 
