@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.4 (unreleased)
+0.4.4 (2019-03-21)
 ------------------
 
 - Reintroduce codes2unicode() for backward compatibility.
