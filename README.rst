@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmete0r%2Fhypua2jamo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmete0r%2Fhypua2jamo?ref=badge_shield)
+
 hypua2jamo
 ==========
 
@@ -64,3 +66,7 @@ Disclosure
 
 This work is based on `KTUG <http://www.ktug.or.kr>`_
 `Hanyang PUA Table Project <http://faq.ktug.or.kr/faq/HanyangPuaTableProject>`_.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmete0r%2Fhypua2jamo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmete0r%2Fhypua2jamo?ref=badge_large)
