@@ -47,7 +47,7 @@ ipykernel==4.9.0          # via ipywidgets, jupyter, jupyter-console, notebook, 
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==5.8.0            # via ipykernel, ipywidgets, jupyter-console
 ipywidgets==7.4.1         # via jupyter
-jinja2==2.10              # via nbconvert, notebook, sphinx
+jinja2==2.10.1            # via nbconvert, notebook, sphinx
 jsonschema==2.6.0         # via nbformat
 jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==5.2.0    # via jupyter
