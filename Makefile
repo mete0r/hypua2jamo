@@ -117,9 +117,10 @@ src/hypua2jamo/_cython3.c: src/hypua2jamo/_cython.pyx
 
 .PHONY: test
 test: requirements/test.txt cythonize
-	$(VENV) detox -e py27,py34,pypy
+	$(VENV) detox -e py27,py37,pypy
 	$(VENV) coverage combine
 	$(VENV) coverage report
+	@mkdir -p build
 	@cat	.benchmark.csv.* >	build/benchmark.csv
 	@rm  -f	.benchmark.csv.*
 	@cat 				build/benchmark.csv
