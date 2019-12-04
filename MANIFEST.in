@@ -10,6 +10,8 @@ include buildout.cfg
 include ccompiler-*.cmd
 include examples/*.txt
 include hypua2jamo_build.py
+include .manylinux.sh
+include .manylinux-install.sh
 include requirements.in
 include requirements.txt
 include requirements/dev.in
