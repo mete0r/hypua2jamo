@@ -2,17 +2,19 @@ language: python
 env:
   global:
     secure: BaDvppbzs10CcJTu0MTzsioFAl4fr1SY8iGkdCB6sfpaLQnQQ8eJvBwHbjeSLdanLPQwOv3MCkMKLT9NPC0dKhwiSo6ow+9GRAMK3td12zLntsJufAM7kCcS+fXzhxuaZSXolveLYKkASum+RZ0ldISnR2MUtxHUE15rZ1xSc9E=
-python:
-  - 2.7
-  - 3.5
-  - 3.6
-  - 3.7
-  - 3.8
-  - pypy
-  - pypy3
 
 jobs:
   include:
+    - python: '2.7'
+      env: TOXENV=py27
+    - python: '3.5'
+      env: TOXENV=py35
+    - python: '3.6'
+      env: TOXENV=py36
+    - python: '3.7'
+      env: TOXENV=py37
+      dist: xenial
+      sudo: true
     - name: 64-bit manylinux wheels (all Pythons)
       services: docker
       env: DOCKER_IMAGE=quay.io/pypa/manylinux2010_x86_64
