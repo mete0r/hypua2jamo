@@ -27,28 +27,28 @@ jobs:
 before_install:
 
 install:
-- pip install -U setuptools pip wheel "tox>=3.4.0"
+  - pip install -U setuptools pip wheel "tox>=3.4.0"
 
 script:
-- env | sort
-- python --version
-- python setup.py bdist_wheel
-- tox
-- cat .benchmark.csv.*
+  - env | sort
+  - python --version
+  - python setup.py bdist_wheel
+  - tox
+  - cat .benchmark.csv.*
 
 after_success:
-- coverage combine
-- coverage report
-- coveralls
-- echo [distutils]               > ~/.pypirc
-- echo index-servers = pypi     >> ~/.pypirc
-- echo [pypi]                   >> ~/.pypirc
-- echo username=mete0r          >> ~/.pypirc
-- echo password=$PYPIPASSWORD   >> ~/.pypirc
-- if [[ $TRAVIS_TAG ]]; then pip install twine; fi
-- if [[ $TRAVIS_TAG ]]; then python setup.py bdist_wheel; fi
-- if [[ $TRAVIS_TAG ]]; then echo twine upload dist/*.whl; fi
-- if [[ $TRAVIS_TAG ]]; then echo upload wheel disabled - requires manylinux platform tag; fi
+  - coverage combine
+  - coverage report
+  - coveralls
+  - echo [distutils]               > ~/.pypirc
+  - echo index-servers = pypi     >> ~/.pypirc
+  - echo [pypi]                   >> ~/.pypirc
+  - echo username=mete0r          >> ~/.pypirc
+  - echo password=$PYPIPASSWORD   >> ~/.pypirc
+  - if [[ $TRAVIS_TAG ]]; then pip install twine; fi
+  - if [[ $TRAVIS_TAG ]]; then python setup.py bdist_wheel; fi
+  - if [[ $TRAVIS_TAG ]]; then echo twine upload dist/*.whl; fi
+  - if [[ $TRAVIS_TAG ]]; then echo upload wheel disabled - requires manylinux platform tag; fi
 cache: pip
 before_cache:
-- rm -f $HOME/.cache/pip/log/debug.log
+  - rm -f $HOME/.cache/pip/log/debug.log
