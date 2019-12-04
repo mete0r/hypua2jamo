@@ -22,7 +22,7 @@ jobs:
       services: docker
       env: DOCKER_IMAGE=quay.io/pypa/manylinux2010_i686 PRE_CMD=linux32
       install: docker pull $DOCKER_IMAGE
-      script bash .manylinux.sh
+      script: bash .manylinux.sh
 
 before_install:
 
