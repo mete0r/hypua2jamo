@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 2.8.12.2)
 project (HanyangPUA)
 add_library(HanyangPUA STATIC c2d.cpp p2jc.cpp d2c.c p2jd.cpp jx2p.cpp jc2p.c jd2p.c)
 set_property(TARGET HanyangPUA PROPERTY POSITION_INDEPENDENT_CODE ON)

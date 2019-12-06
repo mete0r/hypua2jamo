@@ -47,10 +47,14 @@ after_success:
   - echo [pypi]                   >> ~/.pypirc
   - echo username=mete0r          >> ~/.pypirc
   - echo password=$PYPIPASSWORD   >> ~/.pypirc
-  - if [[ $TRAVIS_TAG ]]; then pip install twine; fi
-  - if [[ $TRAVIS_TAG ]]; then python setup.py bdist_wheel; fi
-  - if [[ $TRAVIS_TAG ]]; then echo twine upload dist/*.whl; fi
-  - if [[ $TRAVIS_TAG ]]; then echo upload wheel disabled - requires manylinux platform tag; fi
+  - |
+    if [[ -n "DOCKER_IMAGE" ]]; then
+      pip install twine
+      twine check dist/hypua2jamo-*manylinux*
+      if [[ $TRAVIS_TAG ]]; then
+        twine upload --skip-existing dist/hypua2jamo-*manylinux*
+      fi
+    fi
 cache: pip
 before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log

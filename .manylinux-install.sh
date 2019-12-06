@@ -2,20 +2,24 @@
 
 set -e -x
 
+cd /io/
+
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    if [[ "${PYBIN}" == *"cp27"* ]] || \
+    if \
+#      [[ "${PYBIN}" == *"cp27"* ]] || \
        [[ "${PYBIN}" == *"cp35"* ]] || \
        [[ "${PYBIN}" == *"cp36"* ]] || \
        [[ "${PYBIN}" == *"cp37"* ]] || \
        [[ "${PYBIN}" == *"cp38"* ]]; then
-        "${PYBIN}/pip" install -e /io/
-        "${PYBIN}/pip" wheel /io/ -w wheelhouse/
+        "${PYBIN}/python" setup.py bdist_wheel
         rm -rf /io/build /io/*.egg-info
     fi
 done
 
+ls -l /io/dist/
+
 # Bundle external shared libraries into the wheels
-for whl in wheelhouse/zope.interface*.whl; do
-    auditwheel repair "$whl" -w /io/wheelhouse/
+for whl in /io/dist/hypua2jamo-*.whl; do
+    auditwheel repair "$whl" -w /io/dist/
 done
