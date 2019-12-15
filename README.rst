@@ -20,22 +20,16 @@ Example
 Installation
 ------------
 
-from `pypi <http://pypi.python.org/pypi/hypua2jamo>`_::
+from `PyPI <http://pypi.python.org/pypi/hypua2jamo>`_::
 
    pip install hypua2jamo
 
-from `github <https://github.com/mete0r/hypua2jamo>`_::
-
-   git clone git://github.com/mete0r/hypua2jamo.git
-   cd hypua2jamo
-   python bootstrap.py
-   bin/buildout
-   python data2py.py
 
 Requirements
 ------------
 
-- Python 2.7, Python 3.4
+- Python 2.7
+- Python 3.5 or above.
 
 Documentation & Development
 ---------------------------
