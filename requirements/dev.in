@@ -7,8 +7,6 @@ ktug-hanyang-pua == 0.1.2
 notebook >= 5.7.8
 parsec >= 3.4
 pip-tools >= 3.4.0
-pyside
-qtconsole >= 4.3.1
 restview >= 2.9.1
 tox >= 3.4.0
 detox >= 0.18
