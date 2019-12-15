@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.5 (unreleased)
+0.4.5 (2019-12-15)
 ------------------
 
 - Fix wheel buildling for MS Windows.
