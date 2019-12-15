@@ -60,7 +60,7 @@ ifeq (1,$(offline))
 PIP_NO_INDEX:=--no-index
 endif
 
-FIND_LINKS:=-f virtualenv_support
+FIND_LINKS:=
 VENV	:= . bin/activate &&
 
 
