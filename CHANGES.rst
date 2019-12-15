@@ -4,7 +4,8 @@ Changes
 0.4.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix wheel buildling for MS Windows.
+- Drop support for Python 3.4
 
 
 0.4.4 (2019-03-21)
