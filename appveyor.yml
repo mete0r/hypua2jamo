@@ -55,11 +55,9 @@ build_script:
 
 test_script:
   - cmd: |
-      CALL "%ccompiler%"
       "C:\\Python%python%\\Scripts\\pip" install -r requirements\test.txt
       "C:\\Python%python%\\Scripts\\pip" install --no-deps .
       "C:\\Python%python%\\Scripts\\coverage" run --parallel -m pytest tests
-      type .benchmark.csv.*
 
 artifacts:
   - path: 'dist\*.whl'
