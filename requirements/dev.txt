@@ -4,119 +4,94 @@
 #
 #    pip-compile -f virtualenv_support -o requirements/dev.txt requirements/setup.in requirements/dev.in requirements/docs.in requirements/lint.in requirements/test.in requirements/site.in requirements.in
 #
-alabaster==0.7.11
-argcomplete==1.9.4
-atomicwrites==1.2.1       # via pytest
-attrs==18.2.0             # via pytest
-babel==2.6.0
+argcomplete==1.9.4        # via -r dev.in
+babel==2.6.0              # via -r dev.in
 backports-abc==0.5        # via tornado
 backports.shutil-get-terminal-size==1.0.0  # via ipython
-bleach==2.1.4             # via nbconvert, readme-renderer
+bleach==3.1.2             # via nbconvert, readme-renderer
 certifi==2018.8.24        # via requests
-cffi==1.11.5
+cffi==1.11.5              # via cmarkgfm
 chardet==3.0.4            # via requests
-check-manifest==0.37
-click==6.7                # via pip-tools, sphinx-intl
+click==6.7                # via pip-tools
 cmarkgfm==0.4.2           # via readme-renderer
 colorama==0.3.9           # via zest.releaser
-coloredlogs==10.0
-configparser==3.5.0       # via entrypoints, flake8
-coverage==4.5.1
-cython==0.29.6
+coloredlogs==10.0         # via -r dev.in
+configparser==3.5.0       # via entrypoints
+cython==0.29.6            # via -r dev.in
 decorator==4.3.0          # via ipython, traitlets
 defusedxml==0.5.0         # via nbconvert
-detox==0.18
+detox==0.18               # via -r dev.in
 dnspython==1.15.0         # via eventlet
-docutils==0.14            # via pyroma, readme-renderer, restview, sphinx
+docutils==0.14            # via readme-renderer, restview
 entrypoints==0.2.3        # via nbconvert
-enum34==1.1.6             # via eventlet, flake8, traitlets
+enum34==1.1.6             # via eventlet, traitlets
 eventlet==0.24.1          # via detox
 filelock==3.0.10          # via tox
-flake8==3.5.0
-funcsigs==1.0.2           # via pytest
 functools32==3.2.3.post2  # via jsonschema
 future==0.16.0            # via readme-renderer
 futures==3.2.0            # via tornado
 greenlet==0.4.15          # via eventlet
-html5lib==1.0.1           # via bleach
 humanfriendly==4.16.1     # via coloredlogs
 idna==2.7                 # via requests
-imagesize==1.1.0          # via sphinx
 ipaddress==1.0.22         # via notebook
 ipykernel==4.9.0          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==5.8.0            # via ipykernel, ipywidgets, jupyter-console
 ipywidgets==7.4.1         # via jupyter
-jinja2==2.10.1            # via nbconvert, notebook, sphinx
+jinja2==2.10.1            # via nbconvert, notebook
 jsonschema==2.6.0         # via nbformat
 jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==5.2.0    # via jupyter
 jupyter-core==4.4.0       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
-jupyter==1.0.0
-ktug-hanyang-pua==0.1.2
+jupyter==1.0.0            # via -r dev.in
+ktug-hanyang-pua==0.1.2   # via -r dev.in
 markupsafe==1.0           # via jinja2
-mccabe==0.6.1             # via flake8
 mistune==0.8.3            # via nbconvert
 monotonic==1.5            # via eventlet, humanfriendly
-more-itertools==4.3.0     # via pytest
 nbconvert==5.4.0          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-notebook==5.7.8
-packaging==17.1           # via sphinx
+notebook==5.7.8           # via -r dev.in, jupyter, widgetsnbextension
 pandocfilters==1.4.2      # via nbconvert
-parsec==3.4
-pathlib2==2.3.2           # via ipython, pickleshare, pytest
+parsec==3.4               # via -r dev.in, ktug-hanyang-pua
+pathlib2==2.3.2           # via ipython, pickleshare
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.4        # via ipython
-pip-tools==3.4.0
+pip-tools==3.4.0          # via -r dev.in
 pkginfo==1.4.2            # via twine
-pluggy==0.7.1             # via pytest, tox
+pluggy==0.7.1             # via tox
 prometheus-client==0.3.1  # via notebook
 prompt-toolkit==1.0.15    # via ipython, jupyter-console
 ptyprocess==0.6.0         # via pexpect, terminado
-py==1.6.0                 # via detox, pytest, tox
-pycodestyle==2.3.1        # via flake8
+py==1.6.0                 # via detox, tox
 pycparser==2.18           # via cffi
-pyflakes==1.6.0           # via flake8
-pygments==2.2.0           # via ipython, jupyter-console, nbconvert, qtconsole, readme-renderer, restview, sphinx
-pyparsing==2.2.0          # via packaging
-pyroma==2.4
-pyside==1.2.4
-pytest==3.9.2
+pygments==2.2.0           # via ipython, jupyter-console, nbconvert, qtconsole, readme-renderer, restview
+pyside==1.2.4             # via -r dev.in
 python-dateutil==2.7.3    # via jupyter-client
 pytz==2018.5              # via babel
 pyzmq==17.1.2             # via jupyter-client, notebook
-qtconsole==4.4.1
+qtconsole==4.4.1          # via -r dev.in, jupyter
 readme-renderer==21.0     # via restview
-repoze.sphinx.autointerface==0.8
 requests-toolbelt==0.8.0  # via twine
-requests==2.20.0
-restview==2.9.1
+requests==2.20.0          # via requests-toolbelt, twine, zest.releaser
+restview==2.9.1           # via -r dev.in
 scandir==1.9.0            # via pathlib2
 send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
 singledispatch==3.4.0.3   # via tornado
-six==1.11.0               # via bleach, eventlet, html5lib, more-itertools, packaging, pathlib2, pip-tools, prompt-toolkit, pytest, python-dateutil, readme-renderer, singledispatch, sphinx, sphinx-intl, tox, traitlets, zest.releaser
-snowballstemmer==1.2.1    # via sphinx
-sphinx-argparse==0.2.2
-sphinx-intl==0.9.11
-sphinx==1.8.1
-sphinxcontrib-websupport==1.1.0  # via sphinx
+six==1.11.0               # via bleach, eventlet, pathlib2, pip-tools, prompt-toolkit, python-dateutil, readme-renderer, singledispatch, tox, traitlets, zest.releaser
 terminado==0.8.1          # via notebook
 testpath==0.3.1           # via nbconvert
 toml==0.10.0              # via tox
 tornado==5.1              # via ipykernel, jupyter-client, notebook, terminado
-tox==3.6.1
+tox==3.6.1                # via -r dev.in, detox
 tqdm==4.25.0              # via twine
 traitlets==4.3.2          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
 twine==1.11.0             # via zest.releaser
-typing==3.6.6             # via sphinx
 urllib3==1.24.2           # via requests
 virtualenv==16.0.0        # via tox
 wcwidth==0.1.7            # via prompt-toolkit
-webencodings==0.5.1       # via html5lib
-wheel==0.31.1
+webencodings==0.5.1       # via bleach
+wheel==0.31.1             # via -r dev.in
 widgetsnbextension==3.4.1  # via ipywidgets
-zc.buildout==2.12.2
-zest.releaser==6.15.2
-zope.interface==4.5.0     # via repoze.sphinx.autointerface
+zc.buildout==2.12.2       # via -r dev.in
+zest.releaser==6.15.2     # via -r dev.in
