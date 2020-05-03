@@ -31,8 +31,8 @@ environment:
     - TOXENV: py37
       python: 37
       ccompiler: ccompiler-winsdk71.cmd
-    - TOXENV: py37
-      python: 37
+    - TOXENV: py38
+      python: 38
       ccompiler: ccompiler-winsdk71.cmd
 
 platform:
