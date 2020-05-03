@@ -42,7 +42,7 @@ install:
   - cmd: |
       cd
       cd c:\projects\hypua2jamo
-      c:\python27\scripts\virtualenv .
+      c:\python38\scripts\virtualenv .
       call scripts\activate
       pip install -U setuptools pip wheel "tox>=3.4.0"
 
