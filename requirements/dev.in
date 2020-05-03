@@ -1,5 +1,6 @@
 argcomplete >= 1.9.4
 babel >= 2.6.0
+bleach >= 3.1.4
 coloredlogs >= 10.0
 cython >= 0.29.6
 jupyter
