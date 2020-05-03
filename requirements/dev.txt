@@ -4,36 +4,35 @@
 #
 #    pip-compile --output-file=requirements/dev.txt requirements.in requirements/dev.in requirements/docs.in requirements/lint.in requirements/setup.in requirements/site.in requirements/test.in
 #
-alabaster==0.7.12
-argcomplete==1.10.3
+alabaster==0.7.12         # via -r requirements/docs.in, sphinx
+argcomplete==1.10.3       # via -r requirements/dev.in
 attrs==19.3.0             # via jsonschema, pytest
-babel==2.7.0
+babel==2.7.0              # via -r requirements/dev.in, sphinx, sphinx-intl
 backcall==0.1.0           # via ipython
-bleach==3.1.0             # via nbconvert, readme-renderer
+bleach==3.1.5             # via -r requirements/dev.in, nbconvert, readme-renderer
 certifi==2019.11.28       # via requests
-cffi==1.13.2
+cffi==1.13.2              # via -r requirements.in, -r requirements/setup.in, -r requirements/test.in, cryptography
 chardet==3.0.4            # via requests
-check-manifest==0.40
+check-manifest==0.40      # via -r requirements/lint.in
 click==7.0                # via pip-tools, sphinx-intl
 colorama==0.4.3           # via zest.releaser
-coloredlogs==10.0
-coverage==5.0
+coloredlogs==10.0         # via -r requirements/dev.in
+coverage==5.0             # via -r requirements/test.in
 cryptography==2.8         # via secretstorage
-cython==0.29.14
+cython==0.29.14           # via -r requirements/dev.in
 decorator==4.4.1          # via ipython, traitlets
 defusedxml==0.6.0         # via nbconvert
-detox==0.19
+detox==0.19               # via -r requirements/dev.in
 dnspython==1.16.0         # via eventlet
 docutils==0.15.2          # via pyroma, readme-renderer, restview, sphinx
 entrypoints==0.3          # via flake8, nbconvert
 eventlet==0.25.1          # via detox
 filelock==3.0.12          # via tox
-flake8==3.7.9
+flake8==3.7.9             # via -r requirements/lint.in
 greenlet==0.4.15          # via eventlet
 humanfriendly==4.18       # via coloredlogs
 idna==2.8                 # via requests
 imagesize==1.1.0          # via sphinx
-importlib-metadata==1.3.0  # via jsonschema, keyring, pluggy, pytest, twine
 ipykernel==5.1.3          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==7.10.2           # via ipykernel, ipywidgets, jupyter-console
@@ -45,24 +44,24 @@ jsonschema==3.2.0         # via nbformat
 jupyter-client==5.3.4     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==6.0.0    # via jupyter
 jupyter-core==4.6.1       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
-jupyter==1.0.0
+jupyter==1.0.0            # via -r requirements/dev.in
 keyring==20.0.0           # via twine
-ktug-hanyang-pua==0.1.2
+ktug-hanyang-pua==0.1.2   # via -r requirements/dev.in
 markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8
 mistune==0.8.4            # via nbconvert
 monotonic==1.5            # via eventlet
-more-itertools==8.0.2     # via pytest, zipp
+more-itertools==8.0.2     # via pytest
 nbconvert==5.6.1          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-notebook==6.0.2
-packaging==19.2           # via pytest, sphinx
+notebook==6.0.2           # via -r requirements/dev.in, jupyter, widgetsnbextension
+packaging==19.2           # via bleach, pytest, sphinx
 pandocfilters==1.4.2      # via nbconvert
-parsec==3.5
+parsec==3.5               # via -r requirements/dev.in, ktug-hanyang-pua
 parso==0.5.2              # via jedi
 pexpect==4.7.0            # via ipython
 pickleshare==0.7.5        # via ipython
-pip-tools==4.3.0
+pip-tools==4.3.0          # via -r requirements/dev.in
 pkginfo==1.5.0.1          # via twine
 pluggy==0.13.1            # via pytest, tox
 prometheus-client==0.7.1  # via notebook
@@ -74,25 +73,25 @@ pycparser==2.19           # via cffi
 pyflakes==2.1.1           # via flake8
 pygments==2.5.2           # via ipython, jupyter-console, nbconvert, pyroma, qtconsole, readme-renderer, restview, sphinx
 pyparsing==2.4.5          # via packaging
-pyroma==2.6
+pyroma==2.6               # via -r requirements/lint.in
 pyrsistent==0.15.6        # via jsonschema
-pytest==5.3.2
+pytest==5.3.2             # via -r requirements/test.in
 python-dateutil==2.8.1    # via jupyter-client
 pytz==2019.3              # via babel
 pyzmq==18.1.1             # via jupyter-client, notebook
 qtconsole==4.6.0          # via jupyter
 readme-renderer==24.0     # via restview, twine
-repoze.sphinx.autointerface==0.8
+repoze.sphinx.autointerface==0.8  # via -r requirements/docs.in
 requests-toolbelt==0.9.1  # via twine
-requests==2.22.0
-restview==2.9.2
+requests==2.22.0          # via -r requirements/docs.in, requests-toolbelt, sphinx, twine, zest.releaser
+restview==2.9.2           # via -r requirements/dev.in
 secretstorage==3.1.1      # via keyring
 send2trash==1.5.0         # via notebook
 six==1.13.0               # via bleach, cryptography, eventlet, jsonschema, packaging, pip-tools, prompt-toolkit, pyrsistent, python-dateutil, readme-renderer, tox, traitlets, zest.releaser
 snowballstemmer==2.0.0    # via sphinx
-sphinx-argparse==0.2.5
-sphinx-intl==2.0.0
-sphinx==2.2.2
+sphinx-argparse==0.2.5    # via -r requirements/docs.in
+sphinx-intl==2.0.0        # via -r requirements/docs.in
+sphinx==2.2.2             # via -r requirements/docs.in, repoze.sphinx.autointerface, sphinx-argparse, sphinx-intl
 sphinxcontrib-applehelp==1.0.1  # via sphinx
 sphinxcontrib-devhelp==1.0.1  # via sphinx
 sphinxcontrib-htmlhelp==1.0.2  # via sphinx
@@ -103,7 +102,7 @@ terminado==0.8.3          # via notebook
 testpath==0.4.4           # via nbconvert
 toml==0.10.0              # via check-manifest, tox
 tornado==6.0.3            # via ipykernel, jupyter-client, notebook, terminado
-tox==3.6.1
+tox==3.6.1                # via -r requirements/dev.in, detox
 tqdm==4.40.2              # via twine
 traitlets==4.3.3          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
 twine==3.1.1              # via zest.releaser
@@ -111,11 +110,10 @@ urllib3==1.25.7           # via requests
 virtualenv==16.7.8        # via tox
 wcwidth==0.1.7            # via prompt-toolkit, pytest
 webencodings==0.5.1       # via bleach
-wheel==0.33.6
+wheel==0.33.6             # via -r requirements/dev.in
 widgetsnbextension==3.5.1  # via ipywidgets
-zc.buildout==2.13.2
-zest.releaser==6.19.1
-zipp==0.6.0               # via importlib-metadata
+zc.buildout==2.13.2       # via -r requirements/dev.in
+zest.releaser==6.19.1     # via -r requirements/dev.in
 zope.interface==4.7.1     # via repoze.sphinx.autointerface
 
 # The following packages are considered to be unsafe in a requirements file:
