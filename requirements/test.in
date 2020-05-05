@@ -1,3 +1,4 @@
 cffi >= 1.0.0
 coverage >= 4.5.1
-pytest >= 3.9.2
+more-itertools < 6
+pytest >= 3.9.2, < 5

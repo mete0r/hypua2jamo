@@ -7,6 +7,7 @@
 alabaster==0.7.12         # via -r requirements/docs.in, sphinx
 appdirs==1.4.3            # via virtualenv
 argcomplete==1.11.1       # via -r requirements/dev.in
+atomicwrites==1.4.0       # via pytest
 attrs==19.3.0             # via jsonschema, pytest
 babel==2.8.0              # via -r requirements/dev.in, sphinx, sphinx-intl
 backcall==0.1.0           # via ipython
@@ -18,7 +19,7 @@ check-manifest==0.42      # via -r requirements/lint.in
 click==7.1.2              # via pip-tools, sphinx-intl
 colorama==0.4.3           # via zest.releaser
 coloredlogs==14.0         # via -r requirements/dev.in
-coverage==5.1             # via -r requirements/test.in
+coverage==4.5.4           # via -r requirements/test.in
 cryptography==2.9.2       # via secretstorage
 cython==0.29.17           # via -r requirements/dev.in
 decorator==4.4.2          # via ipython, traitlets
@@ -48,7 +49,7 @@ ktug-hanyang-pua==0.1.2   # via -r requirements/dev.in
 markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8
 mistune==0.8.4            # via nbconvert
-more-itertools==8.2.0     # via pytest
+more-itertools==5.0.0     # via -r requirements/test.in, pytest
 nbconvert==5.6.1          # via jupyter, notebook
 nbformat==5.0.6           # via ipywidgets, nbconvert, notebook
 notebook==6.0.3           # via -r requirements/dev.in, jupyter, widgetsnbextension
@@ -73,7 +74,7 @@ pygments==2.6.1           # via ipython, jupyter-console, nbconvert, pyroma, qtc
 pyparsing==2.4.7          # via packaging
 pyroma==2.6               # via -r requirements/lint.in
 pyrsistent==0.16.0        # via jsonschema
-pytest==5.4.1             # via -r requirements/test.in
+pytest==4.6.9             # via -r requirements/test.in
 python-dateutil==2.8.1    # via jupyter-client
 pytz==2020.1              # via babel
 pyzmq==19.0.0             # via jupyter-client, notebook, qtconsole
@@ -86,7 +87,7 @@ requests==2.23.0          # via -r requirements/docs.in, requests-toolbelt, sphi
 restview==2.9.2           # via -r requirements/dev.in
 secretstorage==3.1.2      # via keyring
 send2trash==1.5.0         # via notebook
-six==1.14.0               # via bleach, cryptography, jsonschema, packaging, pip-tools, pyrsistent, python-dateutil, readme-renderer, tox, traitlets, virtualenv, zest.releaser
+six==1.14.0               # via bleach, cryptography, jsonschema, more-itertools, packaging, pip-tools, pyrsistent, pytest, python-dateutil, readme-renderer, tox, traitlets, virtualenv, zest.releaser
 snowballstemmer==2.0.0    # via sphinx
 sphinx-argparse==0.2.5    # via -r requirements/docs.in
 sphinx-intl==2.0.1        # via -r requirements/docs.in
