@@ -117,7 +117,7 @@ src/hypua2jamo/_cython3.c: src/hypua2jamo/_cython.pyx
 
 .PHONY: test
 test: requirements/test.txt cythonize
-	$(VENV) detox -e py27,py37,pypy
+	$(VENV) tox -e py38
 	$(VENV) coverage combine
 	$(VENV) coverage report
 	@mkdir -p build
