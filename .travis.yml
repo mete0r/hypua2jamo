@@ -15,6 +15,10 @@ jobs:
       env: TOXENV=py37
       dist: xenial
       sudo: true
+    - python: '3.8'
+      env: TOXENV=py38
+      dist: xenial
+      sudo: true
     - name: 64-bit manylinux wheels (all Pythons)
       services: docker
       env: DOCKER_IMAGE=quay.io/pypa/manylinux2010_x86_64
