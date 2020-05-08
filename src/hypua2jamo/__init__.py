@@ -20,7 +20,7 @@ import sys
 import logging
 
 
-__version__ = '0.4.6.dev0'
+__version__ = '0.5'
 
 
 logger = logging.getLogger(__name__)
