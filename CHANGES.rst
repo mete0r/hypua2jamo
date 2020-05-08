@@ -1,10 +1,10 @@
 Changes
 =======
 
-0.6 (unreleased)
+0.5.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Re-release for Windows wheels.
 
 
 0.5 (2020-05-08)
