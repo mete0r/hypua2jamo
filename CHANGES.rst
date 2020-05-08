@@ -1,8 +1,8 @@
 Changes
 =======
 
-0.5.1 (unreleased)
-----------------
+0.5.1 (2020-05-08)
+------------------
 
 - Re-release for Windows wheels.
 
