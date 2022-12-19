@@ -1,5 +1,5 @@
 image:
-  - Visual Studio 2015
+  - Visual Studio 2019
 
 branches:
   only:
@@ -19,18 +19,15 @@ environment:
       secure: HV3H4Fm8sm1lh5YU83vQBg==
 
   matrix:
-    - TOXENV: py27
-      python: 27
-      ccompiler: ccompiler-vc90.cmd
-    - TOXENV: py37
-      python: 37
-      ccompiler: ccompiler-winsdk71.cmd
-    - TOXENV: py38
-      python: 38
-      ccompiler: ccompiler-winsdk71.cmd
     - TOXENV: py39
       python: 39
-      ccompiler: ccompiler-winsdk71.cmd
+      ccompiler: ccompiler-winsdk10.cmd
+    - TOXENV: py310
+      python: 310
+      ccompiler: ccompiler-winsdk10.cmd
+    - TOXENV: py311
+      python: 311
+      ccompiler: ccompiler-winsdk10.cmd
 
 platform:
   - x86
@@ -39,22 +36,21 @@ install:
   - cmd: |
       cd
       cd c:\projects\hypua2jamo
-      c:\python38\scripts\virtualenv .
+      c:\python39\scripts\virtualenv .
       call scripts\activate
-      pip install -U setuptools pip wheel "tox>=3.4.0"
+      python -m pip install -U setuptools pip wheel "tox>=3.4.0"
 
 build_script:
   - cmd: |
       CALL "%ccompiler%"
-      "C:\\Python%python%\\Scripts\\pip" install wheel
+      "C:\\Python%python%\\python" -m pip install wheel
       "C:\\Python%python%\\python" setup.py bdist_wheel
       dir dist\\*.whl
 
 test_script:
   - cmd: |
-      "C:\\Python%python%\\Scripts\\pip" install -r requirements\test.txt
-      "C:\\Python%python%\\Scripts\\pip" install --no-deps .
-      "C:\\Python%python%\\Scripts\\coverage" run --parallel -m pytest tests
+      "C:\\Python%python%\\python" -m pip install -r requirements\test.txt
+      "C:\\Python%python%\\python" -m pip install --no-deps .
 
 artifacts:
   - path: 'dist\*.whl'
