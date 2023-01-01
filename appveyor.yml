@@ -27,12 +27,27 @@ environment:
       ccompiler: ccompiler-winsdk10.cmd
     - TOXENV: py39
       python: 39
+      plat: win32
+      ccompiler: ccompiler-winsdk10.cmd
+    - TOXENV: py39
+      python: 39-x64
+      plat: win-amd64
       ccompiler: ccompiler-winsdk10.cmd
     - TOXENV: py310
       python: 310
+      plat: win32
+      ccompiler: ccompiler-winsdk10.cmd
+    - TOXENV: py310
+      python: 310-x64
+      plat: win-amd64
       ccompiler: ccompiler-winsdk10.cmd
     - TOXENV: py311
       python: 311
+      plat: win32
+      ccompiler: ccompiler-winsdk10.cmd
+    - TOXENV: py311
+      python: 311-x64
+      plat: win-amd64
       ccompiler: ccompiler-winsdk10.cmd
 
 platform:
@@ -50,7 +65,7 @@ build_script:
   - cmd: |
       CALL "%ccompiler%"
       "C:\\Python%python%\\python" -m pip install wheel
-      "C:\\Python%python%\\python" setup.py bdist_wheel
+      "C:\\Python%python%\\python" setup.py build -p %plat% bdist_wheel
       dir dist\\*.whl
 
 test_script:
