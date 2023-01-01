@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements/lint.txt requirements/lint.in requirements/setup.in
 #
-cffi==1.14.0              # via -r requirements/setup.in
+cffi==1.15.1              # via -r requirements/setup.in
 check-manifest==0.42      # via -r requirements/lint.in
 docutils==0.16            # via pyroma
 entrypoints==0.3          # via flake8
