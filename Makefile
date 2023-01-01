@@ -61,7 +61,7 @@ PIP_NO_INDEX:=--no-index
 endif
 
 FIND_LINKS:=
-VENV	:= . bin/activate &&
+VENV	:= . venv/bin/activate &&
 
 
 .PHONY: all
@@ -117,7 +117,7 @@ src/hypua2jamo/_cython3.c: src/hypua2jamo/_cython.pyx
 
 .PHONY: test
 test: requirements/test.txt cythonize
-	$(VENV) tox -p 2 -e py27,py38
+	$(VENV) tox -p 2 -e py27,py39
 	$(VENV) coverage combine
 	$(VENV) coverage report
 	@mkdir -p build
