@@ -28,6 +28,9 @@ environment:
     - TOXENV: py38
       python: 38
       ccompiler: ccompiler-winsdk71.cmd
+    - TOXENV: py39
+      python: 39
+      ccompiler: ccompiler-winsdk71.cmd
 
 platform:
   - x86
