@@ -280,6 +280,11 @@ class BaseDecoderImplementationOnCFFI(IncrementalDecoder):
     def __init__(self, errors='strict'):
         IncrementalDecoder.__init__(self, errors)
 
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
+
         self.ffi = ffi = FFI()
         decoder_alloc_size = _cffi.hypua_decoder_alloc_size()
         decoder_alloc_array = array('b', b' ' * decoder_alloc_size)
@@ -382,6 +387,10 @@ class PUAComposedDecoderImplementationOnCFFI(
     '''
 
     def init_decoder_c_implementation(self, decoder_ptr):
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
         _cffi.hypua_decoder_init_jc2p(decoder_ptr)
 
 
@@ -394,6 +403,10 @@ class PUADecomposedDecoderImplementationOnCFFI(
     CFFI implementation.
     '''
     def init_decoder_c_implementation(self, decoder_ptr):
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
         _cffi.hypua_decoder_init_jd2p(decoder_ptr)
 
 
@@ -406,6 +419,10 @@ class JamoComposingDecoderImplementationOnCFFI(
     CFFI implementation.
     '''
     def init_decoder_c_implementation(self, decoder_ptr):
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
         _cffi.hypua_decoder_init_d2c(decoder_ptr)
 
 
