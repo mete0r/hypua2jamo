@@ -244,6 +244,11 @@ class PUAComposedEncoderImplementationOnCFFI(
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
+
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
@@ -268,6 +273,11 @@ class PUADecomposedEncoderImplementationOnCFFI(
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
 
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
+
         self._ffi = FFI()
 
         if _UNICODE_SIZE == 4:
@@ -291,6 +301,11 @@ class JamoDecomposingEncoderImplementationOnCFFI(
 
     def __init__(self, errors='strict'):
         IncrementalEncoder.__init__(self, errors)
+
+        if not cffi_available:
+            raise NotImplementedError(
+                'hypua2jamo._cffi is not available'
+            )
 
         self._ffi = FFI()
 
