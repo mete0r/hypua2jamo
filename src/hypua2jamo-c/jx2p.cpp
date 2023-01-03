@@ -156,7 +156,7 @@ int hypua_decoder_calcsize_flush(struct Decoder *decoder) {
 
 
 template <typename codepoint_t>
-int decode(
+ptrdiff_t decode(
 		struct Decoder *t,
 		const codepoint_t *src,
 		int srclen,
@@ -212,7 +212,7 @@ int decode(
 }
 
 
-int hypua_decoder_decode_ucs2(
+ptrdiff_t hypua_decoder_decode_ucs2(
 		struct Decoder *decoder,
 		const uint16_t *src,
 		int srclen,
@@ -222,7 +222,7 @@ int hypua_decoder_decode_ucs2(
 }
 
 
-int hypua_decoder_decode_ucs4(
+ptrdiff_t hypua_decoder_decode_ucs4(
 		struct Decoder *decoder,
 		const uint32_t *src,
 		int srclen,
@@ -233,7 +233,7 @@ int hypua_decoder_decode_ucs4(
 
 
 template <typename codepoint_t>
-static int decode_flush(struct Decoder *t, codepoint_t *dst) {
+static ptrdiff_t decode_flush(struct Decoder *t, codepoint_t *dst) {
 	int dstlen = 0;
 	codepoint_t *dst_begin = dst;
 	const uint16_t *src_reserved;
@@ -262,11 +262,11 @@ static int decode_flush(struct Decoder *t, codepoint_t *dst) {
 }
 
 
-int hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst) {
+ptrdiff_t hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst) {
 	return decode_flush(decoder, dst);
 }
 
 
-int hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst) {
+ptrdiff_t hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst) {
 	return decode_flush(decoder, dst);
 }

@@ -29,30 +29,30 @@ cdef extern from *:
 
 cdef extern from "hypua2jamo.h":
     int hypua_c2d_ucs4_calcsize(void *src, int srclen);
-    int hypua_c2d_ucs4_encode(void *src, int srclen, void *dst);
+    long hypua_c2d_ucs4_encode(void *src, int srclen, void *dst);
     int hypua_c2d_ucs2_calcsize(void *src, int srclen);
-    int hypua_c2d_ucs2_encode(void *src, int srclen, void *dst);
+    long hypua_c2d_ucs2_encode(void *src, int srclen, void *dst);
     int hypua_p2jc_ucs4_calcsize(void *src, int srclen);
-    int hypua_p2jc_ucs4_encode(void *src, int srclen, void *dst);
+    long hypua_p2jc_ucs4_encode(void *src, int srclen, void *dst);
     int hypua_p2jc_ucs2_calcsize(void *src, int srclen);
-    int hypua_p2jc_ucs2_encode(void *src, int srclen, void *dst);
+    long hypua_p2jc_ucs2_encode(void *src, int srclen, void *dst);
     int hypua_p2jd_ucs4_calcsize(void *src, int srclen);
-    int hypua_p2jd_ucs4_encode(void *src, int srclen, void *dst);
+    long hypua_p2jd_ucs4_encode(void *src, int srclen, void *dst);
     int hypua_p2jd_ucs2_calcsize(void *src, int srclen);
-    int hypua_p2jd_ucs2_encode(void *src, int srclen, void *dst);
+    long hypua_p2jd_ucs2_encode(void *src, int srclen, void *dst);
 
     int hypua_d2c_ucs4_calcsize(void *src, int srclen);
-    int hypua_d2c_ucs4_decode(void *src, int srclen, void *dst);
+    long hypua_d2c_ucs4_decode(void *src, int srclen, void *dst);
     int hypua_d2c_ucs2_calcsize(void *src, int srclen);
-    int hypua_d2c_ucs2_decode(void *src, int srclen, void *dst);
+    long hypua_d2c_ucs2_decode(void *src, int srclen, void *dst);
     int hypua_jc2p_ucs4_calcsize(void *src, int srclen);
-    int hypua_jc2p_ucs4_decode(void *src, int srclen, void *dst);
+    long hypua_jc2p_ucs4_decode(void *src, int srclen, void *dst);
     int hypua_jc2p_ucs2_calcsize(void *src, int srclen);
-    int hypua_jc2p_ucs2_decode(void *src, int srclen, void *dst);
+    long hypua_jc2p_ucs2_decode(void *src, int srclen, void *dst);
     int hypua_jd2p_ucs4_calcsize(void *src, int srclen);
-    int hypua_jd2p_ucs4_decode(void *src, int srclen, void *dst);
+    long hypua_jd2p_ucs4_decode(void *src, int srclen, void *dst);
     int hypua_jd2p_ucs2_calcsize(void *src, int srclen);
-    int hypua_jd2p_ucs2_decode(void *src, int srclen, void *dst);
+    long hypua_jd2p_ucs2_decode(void *src, int srclen, void *dst);
 
     int hypua_decoder_alloc_size();
     void hypua_decoder_init_jc2p(void *decoder);
@@ -69,20 +69,20 @@ cdef extern from "hypua2jamo.h":
     int hypua_decoder_calcsize_ucs2(void *decoder, void *src, int srclen);
     int hypua_decoder_calcsize_ucs4(void *decoder, void *src, int srclen);
     int hypua_decoder_calcsize_flush(void *decoder);
-    int hypua_decoder_decode_ucs2(
+    long hypua_decoder_decode_ucs2(
         void *decoder,
         void *src,
         int srclen,
         void *dst
     );
-    int hypua_decoder_decode_ucs4(
+    long hypua_decoder_decode_ucs4(
         void *decoder,
         void *src,
         int srclen,
         void *dst
     );
-    int hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
-    int hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
+    long hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
+    long hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
 
 
 cdef int _UNICODE_SIZE = array('u').itemsize
@@ -93,8 +93,8 @@ cdef class JamoDecoderImplementationOnCython:
     cdef void* _decoder
     cdef int (*_calcsize)(void*, void*, int)
     cdef int (*_calcsize_flush)(void *)
-    cdef int (*_decode)(void*, void*, int, void*)
-    cdef int (*_decode_flush)(void*, void*)
+    cdef long (*_decode)(void*, void*, int, void*)
+    cdef long (*_decode_flush)(void*, void*)
 
     def __dealloc__(self):
         PyMem_Free(self._decoder)
@@ -246,7 +246,7 @@ cdef class JamoEncoderImplementationOnCython:
     '''
 
     cdef int (*_calcsize)(void *src, int srclen);
-    cdef int (*_encode)(void *src, int srclen, void *dst);
+    cdef long (*_encode)(void *src, int srclen, void *dst);
 
     def reset(self):
         pass

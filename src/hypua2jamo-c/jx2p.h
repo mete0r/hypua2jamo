@@ -34,20 +34,20 @@ int hypua_decoder_setstate(struct Decoder *decoder, int state);
 int hypua_decoder_calcsize_ucs2(struct Decoder *decoder, const uint16_t *src, int srclen);
 int hypua_decoder_calcsize_ucs4(struct Decoder *decoder, const uint32_t *src, int srclen);
 int hypua_decoder_calcsize_flush(struct Decoder *decoder);
-int hypua_decoder_decode_ucs2(
+ptrdiff_t hypua_decoder_decode_ucs2(
 		struct Decoder *decoder,
 		const uint16_t *src,
 		int srclen,
 		uint16_t *dst
 );
-int hypua_decoder_decode_ucs4(
+ptrdiff_t hypua_decoder_decode_ucs4(
 		struct Decoder *decoder,
 		const uint32_t *src,
 		int srclen,
 		uint32_t *dst
 );
-int hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst);
-int hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst);
+ptrdiff_t hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst);
+ptrdiff_t hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst);
 
 
 #ifdef __cplusplus
