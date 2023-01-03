@@ -39,6 +39,23 @@ Documentation & Development
 - Issue tracker: `https://github.com/mete0r/hypua2jamo/issues <https://github.com/mete0r/hypua2jamo/issues>`_
 - Bug reports, feedbacks and contributions are welcome!
 
+Hacking
+-------
+
+Currently, development and maintenance is taking place in the Debian stable version environment. Following debian packages are required::
+
+   sudo apt install python3.9 python3.9-dev python3.9-venv
+   sudp apt install python2.7 python2.7-dev
+   sudo apt install make build-essential cmake
+
+To bootstrap development environment, run following commands in the project root directory::
+
+   python3.9 -m venv venv
+   . venv/bin/activate
+   pip install --upgrade setuptools pip pip-tools
+   make update-requirements
+   make test
+
 Contributors
 ------------
 
