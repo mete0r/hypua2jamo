@@ -10,11 +10,11 @@ Example
    >>> pua = u'\ub098\ub78f\u302e\ub9d0\u302f\uebd4\ubbf8\u302e'
    >>> translate(pua)
    u'\ub098\ub78f\u302e\ub9d0\u302f\u110a\u119e\ubbf8\u302e'
-   >>> print _
+   >>> print(_)
    나랏말ᄊ미
    >>> translate(pua, composed=False)
    u'\ub098\ub78f\u302e\ub9d0\u302f\u1109\u1109\u119e\ubbf8\u302e'
-   >>> print _
+   >>> print(_)
    나랏말ㅅㅅ미
 
 Installation
