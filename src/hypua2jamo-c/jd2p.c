@@ -34,7 +34,7 @@ int hypua_jd2p_ucs2_calcsize(const uint16_t *src, int srclen) {
 }
 
 
-int hypua_jd2p_ucs2_decode(const uint16_t *src, int srclen, uint16_t *dst) {
+ptrdiff_t hypua_jd2p_ucs2_decode(const uint16_t *src, int srclen, uint16_t *dst) {
 	int dstlen = 0;
 	struct Decoder decoder;
 	uint16_t *dst_begin = dst;
@@ -56,7 +56,7 @@ int hypua_jd2p_ucs4_calcsize(const uint32_t *src, int srclen) {
 }
 
 
-int hypua_jd2p_ucs4_decode(const uint32_t *src, int srclen, uint32_t *dst) {
+ptrdiff_t hypua_jd2p_ucs4_decode(const uint32_t *src, int srclen, uint32_t *dst) {
 	int dstlen = 0;
 	struct Decoder decoder;
 	uint32_t *dst_begin = dst;

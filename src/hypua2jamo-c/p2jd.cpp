@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -33,7 +34,7 @@ inline int p2jd_calcsize(const codepoint_t *src, int srclen) {
 
 
 template <typename codepoint_t>
-inline int p2jd_encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
+inline ptrdiff_t p2jd_encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
 	const unsigned short *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
@@ -58,7 +59,7 @@ extern "C" int hypua_p2jd_ucs2_calcsize(const uint16_t *src, int srclen) {
 }
 
 
-extern "C" int hypua_p2jd_ucs2_encode(const uint16_t *src, int srclen, uint16_t *dst) {
+extern "C" ptrdiff_t hypua_p2jd_ucs2_encode(const uint16_t *src, int srclen, uint16_t *dst) {
 	return p2jd_encode(src, srclen, dst);
 }
 
@@ -68,6 +69,6 @@ extern "C" int hypua_p2jd_ucs4_calcsize(const uint32_t *src, int srclen) {
 }
 
 
-extern "C" int hypua_p2jd_ucs4_encode(const uint32_t *src, int srclen, uint32_t *dst) {
+extern "C" ptrdiff_t hypua_p2jd_ucs4_encode(const uint32_t *src, int srclen, uint32_t *dst) {
 	return p2jd_encode(src, srclen, dst);
 }
