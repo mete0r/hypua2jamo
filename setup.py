@@ -18,7 +18,6 @@
 # along with hypua2jamo.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import absolute_import
 from contextlib import contextmanager
-from distutils.command.build import build as _build
 from distutils.errors import CCompilerError
 from distutils.errors import DistutilsExecError
 from distutils.errors import DistutilsPlatformError
@@ -152,35 +151,6 @@ setup_info = {
 }
 
 
-class build(_build):
-    def run(self):
-        BUILD_DIR = 'build/hypua2jamo-c'
-        if os.path.exists(BUILD_DIR):
-            shutil.rmtree(BUILD_DIR)
-        os.makedirs(BUILD_DIR)
-        cwd = os.getcwd()
-        os.chdir(BUILD_DIR)
-        try:
-            if sys.platform == 'win32':
-                subprocess.check_call([
-                    'cmake',
-                    '-G', 'NMake Makefiles',
-                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
-                    '../../src/hypua2jamo-c'
-                ])
-                subprocess.check_call(['nmake'])
-            else:
-                subprocess.check_call([
-                    'cmake',
-                    '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
-                    '../../src/hypua2jamo-c',
-                ])
-                subprocess.check_call(['make'])
-        finally:
-            os.chdir(cwd)
-        _build.run(self)
-
-
 @setup_dir
 def main():
     setuptools = import_setuptools()
@@ -193,6 +163,41 @@ def main():
         the building of C extensions to fail.
         '''
         def run(self):
+            BUILD_DIR = 'build/hypua2jamo-c'
+            if os.path.exists(BUILD_DIR):
+                shutil.rmtree(BUILD_DIR)
+            os.makedirs(BUILD_DIR)
+            cwd = os.getcwd()
+            os.chdir(BUILD_DIR)
+            try:
+                if sys.platform == 'win32':
+                    subprocess.check_call([
+                        'cmake',
+                        '-G', 'NMake Makefiles',
+                        '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                        '../../src/hypua2jamo-c'
+                    ])
+                    subprocess.check_call(['nmake'])
+                else:
+                    subprocess.check_call([
+                        'cmake',
+                        '-D', 'CMAKE_BUILD_TYPE:String=RELEASE',
+                        '../../src/hypua2jamo-c',
+                    ])
+                    subprocess.check_call(['make'])
+            except Exception as e:
+                print('*' * 80)
+                print(e)
+                print()
+                print(
+                    'WARNING: An optional C module (hypua2jamo-c) '
+                    'could not be built. Optimization for this package '
+                    'will not be available!'
+                )
+                print('*' * 80)
+            finally:
+                os.chdir(cwd)
+
             try:
                 build_ext.run(self)
             except DistutilsPlatformError as e:
@@ -206,17 +211,16 @@ def main():
 
         def _unavailable(self, e):
             print('*' * 80)
+            print(e)
+            print()
             print(
                 'WARNING: An optional code optimization (C extension) '
-                'could not be compiled. Optimization for this package '
+                'could not be built. Optimization for this package '
                 'will not be available!'
             )
-            print()
-            print(e)
             print('*' * 80)
 
     setup_info['cmdclass'] = {
-        'build': build,
         'build_ext': optional_build_ext,
     }
 
