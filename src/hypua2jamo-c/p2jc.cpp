@@ -16,9 +16,9 @@ typedef unsigned int uint32_t;
 
 
 template <typename codepoint_t>
-inline int p2jc_calcsize(const codepoint_t *src, int srclen) {
+inline size_t p2jc_calcsize(const codepoint_t *src, size_t srclen) {
 	const unsigned short *jamo_seq;
-	int ret = 0;
+	size_t ret = 0;
 	const codepoint_t *src_end = src + srclen;
 	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
@@ -33,7 +33,7 @@ inline int p2jc_calcsize(const codepoint_t *src, int srclen) {
 
 
 template <typename codepoint_t>
-inline ptrdiff_t p2jc_encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
+inline size_t p2jc_encode(const codepoint_t *src, size_t srclen, codepoint_t *dst) {
 	const unsigned short *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
@@ -53,21 +53,21 @@ inline ptrdiff_t p2jc_encode(const codepoint_t *src, int srclen, codepoint_t *ds
 }
 
 
-extern "C" int hypua_p2jc_ucs2_calcsize(const uint16_t *src, int srclen) {
+extern "C" size_t hypua_p2jc_ucs2_calcsize(const uint16_t *src, size_t srclen) {
 	return p2jc_calcsize(src, srclen);
 }
 
 
-extern "C" ptrdiff_t hypua_p2jc_ucs2_encode(const uint16_t *src, int srclen, uint16_t *dst) {
+extern "C" size_t hypua_p2jc_ucs2_encode(const uint16_t *src, size_t srclen, uint16_t *dst) {
 	return p2jc_encode(src, srclen, dst);
 }
 
 
-extern "C" int hypua_p2jc_ucs4_calcsize(const uint32_t *src, int srclen) {
+extern "C" size_t hypua_p2jc_ucs4_calcsize(const uint32_t *src, size_t srclen) {
 	return p2jc_calcsize(src, srclen);
 }
 
 
-extern "C" ptrdiff_t hypua_p2jc_ucs4_encode(const uint32_t *src, int srclen, uint32_t *dst) {
+extern "C" size_t hypua_p2jc_ucs4_encode(const uint32_t *src, size_t srclen, uint32_t *dst) {
 	return p2jc_encode(src, srclen, dst);
 }

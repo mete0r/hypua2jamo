@@ -977,10 +977,10 @@ struct __pyx_obj_10hypua2jamo_7_cython_JamoDecomposingEncoderImplementationOnCyt
 struct __pyx_obj_10hypua2jamo_7_cython_JamoDecoderImplementationOnCython {
   PyObject_HEAD
   void *_decoder;
-  int (*_calcsize)(void *, void *, int);
-  int (*_calcsize_flush)(void *);
-  ptrdiff_t (*_decode)(void *, void *, int, void *);
-  ptrdiff_t (*_decode_flush)(void *, void *);
+  size_t (*_calcsize)(void *, void *, size_t);
+  size_t (*_calcsize_flush)(void *);
+  size_t (*_decode)(void *, void *, size_t, void *);
+  size_t (*_decode_flush)(void *, void *);
 };
 
 
@@ -1029,8 +1029,8 @@ struct __pyx_obj_10hypua2jamo_7_cython_JamoComposingDecoderImplementationOnCytho
  */
 struct __pyx_obj_10hypua2jamo_7_cython_JamoEncoderImplementationOnCython {
   PyObject_HEAD
-  int (*_calcsize)(void *, int);
-  ptrdiff_t (*_encode)(void *, int, void *);
+  size_t (*_calcsize)(void *, size_t);
+  size_t (*_encode)(void *, size_t, void *);
 };
 
 
@@ -1577,7 +1577,7 @@ static PyObject *__pyx_tuple__18;
 /* Late includes */
 
 /* "hypua2jamo/_cython.pyx":99
- *     cdef ptrdiff_t (*_decode_flush)(void*, void*)
+ *     cdef size_t (*_decode_flush)(void*, void*)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         PyMem_Free(self._decoder)
@@ -1609,7 +1609,7 @@ static void __pyx_pf_10hypua2jamo_7_cython_33JamoDecoderImplementationOnCython__
   PyMem_Free(__pyx_v_self->_decoder);
 
   /* "hypua2jamo/_cython.pyx":99
- *     cdef ptrdiff_t (*_decode_flush)(void*, void*)
+ *     cdef size_t (*_decode_flush)(void*, void*)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         PyMem_Free(self._decoder)
@@ -3381,7 +3381,7 @@ static PyObject *__pyx_pf_10hypua2jamo_7_cython_42JamoComposingDecoderImplementa
 }
 
 /* "hypua2jamo/_cython.pyx":251
- *     cdef ptrdiff_t (*_encode)(void *src, int srclen, void *dst);
+ *     cdef size_t (*_encode)(void *src, size_t srclen, void *dst);
  * 
  *     def reset(self):             # <<<<<<<<<<<<<<
  *         pass
