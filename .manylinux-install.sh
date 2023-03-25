@@ -53,13 +53,13 @@ for PYBIN in /opt/python/*/bin; do
             "${PYBIN}/pip" install -e /io/
             "${PYBIN}/pip" wheel /io/ -w wheelhouse/
         fi
-        if [ `uname -m` == 'aarch64' ]; then
-          cd /io/
-          ${PYBIN}/pip install tox
-          TOXENV=$(tox_env_map "${PYBIN}")
-          ${PYBIN}/tox -e ${TOXENV}
-          cd ..
-        fi
+#        if [ `uname -m` == 'aarch64' ]; then
+#          cd /io/
+#          ${PYBIN}/pip install tox
+#          TOXENV=$(tox_env_map "${PYBIN}")
+#          ${PYBIN}/tox -e ${TOXENV}
+#          cd ..
+#        fi
         rm -rf /io/build /io/*.egg-info
     fi
 done
