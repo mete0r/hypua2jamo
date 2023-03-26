@@ -25,11 +25,11 @@ from `PyPI <http://pypi.python.org/pypi/hypua2jamo>`_::
    pip install hypua2jamo
 
 
-Requirements
-------------
+Supported Python versions
+-------------------------
 
 - Python 2.7
-- Python 3.5 or above.
+- Python 3.7 or above.
 
 Documentation & Development
 ---------------------------
