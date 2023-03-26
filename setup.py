@@ -94,9 +94,10 @@ setup_info = {
     'version': get_version(),
     'description': ('Convert Hanyang-PUA code to unicode Hangul Jamo, i.e., '
                     'Syllable-Initial-Peak-Final Encoding (첫가끝 코드).'),
-    'long_description': readfile('README.rst'),
+    'long_description': readfile('README.rst') + '\n' + readfile('CHANGES.rst'),
+    'long_description_content_type': 'text/x-rst',
     'author': 'mete0r',
-    'author_email': 'mete0r@sarangbang.or.kr',
+    'author_email': 'arbeitmachtfrei77@gmail.com',
     'license': 'GNU Lesser General Public License v3 or later (LGPLv3+)',
     'url': 'https://github.com/mete0r/hypua2jamo',
     'packages': [
