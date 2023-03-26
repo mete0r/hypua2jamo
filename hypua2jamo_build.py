@@ -27,8 +27,7 @@ from cffi import FFI
 ffi = FFI()
 
 
-ffi.cdef(
-    '''
+c_declarations = '''
 size_t hypua_c2d_ucs4_calcsize(const unsigned int *src, size_t srclen);
 size_t hypua_c2d_ucs4_encode(const unsigned int *src, size_t srclen, unsigned int *dst);
 size_t hypua_c2d_ucs2_calcsize(const unsigned short *src, size_t srclen);
@@ -84,8 +83,11 @@ size_t hypua_decoder_decode_ucs4(
 );
 size_t hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
 size_t hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
+'''
 
-    '''  # noqa
+
+ffi.cdef(
+    c_declarations,
 )
 
 
@@ -97,8 +99,11 @@ else:
 
 ffi.set_source(
     'hypua2jamo._cffi',
-    '',
+    c_declarations,
     extra_objects=[
         library,
     ],
 )
+
+if __name__ == '__main__':
+    ffi.compile(verbose=True)
