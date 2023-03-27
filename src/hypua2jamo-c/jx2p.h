@@ -31,23 +31,23 @@ void hypua_decoder_init(
 );
 int hypua_decoder_getstate(const struct Decoder *decoder);
 int hypua_decoder_setstate(struct Decoder *decoder, int state);
-int hypua_decoder_calcsize_ucs2(struct Decoder *decoder, const uint16_t *src, int srclen);
-int hypua_decoder_calcsize_ucs4(struct Decoder *decoder, const uint32_t *src, int srclen);
-int hypua_decoder_calcsize_flush(struct Decoder *decoder);
-ptrdiff_t hypua_decoder_decode_ucs2(
+size_t hypua_decoder_calcsize_ucs2(struct Decoder *decoder, const uint16_t *src, size_t srclen);
+size_t hypua_decoder_calcsize_ucs4(struct Decoder *decoder, const uint32_t *src, size_t srclen);
+size_t hypua_decoder_calcsize_flush(struct Decoder *decoder);
+size_t hypua_decoder_decode_ucs2(
 		struct Decoder *decoder,
 		const uint16_t *src,
-		int srclen,
+		size_t srclen,
 		uint16_t *dst
 );
-ptrdiff_t hypua_decoder_decode_ucs4(
+size_t hypua_decoder_decode_ucs4(
 		struct Decoder *decoder,
 		const uint32_t *src,
-		int srclen,
+		size_t srclen,
 		uint32_t *dst
 );
-ptrdiff_t hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst);
-ptrdiff_t hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst);
+size_t hypua_decoder_decode_flush_ucs2(struct Decoder *decoder, uint16_t *dst);
+size_t hypua_decoder_decode_flush_ucs4(struct Decoder *decoder, uint32_t *dst);
 
 
 #ifdef __cplusplus
