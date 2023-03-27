@@ -24,8 +24,8 @@ void hypua_decoder_init_d2c(void *decoder) {
 }
 
 
-int hypua_d2c_ucs2_calcsize(const uint16_t *src, int srclen) {
-	int dstlen = 0;
+size_t hypua_d2c_ucs2_calcsize(const uint16_t *src, size_t srclen) {
+	size_t dstlen = 0;
 	struct Decoder decoder;
 	hypua_decoder_init_d2c(&decoder);
 	dstlen += hypua_decoder_calcsize_ucs2(&decoder, src, srclen);
@@ -34,8 +34,7 @@ int hypua_d2c_ucs2_calcsize(const uint16_t *src, int srclen) {
 }
 
 
-ptrdiff_t hypua_d2c_ucs2_decode(const uint16_t *src, int srclen, uint16_t *dst) {
-	int dstlen = 0;
+size_t hypua_d2c_ucs2_decode(const uint16_t *src, size_t srclen, uint16_t *dst) {
 	struct Decoder decoder;
 	uint16_t *dst_begin = dst;
 
@@ -46,8 +45,8 @@ ptrdiff_t hypua_d2c_ucs2_decode(const uint16_t *src, int srclen, uint16_t *dst) 
 }
 
 
-int hypua_d2c_ucs4_calcsize(const uint32_t *src, int srclen) {
-	int dstlen = 0;
+size_t hypua_d2c_ucs4_calcsize(const uint32_t *src, size_t srclen) {
+	size_t dstlen = 0;
 	struct Decoder decoder;
 	hypua_decoder_init_d2c(&decoder);
 	dstlen += hypua_decoder_calcsize_ucs4(&decoder, src, srclen);
@@ -56,8 +55,7 @@ int hypua_d2c_ucs4_calcsize(const uint32_t *src, int srclen) {
 }
 
 
-ptrdiff_t hypua_d2c_ucs4_decode(const uint32_t *src, int srclen, uint32_t *dst) {
-	int dstlen = 0;
+size_t hypua_d2c_ucs4_decode(const uint32_t *src, size_t srclen, uint32_t *dst) {
 	struct Decoder decoder;
 	uint32_t *dst_begin = dst;
 
