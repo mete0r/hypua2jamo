@@ -1,4 +1,5 @@
 image:
+  - Visual Studio 2015
   - Visual Studio 2019
 
 branches:
@@ -19,41 +20,81 @@ environment:
       secure: HV3H4Fm8sm1lh5YU83vQBg==
 
   matrix:
+    - TOXENV: py27
+      python: 27
+      plat: win32
+      vcarch: x86
+      ccompiler: ccompiler-vc90.cmd
+    - TOXENV: py27
+      python: 27-x64
+      plat: win-amd64
+      vcarch: amd64
+      ccompiler: ccompiler-vc90.cmd
+    - TOXENV: py37
+      python: 37
+      plat: win32
+      vcarch: x86
+      ccompiler: ccompiler-vs2019.cmd
+    - TOXENV: py37
+      python: 37-x64
+      plat: win-amd64
+      vcarch: amd64
+      ccompiler: ccompiler-vs2019.cmd
+    - TOXENV: py38
+      python: 38
+      plat: win32
+      vcarch: x86
+      ccompiler: ccompiler-vs2019.cmd
+    - TOXENV: py38
+      python: 38-x64
+      plat: win-amd64
+      vcarch: amd64
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py39
       python: 39
       plat: win32
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: x86
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py39
       python: 39-x64
       plat: win-amd64
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: amd64
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py310
       python: 310
       plat: win32
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: x86
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py310
       python: 310-x64
       plat: win-amd64
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: amd64
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py311
       python: 311
       plat: win32
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: x86
+      ccompiler: ccompiler-vs2019.cmd
     - TOXENV: py311
       python: 311-x64
       plat: win-amd64
-      ccompiler: ccompiler-winsdk10.cmd
+      vcarch: amd64
+      ccompiler: ccompiler-vs2019.cmd
+
+
+matrix:
+  exclude:
+    - image: Visual Studio 2019
+      ccompiler: ccompiler-vc90.cmd
+    - image: Visual Studio 2015
+      ccompiler: ccompiler-vs2019.cmd
 
 platform:
   - x86
 
 install:
   - cmd: |
-      cd
-      cd c:\projects\hypua2jamo
-      c:\python39\scripts\virtualenv .
-      call scripts\activate
-      python -m pip install -U setuptools pip wheel "tox>=3.4.0"
+      "C:\\Python%python%\\python" -m pip install -U setuptools pip
 
 build_script:
   - cmd: |
@@ -66,6 +107,7 @@ test_script:
   - cmd: |
       "C:\\Python%python%\\python" -m pip install -r requirements\test.txt
       "C:\\Python%python%\\python" -m pip install --no-deps .
+      "C:\\Python%python%\\python" -m coverage run --parallel -m unittest discover tests
 
 artifacts:
   - path: 'dist\*.whl'
