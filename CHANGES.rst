@@ -4,7 +4,9 @@ Changes
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Build Win64 wheels.
+- Add support for Python 3.9 / 3.10 / 3.11
+- Drop support for Python 3.5 / Python 3.6
 
 
 0.5.1 (2020-05-08)
@@ -22,7 +24,7 @@ Changes
 0.4.5 (2019-12-15)
 ------------------
 
-- Fix wheel buildling for MS Windows.
+- Fix wheel building for MS Windows.
 - Drop support for Python 3.4
 
 
