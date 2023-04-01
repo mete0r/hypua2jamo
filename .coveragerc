@@ -1,6 +1,8 @@
 [run]
 branch = True
 source = hypua2jamo
+# required for the Github Actions coveralls submission.
+relative_files = True
 
 [paths]
 source =

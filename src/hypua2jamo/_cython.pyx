@@ -20,7 +20,6 @@ from array import array
 from cython import embedsignature
 from cpython.mem cimport PyMem_Malloc
 from cpython.mem cimport PyMem_Free
-from libc.stdlib cimport malloc
 
 cdef extern from *:
     Py_UNICODE* PyUnicode_AsUnicode(object o) except NULL
@@ -28,73 +27,78 @@ cdef extern from *:
     unicode PyUnicode_FromUnicode(Py_UNICODE *u, Py_ssize_t size)
 
 cdef extern from "hypua2jamo.h":
-    int hypua_c2d_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_c2d_ucs4_encode(void *src, int srclen, void *dst);
-    int hypua_c2d_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_c2d_ucs2_encode(void *src, int srclen, void *dst);
-    int hypua_p2jc_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_p2jc_ucs4_encode(void *src, int srclen, void *dst);
-    int hypua_p2jc_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_p2jc_ucs2_encode(void *src, int srclen, void *dst);
-    int hypua_p2jd_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_p2jd_ucs4_encode(void *src, int srclen, void *dst);
-    int hypua_p2jd_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_p2jd_ucs2_encode(void *src, int srclen, void *dst);
+    ctypedef unsigned short uint16_t
+    ctypedef unsigned int uint32_t
+    size_t hypua_c2d_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_c2d_ucs4_encode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_c2d_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_c2d_ucs2_encode(const uint16_t *src, size_t srclen, uint16_t *dst);
+    size_t hypua_p2jc_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_p2jc_ucs4_encode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_p2jc_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_p2jc_ucs2_encode(const uint16_t *src, size_t srclen, uint16_t *dst);
+    size_t hypua_p2jd_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_p2jd_ucs4_encode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_p2jd_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_p2jd_ucs2_encode(const uint16_t *src, size_t srclen, uint16_t *dst);
 
-    int hypua_d2c_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_d2c_ucs4_decode(void *src, int srclen, void *dst);
-    int hypua_d2c_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_d2c_ucs2_decode(void *src, int srclen, void *dst);
-    int hypua_jc2p_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_jc2p_ucs4_decode(void *src, int srclen, void *dst);
-    int hypua_jc2p_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_jc2p_ucs2_decode(void *src, int srclen, void *dst);
-    int hypua_jd2p_ucs4_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_jd2p_ucs4_decode(void *src, int srclen, void *dst);
-    int hypua_jd2p_ucs2_calcsize(void *src, int srclen);
-    ptrdiff_t hypua_jd2p_ucs2_decode(void *src, int srclen, void *dst);
+    size_t hypua_d2c_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_d2c_ucs4_decode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_d2c_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_d2c_ucs2_decode(const uint16_t *src, size_t srclen, uint16_t *dst);
+    size_t hypua_jc2p_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_jc2p_ucs4_decode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_jc2p_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_jc2p_ucs2_decode(const uint16_t *src, size_t srclen, uint16_t *dst);
+    size_t hypua_jd2p_ucs4_calcsize(const uint32_t *src, size_t srclen);
+    size_t hypua_jd2p_ucs4_decode(const uint32_t *src, size_t srclen, uint32_t *dst);
+    size_t hypua_jd2p_ucs2_calcsize(const uint16_t *src, size_t srclen);
+    size_t hypua_jd2p_ucs2_decode(const uint16_t *src, size_t srclen, uint16_t *dst);
 
     int hypua_decoder_alloc_size();
+    void hypua_decoder_init_d2c(void *decoder);
     void hypua_decoder_init_jc2p(void *decoder);
     void hypua_decoder_init_jd2p(void *decoder);
-    void hypua_decoder_init_d2c(void *decoder);
     void hypua_decoder_init(
-        void *decoder,
-        void *root,
-        void *nodelist,
-        int nodelistLen
+                    void *decoder,
+                    const void *root,
+                    const void *nodelist,
+                    int nodelistLen
     );
     int hypua_decoder_getstate(void *decoder);
     int hypua_decoder_setstate(void *decoder, int state);
-    int hypua_decoder_calcsize_ucs2(void *decoder, void *src, int srclen);
-    int hypua_decoder_calcsize_ucs4(void *decoder, void *src, int srclen);
-    int hypua_decoder_calcsize_flush(void *decoder);
-    ptrdiff_t hypua_decoder_decode_ucs2(
-        void *decoder,
-        void *src,
-        int srclen,
-        void *dst
+    size_t hypua_decoder_calcsize_ucs2(void *decoder, const uint16_t *src, size_t srclen);
+    size_t hypua_decoder_calcsize_ucs4(void *decoder, const uint32_t *src, size_t srclen);
+    size_t hypua_decoder_calcsize_flush(void *decoder);
+    size_t hypua_decoder_decode_ucs2(
+                    void *decoder,
+                    uint16_t *src,
+                    size_t srclen,
+                    uint16_t *dst
     );
-    ptrdiff_t hypua_decoder_decode_ucs4(
-        void *decoder,
-        void *src,
-        int srclen,
-        void *dst
+    size_t hypua_decoder_decode_ucs4(
+                    void *decoder,
+                    uint32_t *src,
+                    size_t srclen,
+                    uint32_t *dst
     );
-    ptrdiff_t hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
-    ptrdiff_t hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
+    size_t hypua_decoder_decode_flush_ucs2(void *decoder, void *dst);
+    size_t hypua_decoder_decode_flush_ucs4(void *decoder, void *dst);
 
 
 cdef int _UNICODE_SIZE = array('u').itemsize
+
+ctypedef size_t (*_decoder_calcsize_fn)(void*, void*, size_t)
+ctypedef size_t (*_decoder_decode_fn)(void*, void*, size_t, void*)
 
 
 cdef class JamoDecoderImplementationOnCython:
 
     cdef void* _decoder
-    cdef int (*_calcsize)(void*, void*, int)
-    cdef int (*_calcsize_flush)(void *)
-    cdef ptrdiff_t (*_decode)(void*, void*, int, void*)
-    cdef ptrdiff_t (*_decode_flush)(void*, void*)
+    cdef _decoder_calcsize_fn _calcsize
+    cdef size_t (*_calcsize_flush)(void *)
+    cdef _decoder_decode_fn _decode
+    cdef size_t (*_decode_flush)(void*, void*)
 
     def __dealloc__(self):
         PyMem_Free(self._decoder)
@@ -160,14 +164,14 @@ cdef class PUAComposedDecoderImplementationOnCython(
         hypua_decoder_init_jc2p(decoder)
         self._decoder = decoder
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs4
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs4
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs4
             self._decode_flush = hypua_decoder_decode_flush_ucs4
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs2
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs2
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs2
             self._decode_flush = hypua_decoder_decode_flush_ucs2
         else:
             raise AssertionError(_UNICODE_SIZE)
@@ -192,14 +196,14 @@ cdef class PUADecomposedDecoderImplementationOnCython(
         hypua_decoder_init_jd2p(decoder)
         self._decoder = decoder
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs4
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs4
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs4
             self._decode_flush = hypua_decoder_decode_flush_ucs4
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs2
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs2
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs2
             self._decode_flush = hypua_decoder_decode_flush_ucs2
         else:
             raise AssertionError(_UNICODE_SIZE)
@@ -225,17 +229,20 @@ cdef class JamoComposingDecoderImplementationOnCython(
 
         self._decoder = decoder
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_decoder_calcsize_ucs4
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs4
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs4
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs4
             self._decode_flush = hypua_decoder_decode_flush_ucs4
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_decoder_calcsize_ucs2
+            self._calcsize = <_decoder_calcsize_fn>hypua_decoder_calcsize_ucs2
             self._calcsize_flush = hypua_decoder_calcsize_flush
-            self._decode = hypua_decoder_decode_ucs2
+            self._decode = <_decoder_decode_fn>hypua_decoder_decode_ucs2
             self._decode_flush = hypua_decoder_decode_flush_ucs2
         else:
             raise AssertionError(_UNICODE_SIZE)
+
+ctypedef size_t (*_encoder_calcsize_fn)(void*, size_t)
+ctypedef size_t (*_encoder_encode_fn)(void *, size_t, void *)
 
 
 cdef class JamoEncoderImplementationOnCython:
@@ -245,8 +252,8 @@ cdef class JamoEncoderImplementationOnCython:
     Cython implementation.
     '''
 
-    cdef int (*_calcsize)(void *src, int srclen);
-    cdef ptrdiff_t (*_encode)(void *src, int srclen, void *dst);
+    cdef _encoder_calcsize_fn _calcsize
+    cdef _encoder_encode_fn _encode
 
     def reset(self):
         pass
@@ -290,11 +297,11 @@ cdef class PUAComposedEncoderImplementationOnCython(
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_p2jc_ucs4_calcsize
-            self._encode = hypua_p2jc_ucs4_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_p2jc_ucs4_calcsize
+            self._encode = <_encoder_encode_fn>hypua_p2jc_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_p2jc_ucs2_calcsize
-            self._encode = hypua_p2jc_ucs2_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_p2jc_ucs2_calcsize
+            self._encode = <_encoder_encode_fn>hypua_p2jc_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -311,11 +318,11 @@ cdef class PUADecomposedEncoderImplementationOnCython(
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_p2jd_ucs4_calcsize
-            self._encode = hypua_p2jd_ucs4_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_p2jd_ucs4_calcsize
+            self._encode = <_encoder_encode_fn>hypua_p2jd_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_p2jd_ucs2_calcsize
-            self._encode = hypua_p2jd_ucs2_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_p2jd_ucs2_calcsize
+            self._encode = <_encoder_encode_fn>hypua_p2jd_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)
 
@@ -332,10 +339,10 @@ cdef class JamoDecomposingEncoderImplementationOnCython(
 
     def __cinit__(self):
         if _UNICODE_SIZE == 4:
-            self._calcsize = hypua_c2d_ucs4_calcsize
-            self._encode = hypua_c2d_ucs4_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_c2d_ucs4_calcsize
+            self._encode = <_encoder_encode_fn>hypua_c2d_ucs4_encode
         elif _UNICODE_SIZE == 2:
-            self._calcsize = hypua_c2d_ucs2_calcsize
-            self._encode = hypua_c2d_ucs2_encode
+            self._calcsize = <_encoder_calcsize_fn>hypua_c2d_ucs2_calcsize
+            self._encode = <_encoder_encode_fn>hypua_c2d_ucs2_encode
         else:
             raise AssertionError(_UNICODE_SIZE)

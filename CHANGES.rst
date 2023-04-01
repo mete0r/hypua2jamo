@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.6 (unreleased)
+0.6 (2023-04-02)
 ----------------
 
 - Build Win64 wheels.

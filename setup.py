@@ -94,11 +94,13 @@ setup_info = {
     'version': get_version(),
     'description': ('Convert Hanyang-PUA code to unicode Hangul Jamo, i.e., '
                     'Syllable-Initial-Peak-Final Encoding (첫가끝 코드).'),
-    'long_description': readfile('README.rst'),
+    'long_description': readfile('README.rst') + '\n' + readfile('CHANGES.rst'),  # noqa
+    'long_description_content_type': 'text/x-rst',
     'author': 'mete0r',
-    'author_email': 'mete0r@sarangbang.or.kr',
+    'author_email': '137794+mete0r@users.noreply.github.com',
     'license': 'GNU Lesser General Public License v3 or later (LGPLv3+)',
     'url': 'https://github.com/mete0r/hypua2jamo',
+    'python_requires': '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*,!=3.6.*',  # noqa
     'packages': [
         'hypua2jamo',
     ],
@@ -127,17 +129,17 @@ setup_info = {
         ],
     },
     'classifiers': [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',  # noqa
         'Natural Language :: Korean',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Text Processing :: Filters',
     ],

@@ -4,21 +4,20 @@
 
 #include "config.h"
 
-#ifdef HAVE_INTTYPES_H
-#include <inttypes.h>
+#ifdef HAVE_STDINT_H
+#include <stdint.h>
 #else
 typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
 #endif
 
-
 #include "c2d-table.h"
 
 
 template <typename codepoint_t>
-inline int c2d_calcsize(const codepoint_t *src, int srclen) {
+inline size_t c2d_calcsize(const codepoint_t *src, size_t srclen) {
 	const unsigned short *jamo_seq;
-	int ret = 0;
+	size_t ret = 0;
 	const codepoint_t *src_end = src + srclen;
 	for (; src < src_end; ++src) {
 		jamo_seq = lookup(*src);
@@ -33,7 +32,7 @@ inline int c2d_calcsize(const codepoint_t *src, int srclen) {
 
 
 template <typename codepoint_t>
-inline ptrdiff_t c2d_encode(const codepoint_t *src, int srclen, codepoint_t *dst) {
+inline size_t c2d_encode(const codepoint_t *src, size_t srclen, codepoint_t *dst) {
 	const unsigned short *jamo_seq;
 	int jamo_len;
 	const codepoint_t *src_end = src + srclen;
@@ -53,21 +52,21 @@ inline ptrdiff_t c2d_encode(const codepoint_t *src, int srclen, codepoint_t *dst
 }
 
 
-extern "C" int hypua_c2d_ucs2_calcsize(const uint16_t *src, int srclen) {
+extern "C" size_t hypua_c2d_ucs2_calcsize(const uint16_t *src, size_t srclen) {
 	return c2d_calcsize(src, srclen);
 }
 
 
-extern "C" ptrdiff_t hypua_c2d_ucs2_encode(const uint16_t *src, int srclen, uint16_t *dst) {
+extern "C" size_t hypua_c2d_ucs2_encode(const uint16_t *src, size_t srclen, uint16_t *dst) {
 	return c2d_encode(src, srclen, dst);
 }
 
 
-extern "C" int hypua_c2d_ucs4_calcsize(const uint32_t *src, int srclen) {
+extern "C" size_t hypua_c2d_ucs4_calcsize(const uint32_t *src, size_t srclen) {
 	return c2d_calcsize(src, srclen);
 }
 
 
-extern "C" ptrdiff_t hypua_c2d_ucs4_encode(const uint32_t *src, int srclen, uint32_t *dst) {
+extern "C" size_t hypua_c2d_ucs4_encode(const uint32_t *src, size_t srclen, uint32_t *dst) {
 	return c2d_encode(src, srclen, dst);
 }
