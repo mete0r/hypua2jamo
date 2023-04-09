@@ -97,7 +97,7 @@ executing==1.2.0
     # via stack-data
 fastjsonschema==2.16.3
     # via nbformat
-filelock==3.10.6
+filelock==3.11.0
     # via
     #   tox
     #   virtualenv
@@ -244,7 +244,7 @@ nest-asyncio==1.5.6
     #   ipykernel
     #   nbclassic
     #   notebook
-notebook==6.5.3
+notebook==6.5.4
     # via
     #   -r requirements/dev.in
     #   jupyter
@@ -445,7 +445,7 @@ tornado==6.2
     #   nbclassic
     #   notebook
     #   terminado
-tox==4.4.8
+tox==4.4.11
     # via -r requirements/dev.in
 traitlets==5.9.0
     # via
