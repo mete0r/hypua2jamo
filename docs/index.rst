@@ -14,6 +14,7 @@ Contents:
    intro
    hypua2jamo
    hypua2jamo-cli
+   changes
 
 
 Indices and tables
