@@ -4,7 +4,7 @@ Changes
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix `hypua2jamo` script to work.
 
 
 0.6 (2023-04-02)
