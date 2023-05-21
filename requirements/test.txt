@@ -11,9 +11,5 @@ cffi==1.15.1
     #   -r requirements/test.in
 coverage==5.5
     # via -r requirements/test.in
-more-itertools==5.0.0
-    # via -r requirements/test.in
 pycparser==2.21
     # via cffi
-six==1.16.0
-    # via more-itertools
