@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.7 (unreleased)
+0.7 (2023-05-22)
 ----------------
 
 - Fix `hypua2jamo` script to work.
