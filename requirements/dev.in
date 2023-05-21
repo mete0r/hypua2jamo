@@ -1,4 +1,4 @@
-argcomplete >= 1.9.4
+argcomplete >= 3.0.8
 babel >= 2.6.0
 bleach >= 3.1.4
 coloredlogs >= 10.0
@@ -7,9 +7,9 @@ jupyter
 ktug-hanyang-pua == 0.1.2
 notebook >= 6.5.4
 parsec >= 3.4
-pip-tools >= 6.12.1
+pip-tools >= 6.13.0
 restview >= 2.9.1
-tox >= 4.4.11
+tox >= 4.5.1
 wheel >= 0.31.1
 zc.buildout >= 2.12.2
 zest.releaser >= 6.15.2

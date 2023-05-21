@@ -10,7 +10,7 @@ alabaster==0.7.13
     #   sphinx
 anyio==3.6.2
     # via jupyter-server
-argcomplete==3.0.5
+argcomplete==3.0.8
     # via -r requirements/dev.in
 argon2-cffi==21.3.0
     # via
@@ -250,7 +250,7 @@ notebook==6.5.4
     #   jupyter
 notebook-shim==0.2.2
     # via nbclassic
-packaging==23.0
+packaging==23.1
     # via
     #   build
     #   ipykernel
@@ -274,7 +274,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pip-tools==6.12.3
+pip-tools==6.13.0
     # via -r requirements/dev.in
 pkginfo==1.9.6
     # via twine
@@ -398,7 +398,7 @@ snowballstemmer==2.2.0
     # via sphinx
 soupsieve==2.4
     # via beautifulsoup4
-sphinx==6.1.3
+sphinx==7.0.1
     # via
     #   -r requirements/docs.in
     #   repoze-sphinx-autointerface
@@ -445,7 +445,7 @@ tornado==6.2
     #   nbclassic
     #   notebook
     #   terminado
-tox==4.4.11
+tox==4.5.1
     # via -r requirements/dev.in
 traitlets==5.9.0
     # via
