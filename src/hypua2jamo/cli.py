@@ -115,9 +115,9 @@ def main():
 
     with io.open(args.FILE, 'r', encoding='utf-8') as fp:
         for encoded in (translate(line) for line in fp):
-            sys.stdout.write(encoded.encode('utf-8'))
+            sys.stdout.write(encoded)
         encoded = translate('', final=True)
-        sys.stdout.write(encoded.encode('utf-8'))
+        sys.stdout.write(encoded)
 
 
 def main_argparse():
@@ -131,6 +131,7 @@ def main_argparse():
     parser.add_argument(
         '-v', '--verbose',
         action='count',
+        default=0,
         help=_('increase verbosity')
     )
     parser.add_argument(
