@@ -74,27 +74,27 @@ update-requirements: .pip-sync
 	$(VENV) pip freeze > $@.tmp && mv $@.tmp $@
 
 requirements.txt: $(REQUIREMENTS_IN)
-	$(VENV)	pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV)	pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV)	pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@ -w virtualenv_support
 
 requirements/site.txt: $(REQUIREMENTS_IN_SITE)
-	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
 requirements/test.txt: $(REQUIREMENTS_IN_TEST)
-	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
 requirements/lint.txt: $(REQUIREMENTS_IN_LINT)
-	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
 requirements/docs.txt: $(REQUIREMENTS_IN_DOCS)
-	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
 requirements/dev.txt: $(REQUIREMENTS_IN_DEV)
-	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) $(pip-compile-options) -o $@ $^
+	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
 .PHONY: bootstrap-virtualenv
