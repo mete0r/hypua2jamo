@@ -437,7 +437,7 @@ tomli==2.0.1
     #   pyproject-api
     #   pyproject-hooks
     #   tox
-tornado==6.2
+tornado==6.3.2
     # via
     #   ipykernel
     #   jupyter-client
