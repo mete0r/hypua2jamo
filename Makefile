@@ -97,10 +97,6 @@ requirements/dev.txt: $(REQUIREMENTS_IN_DEV)
 	$(VENV) pip-compile $(FIND_LINKS) $(PIP_NO_INDEX) --resolver=backtracking $(pip-compile-options) -o $@ $^
 	$(VENV) pip wheel $(FIND_LINKS) $(PIP_NO_INDEX) --no-deps -r $@
 
-.PHONY: bootstrap-virtualenv
-bootstrap-virtualenv.py: requirements.txt bootstrap-virtualenv.in
-	python setup.py virtualenv_bootstrap_script -o $@ -r $<
-
 
 .PHONY: notebook
 notebook:
