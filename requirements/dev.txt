@@ -437,6 +437,7 @@ tomli==2.0.1
     #   pyproject-api
     #   pyproject-hooks
     #   tox
+    #   zest-releaser
 tornado==6.3.2
     # via
     #   ipykernel
@@ -496,7 +497,7 @@ widgetsnbextension==4.0.6
     # via ipywidgets
 zc-buildout==3.0.1
     # via -r requirements/dev.in
-zest-releaser==7.3.0
+zest-releaser==8.0.0
     # via -r requirements/dev.in
 zipp==3.15.0
     # via importlib-metadata
